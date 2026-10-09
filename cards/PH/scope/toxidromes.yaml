@@ -1,0 +1,44 @@
+# Pharma Cards — Toxidrome (PH)
+# Referenzliste für das Feld `toxidrome`. Inhaltlich knapp als Anker; Details in den Karten.
+# Alle Einträge sind fachlich zu prüfen (toxicology_review_needed), bevor Karten freigegeben werden.
+schema_version: "1.0.0"
+module: PH
+
+toxidromes:
+  - slug: cholinerg
+    name: Cholinerges Syndrom
+    lead_symptoms: "DUMBELS/SLUDGE-Muster (Miosis, Hypersalivation, Bronchorrhö, Bradykardie)"
+  - slug: anticholinerg
+    name: Anticholinerges Syndrom
+    lead_symptoms: "Mydriasis, trockene Haut, Tachykardie, Delir, Harnverhalt"
+  - slug: sympathomimetisch
+    name: Sympathomimetisches Syndrom
+    lead_symptoms: "Mydriasis, Tachykardie, Hypertonie, Agitation, Schwitzen"
+  - slug: opioid
+    name: Opioid-Toxidrom
+    lead_symptoms: "Miosis, Atemdepression, reduzierte Vigilanz"
+  - slug: sedativ_hypnotisch
+    name: Sedativ-hypnotisches Toxidrom
+    lead_symptoms: "Sedierung, reduzierte Vigilanz, meist erhaltene Atmung (dosisabhängig)"
+  - slug: serotonerg
+    name: Serotonerges Syndrom
+    lead_symptoms: "Neuromuskuläre Erregbarkeit (Klonus), autonome Instabilität, Agitation"
+  - slug: malignes_neuroleptisches_syndrom
+    name: Malignes neuroleptisches Syndrom
+    lead_symptoms: "Rigor, Hyperthermie, autonome Instabilität, Bewusstseinsstörung"
+
+# Intoxikationsbilder (für Antidot-/Fallkarten referenzierbar)
+intoxications:
+  - { slug: salicylat,        name: "Salicylatintoxikation" }
+  - { slug: paracetamol,      name: "Paracetamolintoxikation" }
+  - { slug: co,               name: "CO-Intoxikation" }
+  - { slug: methanol,         name: "Methanolintoxikation" }
+  - { slug: ethylenglykol,    name: "Ethylenglykolintoxikation" }
+  - { slug: digitalis,        name: "Digitalisintoxikation" }
+  - { slug: betablocker,      name: "Betablockerintoxikation" }
+  - { slug: calciumkanalblocker, name: "Calciumkanalblockerintoxikation" }
+  - { slug: trizyklika,       name: "Trizyklika-Intoxikation" }
+  - { slug: benzodiazepin,    name: "Benzodiazepinintoxikation" }
+  - { slug: opioid,           name: "Opioidintoxikation" }
+  - { slug: organophosphat,   name: "Organophosphatintoxikation" }
+  - { slug: last,             name: "Lokalanästhetika-Intoxikation (LAST)" }

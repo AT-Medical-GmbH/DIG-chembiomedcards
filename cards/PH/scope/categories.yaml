@@ -1,0 +1,126 @@
+# Pharma Cards — Kategorien (PH)
+# Single Source of Truth für Hauptkategorien. Layout-Code und Online-DB konsumieren DIESE Datei.
+# Kategorien sind NICHT im Layout hart verdrahtet (Handover Phase 2/13).
+#
+# color  = Akzentfarbe (Hex), passend zur ChemBioMed-/AT-Medical-Palette
+# icon   = Icon-Key (Asset in brand/ bzw. cards/PH/assets/icons)
+# sort   = Reihenfolge in Übersichten
+# release= geplante Release-Welle (R1 = Pilot, siehe 04_startliste-kuratiert.md)
+
+schema_version: "1.0.0"
+module: PH
+
+categories:
+  - slug: allgemeine_pharmakologie
+    name: Allgemeine Pharmakologie
+    color: "#37474F"   # Dunkelgrau — Grundlagen/Definition
+    icon: foundation
+    sort: 10
+    release: R1
+  - slug: pharmakokinetik
+    name: Pharmakokinetik
+    color: "#1E88E5"   # Blau — PK/PD/Wirkmechanismus
+    icon: kinetics
+    sort: 20
+    release: R1
+  - slug: pharmakodynamik
+    name: Pharmakodynamik
+    color: "#1E88E5"
+    icon: dynamics
+    sort: 30
+    release: R1
+  - slug: klinische_pharmakologie
+    name: Klinische Pharmakologie
+    color: "#43A047"   # Grün — klinische Anwendung
+    icon: clinical
+    sort: 40
+    release: R2
+  - slug: arzneimittelgruppen
+    name: Arzneimittelgruppen
+    color: "#37474F"
+    icon: classes
+    sort: 50
+    release: R2
+  - slug: notfallmedikamente
+    name: Notfallmedikamente
+    color: "#E53935"   # Rot — Hochrisiko/Warnung
+    icon: emergency
+    sort: 60
+    release: R1
+  - slug: intensivpharmakologie
+    name: Intensivmedizinische Pharmakologie
+    color: "#E53935"
+    icon: icu
+    sort: 70
+    release: R2
+  - slug: anaesthesiepharmakologie
+    name: Anästhesiologische Pharmakologie
+    color: "#E53935"
+    icon: anesthesia
+    sort: 80
+    release: R2
+  - slug: toxikologie
+    name: Toxikologie
+    color: "#E53935"
+    icon: toxicology
+    sort: 90
+    release: R1
+  - slug: notfalltoxikologie
+    name: Notfalltoxikologie
+    color: "#E53935"
+    icon: tox_emergency
+    sort: 100
+    release: R1
+  - slug: antidote
+    name: Antidote
+    color: "#8E24AA"   # Violett — Antidot/Spezialwissen
+    icon: antidote
+    sort: 110
+    release: R1
+  - slug: arzneimittelinteraktionen
+    name: Arzneimittelinteraktionen
+    color: "#FB8C00"   # Orange — Interaktion/Monitoring
+    icon: interaction
+    sort: 120
+    release: R2
+  - slug: nebenwirkungen_kontraindikationen
+    name: Nebenwirkungen und Kontraindikationen
+    color: "#E53935"
+    icon: adverse
+    sort: 130
+    release: R2
+  - slug: arzneimittelsicherheit
+    name: Arzneimittelsicherheit
+    color: "#FB8C00"
+    icon: safety
+    sort: 140
+    release: R2
+  - slug: pharmakogenetik
+    name: Pharmakogenetik / individualisierte Pharmakotherapie
+    color: "#8E24AA"
+    icon: genetics
+    sort: 150
+    release: R3
+
+# Perspektivische Kategorien (Handover Phase 2) — angelegt, Release später.
+# Datenmodell ist erweiterbar: neue Kategorie = neuer Eintrag hier, kein Code-Change.
+future_categories:
+  - { slug: antibiotika_antiinfektiva, name: "Antibiotika und Antiinfektiva", release: R3 }
+  - { slug: analgetika, name: "Analgetika", release: R2 }
+  - { slug: sedativa_hypnotika, name: "Sedativa und Hypnotika", release: R2 }
+  - { slug: katecholamine_vasopressoren, name: "Katecholamine und Vasopressoren", release: R1 }
+  - { slug: antiarrhythmika, name: "Antiarrhythmika", release: R3 }
+  - { slug: antihypertensiva, name: "Antihypertensiva", release: R3 }
+  - { slug: antikoagulanzien, name: "Antikoagulanzien", release: R2 }
+  - { slug: antiepileptika, name: "Antiepileptika", release: R3 }
+  - { slug: psychopharmaka, name: "Psychopharmaka", release: R3 }
+  - { slug: endokrinologie, name: "Endokrinologische Medikamente", release: R3 }
+  - { slug: diabetologie, name: "Diabetologie", release: R3 }
+  - { slug: onkologische_pharmakologie, name: "Onkologische Pharmakologie", release: R4 }
+  - { slug: paediatrische_pharmakologie, name: "Pädiatrische Pharmakologie", release: R4 }
+  - { slug: geriatrische_pharmakologie, name: "Geriatrische Pharmakologie", release: R4 }
+  - { slug: schwangerschaft_stillzeit, name: "Schwangerschaft und Stillzeit", release: R4 }
+  - { slug: niere_leber_insuffizienz, name: "Nieren-/Leberinsuffizienz", release: R4 }
+  - { slug: praeklinische_notfallmedizin, name: "Präklinische Notfallmedizin", release: R3 }
+  - { slug: cbrn_gefahrstoffe, name: "CBRN / Gefahrstoffe", release: R4 }
+  - { slug: drogen_alkohol_intoxikationen, name: "Drogen, Alkohol und Intoxikationen", release: R3 }
