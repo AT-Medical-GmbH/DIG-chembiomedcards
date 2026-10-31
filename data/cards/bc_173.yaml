@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_173
+id_status: provisional
+slug: bc_173_gip
+title: GIP
+subtitle: Glukoseabhängiges insulinotropes Peptid
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- peptidhormon
+- inkretin
+- arzneimittel-target
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: GIP
+back_sections:
+  classification: Inkretin · Peptidhormon der K-Zellen von Duodenum und Jejunum
+  general_properties:
+  - 42 Aminosäuren; Abbau durch DPP-4
+  biochemical_relevance:
+  - Steigert glukoseabhängig die Insulinsekretion
+  - Fördert die Lipidspeicherung im Fettgewebe
+  clinical_relevance:
+  - 'Tirzepatid: dualer GIP-/GLP-1-Rezeptoragonist (Diabetes, Adipositas)'
+  molecular_relevance:
+  - GIP-Rezeptor (Gs) → cAMP ↑
+  mnemonic: K-Zellen oben im Darm (GIP), L-Zellen weiter unten (GLP-1).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc173

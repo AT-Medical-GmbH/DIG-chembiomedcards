@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_171
+id_status: provisional
+slug: bc_171_glukagon
+title: Glukagon
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- peptidhormon
+- arzneimittel-target
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Glukagon
+back_sections:
+  classification: Peptidhormon der A-Zellen des Pankreas · 29 Aminosäuren
+  general_properties:
+  - Entsteht aus Proglukagon
+  biochemical_relevance:
+  - Fördert Glykogenolyse, Glukoneogenese und Ketogenese in der Leber
+  - Wirkt nicht auf den Skelettmuskel (kein Rezeptor)
+  clinical_relevance:
+  - Notfalltherapie der schweren Hypoglykämie (i. m., s. c. oder nasal)
+  molecular_relevance:
+  - Glukagonrezeptor (Gs) → cAMP ↑ → Proteinkinase A
+  mnemonic: Glukagon ist der Gegenspieler des Insulins – ‚Glukose geht‘ ins Blut.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc171

@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_145
+id_status: provisional
+slug: bc_145_prostaglandin_e2
+title: Prostaglandin E2
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- lipid
+- eicosanoid
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CCCCC[C@@H](/C=C/[C@H]1[C@@H](CC(=O)[C@@H]1C/C=C\CCCC(=O)O)O)O
+  pubchem_cid: 5280360
+  form: as_is
+back_sections:
+  classification: Eicosanoid · Prostaglandin der Cyclooxygenase-Kaskade
+  general_properties:
+  - C20-Gerüst mit Cyclopentanring; lokal wirkendes Gewebshormon
+  biochemical_relevance:
+  - Arachidonsäure → PGH₂ (COX-1/-2) → PGE₂ (PGE-Synthase)
+  clinical_relevance:
+  - Vermittelt Fieber, Schmerz und Entzündung
+  - Schützt die Magenschleimhaut; hält den Ductus arteriosus offen
+  molecular_relevance:
+  - EP1- bis EP4-Rezeptoren (G-Protein-gekoppelt)
+  mnemonic: NSAR senken PGE₂ – daher Magenulzera als Nebenwirkung.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc145

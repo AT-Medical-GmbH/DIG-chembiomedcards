@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_174
+id_status: provisional
+slug: bc_174_ghrelin
+title: Ghrelin
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- peptidhormon
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Ghrelin
+back_sections:
+  classification: Peptidhormon des Magens · 28 Aminosäuren · ‚Hungerhormon‘
+  general_properties:
+  - Aktiv nur mit Octanoylrest an Serin 3 (Enzym GOAT)
+  biochemical_relevance:
+  - Spiegel steigen vor den Mahlzeiten und fallen danach
+  - Stimuliert die GH-Freisetzung
+  clinical_relevance:
+  - 'Prader-Willi-Syndrom: stark erhöhtes Ghrelin, Hyperphagie'
+  - Nach Sleeve-Gastrektomie sinkt der Ghrelinspiegel
+  molecular_relevance:
+  - Ghrelinrezeptor GHS-R1a (Gq) im Hypothalamus
+  mnemonic: 'Ghrelin – ‚Grrr‘: der Magen knurrt.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc174

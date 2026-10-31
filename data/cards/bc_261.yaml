@@ -1,0 +1,46 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_261
+id_status: provisional
+slug: bc_261_vitamin_b6
+title: Vitamin B6
+subtitle: Pyridoxin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+- transaminierung
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B6
+back_sections:
+  classification: Wasserlösliches Vitamin · Pyridoxin, Pyridoxal, Pyridoxamin
+  general_properties:
+  - 'Aktive Form: Pyridoxalphosphat (PLP)'
+  biochemical_relevance:
+  - Coenzym von Transaminasen und Decarboxylasen (GABA, Serotonin, Histamin, Dopamin)
+  - ALA-Synthase (Häm) und Glykogenphosphorylase
+  clinical_relevance:
+  - Isoniazid verursacht B6-Mangel (Neuropathie) – Prophylaxe mit Pyridoxin
+  - 'Mangel: sideroblastische Anämie, Krampfanfälle'
+  mnemonic: B6 ist das Aminosäure-Vitamin.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc261

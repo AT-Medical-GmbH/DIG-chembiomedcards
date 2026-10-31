@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_212
+id_status: provisional
+slug: bc_212_stickstoffmonoxid
+title: Stickstoffmonoxid (NO)
+subtitle: Nukleotid · Coenzym · Second Messenger
+show_subtitle: false
+module: BC
+primary_category: molekularbio
+secondary_categories:
+- anorganik
+- biochemie
+- klinik
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- gasotransmitter
+- second-messenger
+- signaltransduktion
+- arzneimittel-target
+difficulty: intermediate
+front_type: term
+front_content:
+  render: formula
+  text: •N=O
+back_sections:
+  classification: Gasförmiges Radikal · Signalmolekül (Gasotransmitter)
+  general_properties:
+  - Membrangängig, Halbwertszeit wenige Sekunden
+  biochemical_relevance:
+  - 'NO-Synthasen (eNOS, nNOS, iNOS): Arginin → NO + Citrullin'
+  - Aktiviert die lösliche Guanylatcyclase → cGMP ↑
+  clinical_relevance:
+  - Nitroglycerin setzt NO frei (Angina pectoris)
+  - Inhalatives NO bei pulmonaler Hypertonie des Neugeborenen
+  molecular_relevance:
+  - Endothelialer ‚relaxing factor‘ (EDRF) – Nobelpreis 1998
+  mnemonic: 'Ein Gas als Botenstoff: lokal, kurzlebig, direkt.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc212

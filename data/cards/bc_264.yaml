@@ -1,0 +1,47 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_264
+id_status: provisional
+slug: bc_264_vitamin_b12
+title: Vitamin B12
+subtitle: Cobalamin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+- laborwert
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B12
+back_sections:
+  classification: Wasserlösliches Vitamin · Cobalamin (Cobalt-Corrinoid)
+  general_properties:
+  - Nur von Mikroorganismen gebildet, in tierischen Lebensmitteln
+  - Resorption im terminalen Ileum mit Intrinsic Factor
+  biochemical_relevance:
+  - Methionin-Synthase (Methylcobalamin)
+  - Methylmalonyl-CoA-Mutase (Adenosylcobalamin)
+  clinical_relevance:
+  - Perniziöse Anämie (Autoimmungastritis, IF-Mangel)
+  - Funikuläre Myelose; Methylmalonsäure ↑
+  mnemonic: Die Leberspeicher reichen für Jahre – der Mangel entwickelt sich langsam.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc264

@@ -1,0 +1,49 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_135
+id_status: provisional
+slug: bc_135_orotat
+title: Orotat
+subtitle: Stickstoffstoffwechsel
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: stickstoffstoffwechsel
+chapter: biochemie/stickstoffstoffwechsel
+tags:
+- nukleotidsynthese
+- stoffwechseldefekt
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C1=C(NC(=O)NC1=O)C(=O)O
+  pubchem_cid: 967
+  form: physiological
+back_sections:
+  classification: Pyrimidin-Zwischenprodukt · Vorstufe von UMP
+  general_properties:
+  - Heterocyclische Carbonsäure (Pyrimidinring)
+  biochemical_relevance:
+  - Entsteht aus Dihydroorotat (DHODH, innere Mitochondrienmembran)
+  - Orotat + PRPP → OMP → UMP (UMP-Synthase)
+  clinical_relevance:
+  - 'Orotacidurie: hereditär (UMP-Synthase) oder sekundär bei OTC-Mangel'
+  - Leflunomid/Teriflunomid hemmen die DHODH
+  mnemonic: Orotat ↑ plus Ammoniak ↑ → an einen OTC-Mangel denken.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc135

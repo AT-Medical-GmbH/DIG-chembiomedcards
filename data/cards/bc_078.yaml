@@ -1,0 +1,52 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_078
+id_status: provisional
+slug: bc_078_succinyl_coa
+title: Succinyl-CoA
+subtitle: Stoffwechsel-Zwischenprodukt
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: stoffwechsel_zentral
+chapter: biochemie/zentraler_stoffwechsel
+tags:
+- thioester
+- citratzyklus
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: '[O-]C(=O)CCC(=O)S[*:1]'
+  form: as_is
+  structure_note: Acylrest vollständig, Coenzym A als Abkürzung „CoA“ (Lehrbuchkonvention).
+  labels:
+    1: CoA
+back_sections:
+  classification: Thioester · Citratzyklus-Zwischenprodukt
+  general_properties:
+  - Energiereiche Thioesterbindung
+  biochemical_relevance:
+  - 'Succinyl-CoA-Synthetase: Substratkettenphosphorylierung → GTP bzw. ATP'
+  - Entsteht auch aus Propionyl-CoA (Methylmalonyl-CoA-Mutase, B12)
+  - 'Häm-Synthese: Succinyl-CoA + Glycin → δ-ALA'
+  clinical_relevance:
+  - 'Methylmalonazidämie: Mutase- oder B12-Defekt'
+  - 'B12-Mangel: Methylmalonsäure im Serum ↑'
+  mnemonic: Einziger Schritt des Citratzyklus mit direkter GTP/ATP-Bildung.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc078

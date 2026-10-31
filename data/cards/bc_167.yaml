@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_167
+id_status: provisional
+slug: bc_167_gaba
+title: GABA
+subtitle: γ-Aminobuttersäure
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: neurotransmitter
+chapter: biochemie/neurotransmitter
+tags:
+- neurotransmitter
+- nicht-proteinogen
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C(CC(=O)O)CN
+  pubchem_cid: 119
+  form: as_is
+back_sections:
+  classification: γ-Aminosäure · wichtigster hemmender Neurotransmitter im Gehirn
+  general_properties:
+  - Aminogruppe am γ-C-Atom
+  biochemical_relevance:
+  - Synthese aus Glutamat (Glutamat-Decarboxylase, B6)
+  - Abbau über GABA-Transaminase zu Succinat (GABA-Shunt)
+  clinical_relevance:
+  - Benzodiazepine, Barbiturate und Propofol verstärken die GABA-A-Wirkung
+  - Vitamin-B6-Mangel → GABA ↓ → Krampfanfälle
+  molecular_relevance:
+  - 'GABA-A: Chloridkanal · GABA-B: G-Protein-gekoppelt'
+  mnemonic: Aus erregendem Glutamat wird durch Decarboxylierung hemmendes GABA.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc167

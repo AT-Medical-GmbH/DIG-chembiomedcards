@@ -1,0 +1,46 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_257
+id_status: provisional
+slug: bc_257_vitamin_b1
+title: Vitamin B1
+subtitle: Thiamin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B1
+back_sections:
+  classification: Wasserlösliches Vitamin · Thiamin
+  general_properties:
+  - 'Aktive Form: Thiaminpyrophosphat (TPP)'
+  - Geringe Speicher – Mangel nach wenigen Wochen
+  biochemical_relevance:
+  - Coenzym der oxidativen Decarboxylierung (PDH, α-KGDH, BCKDH)
+  - Transketolase im Pentosephosphatweg
+  clinical_relevance:
+  - Beriberi; Wernicke-Enzephalopathie (Alkoholabhängigkeit)
+  - Bei Risikopatienten Thiamin vor Glucose geben
+  mnemonic: B1 vor Glucose – sonst droht Wernicke.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc257

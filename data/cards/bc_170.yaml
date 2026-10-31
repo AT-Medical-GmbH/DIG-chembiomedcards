@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_170
+id_status: provisional
+slug: bc_170_insulin
+title: Insulin
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- peptidhormon
+- arzneimittel-target
+- laborwert
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Insulin
+back_sections:
+  classification: Peptidhormon der B-Zellen des Pankreas · 51 Aminosäuren
+  general_properties:
+  - A-Kette (21 AS) und B-Kette (30 AS), über zwei Disulfidbrücken verbunden
+  - Vorstufe Proinsulin – Abspaltung des C-Peptids
+  biochemical_relevance:
+  - Fördert Glukoseaufnahme (GLUT4), Glykogen-, Lipid- und Proteinsynthese
+  - Hemmt Glukoneogenese, Lipolyse und Ketogenese
+  clinical_relevance:
+  - Diabetes mellitus Typ 1 (Mangel) und Typ 2 (Resistenz)
+  - C-Peptid zeigt die endogene Insulinproduktion an
+  molecular_relevance:
+  - Insulinrezeptor = Rezeptor-Tyrosinkinase → PI3K/Akt-Signalweg
+  mnemonic: Insulin ist das einzige blutzuckersenkende Hormon.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc170

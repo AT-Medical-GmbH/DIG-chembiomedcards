@@ -1,0 +1,52 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_161
+id_status: provisional
+slug: bc_161_adrenalin
+title: Adrenalin
+subtitle: Epinephrin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: neurotransmitter
+chapter: biochemie/neurotransmitter
+tags:
+- neurotransmitter
+- hormon
+- biogenes-amin
+- katecholamin
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CNC[C@@H](C1=CC(=C(C=C1)O)O)O
+  pubchem_cid: 5816
+  form: as_is
+back_sections:
+  classification: Katecholamin · Hormon des Nebennierenmarks
+  general_properties:
+  - N-methyliertes Noradrenalin
+  biochemical_relevance:
+  - Synthese aus Noradrenalin durch PNMT (SAM als Methyldonor, durch Cortisol induziert)
+  - Stimuliert Glykogenolyse und Lipolyse
+  clinical_relevance:
+  - Notfallmedikament bei Reanimation und Anaphylaxie
+  - 'Phäochromozytom: Katecholamin-Überproduktion'
+  molecular_relevance:
+  - Wirkt über α- und β-Adrenozeptoren (G-Protein-gekoppelt)
+  mnemonic: '‚Nor‘ = N ohne Radikal: Noradrenalin fehlt die N-Methylgruppe.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc161

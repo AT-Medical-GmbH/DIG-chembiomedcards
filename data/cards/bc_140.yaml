@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_140
+id_status: provisional
+slug: bc_140_oelsaeure
+title: Ölsäure
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- lipid
+- fettsaeure
+- ungesaettigt
+- carbonsaeure
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CCCCCCCC/C=C\CCCCCCCC(=O)O
+  pubchem_cid: 445639
+  form: as_is
+back_sections:
+  classification: Einfach ungesättigte Fettsäure · C18:1 ω-9 (cis-Δ9)
+  general_properties:
+  - cis-Doppelbindung knickt die Kette – niedriger Schmelzpunkt
+  - 'Nicht essenziell: Synthese durch Δ9-Desaturase'
+  biochemical_relevance:
+  - Häufigste Fettsäure in Triacylglyceriden und Membranlipiden
+  clinical_relevance:
+  - Hauptfettsäure des Olivenöls (mediterrane Ernährung)
+  - trans-Isomer Elaidinsäure ist ungünstig für das Lipidprofil
+  mnemonic: 'Ölsäure: 18 C-Atome, eine cis-Doppelbindung an C9.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc140

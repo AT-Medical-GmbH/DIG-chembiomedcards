@@ -1,0 +1,54 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_127
+id_status: provisional
+slug: bc_127_ornithin
+title: Ornithin
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- nicht-proteinogen
+- basisch
+- harnstoffzyklus
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: CH2
+  - label: NH2
+back_sections:
+  classification: Nicht-proteinogene basische Aminosäure · Harnstoffzyklus
+  general_properties:
+  - Eine CH₂-Gruppe kürzer als Lysin
+  biochemical_relevance:
+  - Nimmt im Mitochondrium Carbamoylphosphat auf → Citrullin (OTC)
+  - Wird durch Arginase aus Arginin regeneriert
+  - Vorstufe der Polyamine (Ornithin-Decarboxylase)
+  clinical_relevance:
+  - 'OTC-Mangel: häufigster Harnstoffzyklusdefekt (X-chromosomal) → Hyperammonämie'
+  mnemonic: Ornithin ist der Träger im Harnstoffzyklus – er kehrt immer zurück.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc127

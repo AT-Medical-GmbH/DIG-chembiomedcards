@@ -1,0 +1,49 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_176
+id_status: provisional
+slug: bc_176_adiponektin
+title: Adiponektin
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- peptidhormon
+- adipokin
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Adiponektin
+back_sections:
+  classification: Proteohormon des Fettgewebes (Adipokin)
+  general_properties:
+  - Bildet Trimere, Hexamere und hochmolekulare Multimere
+  - Spiegel sinken paradox mit zunehmender Fettmasse
+  biochemical_relevance:
+  - Steigert Insulinsensitivität und Fettsäureoxidation (AMPK)
+  - Hemmt die hepatische Glukoneogenese
+  clinical_relevance:
+  - Niedrige Spiegel bei Adipositas, Typ-2-Diabetes und KHK
+  molecular_relevance:
+  - AdipoR1/AdipoR2 → Aktivierung von AMPK und PPAR-α
+  mnemonic: Mehr Fett – weniger Adiponektin.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc176

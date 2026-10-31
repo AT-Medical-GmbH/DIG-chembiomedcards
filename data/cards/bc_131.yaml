@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_131
+id_status: provisional
+slug: bc_131_n_acetylaspartat
+title: N-Acetylaspartat
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- nicht-proteinogen
+- laborwert
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CC(=O)N[C@@H](CC(=O)O)C(=O)O
+  pubchem_cid: 65065
+  form: physiological
+back_sections:
+  classification: Acetyliertes Aspartat · zweithäufigster Metabolit im Gehirn
+  general_properties:
+  - Bildung in Mitochondrien von Neuronen
+  biochemical_relevance:
+  - Aspartoacylase der Oligodendrozyten spaltet NAA → Acetat für die Myelinsynthese
+  clinical_relevance:
+  - 'MR-Spektroskopie: NAA-Peak als Marker neuronaler Integrität'
+  - 'Morbus Canavan: Aspartoacylase-Defekt → NAA ↑, Leukodystrophie'
+  mnemonic: NAA-Peak ↓ in der MR-Spektroskopie bedeutet Neuronenverlust.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc131

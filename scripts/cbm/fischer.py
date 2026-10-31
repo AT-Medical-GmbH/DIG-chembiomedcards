@@ -164,8 +164,10 @@ def _alpha_center(d: Drawing, amino: str = "H2N") -> None:
     d.label(L, 0.0, "H")
 
 
-def _ring(d: Drawing, kind: str, top: tuple[float, float]) -> None:
-    """Endring, dessen oberer Eckpunkt `top` an der Kette hängt."""
+def _ring(d: Drawing, kind: str, top: tuple[float, float], subs: dict | None = None) -> None:
+    """Endring, dessen oberer Eckpunkt `top` an der Kette hängt. `subs` setzt
+    Substituenten nach Ringposition (Phenyl: 2–6, Indol: 4–7)."""
+    subs = {str(k): v for k, v in (subs or {}).items()}
     tx, ty = top
     s = L * 0.82  # Ringkante
     if kind in ("phenyl", "4-hydroxyphenyl"):
@@ -175,9 +177,10 @@ def _ring(d: Drawing, kind: str, top: tuple[float, float]) -> None:
         for k in range(6):
             d.bond(v[k], v[(k + 1) % 6], 2 if k % 2 == 1 else 1, inner=(cx, cy))
         if kind == "4-hydroxyphenyl":
-            oh = (v[3][0], v[3][1] + L * 0.8)
-            d.bond(v[3], oh)
-            d.label(*oh, "OH")
+            subs.setdefault("4", "OH")
+        # Phenyl-Nummerierung: v[0] = C1 (Anknüpfung), im Uhrzeigersinn C2 … C6
+        for pos, label in subs.items():
+            _substituent(d, v[int(pos) - 1], (cx, cy), label)
         return
 
     r5 = s / (2 * math.sin(math.radians(36)))
@@ -218,9 +221,21 @@ def _ring(d: Drawing, kind: str, top: tuple[float, float]) -> None:
         for k in range(6):
             d.bond(hexv[k], hexv[(k + 1) % 6], hex_orders[k], inner=(hx, hy))
         _ring_nh(d, p[3], (cx, cy))
+        # Indol-Benzolteil: hexv = C3a, C4, C5, C6, C7, C7a
+        for pos, label in subs.items():
+            _substituent(d, hexv[int(pos) - 3], (hx, hy), label)
         return
 
     raise ValueError(f"Unbekannter Ringtyp: {kind}")
+
+
+def _substituent(d: Drawing, atom, center, label: str) -> None:
+    """Substituent radial nach außen an einem Ringatom."""
+    vx, vy = atom[0] - center[0], atom[1] - center[1]
+    n = math.hypot(vx, vy)
+    pos = (atom[0] + vx / n * L * 0.8, atom[1] + vy / n * L * 0.8)
+    d.bond(atom, pos)
+    d.label(*pos, label)
 
 
 def _angle_diff(a: float, b: float) -> float:
@@ -242,7 +257,7 @@ def _side_chain(d: Drawing, chain: list[dict]) -> None:
         if "ring" in node:
             top = (0.0, y + L * 0.92)
             d.bond(prev, top)
-            _ring(d, node["ring"], top)
+            _ring(d, node["ring"], top, node.get("subs"))
             return
         y += L
         cur = (0.0, y)
@@ -265,8 +280,9 @@ def _side_chain(d: Drawing, chain: list[dict]) -> None:
         prev = cur
 
 
-def _proline(d: Drawing) -> None:
-    # Pyrrolidinring: Cα – N – Cδ – Cγ – Cβ – Cα ; N trägt H (sekundäre Aminogruppe)
+def _proline(d: Drawing, hydroxy: bool = False) -> None:
+    # Pyrrolidinring: Cα – N – Cδ – Cγ – Cβ – Cα ; N trägt H (sekundäre Aminogruppe).
+    # hydroxy=True: 4-Hydroxyprolin, OH am Cγ (Stereochemie am C4 nicht dargestellt).
     ca, n = (0.0, 0.0), (-L, 0.0)
     cd, cg, cb = (-L * 1.3, L * 1.05), (-L * 0.62, L * 1.85), (0.0, L)
     d.bond(ca, (L, 0.0))
@@ -276,15 +292,21 @@ def _proline(d: Drawing) -> None:
     d.label(L, 0.0, "H")
     d.label(*n, "HN")
     d.label(*cd, "H2C")
-    d.label(*cg, "CH2")
     d.label(*cb, "CH2")
+    if hydroxy:
+        oh = (cg[0], cg[1] + L * 0.8)
+        d.bond(cg, oh)
+        d.label(*cg, "CH")
+        d.label(*oh, "OH")
+    else:
+        d.label(*cg, "CH2")
 
 
 def fischer_svg(front_content: dict) -> str:
     d = Drawing()
     _carboxyl_head(d)
-    if front_content.get("special") == "proline":
-        _proline(d)
+    if front_content.get("special") in ("proline", "hydroxyproline"):
+        _proline(d, hydroxy=front_content["special"] == "hydroxyproline")
     else:
         _alpha_center(d)
         _side_chain(d, front_content.get("side_chain", []))

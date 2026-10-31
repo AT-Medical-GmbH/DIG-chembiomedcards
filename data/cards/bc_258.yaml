@@ -1,0 +1,44 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_258
+id_status: provisional
+slug: bc_258_vitamin_b2
+title: Vitamin B2
+subtitle: Riboflavin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B2
+back_sections:
+  classification: Wasserlösliches Vitamin · Riboflavin
+  general_properties:
+  - Gelb, fluoreszierend, lichtempfindlich
+  biochemical_relevance:
+  - Vorstufe von FMN und FAD (Flavoproteine)
+  - Komplex I (FMN), Komplex II und β-Oxidation (FAD)
+  clinical_relevance:
+  - 'Mangel: Mundwinkelrhagaden, Glossitis, seborrhoische Dermatitis'
+  mnemonic: B2 färbt den Urin gelb.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc258

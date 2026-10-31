@@ -1,0 +1,53 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_126
+id_status: provisional
+slug: bc_126_selenomethionin
+title: Selenomethionin
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- nicht-proteinogen
+- selenhaltig
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: Se
+  - label: CH3
+back_sections:
+  classification: Selenhaltiges Methionin-Analogon · nicht genetisch codiert
+  general_properties:
+  - Selen statt Schwefel in der Seitenkette
+  - Hauptform von Selen in Pflanzen und Supplementen
+  biochemical_relevance:
+  - Wird unspezifisch anstelle von Methionin in Proteine eingebaut (Selenspeicher)
+  - Selenquelle für die Selenocystein-Synthese
+  clinical_relevance:
+  - Selen-Supplementierung z. B. bei Hashimoto-Thyreoiditis diskutiert
+  mnemonic: Selenomethionin ersetzt Met – Selenocystein ist eine eigene Aminosäure.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- Klinische Aussage (Hashimoto) bewusst als ‚diskutiert‘ formuliert – Evidenzlage prüfen.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc126

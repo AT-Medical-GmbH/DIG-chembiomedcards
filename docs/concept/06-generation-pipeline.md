@@ -47,16 +47,24 @@ Front/Back-SVG, Einzelkarten-PDF, Preview.
 
 ## 4. Templates
 
-Aufbauend auf `card-system/templates/` (bestehend: `card-template-front/back.html/.svg`):
+**Umgesetzt (ADR-018): eine zentrale Kartenvorlage** – `templates/card_template.html` enthält
+CSS, Kopfzone (Register-Tabs, Wortmarke), Vorder- und Rückseite in einer Datei. Eine Änderung dort
+wirkt beim nächsten Build auf alle Karten. Bedienung: [`templates/README.md`](../../templates/README.md).
 
-| Template | Zweck |
-|----------|-------|
-| `templates/card_front_template.html` | Vorderseite (typabhängige Blöcke) |
-| `templates/card_back_template.html` | Rückseite (feste Sektionen, Kap. 05) |
-| `templates/print_sheet_template.html` | A4/A3-Montagebogen (Kap. 07) |
-| `templates/online_card_template.html` | Online-Kartenkomponente (DOM-nah zur React-Ansicht) |
+| Baustein | Ort | Ändern wirkt auf |
+|----------|-----|------------------|
+| Layout, Typografie, Abstände | `templates/card_template.html` | alle Karten |
+| Farben, Format, Schrift | `brand/design-tokens/chembiomed.tokens.json` (`card.*`) | alle Karten + Online-System |
+| Register-Tabs | `data/categories.yaml` | alle Karten |
+| Inhalt einer Karte | `data/cards/<card_id>.yaml` | nur diese Karte |
+| Fischer-Projektion / Strukturformel | `scripts/cbm/fischer.py` / `scripts/cbm/molecule.py` | alle Karten des Typs |
 
-Alle Templates ziehen Farben/Typo/Spacing aus `brand/design-tokens/chembiomed.tokens.json`.
+Vorderseitentypen (`front_content.render`): `fischer_projection` (α-Aminosäuren), `molecule`
+(Strukturformel aus SMILES, ADR-019), `term` (Bezeichnung, z. B. Vitamine, Peptidhormone),
+`formula` (Summenformel für Ionen/kleine Teilchen).
+
+Geplant, noch nicht umgesetzt: `print_sheet_template.html` (A4/A3-Montage, Kap. 07) und eine
+Online-Kartenkomponente (Kap. 12), die dieselben Tokens nutzt.
 
 ## 5. Reproduzierbarkeit & Inkrementalität
 

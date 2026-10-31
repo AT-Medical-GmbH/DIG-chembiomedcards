@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_208
+id_status: provisional
+slug: bc_208_coenzym_q10
+title: Coenzym Q10
+subtitle: Ubichinon
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- coenzym
+- atmungskette
+- cholesterinsynthese
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: O=C1C(OC)=C(OC)C(=O)C(C)=C1[*:1]
+  form: as_is
+  structure_note: Chinonkopf vollständig; Seitenkette (10 Isopreneinheiten) abgekürzt.
+  labels:
+    1: (C<sub>5</sub>H<sub>8</sub>)<sub>10</sub>H
+back_sections:
+  classification: Benzochinon mit Isoprenoid-Seitenkette · mobiler Elektronenträger
+  general_properties:
+  - Seitenkette aus 10 Isopreneinheiten – stark lipophil
+  - Körpereigene Synthese über den Mevalonatweg
+  biochemical_relevance:
+  - Übernimmt Elektronen von Komplex I und II, gibt sie an Komplex III
+  - Redoxpaar mit Ubichinol (Q-Zyklus)
+  clinical_relevance:
+  - 'Primärer CoQ10-Mangel: mitochondriale Erkrankung, teils behandelbar'
+  mnemonic: Q wie Quinone, 10 wie zehn Isopreneinheiten.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc208

@@ -1,0 +1,52 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_183
+id_status: provisional
+slug: bc_183_oestradiol
+title: Östradiol
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- steroidhormon
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O
+  pubchem_cid: 5757
+  form: as_is
+back_sections:
+  classification: Östrogen · C18-Steroidhormon mit aromatischem A-Ring
+  general_properties:
+  - Wichtigstes Östrogen der geschlechtsreifen Frau
+  - Bildung durch Aromatase aus Testosteron
+  biochemical_relevance:
+  - Proliferation des Endometriums, sekundäre Geschlechtsmerkmale
+  - Hemmt Osteoklasten und schützt so den Knochen
+  clinical_relevance:
+  - Postmenopausale Osteoporose; Aromatasehemmer beim Mammakarzinom
+  molecular_relevance:
+  - Östrogenrezeptoren ERα und ERβ (nukleär)
+  mnemonic: Phenolischer A-Ring = Erkennungszeichen der Östrogene.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc183

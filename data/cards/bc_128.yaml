@@ -1,0 +1,59 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_128
+id_status: provisional
+slug: bc_128_citrullin
+title: Citrullin
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- nicht-proteinogen
+- harnstoffzyklus
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: CH2
+  - label: NH
+  - label: C
+    fork:
+    - label: O
+      bond: 2
+    - label: NH2
+      bond: 1
+back_sections:
+  classification: Nicht-proteinogene Aminosäure · Harnstoffzyklus · Ureidogruppe
+  general_properties:
+  - Ureidogruppe (–NH–CO–NH₂) am Ende der Seitenkette
+  biochemical_relevance:
+  - Entsteht aus Ornithin + Carbamoylphosphat (OTC) im Mitochondrium
+  - Nebenprodukt der NO-Synthase (Arginin → NO + Citrullin)
+  clinical_relevance:
+  - Antikörper gegen citrullinierte Proteine (ACPA) bei rheumatoider Arthritis
+  - 'Citrullinämie Typ I: Argininosuccinat-Synthetase-Defekt'
+  mnemonic: Zuerst aus der Wassermelone isoliert (lat. citrullus).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc128

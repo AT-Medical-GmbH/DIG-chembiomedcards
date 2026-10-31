@@ -1,0 +1,49 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_129
+id_status: provisional
+slug: bc_129_argininosuccinat
+title: Argininosuccinat
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- nicht-proteinogen
+- harnstoffzyklus
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C(C[C@@H](C(=O)O)N)CN=C(N)N[C@@H](CC(=O)O)C(=O)O
+  pubchem_cid: 16950
+  form: physiological
+  layout: rdkit
+back_sections:
+  classification: Zwischenprodukt des Harnstoffzyklus
+  general_properties:
+  - Verknüpfung aus Citrullin und Aspartat
+  biochemical_relevance:
+  - 'Argininosuccinat-Synthetase: Citrullin + Aspartat + ATP → Argininosuccinat'
+  - Argininosuccinat-Lyase spaltet in Arginin + Fumarat
+  clinical_relevance:
+  - 'Argininosuccinat-Lyase-Mangel: Hyperammonämie, brüchige Haare (Trichorrhexis nodosa)'
+  mnemonic: Über Fumarat ist der Harnstoffzyklus mit dem Citratzyklus verbunden.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc129

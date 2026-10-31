@@ -1,0 +1,55 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_073
+id_status: confirmed
+slug: bc_073_acetyl_coa
+title: Acetyl-CoA
+subtitle: Stoffwechsel-Zwischenprodukt
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: stoffwechsel_zentral
+chapter: biochemie/zentraler_stoffwechsel
+tags:
+- thioester
+- coenzym
+- citratzyklus
+- fettsaeuresynthese
+- ketogenese
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CC(=O)S[*:1]
+  form: as_is
+  structure_note: Acylrest vollständig, Coenzym A als Abkürzung „CoA“ (Lehrbuchkonvention).
+  labels:
+    1: CoA
+back_sections:
+  classification: Thioester · aktivierte Essigsäure · zentrale Drehscheibe des Stoffwechsels
+  general_properties:
+  - Energiereiche Thioesterbindung (ΔG°′ der Hydrolyse ≈ −31 kJ/mol)
+  biochemical_relevance:
+  - 'Quellen: PDH, β-Oxidation, Aminosäureabbau'
+  - 'Verwertung: Citratzyklus, Fettsäure-, Cholesterin- und Ketonkörpersynthese'
+  clinical_relevance:
+  - Acetyl-CoA-Überschuss bei Insulinmangel → Ketoazidose
+  molecular_relevance:
+  - Acetylgruppen-Donor für die Histonacetylierung
+  mnemonic: Aus Acetyl-CoA kann der Mensch keine Glucose bilden.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc073

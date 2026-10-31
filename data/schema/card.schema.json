@@ -5,91 +5,329 @@
   "$comment": "Kanonisches Kartenschema (docs/concept/02-content-model.md). Eine YAML-Datei je Karte unter data/cards/.",
   "type": "object",
   "required": [
-    "card_id", "slug", "title", "module", "primary_category", "front_type",
-    "front_content", "back_sections", "review_status", "version", "created_at", "updated_at"
+    "card_id",
+    "slug",
+    "title",
+    "module",
+    "primary_category",
+    "front_type",
+    "front_content",
+    "back_sections",
+    "review_status",
+    "version",
+    "created_at",
+    "updated_at"
   ],
   "additionalProperties": false,
   "properties": {
-    "card_id": { "type": "string", "pattern": "^[a-z]{2,4}_[0-9]{3}$" },
-    "id_status": { "enum": ["confirmed", "provisional"] },
-    "slug": { "type": "string", "pattern": "^[a-z]{2,4}_[0-9]{3}_[a-z0-9_]+$" },
-    "title": { "type": "string", "minLength": 1 },
-    "subtitle": { "type": "string" },
+    "card_id": {
+      "type": "string",
+      "pattern": "^[a-z]{2,4}_[0-9]{3}$"
+    },
+    "id_status": {
+      "enum": [
+        "confirmed",
+        "provisional"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z]{2,4}_[0-9]{3}_[a-z0-9_]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string"
+    },
     "identifiers": {
       "type": "object",
       "properties": {
-        "three_letter": { "type": "string" },
-        "one_letter": { "type": "string", "pattern": "^[A-Z]$" }
+        "three_letter": {
+          "type": "string"
+        },
+        "one_letter": {
+          "type": "string",
+          "pattern": "^[A-Z]$"
+        }
       },
       "additionalProperties": false
     },
-    "module": { "enum": ["AC", "OC", "BC", "MB", "APC", "PH"] },
-    "primary_category": { "type": "string" },
-    "secondary_categories": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "topic_group": { "type": "string" },
-    "chapter": { "type": "string" },
-    "tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "difficulty": { "enum": ["beginner", "intermediate", "advanced"] },
-    "front_type": { "enum": ["structure", "term", "image", "diagram", "case", "labvalue", "ecg", "xray", "micro", "algorithm", "calc"] },
+    "module": {
+      "enum": [
+        "AC",
+        "OC",
+        "BC",
+        "MB",
+        "APC",
+        "PH"
+      ]
+    },
+    "primary_category": {
+      "type": "string"
+    },
+    "secondary_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "topic_group": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "difficulty": {
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "front_type": {
+      "enum": [
+        "structure",
+        "term",
+        "image",
+        "diagram",
+        "case",
+        "labvalue",
+        "ecg",
+        "xray",
+        "micro",
+        "algorithm",
+        "calc"
+      ]
+    },
     "front_content": {
       "type": "object",
       "properties": {
-        "render": { "enum": ["fischer_projection", "term", "svg"] },
-        "caption": { "type": "string" },
-        "text": { "type": "string" },
-        "special": { "enum": ["proline"] },
-        "side_chain": { "type": "array", "items": { "$ref": "#/$defs/chainNode" } }
+        "render": {
+          "enum": [
+            "fischer_projection",
+            "molecule",
+            "term",
+            "formula",
+            "svg"
+          ]
+        },
+        "caption": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "special": {
+          "enum": [
+            "proline",
+            "hydroxyproline"
+          ]
+        },
+        "side_chain": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/chainNode"
+          }
+        },
+        "smiles": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pubchem_cid": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "form": {
+          "enum": [
+            "as_is",
+            "physiological"
+          ]
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "rotate": {
+          "type": "number"
+        },
+        "structure_note": {
+          "type": "string"
+        },
+        "layout": {
+          "enum": [
+            "auto",
+            "coordgen",
+            "rdkit"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "back_sections": {
       "type": "object",
-      "required": ["classification"],
+      "required": [
+        "classification"
+      ],
       "properties": {
-        "classification": { "type": "string", "minLength": 1 },
-        "general_properties": { "$ref": "#/$defs/lines" },
-        "biochemical_relevance": { "$ref": "#/$defs/lines" },
-        "clinical_relevance": { "$ref": "#/$defs/lines" },
-        "molecular_relevance": { "$ref": "#/$defs/lines" },
-        "mnemonic": { "type": "string" },
-        "fun_fact": { "type": "string" }
+        "classification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "general_properties": {
+          "$ref": "#/$defs/lines"
+        },
+        "biochemical_relevance": {
+          "$ref": "#/$defs/lines"
+        },
+        "clinical_relevance": {
+          "$ref": "#/$defs/lines"
+        },
+        "molecular_relevance": {
+          "$ref": "#/$defs/lines"
+        },
+        "mnemonic": {
+          "type": "string"
+        },
+        "fun_fact": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
-    "references": { "type": "array", "items": { "type": "string" } },
-    "review_status": { "enum": ["draft", "needs_review", "reviewed", "approved", "deprecated", "archived"] },
-    "review_notes": { "type": "array", "items": { "type": "string" } },
-    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
-    "author": { "type": "string" },
-    "reviewer": { "type": "string" },
-    "created_at": { "type": "string", "format": "date" },
-    "updated_at": { "type": "string", "format": "date" },
-    "print_status": { "type": "string" },
-    "web_status": { "type": "string" },
-    "related_cards": { "type": "array", "items": { "type": "string", "pattern": "^[a-z]{2,4}_[0-9]{3}$" } },
-    "qr_url": { "type": "string", "format": "uri" },
-    "lms_url": { "type": "string" }
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_status": {
+      "enum": [
+        "draft",
+        "needs_review",
+        "reviewed",
+        "approved",
+        "deprecated",
+        "archived"
+      ]
+    },
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "author": {
+      "type": "string"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "print_status": {
+      "type": "string"
+    },
+    "web_status": {
+      "type": "string"
+    },
+    "related_cards": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2,4}_[0-9]{3}$"
+      }
+    },
+    "qr_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "lms_url": {
+      "type": "string"
+    },
+    "show_subtitle": {
+      "type": "boolean"
+    }
   },
   "$defs": {
-    "lines": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "chainNode": {
       "type": "object",
       "properties": {
-        "label": { "type": "string" },
-        "left": { "type": "string" },
-        "right": { "type": "string" },
+        "label": {
+          "type": "string"
+        },
+        "left": {
+          "type": "string"
+        },
+        "right": {
+          "type": "string"
+        },
         "fork": {
           "type": "array",
           "minItems": 2,
           "maxItems": 2,
           "items": {
             "type": "object",
-            "required": ["label", "bond"],
-            "properties": { "label": { "type": "string" }, "bond": { "enum": [1, 2] } },
+            "required": [
+              "label",
+              "bond"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "bond": {
+                "enum": [
+                  1,
+                  2
+                ]
+              }
+            },
             "additionalProperties": false
           }
         },
-        "ring": { "enum": ["phenyl", "4-hydroxyphenyl", "indol-3-yl", "imidazol-4-yl"] }
+        "ring": {
+          "enum": [
+            "phenyl",
+            "4-hydroxyphenyl",
+            "indol-3-yl",
+            "imidazol-4-yl"
+          ]
+        },
+        "subs": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
       },
       "additionalProperties": false
     }

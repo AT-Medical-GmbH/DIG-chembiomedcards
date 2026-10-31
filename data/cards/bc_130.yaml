@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_130
+id_status: provisional
+slug: bc_130_n_acetylglutamat
+title: N-Acetylglutamat
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- nicht-proteinogen
+- harnstoffzyklus
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CC(=O)N[C@@H](CCC(=O)O)C(=O)O
+  pubchem_cid: 70914
+  form: physiological
+back_sections:
+  classification: Acetyliertes Glutamat · allosterischer Aktivator
+  general_properties:
+  - Synthese aus Acetyl-CoA und Glutamat (NAG-Synthase)
+  biochemical_relevance:
+  - Obligater Aktivator der Carbamoylphosphat-Synthetase I
+  - Arginin stimuliert die NAG-Synthase – der Harnstoffzyklus läuft bei Proteinzufuhr an
+  clinical_relevance:
+  - 'NAGS-Mangel: Hyperammonämie; Therapie mit Carglumsäure (NAG-Analogon)'
+  mnemonic: Ohne N-Acetylglutamat startet der Harnstoffzyklus nicht.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc130

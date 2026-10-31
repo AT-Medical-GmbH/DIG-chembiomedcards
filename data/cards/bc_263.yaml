@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_263
+id_status: provisional
+slug: bc_263_vitamin_b9
+title: Vitamin B9
+subtitle: Folsäure
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+- nukleotidsynthese
+- arzneimittel-target
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B9
+back_sections:
+  classification: Wasserlösliches Vitamin · Folsäure / Folat
+  general_properties:
+  - 'Aktive Form: Tetrahydrofolat (THF)'
+  biochemical_relevance:
+  - Überträger von C₁-Einheiten für Purin- und Thymidinsynthese
+  - Remethylierung von Homocystein (zusammen mit B12)
+  clinical_relevance:
+  - 'Mangel: megaloblastäre Anämie; Neuralrohrdefekte – Prophylaxe vor der Schwangerschaft'
+  - Methotrexat hemmt die Dihydrofolat-Reduktase
+  mnemonic: Folat für die Zellteilung – der Mangel trifft schnell teilende Gewebe.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc263

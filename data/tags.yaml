@@ -3,6 +3,30 @@
 stoffklasse:
   - aminosaeure
   - proteinogen
+  - nicht-proteinogen
+  - neurotransmitter
+  - biogenes-amin
+  - katecholamin
+  - hormon
+  - peptidhormon
+  - steroidhormon
+  - schilddruesenhormon
+  - inkretin
+  - adipokin
+  - kohlenhydrat
+  - carbonsaeure
+  - thioester
+  - lipid
+  - fettsaeure
+  - eicosanoid
+  - ketonkoerper
+  - nukleotid
+  - coenzym
+  - second-messenger
+  - vitamin
+  - ion
+  - gasotransmitter
+  - sonderkarte
 eigenschaft:
   - unpolar
   - polar
@@ -12,13 +36,17 @@ eigenschaft:
   - aliphatisch
   - verzweigtkettig
   - schwefelhaltig
+  - selenhaltig
   - hydroxy
   - amid
+  - ungesaettigt
   - essenziell
   - semi-essenziell
   - nicht-essenziell
   - glukogen
   - ketogen
+  - fettloeslich
+  - wasserloeslich
 pathway:
   - harnstoffzyklus
   - transaminierung
@@ -26,6 +54,16 @@ pathway:
   - neurotransmitter-vorstufe
   - methylierung
   - signaltransduktion
+  - glykolyse
+  - citratzyklus
+  - glukoneogenese
+  - fettsaeuresynthese
+  - cholesterinsynthese
+  - ketogenese
+  - atmungskette
+  - nukleotidsynthese
+  - energiestoffwechsel
 klinik:
   - laborwert
   - stoffwechseldefekt
+  - arzneimittel-target

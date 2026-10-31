@@ -1,0 +1,54 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_169
+id_status: provisional
+slug: bc_169_l_dopa
+title: L-DOPA
+subtitle: Levodopa
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: neurotransmitter
+chapter: biochemie/neurotransmitter
+tags:
+- aminosaeure
+- nicht-proteinogen
+- aromatisch
+- neurotransmitter-vorstufe
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - ring: phenyl
+    subs:
+      '3': OH
+      '4': OH
+  structure_note: Fischer-Konvention; Strukturreferenz PubChem CID 6047.
+back_sections:
+  classification: Aromatische Aminosäure · Katecholamin-Vorstufe
+  general_properties:
+  - L-3,4-Dihydroxyphenylalanin, nicht proteinogen
+  biochemical_relevance:
+  - Entsteht aus Tyrosin (Tyrosinhydroxylase, BH₄) – geschwindigkeitsbestimmend
+  - Decarboxylierung zu Dopamin (DOPA-Decarboxylase, B6)
+  clinical_relevance:
+  - Parkinson-Therapie, kombiniert mit peripherem Decarboxylasehemmer (Carbidopa, Benserazid)
+  mnemonic: L-DOPA passiert die Blut-Hirn-Schranke – Dopamin nicht.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc169

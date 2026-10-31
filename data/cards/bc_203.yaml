@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_203
+id_status: provisional
+slug: bc_203_cgmp
+title: cGMP
+subtitle: Zyklisches Guanosinmonophosphat
+module: BC
+primary_category: molekularbio
+secondary_categories:
+- biochemie
+- klinik
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- nukleotid
+- second-messenger
+- signaltransduktion
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C1[C@@H]2[C@H]([C@H]([C@@H](O2)N3C=NC4=C3N=C(NC4=O)N)O)OP(=O)(O1)O
+  pubchem_cid: 135398570
+  form: physiological
+back_sections:
+  classification: Zyklisches Nukleotid · Second Messenger
+  general_properties:
+  - 3′,5′-zyklisches GMP
+  biochemical_relevance:
+  - Bildung durch lösliche (NO) bzw. membranständige (ANP) Guanylatcyclase
+  - Abbau durch Phosphodiesterasen (z. B. PDE5)
+  clinical_relevance:
+  - PDE-5-Hemmer (Sildenafil) bei erektiler Dysfunktion und pulmonaler Hypertonie
+  - Nitrate → NO → cGMP ↑ → Vasodilatation
+  molecular_relevance:
+  - Aktiviert Proteinkinase G; Phototransduktion in den Stäbchen
+  mnemonic: NO und ANP sprechen cGMP.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc203

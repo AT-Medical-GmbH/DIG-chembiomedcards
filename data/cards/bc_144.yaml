@@ -1,0 +1,53 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_144
+id_status: provisional
+slug: bc_144_diacylglycerin
+title: Diacylglycerin (DAG)
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- molekularbio
+- klinik
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- lipid
+- second-messenger
+- signaltransduktion
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C(OC(=O)[*:1])C(OC(=O)[*:2])CO
+  form: as_is
+  structure_note: Allgemeine Struktur (sn-1,2-DAG); R = Fettsäurereste.
+  labels:
+    1: R<sub>1</sub>
+    2: R<sub>2</sub>
+back_sections:
+  classification: Glycerin mit zwei Fettsäureestern · Lipid-Zwischenprodukt und Second Messenger
+  general_properties:
+  - 'Im Signalweg: sn-1,2-Diacylglycerin'
+  biochemical_relevance:
+  - Zwischenprodukt der TAG- und Phospholipidsynthese
+  clinical_relevance:
+  - DAG-Akkumulation in Muskel und Leber ist mit Insulinresistenz assoziiert
+  molecular_relevance:
+  - 'Phospholipase C: PIP₂ → DAG + IP₃; DAG aktiviert die Proteinkinase C'
+  mnemonic: DAG bleibt in der Membran, IP₃ geht ins Zytosol.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc144

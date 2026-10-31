@@ -1,0 +1,43 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_260
+id_status: provisional
+slug: bc_260_vitamin_b5
+title: Vitamin B5
+subtitle: Pantothensäure
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B5
+back_sections:
+  classification: Wasserlösliches Vitamin · Pantothensäure
+  general_properties:
+  - In fast allen Lebensmitteln enthalten
+  biochemical_relevance:
+  - Baustein von Coenzym A und der Acyl-Carrier-Domäne der Fettsäuresynthase
+  clinical_relevance:
+  - Isolierter Mangel sehr selten (‚Burning-Feet‘-Syndrom)
+  mnemonic: Griech. pantothen = überall.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc260

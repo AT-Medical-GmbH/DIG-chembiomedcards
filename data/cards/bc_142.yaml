@@ -1,0 +1,52 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_142
+id_status: provisional
+slug: bc_142_arachidonsaeure
+title: Arachidonsäure
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- lipid
+- fettsaeure
+- ungesaettigt
+- eicosanoid
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CCCCC/C=C\C/C=C\C/C=C\C/C=C\CCCC(=O)O
+  pubchem_cid: 444899
+  form: as_is
+back_sections:
+  classification: Mehrfach ungesättigte Fettsäure · C20:4 ω-6
+  general_properties:
+  - Vier cis-Doppelbindungen (Δ5,8,11,14)
+  - Bedingt essenziell – entsteht aus Linolsäure
+  biochemical_relevance:
+  - Freisetzung aus Membranphospholipiden durch Phospholipase A₂
+  - COX → Prostaglandine, Thromboxane · Lipoxygenase → Leukotriene
+  clinical_relevance:
+  - NSAR hemmen die Cyclooxygenase, Glucocorticoide indirekt die PLA₂
+  mnemonic: Arachidonsäure ist die Mutter der Eicosanoide (griech. eikosi = 20).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc142

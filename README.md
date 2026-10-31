@@ -29,9 +29,12 @@ Online-Lernsystem) liegt in **[`docs/concept/`](docs/concept/README.md)**. Einst
 
 ## Projektstatus
 
-**Pilotproduktion läuft.** Das Konzept ist abgeschlossen; die Content-Pipeline ist umgesetzt
-(`make build`). Pilotserie: 20 proteinogene Aminosäuren
-([Vorschau](generated/preview/contact_sheet.png), [offene Reviews](reports/cards_review_needed.md)).
+**Soll-Liste vollständig produziert – Fachreview offen.** 116 Karten (Handover-Soll-Liste) liegen als
+Datensätze in `data/cards/` und werden aus **einer zentralen Vorlage** erzeugt
+([`templates/card_template.html`](templates/card_template.html), Bedienung:
+[`templates/README.md`](templates/README.md)). Vorschauen je Themengruppe unter
+[`generated/preview/`](generated/preview/), offene Reviews in
+[`reports/cards_review_needed.md`](reports/cards_review_needed.md).
 
 Bisher existieren nur einige Musterkarten und die Planungsliste
 (`cards/registry/MASTER_DIRECTORY.md`); die Karten werden deshalb direkt aus Daten produziert

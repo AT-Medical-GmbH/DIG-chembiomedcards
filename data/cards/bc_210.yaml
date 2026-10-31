@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_210
+id_status: provisional
+slug: bc_210_s_adenosylmethionin
+title: S-Adenosylmethionin (SAM)
+subtitle: Nukleotid · Coenzym · Second Messenger
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- coenzym
+- methylierung
+- nukleotid
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C[S+](CC[C@@H](C(=O)[O-])N)C[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O
+  pubchem_cid: 34755
+  form: as_is
+back_sections:
+  classification: Sulfoniumverbindung · universeller Methylgruppendonor
+  general_properties:
+  - Aus Methionin + ATP (Methionin-Adenosyltransferase)
+  biochemical_relevance:
+  - Methyliert DNA, Histone, Katecholamine (COMT, PNMT), Kreatin und Phosphatidylcholin
+  - Wird zu S-Adenosylhomocystein und weiter zu Homocystein
+  clinical_relevance:
+  - Folat-/B12-Mangel stört die SAM-Regeneration (‚Methylfalle‘)
+  molecular_relevance:
+  - Methyldonor der DNA-Methyltransferasen (Epigenetik)
+  mnemonic: SAM gibt CH₃ ab – zurück bleibt Homocystein.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc210

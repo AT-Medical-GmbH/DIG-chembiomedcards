@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_151
+id_status: provisional
+slug: bc_151_mevalonat
+title: Mevalonat
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- cholesterinsynthese
+- carbonsaeure
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C[C@@](CCO)(CC(=O)O)O
+  pubchem_cid: 439230
+  form: physiological
+back_sections:
+  classification: Hydroxycarbonsäure-Anion · erstes Produkt der Cholesterinsynthese
+  general_properties:
+  - (R)-Mevalonat
+  biochemical_relevance:
+  - Entsteht durch HMG-CoA-Reduktase (2 NADPH) – geschwindigkeitsbestimmend
+  - 'Weiter zu Isopentenyl-Pyrophosphat: Cholesterin, Ubichinon, Dolichol'
+  clinical_relevance:
+  - 'Mevalonatkinase-Mangel: periodisches Fiebersyndrom (Hyper-IgD-Syndrom)'
+  mnemonic: Statine bremsen auch die Ubichinon-Synthese – eine diskutierte Ursache für Myopathien.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc151

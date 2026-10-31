@@ -1,0 +1,53 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_178
+id_status: provisional
+slug: bc_178_aldosteron
+title: Aldosteron
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- steroidhormon
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C[C@]12CCC(=O)C=C1CC[C@@H]3[C@@H]2[C@H](C[C@]4([C@H]3CC[C@@H]4C(=O)CO)C=O)O
+  pubchem_cid: 5839
+  form: as_is
+back_sections:
+  classification: Mineralocorticoid · Steroidhormon der Zona glomerulosa
+  general_properties:
+  - C21-Steroid mit Aldehydgruppe an C18
+  biochemical_relevance:
+  - Fördert Na⁺-Rückresorption sowie K⁺- und H⁺-Sekretion im Sammelrohr (ENaC)
+  - Freisetzung durch Angiotensin II und Hyperkaliämie
+  clinical_relevance:
+  - 'Conn-Syndrom: Hypertonie, Hypokaliämie'
+  - 'Spironolacton und Eplerenon: Aldosteronantagonisten'
+  molecular_relevance:
+  - Intrazellulärer Mineralocorticoidrezeptor → Transkription
+  mnemonic: 'Aldosteron: Salz rein, Kalium raus.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- PubChem-Struktur zeigt die Aldehydform; in Lösung überwiegt die Halbacetalform – Darstellung prüfen.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc178

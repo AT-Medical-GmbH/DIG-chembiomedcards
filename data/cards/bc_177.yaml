@@ -1,0 +1,54 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_177
+id_status: provisional
+slug: bc_177_cortisol
+title: Cortisol
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- steroidhormon
+- arzneimittel-target
+- laborwert
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C[C@]12CCC(=O)C=C1CC[C@@H]3[C@@H]2[C@H](C[C@]4([C@H]3CC[C@@]4(C(=O)CO)O)C)O
+  pubchem_cid: 5754
+  form: as_is
+back_sections:
+  classification: Glucocorticoid · Steroidhormon der Zona fasciculata
+  general_properties:
+  - C21-Steroid, Synthese aus Cholesterin
+  - Zirkadianer Rhythmus mit Maximum am frühen Morgen
+  biochemical_relevance:
+  - Fördert Glukoneogenese und Proteinabbau
+  - Wirkt antiinflammatorisch und immunsuppressiv
+  clinical_relevance:
+  - Cushing-Syndrom (Überschuss), Morbus Addison (Mangel)
+  - '21-Hydroxylase-Mangel: AGS mit Cortisolmangel'
+  molecular_relevance:
+  - Intrazellulärer Glucocorticoidrezeptor wirkt als Transkriptionsfaktor
+  mnemonic: 'Stresshormon: Zucker hoch, Abwehr runter.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc177

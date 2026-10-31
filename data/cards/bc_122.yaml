@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_122
+id_status: provisional
+slug: bc_122_beta_alanin
+title: β-Alanin
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- nicht-proteinogen
+- coenzym
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C(CN)C(=O)O
+  pubchem_cid: 239
+  form: as_is
+back_sections:
+  classification: β-Aminosäure · nicht proteinogen
+  general_properties:
+  - Aminogruppe am β-C statt am α-C
+  - Entsteht beim Abbau von Uracil und Cytosin
+  biochemical_relevance:
+  - Baustein von Pantothensäure (Vitamin B5) und damit von Coenzym A
+  - Bildet mit Histidin das Dipeptid Carnosin (Muskelpuffer)
+  clinical_relevance:
+  - 'Verbreitetes Supplement; typische Nebenwirkung: Parästhesien'
+  mnemonic: 'β-Alanin: die Aminogruppe sitzt eine Position weiter – nicht in Proteinen.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc122

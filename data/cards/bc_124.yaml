@@ -1,0 +1,58 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_124
+id_status: provisional
+slug: bc_124_hydroxylysin
+title: Hydroxylysin
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- nicht-proteinogen
+- hydroxy
+- kollagen
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: C
+    left: HO
+    right: H
+  - label: CH2
+  - label: NH2
+back_sections:
+  classification: Posttranslational modifizierte Aminosäure · Kollagenbaustein
+  general_properties:
+  - (2S,5R)-5-Hydroxylysin
+  - Entsteht im Protein durch Lysylhydroxylase (Vitamin C)
+  biochemical_relevance:
+  - Ansatzpunkt der O-Glykosylierung im Kollagen
+  - Beteiligt an kovalenten Quervernetzungen (Lysyloxidase)
+  clinical_relevance:
+  - 'Ehlers-Danlos-Syndrom (kyphoskoliotischer Typ): Lysylhydroxylase-Defekt'
+  mnemonic: Hydroxylysin und Hydroxyprolin sind die Kollagen-Signatur.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- Fischer-Darstellung C5 (OH links = 5R) vom Reviewer bestätigen lassen.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc124

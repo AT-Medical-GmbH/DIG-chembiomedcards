@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_147
+id_status: provisional
+slug: bc_147_leukotrien_b4
+title: Leukotrien B4
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- lipid
+- eicosanoid
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CCCCC/C=C\C[C@H](/C=C/C=C/C=C\[C@H](CCCC(=O)O)O)O
+  pubchem_cid: 5280492
+  form: as_is
+back_sections:
+  classification: Eicosanoid · Leukotrien der Lipoxygenase-Kaskade
+  general_properties:
+  - Kein Ring; konjugiertes Triensystem
+  biochemical_relevance:
+  - Arachidonsäure → LTA₄ (5-Lipoxygenase mit FLAP) → LTB₄
+  clinical_relevance:
+  - Starkes Chemotaxin für neutrophile Granulozyten
+  - Zileuton hemmt die 5-Lipoxygenase
+  molecular_relevance:
+  - BLT1-/BLT2-Rezeptoren (G-Protein-gekoppelt)
+  mnemonic: LTB₄ lockt Neutrophile – Cysteinyl-Leukotriene verengen die Bronchien.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc147

@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_201
+id_status: provisional
+slug: bc_201_gtp
+title: GTP
+subtitle: Guanosintriphosphat
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- nukleotid
+- signaltransduktion
+- citratzyklus
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N=C(NC2=O)N
+  pubchem_cid: 135398633
+  form: physiological
+back_sections:
+  classification: Nukleosidtriphosphat (Guanosin)
+  general_properties:
+  - Guanin + Ribose + drei Phosphate
+  biochemical_relevance:
+  - Bildung im Citratzyklus (Succinyl-CoA-Synthetase)
+  - Energie für Translation und PEPCK; Vorstufe von cGMP und BH₄
+  clinical_relevance:
+  - 'Ras-Mutationen: gestörte GTPase-Aktivität → Dauersignal (Onkogen)'
+  molecular_relevance:
+  - 'G-Proteine: mit GTP aktiv, mit GDP inaktiv'
+  mnemonic: 'GTP ist ein Schalter: an mit GTP, aus nach der Hydrolyse.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc201

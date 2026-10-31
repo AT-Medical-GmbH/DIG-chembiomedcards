@@ -1,0 +1,49 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_061
+id_status: provisional
+slug: bc_061_glucose
+title: Glucose
+subtitle: Traubenzucker
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: stoffwechsel_zentral
+chapter: biochemie/zentraler_stoffwechsel
+tags:
+- kohlenhydrat
+- glykolyse
+- laborwert
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O
+  pubchem_cid: 5793
+  form: as_is
+back_sections:
+  classification: Aldohexose · wichtigster Energieträger des Blutes
+  general_properties:
+  - In Lösung überwiegend als Pyranose (α-/β-Anomere)
+  - Nüchtern-Blutzucker normal 70–99 mg/dl
+  biochemical_relevance:
+  - Aufnahme über GLUT-Transporter bzw. SGLT
+  - Glykolyse, Glykogensynthese, Pentosephosphatweg
+  clinical_relevance:
+  - 'Diabetes mellitus: Nüchternglukose ≥ 126 mg/dl'
+  - 'Hypoglykämie: Warnschwelle < 70 mg/dl'
+  mnemonic: Erythrozyten sind obligat, das Gehirn überwiegend auf Glucose angewiesen.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc061

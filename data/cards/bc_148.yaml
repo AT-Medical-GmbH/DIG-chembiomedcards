@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_148
+id_status: provisional
+slug: bc_148_beta_hydroxybutyrat
+title: β-Hydroxybutyrat
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- ketonkoerper
+- ketogenese
+- carbonsaeure
+- laborwert
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C[C@H](CC(=O)O)O
+  pubchem_cid: 92135
+  form: physiological
+back_sections:
+  classification: Ketonkörper · Hydroxycarbonsäure-Anion
+  general_properties:
+  - (R)-3-Hydroxybutyrat – chemisch kein Keton
+  biochemical_relevance:
+  - Bildung in Lebermitochondrien aus Acetoacetat (β-HB-Dehydrogenase, NADH)
+  - Energiequelle für Gehirn, Herz und Muskel im Hunger
+  clinical_relevance:
+  - 'Diabetische Ketoazidose: β-HB ist der Hauptketonkörper'
+  - Urin-Teststreifen erfassen β-HB nicht, nur Acetoacetat
+  mnemonic: Die Leber bildet Ketonkörper, kann sie aber nicht verwerten.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc148

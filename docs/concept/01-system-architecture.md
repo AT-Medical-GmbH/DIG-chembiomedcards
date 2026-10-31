@@ -79,9 +79,9 @@ DIG-chembiomedcards/
     audit_report.json
   input/                     # ← NEU: Upload-Verarbeitung
     uploaded_raw/  extracted/  rejected/
-  templates/                 # ← erweitert aus card-system/templates
-    card_front_template.html  card_back_template.html
-    print_sheet_template.html  online_card_template.html
+  templates/                 # ← zentrale Kartenvorlage (ADR-018)
+    card_template.html         #   Layout aller Karten (Vorder- + Rückseite)
+    (geplant: print_sheet_template.html)
   generated/                 # ← NEU: Build-Artefakte (gitignored, außer Beispiele)
     individual/{front,back,svg,pdf}/  moodle/  print/  preview/
   scripts/                   # (bestehend) + neue Pipeline-Skripte

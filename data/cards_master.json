@@ -1,10 +1,829 @@
 {
   "schema": "data/schema/card.schema.json",
-  "card_count": 20,
+  "card_count": 116,
   "cards_per_primary_category": {
-    "biochemie": 20
+    "biochemie": 111,
+    "molekularbio": 5
   },
   "cards": [
+    {
+      "card_id": "bc_061",
+      "id_status": "provisional",
+      "slug": "bc_061_glucose",
+      "title": "Glucose",
+      "subtitle": "Traubenzucker",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "kohlenhydrat",
+        "glykolyse",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O",
+        "pubchem_cid": 5793,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Aldohexose · wichtigster Energieträger des Blutes",
+        "general_properties": [
+          "In Lösung überwiegend als Pyranose (α-/β-Anomere)",
+          "Nüchtern-Blutzucker normal 70–99 mg/dl"
+        ],
+        "biochemical_relevance": [
+          "Aufnahme über GLUT-Transporter bzw. SGLT",
+          "Glykolyse, Glykogensynthese, Pentosephosphatweg"
+        ],
+        "clinical_relevance": [
+          "Diabetes mellitus: Nüchternglukose ≥ 126 mg/dl",
+          "Hypoglykämie: Warnschwelle < 70 mg/dl"
+        ],
+        "mnemonic": "Erythrozyten sind obligat, das Gehirn überwiegend auf Glucose angewiesen."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc061"
+    },
+    {
+      "card_id": "bc_062",
+      "id_status": "provisional",
+      "slug": "bc_062_glucose_6_phosphat",
+      "title": "Glucose-6-phosphat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "kohlenhydrat",
+        "glykolyse",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)OP(=O)(O)O",
+        "pubchem_cid": 5958,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Phosphorylierte Hexose · zentraler Verteilerknoten",
+        "general_properties": [
+          "Verlässt die Zelle nicht mehr (geladen, kein Transporter)"
+        ],
+        "biochemical_relevance": [
+          "Hexokinase/Glukokinase: Glucose + ATP → G6P",
+          "Weiter in Glykolyse, Glykogensynthese oder Pentosephosphatweg (G6PD)"
+        ],
+        "clinical_relevance": [
+          "G6PD-Mangel: hämolytische Anämie, z. B. nach Favabohnen",
+          "Glykogenose Typ I (von Gierke): Glucose-6-Phosphatase-Defekt"
+        ],
+        "mnemonic": "Phosphorylieren heißt Glucose ‚einsperren‘."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc062"
+    },
+    {
+      "card_id": "bc_063",
+      "id_status": "provisional",
+      "slug": "bc_063_fructose_6_phosphat",
+      "title": "Fructose-6-phosphat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "kohlenhydrat",
+        "glykolyse",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C([C@@H]1[C@H]([C@@H]([C@](O1)(CO)O)O)O)OP(=O)(O)O",
+        "pubchem_cid": 440641,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Phosphorylierte Ketohexose · Glykolyse-Zwischenprodukt",
+        "general_properties": [
+          "Entsteht aus G6P durch Phosphoglucose-Isomerase"
+        ],
+        "biochemical_relevance": [
+          "PFK-1: F6P → Fructose-1,6-bisphosphat – Schrittmacher der Glykolyse",
+          "Fructose-2,6-bisphosphat (aus F6P, PFK-2) aktiviert PFK-1"
+        ],
+        "clinical_relevance": [
+          "PFK-Mangel (Glykogenose Typ VII, Tarui): Belastungsintoleranz, Hämolyse"
+        ],
+        "mnemonic": "Die PFK-1 ist die Schaltstelle der Glykolyse."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc063"
+    },
+    {
+      "card_id": "bc_064",
+      "id_status": "provisional",
+      "slug": "bc_064_pyruvat",
+      "title": "Pyruvat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "glykolyse",
+        "citratzyklus"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)C(=O)O",
+        "pubchem_cid": 1060,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "α-Ketosäure-Anion · Endprodukt der Glykolyse",
+        "general_properties": [
+          "Anion der Brenztraubensäure"
+        ],
+        "biochemical_relevance": [
+          "PDH → Acetyl-CoA (Thiamin, Liponsäure, CoA, FAD, NAD⁺)",
+          "Pyruvatcarboxylase → Oxalacetat (Biotin)",
+          "LDH → Laktat · ALT → Alanin"
+        ],
+        "clinical_relevance": [
+          "PDH- oder Thiaminmangel → Laktatazidose"
+        ],
+        "mnemonic": "Pyruvat ist die Weggabelung: Acetyl-CoA, Oxalacetat, Laktat oder Alanin."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc064"
+    },
+    {
+      "card_id": "bc_065",
+      "id_status": "provisional",
+      "slug": "bc_065_laktat",
+      "title": "Laktat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "glykolyse",
+        "glukoneogenese",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@@H](C(=O)O)O",
+        "pubchem_cid": 107689,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Hydroxycarbonsäure-Anion · Endprodukt der anaeroben Glykolyse",
+        "general_properties": [
+          "Beim Menschen L-Laktat; D-Laktat stammt von Bakterien"
+        ],
+        "biochemical_relevance": [
+          "LDH: Pyruvat + NADH ⇄ Laktat + NAD⁺ – regeneriert NAD⁺",
+          "Cori-Zyklus: Laktat aus Muskel/Erythrozyt → Glukoneogenese in der Leber"
+        ],
+        "clinical_relevance": [
+          "Laktat > 2 mmol/l: Marker der Hypoperfusion (Sepsis, Schock)",
+          "Metformin-assoziierte Laktatazidose"
+        ],
+        "mnemonic": "Erythrozyten bilden immer Laktat – sie haben keine Mitochondrien."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc065"
+    },
+    {
+      "card_id": "bc_073",
+      "id_status": "confirmed",
+      "slug": "bc_073_acetyl_coa",
+      "title": "Acetyl-CoA",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "thioester",
+        "coenzym",
+        "citratzyklus",
+        "fettsaeuresynthese",
+        "ketogenese"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)S[*:1]",
+        "form": "as_is",
+        "structure_note": "Acylrest vollständig, Coenzym A als Abkürzung „CoA“ (Lehrbuchkonvention).",
+        "labels": {
+          "1": "CoA"
+        }
+      },
+      "back_sections": {
+        "classification": "Thioester · aktivierte Essigsäure · zentrale Drehscheibe des Stoffwechsels",
+        "general_properties": [
+          "Energiereiche Thioesterbindung (ΔG°′ der Hydrolyse ≈ −31 kJ/mol)"
+        ],
+        "biochemical_relevance": [
+          "Quellen: PDH, β-Oxidation, Aminosäureabbau",
+          "Verwertung: Citratzyklus, Fettsäure-, Cholesterin- und Ketonkörpersynthese"
+        ],
+        "clinical_relevance": [
+          "Acetyl-CoA-Überschuss bei Insulinmangel → Ketoazidose"
+        ],
+        "molecular_relevance": [
+          "Acetylgruppen-Donor für die Histonacetylierung"
+        ],
+        "mnemonic": "Aus Acetyl-CoA kann der Mensch keine Glucose bilden."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc073"
+    },
+    {
+      "card_id": "bc_074",
+      "id_status": "provisional",
+      "slug": "bc_074_coenzym_a",
+      "title": "Coenzym A",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "coenzym",
+        "vitamin",
+        "thioester"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(C)(COP(=O)(O)OP(=O)(O)OC[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)OP(=O)(O)O)[C@H](C(=O)NCCC(=O)NCCS)O",
+        "pubchem_cid": 87642,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Coenzym · Überträger von Acylgruppen",
+        "general_properties": [
+          "Aus Pantothensäure (B5), Cysteamin (aus Cystein) und 3′-Phospho-ADP",
+          "Reaktive Gruppe: Thiol (–SH)"
+        ],
+        "biochemical_relevance": [
+          "Bildet Thioester mit Acylresten (Acetyl-, Succinyl-, Malonyl-CoA)",
+          "Beteiligt an PDH, α-KGDH, β-Oxidation und Fettsäuresynthese"
+        ],
+        "clinical_relevance": [
+          "PKAN: Pantothenatkinase-assoziierte Neurodegeneration"
+        ],
+        "mnemonic": "CoA ist der ‚Henkel‘ für Acylgruppen – angefasst wird am Schwefel."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc074"
+    },
+    {
+      "card_id": "bc_075",
+      "id_status": "provisional",
+      "slug": "bc_075_citrat",
+      "title": "Citrat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "citratzyklus",
+        "fettsaeuresynthese"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(C(=O)O)C(CC(=O)O)(C(=O)O)O",
+        "pubchem_cid": 311,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Tricarbonsäure-Anion · erstes Zwischenprodukt des Citratzyklus",
+        "general_properties": [
+          "Achiral, wird von der Aconitase aber stereospezifisch umgesetzt"
+        ],
+        "biochemical_relevance": [
+          "Citratsynthase: Acetyl-CoA + Oxalacetat → Citrat",
+          "Im Zytosol Acetyl-CoA-Quelle der Fettsäuresynthese; hemmt PFK-1"
+        ],
+        "clinical_relevance": [
+          "Bindet Ca²⁺: Antikoagulans in Blutkonserven und bei Dialyse",
+          "Hypocitraturie begünstigt Nierensteine"
+        ],
+        "mnemonic": "Citrat signalisiert: Energie satt – Fett speichern."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc075"
+    },
+    {
+      "card_id": "bc_076",
+      "id_status": "provisional",
+      "slug": "bc_076_oxalacetat",
+      "title": "Oxalacetat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "citratzyklus",
+        "glukoneogenese",
+        "transaminierung"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(C(=O)C(=O)O)C(=O)O",
+        "pubchem_cid": 970,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "α-Ketodicarbonsäure-Anion · Startmolekül des Citratzyklus",
+        "general_properties": [
+          "Passiert die innere Mitochondrienmembran nicht direkt"
+        ],
+        "biochemical_relevance": [
+          "Bildung aus Pyruvat (Pyruvatcarboxylase, Biotin) oder Malat",
+          "Glukoneogenese: PEPCK → Phosphoenolpyruvat",
+          "Transaminierung zu Aspartat (AST)"
+        ],
+        "clinical_relevance": [
+          "Oxalacetatmangel bei Hunger/Diabetes: Acetyl-CoA wird zu Ketonkörpern"
+        ],
+        "mnemonic": "‚Fette verbrennen im Feuer der Kohlenhydrate‘ – Oxalacetat ist das Feuer."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc076"
+    },
+    {
+      "card_id": "bc_077",
+      "id_status": "provisional",
+      "slug": "bc_077_alpha_ketoglutarat",
+      "title": "α-Ketoglutarat",
+      "subtitle": "2-Oxoglutarat",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "citratzyklus",
+        "transaminierung"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(CC(=O)O)C(=O)C(=O)O",
+        "pubchem_cid": 51,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "α-Ketodicarbonsäure-Anion · Citratzyklus-Zwischenprodukt",
+        "general_properties": [
+          "Entsteht aus Isocitrat (Isocitrat-Dehydrogenase)"
+        ],
+        "biochemical_relevance": [
+          "α-KG-Dehydrogenase → Succinyl-CoA (Kofaktoren wie bei der PDH)",
+          "Aminogruppen-Akzeptor der Transaminasen → Glutamat"
+        ],
+        "clinical_relevance": [
+          "IDH-Mutationen (Gliome, AML) bilden den Onkometaboliten 2-Hydroxyglutarat"
+        ],
+        "molecular_relevance": [
+          "Kosubstrat von Dioxygenasen (Prolylhydroxylase, TET-Enzyme, Histondemethylasen)"
+        ],
+        "mnemonic": "α-KG plus Aminogruppe = Glutamat: das Stickstoff-Taxi."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc077"
+    },
+    {
+      "card_id": "bc_078",
+      "id_status": "provisional",
+      "slug": "bc_078_succinyl_coa",
+      "title": "Succinyl-CoA",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "thioester",
+        "citratzyklus",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "[O-]C(=O)CCC(=O)S[*:1]",
+        "form": "as_is",
+        "structure_note": "Acylrest vollständig, Coenzym A als Abkürzung „CoA“ (Lehrbuchkonvention).",
+        "labels": {
+          "1": "CoA"
+        }
+      },
+      "back_sections": {
+        "classification": "Thioester · Citratzyklus-Zwischenprodukt",
+        "general_properties": [
+          "Energiereiche Thioesterbindung"
+        ],
+        "biochemical_relevance": [
+          "Succinyl-CoA-Synthetase: Substratkettenphosphorylierung → GTP bzw. ATP",
+          "Entsteht auch aus Propionyl-CoA (Methylmalonyl-CoA-Mutase, B12)",
+          "Häm-Synthese: Succinyl-CoA + Glycin → δ-ALA"
+        ],
+        "clinical_relevance": [
+          "Methylmalonazidämie: Mutase- oder B12-Defekt",
+          "B12-Mangel: Methylmalonsäure im Serum ↑"
+        ],
+        "mnemonic": "Einziger Schritt des Citratzyklus mit direkter GTP/ATP-Bildung."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc078"
+    },
+    {
+      "card_id": "bc_079",
+      "id_status": "provisional",
+      "slug": "bc_079_succinat",
+      "title": "Succinat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "citratzyklus",
+        "atmungskette"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(CC(=O)O)C(=O)O",
+        "pubchem_cid": 1110,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Dicarbonsäure-Anion · Citratzyklus-Zwischenprodukt",
+        "general_properties": [
+          "Anion der Bernsteinsäure"
+        ],
+        "biochemical_relevance": [
+          "Succinatdehydrogenase (Komplex II): Succinat + FAD → Fumarat + FADH₂",
+          "Verbindet Citratzyklus und Atmungskette"
+        ],
+        "clinical_relevance": [
+          "SDH-Mutationen: Paragangliome, Phäochromozytome, GIST"
+        ],
+        "molecular_relevance": [
+          "Akkumuliertes Succinat stabilisiert HIF-1α (Pseudohypoxie)"
+        ],
+        "mnemonic": "Komplex II ist das einzige membranständige Enzym des Citratzyklus."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc079"
+    },
+    {
+      "card_id": "bc_080",
+      "id_status": "provisional",
+      "slug": "bc_080_fumarat",
+      "title": "Fumarat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "citratzyklus",
+        "harnstoffzyklus",
+        "ungesaettigt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(=C/C(=O)O)\\C(=O)O",
+        "pubchem_cid": 444972,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Ungesättigtes Dicarbonsäure-Anion (trans) · Citratzyklus-Zwischenprodukt",
+        "general_properties": [
+          "trans-Isomer; das cis-Isomer heißt Maleat"
+        ],
+        "biochemical_relevance": [
+          "Fumarase: Fumarat + H₂O → L-Malat",
+          "Entsteht auch im Harnstoff- und Purinnukleotidzyklus"
+        ],
+        "clinical_relevance": [
+          "Fumarathydratase-Mangel: Leiomyomatose und Nierenzellkarzinom (HLRCC)",
+          "Dimethylfumarat: Therapie bei Psoriasis und MS"
+        ],
+        "mnemonic": "Fumarat verknüpft Harnstoff- und Citratzyklus."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc080"
+    },
+    {
+      "card_id": "bc_081",
+      "id_status": "provisional",
+      "slug": "bc_081_malat",
+      "title": "Malat",
+      "subtitle": "Stoffwechsel-Zwischenprodukt",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stoffwechsel_zentral",
+      "chapter": "biochemie/zentraler_stoffwechsel",
+      "tags": [
+        "carbonsaeure",
+        "citratzyklus",
+        "glukoneogenese"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C([C@@H](C(=O)O)O)C(=O)O",
+        "pubchem_cid": 222656,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Hydroxydicarbonsäure-Anion · Citratzyklus-Zwischenprodukt",
+        "general_properties": [
+          "L-Malat, Anion der Äpfelsäure"
+        ],
+        "biochemical_relevance": [
+          "Malatdehydrogenase: Malat + NAD⁺ → Oxalacetat + NADH",
+          "Malat-Aspartat-Shuttle: bringt Reduktionsäquivalente ins Mitochondrium",
+          "Malatenzym: Malat → Pyruvat + NADPH"
+        ],
+        "clinical_relevance": [
+          "Seltene Defekte des Malat-Aspartat-Shuttles: epileptische Enzephalopathien"
+        ],
+        "mnemonic": "Von lat. malum = Apfel."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Klinik-Aussage (Shuttle-Defekte, z. B. MDH2) ist selten – Reviewer soll Relevanz und Formulierung prüfen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc081"
+    },
     {
       "card_id": "bc_098",
       "id_status": "provisional",
@@ -1519,6 +2338,4861 @@
       "print_status": "draft",
       "web_status": "draft",
       "qr_url": "https://chembiomed-cards.de/c/bc117"
+    },
+    {
+      "card_id": "bc_118",
+      "id_status": "provisional",
+      "slug": "bc_118_kreatin",
+      "title": "Kreatin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "energiestoffwechsel",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CN(CC(=O)O)C(=N)N",
+        "pubchem_cid": 586,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Guanidinoverbindung · Energiespeicher-Vorstufe · keine proteinogene Aminosäure",
+        "general_properties": [
+          "Synthese aus Glycin, Arginin und SAM (Niere und Leber)",
+          "Rund 95 % im Skelettmuskel gespeichert"
+        ],
+        "biochemical_relevance": [
+          "Kreatinkinase: Kreatin + ATP ⇄ Kreatinphosphat + ADP",
+          "Kreatinphosphat puffert ATP in den ersten Sekunden der Muskelarbeit"
+        ],
+        "clinical_relevance": [
+          "CK bzw. CK-MB im Serum: Marker für Muskel- bzw. Myokardschaden"
+        ],
+        "mnemonic": "Kreatinphosphat ist der schnelle ATP-Akku des Muskels."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc118"
+    },
+    {
+      "card_id": "bc_119",
+      "id_status": "provisional",
+      "slug": "bc_119_kreatinin",
+      "title": "Kreatinin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CN1CC(=O)N=C1N",
+        "pubchem_cid": 588,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Cyclisches Anhydrid des Kreatins · Ausscheidungsprodukt",
+        "general_properties": [
+          "Entsteht nicht-enzymatisch aus Kreatin/Kreatinphosphat (≈ 1–2 % pro Tag)",
+          "Bildungsrate proportional zur Muskelmasse"
+        ],
+        "biochemical_relevance": [
+          "Wird glomerulär filtriert und kaum rückresorbiert"
+        ],
+        "clinical_relevance": [
+          "Serumkreatinin und eGFR: Standardmaße der Nierenfunktion",
+          "Steigt erst bei deutlichem GFR-Verlust (‚kreatininblinder Bereich‘)"
+        ],
+        "mnemonic": "Mehr Muskelmasse → mehr Kreatinin – bei gleicher Nierenfunktion."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc119"
+    },
+    {
+      "card_id": "bc_120",
+      "id_status": "provisional",
+      "slug": "bc_120_homocystein",
+      "title": "Homocystein",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "schwefelhaltig",
+        "methylierung",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "SH"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Nicht-proteinogene, schwefelhaltige Aminosäure · Zwischenprodukt des Methioninstoffwechsels",
+        "general_properties": [
+          "Eine CH₂-Gruppe länger als Cystein"
+        ],
+        "biochemical_relevance": [
+          "Entsteht aus SAM über S-Adenosylhomocystein",
+          "Remethylierung zu Methionin (B12, Folat) oder Transsulfurierung zu Cystein (B6)"
+        ],
+        "clinical_relevance": [
+          "Hyperhomocysteinämie: Risikofaktor für Atherosklerose und Thrombosen",
+          "Homocystinurie (CBS-Defekt): Linsenluxation, marfanoider Habitus"
+        ],
+        "mnemonic": "Homo-Cystein = Cystein plus eine CH₂-Gruppe."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc120"
+    },
+    {
+      "card_id": "bc_121",
+      "id_status": "provisional",
+      "slug": "bc_121_taurin",
+      "title": "Taurin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "schwefelhaltig"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(CS(=O)(=O)O)N",
+        "pubchem_cid": 1123,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Aminosulfonsäure · nicht proteinogen · keine Carboxylgruppe",
+        "general_properties": [
+          "Entsteht aus Cystein (über Cysteinsulfinat)",
+          "Hohe Konzentration in Herz, Retina und Muskel"
+        ],
+        "biochemical_relevance": [
+          "Konjugation von Gallensäuren (z. B. Taurocholsäure)",
+          "Osmolyt und Membranstabilisator"
+        ],
+        "clinical_relevance": [
+          "Zusatz in Säuglingsnahrung und parenteraler Ernährung"
+        ],
+        "mnemonic": "Von lat. taurus = Stier – zuerst aus Ochsengalle isoliert."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Klinik-Box schwach – Reviewer soll ggf. besseren Klinikbezug vorschlagen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc121"
+    },
+    {
+      "card_id": "bc_122",
+      "id_status": "provisional",
+      "slug": "bc_122_beta_alanin",
+      "title": "β-Alanin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "coenzym"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(CN)C(=O)O",
+        "pubchem_cid": 239,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "β-Aminosäure · nicht proteinogen",
+        "general_properties": [
+          "Aminogruppe am β-C statt am α-C",
+          "Entsteht beim Abbau von Uracil und Cytosin"
+        ],
+        "biochemical_relevance": [
+          "Baustein von Pantothensäure (Vitamin B5) und damit von Coenzym A",
+          "Bildet mit Histidin das Dipeptid Carnosin (Muskelpuffer)"
+        ],
+        "clinical_relevance": [
+          "Verbreitetes Supplement; typische Nebenwirkung: Parästhesien"
+        ],
+        "mnemonic": "β-Alanin: die Aminogruppe sitzt eine Position weiter – nicht in Proteinen."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc122"
+    },
+    {
+      "card_id": "bc_123",
+      "id_status": "provisional",
+      "slug": "bc_123_hydroxyprolin",
+      "title": "Hydroxyprolin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "hydroxy",
+        "kollagen",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "special": "hydroxyproline"
+      },
+      "back_sections": {
+        "classification": "Posttranslational modifizierte Aminosäure · Kollagenbaustein",
+        "general_properties": [
+          "Meist (2S,4R)-4-Hydroxyprolin",
+          "Nicht direkt codiert – entsteht im Protein"
+        ],
+        "biochemical_relevance": [
+          "Prolyl-4-Hydroxylase: benötigt Fe²⁺, O₂, α-Ketoglutarat und Vitamin C",
+          "Stabilisiert die Kollagen-Tripelhelix"
+        ],
+        "clinical_relevance": [
+          "Skorbut: fehlende Hydroxylierung → Zahnfleischbluten, Wundheilungsstörung"
+        ],
+        "mnemonic": "Hydroxyprolin im Urin gilt als Marker des Kollagenabbaus."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Stereochemie am C4 im Ringbild nicht dargestellt – Darstellung prüfen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc123"
+    },
+    {
+      "card_id": "bc_124",
+      "id_status": "provisional",
+      "slug": "bc_124_hydroxylysin",
+      "title": "Hydroxylysin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "hydroxy",
+        "kollagen",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "C",
+            "left": "HO",
+            "right": "H"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "NH2"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Posttranslational modifizierte Aminosäure · Kollagenbaustein",
+        "general_properties": [
+          "(2S,5R)-5-Hydroxylysin",
+          "Entsteht im Protein durch Lysylhydroxylase (Vitamin C)"
+        ],
+        "biochemical_relevance": [
+          "Ansatzpunkt der O-Glykosylierung im Kollagen",
+          "Beteiligt an kovalenten Quervernetzungen (Lysyloxidase)"
+        ],
+        "clinical_relevance": [
+          "Ehlers-Danlos-Syndrom (kyphoskoliotischer Typ): Lysylhydroxylase-Defekt"
+        ],
+        "mnemonic": "Hydroxylysin und Hydroxyprolin sind die Kollagen-Signatur."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Fischer-Darstellung C5 (OH links = 5R) vom Reviewer bestätigen lassen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc124"
+    },
+    {
+      "card_id": "bc_125",
+      "id_status": "provisional",
+      "slug": "bc_125_selenocystein",
+      "title": "Selenocystein",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "identifiers": {
+        "three_letter": "Sec",
+        "one_letter": "U"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "selenhaltig"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "SeH"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "21. proteinogene Aminosäure · selenhaltig",
+        "general_properties": [
+          "Wie Cystein, aber Selen statt Schwefel"
+        ],
+        "biochemical_relevance": [
+          "Aktives Zentrum von Glutathionperoxidase, Thioredoxin-Reduktase und Deiodasen"
+        ],
+        "clinical_relevance": [
+          "Selenmangel: Keshan-Krankheit (Kardiomyopathie)"
+        ],
+        "molecular_relevance": [
+          "Cotranslationaler Einbau an einem UGA-Codon mit SECIS-Element"
+        ],
+        "mnemonic": "UGA ist sonst ein Stoppcodon – mit SECIS wird daraus Selenocystein."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc125"
+    },
+    {
+      "card_id": "bc_126",
+      "id_status": "provisional",
+      "slug": "bc_126_selenomethionin",
+      "title": "Selenomethionin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "selenhaltig"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "Se"
+          },
+          {
+            "label": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Selenhaltiges Methionin-Analogon · nicht genetisch codiert",
+        "general_properties": [
+          "Selen statt Schwefel in der Seitenkette",
+          "Hauptform von Selen in Pflanzen und Supplementen"
+        ],
+        "biochemical_relevance": [
+          "Wird unspezifisch anstelle von Methionin in Proteine eingebaut (Selenspeicher)",
+          "Selenquelle für die Selenocystein-Synthese"
+        ],
+        "clinical_relevance": [
+          "Selen-Supplementierung z. B. bei Hashimoto-Thyreoiditis diskutiert"
+        ],
+        "mnemonic": "Selenomethionin ersetzt Met – Selenocystein ist eine eigene Aminosäure."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Klinische Aussage (Hashimoto) bewusst als ‚diskutiert‘ formuliert – Evidenzlage prüfen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc126"
+    },
+    {
+      "card_id": "bc_127",
+      "id_status": "provisional",
+      "slug": "bc_127_ornithin",
+      "title": "Ornithin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "basisch",
+        "harnstoffzyklus",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "NH2"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Nicht-proteinogene basische Aminosäure · Harnstoffzyklus",
+        "general_properties": [
+          "Eine CH₂-Gruppe kürzer als Lysin"
+        ],
+        "biochemical_relevance": [
+          "Nimmt im Mitochondrium Carbamoylphosphat auf → Citrullin (OTC)",
+          "Wird durch Arginase aus Arginin regeneriert",
+          "Vorstufe der Polyamine (Ornithin-Decarboxylase)"
+        ],
+        "clinical_relevance": [
+          "OTC-Mangel: häufigster Harnstoffzyklusdefekt (X-chromosomal) → Hyperammonämie"
+        ],
+        "mnemonic": "Ornithin ist der Träger im Harnstoffzyklus – er kehrt immer zurück."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc127"
+    },
+    {
+      "card_id": "bc_128",
+      "id_status": "provisional",
+      "slug": "bc_128_citrullin",
+      "title": "Citrullin",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "harnstoffzyklus",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "NH"
+          },
+          {
+            "label": "C",
+            "fork": [
+              {
+                "label": "O",
+                "bond": 2
+              },
+              {
+                "label": "NH2",
+                "bond": 1
+              }
+            ]
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Nicht-proteinogene Aminosäure · Harnstoffzyklus · Ureidogruppe",
+        "general_properties": [
+          "Ureidogruppe (–NH–CO–NH₂) am Ende der Seitenkette"
+        ],
+        "biochemical_relevance": [
+          "Entsteht aus Ornithin + Carbamoylphosphat (OTC) im Mitochondrium",
+          "Nebenprodukt der NO-Synthase (Arginin → NO + Citrullin)"
+        ],
+        "clinical_relevance": [
+          "Antikörper gegen citrullinierte Proteine (ACPA) bei rheumatoider Arthritis",
+          "Citrullinämie Typ I: Argininosuccinat-Synthetase-Defekt"
+        ],
+        "mnemonic": "Zuerst aus der Wassermelone isoliert (lat. citrullus)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc128"
+    },
+    {
+      "card_id": "bc_129",
+      "id_status": "provisional",
+      "slug": "bc_129_argininosuccinat",
+      "title": "Argininosuccinat",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "harnstoffzyklus",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(C[C@@H](C(=O)O)N)CN=C(N)N[C@@H](CC(=O)O)C(=O)O",
+        "pubchem_cid": 16950,
+        "form": "physiological",
+        "layout": "rdkit"
+      },
+      "back_sections": {
+        "classification": "Zwischenprodukt des Harnstoffzyklus",
+        "general_properties": [
+          "Verknüpfung aus Citrullin und Aspartat"
+        ],
+        "biochemical_relevance": [
+          "Argininosuccinat-Synthetase: Citrullin + Aspartat + ATP → Argininosuccinat",
+          "Argininosuccinat-Lyase spaltet in Arginin + Fumarat"
+        ],
+        "clinical_relevance": [
+          "Argininosuccinat-Lyase-Mangel: Hyperammonämie, brüchige Haare (Trichorrhexis nodosa)"
+        ],
+        "mnemonic": "Über Fumarat ist der Harnstoffzyklus mit dem Citratzyklus verbunden."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc129"
+    },
+    {
+      "card_id": "bc_130",
+      "id_status": "provisional",
+      "slug": "bc_130_n_acetylglutamat",
+      "title": "N-Acetylglutamat",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "harnstoffzyklus",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)N[C@@H](CCC(=O)O)C(=O)O",
+        "pubchem_cid": 70914,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Acetyliertes Glutamat · allosterischer Aktivator",
+        "general_properties": [
+          "Synthese aus Acetyl-CoA und Glutamat (NAG-Synthase)"
+        ],
+        "biochemical_relevance": [
+          "Obligater Aktivator der Carbamoylphosphat-Synthetase I",
+          "Arginin stimuliert die NAG-Synthase – der Harnstoffzyklus läuft bei Proteinzufuhr an"
+        ],
+        "clinical_relevance": [
+          "NAGS-Mangel: Hyperammonämie; Therapie mit Carglumsäure (NAG-Analogon)"
+        ],
+        "mnemonic": "Ohne N-Acetylglutamat startet der Harnstoffzyklus nicht."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc130"
+    },
+    {
+      "card_id": "bc_131",
+      "id_status": "provisional",
+      "slug": "bc_131_n_acetylaspartat",
+      "title": "N-Acetylaspartat",
+      "subtitle": "Aminosäure-Derivat",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeure_derivate",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "nicht-proteinogen",
+        "laborwert",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)N[C@@H](CC(=O)O)C(=O)O",
+        "pubchem_cid": 65065,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Acetyliertes Aspartat · zweithäufigster Metabolit im Gehirn",
+        "general_properties": [
+          "Bildung in Mitochondrien von Neuronen"
+        ],
+        "biochemical_relevance": [
+          "Aspartoacylase der Oligodendrozyten spaltet NAA → Acetat für die Myelinsynthese"
+        ],
+        "clinical_relevance": [
+          "MR-Spektroskopie: NAA-Peak als Marker neuronaler Integrität",
+          "Morbus Canavan: Aspartoacylase-Defekt → NAA ↑, Leukodystrophie"
+        ],
+        "mnemonic": "NAA-Peak ↓ in der MR-Spektroskopie bedeutet Neuronenverlust."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc131"
+    },
+    {
+      "card_id": "bc_132",
+      "id_status": "provisional",
+      "slug": "bc_132_ammoniak_ammonium",
+      "title": "Ammoniak / Ammonium",
+      "subtitle": "Stickstoffstoffwechsel",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "anorganik",
+        "klinik"
+      ],
+      "topic_group": "stickstoffstoffwechsel",
+      "chapter": "biochemie/stickstoffstoffwechsel",
+      "tags": [
+        "ion",
+        "harnstoffzyklus",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "formula",
+        "text": "NH<sub>3</sub> / NH<sub>4</sub><sup>+</sup>"
+      },
+      "back_sections": {
+        "classification": "Anorganische N-Verbindung · Gleichgewicht NH₃ ⇄ NH₄⁺ (pKₛ ≈ 9,2)",
+        "general_properties": [
+          "Bei pH 7,4 liegen über 98 % als NH₄⁺ vor",
+          "NH₃ ist membrangängig, NH₄⁺ kaum"
+        ],
+        "biochemical_relevance": [
+          "Entsteht beim Aminosäureabbau (GLDH, Glutaminase) und im Darm",
+          "Entgiftung: Harnstoffzyklus (Leber) und Glutaminsynthese"
+        ],
+        "clinical_relevance": [
+          "Hyperammonämie → hepatische Enzephalopathie",
+          "Therapie u. a. mit Lactulose und Rifaximin"
+        ],
+        "mnemonic": "Ammoniak ist neurotoxisch – NH₄⁺ ist die ‚gefangene‘ Form."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc132"
+    },
+    {
+      "card_id": "bc_133",
+      "id_status": "provisional",
+      "slug": "bc_133_carbamoylphosphat",
+      "title": "Carbamoylphosphat",
+      "subtitle": "Stickstoffstoffwechsel",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stickstoffstoffwechsel",
+      "chapter": "biochemie/stickstoffstoffwechsel",
+      "tags": [
+        "harnstoffzyklus",
+        "nukleotidsynthese",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(=O)(N)OP(=O)(O)O",
+        "pubchem_cid": 278,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Energiereiches gemischtes Säureanhydrid · Harnstoffzyklus und Pyrimidinsynthese",
+        "general_properties": [
+          "Anhydrid aus Carbaminsäure und Phosphorsäure"
+        ],
+        "biochemical_relevance": [
+          "CPS I (Mitochondrium): NH₄⁺ + HCO₃⁻ + 2 ATP → Harnstoffzyklus",
+          "CPS II (Zytosol): Stickstoff aus Glutamin → Pyrimidinsynthese"
+        ],
+        "clinical_relevance": [
+          "CPS-I-Mangel: schwere neonatale Hyperammonämie"
+        ],
+        "mnemonic": "CPS I: Harnstoff im Mitochondrium · CPS II: Pyrimidine im Zytosol."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc133"
+    },
+    {
+      "card_id": "bc_134",
+      "id_status": "provisional",
+      "slug": "bc_134_harnstoff",
+      "title": "Harnstoff",
+      "subtitle": "Stickstoffstoffwechsel",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stickstoffstoffwechsel",
+      "chapter": "biochemie/stickstoffstoffwechsel",
+      "tags": [
+        "harnstoffzyklus",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(=O)(N)N",
+        "pubchem_cid": 1176,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Diamid der Kohlensäure · Haupt-Endprodukt des Stickstoffstoffwechsels",
+        "general_properties": [
+          "Gut wasserlöslich, ungeladen, ungiftig",
+          "Ausscheidung ≈ 20–35 g pro Tag (proteinabhängig)"
+        ],
+        "biochemical_relevance": [
+          "Bildung im Harnstoffzyklus der Leber: ein N aus NH₄⁺, eines aus Aspartat"
+        ],
+        "clinical_relevance": [
+          "Serumharnstoff ↑ bei Niereninsuffizienz, Katabolie und GI-Blutung"
+        ],
+        "mnemonic": "Wöhler 1828: erste Synthese eines ‚organischen‘ Stoffs aus anorganischen Edukten."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc134"
+    },
+    {
+      "card_id": "bc_135",
+      "id_status": "provisional",
+      "slug": "bc_135_orotat",
+      "title": "Orotat",
+      "subtitle": "Stickstoffstoffwechsel",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "stickstoffstoffwechsel",
+      "chapter": "biochemie/stickstoffstoffwechsel",
+      "tags": [
+        "nukleotidsynthese",
+        "stoffwechseldefekt",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=C(NC(=O)NC1=O)C(=O)O",
+        "pubchem_cid": 967,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Pyrimidin-Zwischenprodukt · Vorstufe von UMP",
+        "general_properties": [
+          "Heterocyclische Carbonsäure (Pyrimidinring)"
+        ],
+        "biochemical_relevance": [
+          "Entsteht aus Dihydroorotat (DHODH, innere Mitochondrienmembran)",
+          "Orotat + PRPP → OMP → UMP (UMP-Synthase)"
+        ],
+        "clinical_relevance": [
+          "Orotacidurie: hereditär (UMP-Synthase) oder sekundär bei OTC-Mangel",
+          "Leflunomid/Teriflunomid hemmen die DHODH"
+        ],
+        "mnemonic": "Orotat ↑ plus Ammoniak ↑ → an einen OTC-Mangel denken."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc135"
+    },
+    {
+      "card_id": "bc_140",
+      "id_status": "provisional",
+      "slug": "bc_140_oelsaeure",
+      "title": "Ölsäure",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "fettsaeure",
+        "ungesaettigt",
+        "carbonsaeure"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)O",
+        "pubchem_cid": 445639,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Einfach ungesättigte Fettsäure · C18:1 ω-9 (cis-Δ9)",
+        "general_properties": [
+          "cis-Doppelbindung knickt die Kette – niedriger Schmelzpunkt",
+          "Nicht essenziell: Synthese durch Δ9-Desaturase"
+        ],
+        "biochemical_relevance": [
+          "Häufigste Fettsäure in Triacylglyceriden und Membranlipiden"
+        ],
+        "clinical_relevance": [
+          "Hauptfettsäure des Olivenöls (mediterrane Ernährung)",
+          "trans-Isomer Elaidinsäure ist ungünstig für das Lipidprofil"
+        ],
+        "mnemonic": "Ölsäure: 18 C-Atome, eine cis-Doppelbindung an C9."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc140"
+    },
+    {
+      "card_id": "bc_141",
+      "id_status": "provisional",
+      "slug": "bc_141_linolsaeure",
+      "title": "Linolsäure",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "fettsaeure",
+        "ungesaettigt",
+        "essenziell",
+        "carbonsaeure"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CCCCC/C=C\\C/C=C\\CCCCCCCC(=O)O",
+        "pubchem_cid": 5280450,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Mehrfach ungesättigte Fettsäure · C18:2 ω-6 (cis,cis-Δ9,12)",
+        "general_properties": [
+          "Essenziell: Säuger führen keine Doppelbindung jenseits von C9 ein"
+        ],
+        "biochemical_relevance": [
+          "Vorstufe der Arachidonsäure (Desaturierung, Elongation)",
+          "Bestandteil der Ceramide der Hautbarriere"
+        ],
+        "clinical_relevance": [
+          "Mangel (z. B. lange fettfreie parenterale Ernährung): schuppige Dermatitis"
+        ],
+        "mnemonic": "Linolsäure → Arachidonsäure: der ω-6-Weg."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc141"
+    },
+    {
+      "card_id": "bc_142",
+      "id_status": "provisional",
+      "slug": "bc_142_arachidonsaeure",
+      "title": "Arachidonsäure",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "fettsaeure",
+        "ungesaettigt",
+        "eicosanoid",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CCCCC/C=C\\C/C=C\\C/C=C\\C/C=C\\CCCC(=O)O",
+        "pubchem_cid": 444899,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Mehrfach ungesättigte Fettsäure · C20:4 ω-6",
+        "general_properties": [
+          "Vier cis-Doppelbindungen (Δ5,8,11,14)",
+          "Bedingt essenziell – entsteht aus Linolsäure"
+        ],
+        "biochemical_relevance": [
+          "Freisetzung aus Membranphospholipiden durch Phospholipase A₂",
+          "COX → Prostaglandine, Thromboxane · Lipoxygenase → Leukotriene"
+        ],
+        "clinical_relevance": [
+          "NSAR hemmen die Cyclooxygenase, Glucocorticoide indirekt die PLA₂"
+        ],
+        "mnemonic": "Arachidonsäure ist die Mutter der Eicosanoide (griech. eikosi = 20)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc142"
+    },
+    {
+      "card_id": "bc_143",
+      "id_status": "provisional",
+      "slug": "bc_143_triacylglycerid",
+      "title": "Triacylglycerid (TAG)",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(OC(=O)[*:1])C(OC(=O)[*:2])COC(=O)[*:3]",
+        "form": "as_is",
+        "structure_note": "Allgemeine Struktur; R = Fettsäurereste.",
+        "labels": {
+          "1": "R<sub>1</sub>",
+          "2": "R<sub>2</sub>",
+          "3": "R<sub>3</sub>"
+        }
+      },
+      "back_sections": {
+        "classification": "Neutralfett · Ester aus Glycerin und drei Fettsäuren",
+        "general_properties": [
+          "Unpolar und wasserunlöslich; Speicherform in Adipozyten",
+          "Energiegehalt ≈ 9 kcal/g"
+        ],
+        "biochemical_relevance": [
+          "Synthese in Leber, Fettgewebe und Darm",
+          "Lipolyse durch ATGL, HSL und MGL – durch Insulin gehemmt"
+        ],
+        "clinical_relevance": [
+          "Schwere Hypertriglyzeridämie (> 1000 mg/dl): Pankreatitisrisiko",
+          "Transport in Chylomikronen und VLDL"
+        ],
+        "mnemonic": "TAG: viel Energie, wenig Wasser – der effizienteste Speicher."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc143"
+    },
+    {
+      "card_id": "bc_144",
+      "id_status": "provisional",
+      "slug": "bc_144_diacylglycerin",
+      "title": "Diacylglycerin (DAG)",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "molekularbio",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "second-messenger",
+        "signaltransduktion"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(OC(=O)[*:1])C(OC(=O)[*:2])CO",
+        "form": "as_is",
+        "structure_note": "Allgemeine Struktur (sn-1,2-DAG); R = Fettsäurereste.",
+        "labels": {
+          "1": "R<sub>1</sub>",
+          "2": "R<sub>2</sub>"
+        }
+      },
+      "back_sections": {
+        "classification": "Glycerin mit zwei Fettsäureestern · Lipid-Zwischenprodukt und Second Messenger",
+        "general_properties": [
+          "Im Signalweg: sn-1,2-Diacylglycerin"
+        ],
+        "biochemical_relevance": [
+          "Zwischenprodukt der TAG- und Phospholipidsynthese"
+        ],
+        "clinical_relevance": [
+          "DAG-Akkumulation in Muskel und Leber ist mit Insulinresistenz assoziiert"
+        ],
+        "molecular_relevance": [
+          "Phospholipase C: PIP₂ → DAG + IP₃; DAG aktiviert die Proteinkinase C"
+        ],
+        "mnemonic": "DAG bleibt in der Membran, IP₃ geht ins Zytosol."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc144"
+    },
+    {
+      "card_id": "bc_145",
+      "id_status": "provisional",
+      "slug": "bc_145_prostaglandin_e2",
+      "title": "Prostaglandin E2",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "eicosanoid",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CCCCC[C@@H](/C=C/[C@H]1[C@@H](CC(=O)[C@@H]1C/C=C\\CCCC(=O)O)O)O",
+        "pubchem_cid": 5280360,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Eicosanoid · Prostaglandin der Cyclooxygenase-Kaskade",
+        "general_properties": [
+          "C20-Gerüst mit Cyclopentanring; lokal wirkendes Gewebshormon"
+        ],
+        "biochemical_relevance": [
+          "Arachidonsäure → PGH₂ (COX-1/-2) → PGE₂ (PGE-Synthase)"
+        ],
+        "clinical_relevance": [
+          "Vermittelt Fieber, Schmerz und Entzündung",
+          "Schützt die Magenschleimhaut; hält den Ductus arteriosus offen"
+        ],
+        "molecular_relevance": [
+          "EP1- bis EP4-Rezeptoren (G-Protein-gekoppelt)"
+        ],
+        "mnemonic": "NSAR senken PGE₂ – daher Magenulzera als Nebenwirkung."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc145"
+    },
+    {
+      "card_id": "bc_146",
+      "id_status": "provisional",
+      "slug": "bc_146_thromboxan_a2",
+      "title": "Thromboxan A2",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "eicosanoid",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CCCCC[C@@H](/C=C/[C@@H]1[C@H]([C@@H]2C[C@@H](O2)O1)C/C=C\\CCCC(=O)O)O",
+        "pubchem_cid": 5280497,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Eicosanoid · Prostanoid der Thrombozyten",
+        "general_properties": [
+          "Instabil: Halbwertszeit ≈ 30 s, zerfällt zu Thromboxan B₂"
+        ],
+        "biochemical_relevance": [
+          "Synthese in Thrombozyten über COX-1 und Thromboxan-Synthase"
+        ],
+        "clinical_relevance": [
+          "Fördert Thrombozytenaggregation und Vasokonstriktion",
+          "ASS hemmt COX-1 irreversibel – für die Lebensdauer der Plättchen"
+        ],
+        "molecular_relevance": [
+          "TP-Rezeptor (Gq) → Ca²⁺ ↑"
+        ],
+        "mnemonic": "TXA₂ (Plättchen) und Prostacyclin (Endothel) sind Gegenspieler."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc146"
+    },
+    {
+      "card_id": "bc_147",
+      "id_status": "provisional",
+      "slug": "bc_147_leukotrien_b4",
+      "title": "Leukotrien B4",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "lipid",
+        "eicosanoid",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CCCCC/C=C\\C[C@H](/C=C/C=C/C=C\\[C@H](CCCC(=O)O)O)O",
+        "pubchem_cid": 5280492,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Eicosanoid · Leukotrien der Lipoxygenase-Kaskade",
+        "general_properties": [
+          "Kein Ring; konjugiertes Triensystem"
+        ],
+        "biochemical_relevance": [
+          "Arachidonsäure → LTA₄ (5-Lipoxygenase mit FLAP) → LTB₄"
+        ],
+        "clinical_relevance": [
+          "Starkes Chemotaxin für neutrophile Granulozyten",
+          "Zileuton hemmt die 5-Lipoxygenase"
+        ],
+        "molecular_relevance": [
+          "BLT1-/BLT2-Rezeptoren (G-Protein-gekoppelt)"
+        ],
+        "mnemonic": "LTB₄ lockt Neutrophile – Cysteinyl-Leukotriene verengen die Bronchien."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc147"
+    },
+    {
+      "card_id": "bc_148",
+      "id_status": "provisional",
+      "slug": "bc_148_beta_hydroxybutyrat",
+      "title": "β-Hydroxybutyrat",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "ketonkoerper",
+        "ketogenese",
+        "carbonsaeure",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@H](CC(=O)O)O",
+        "pubchem_cid": 92135,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Ketonkörper · Hydroxycarbonsäure-Anion",
+        "general_properties": [
+          "(R)-3-Hydroxybutyrat – chemisch kein Keton"
+        ],
+        "biochemical_relevance": [
+          "Bildung in Lebermitochondrien aus Acetoacetat (β-HB-Dehydrogenase, NADH)",
+          "Energiequelle für Gehirn, Herz und Muskel im Hunger"
+        ],
+        "clinical_relevance": [
+          "Diabetische Ketoazidose: β-HB ist der Hauptketonkörper",
+          "Urin-Teststreifen erfassen β-HB nicht, nur Acetoacetat"
+        ],
+        "mnemonic": "Die Leber bildet Ketonkörper, kann sie aber nicht verwerten."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc148"
+    },
+    {
+      "card_id": "bc_149",
+      "id_status": "provisional",
+      "slug": "bc_149_malonyl_coa",
+      "title": "Malonyl-CoA",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "thioester",
+        "fettsaeuresynthese",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "[O-]C(=O)CC(=O)S[*:1]",
+        "form": "as_is",
+        "structure_note": "Acylrest vollständig, Coenzym A als Abkürzung „CoA“ (Lehrbuchkonvention).",
+        "labels": {
+          "1": "CoA"
+        }
+      },
+      "back_sections": {
+        "classification": "Thioester · Baustein der Fettsäuresynthese",
+        "general_properties": [
+          "Carboxyliertes Acetyl-CoA"
+        ],
+        "biochemical_relevance": [
+          "Acetyl-CoA-Carboxylase (Biotin): Acetyl-CoA + HCO₃⁻ + ATP → Malonyl-CoA",
+          "Fettsäuresynthase verlängert die Kette um je 2 C"
+        ],
+        "clinical_relevance": [
+          "Malonyl-CoA-Decarboxylase-Mangel: Malonazidurie"
+        ],
+        "molecular_relevance": [
+          "Hemmt CPT-1 – Fettsäuresynthese und β-Oxidation laufen nicht gleichzeitig"
+        ],
+        "mnemonic": "Malonyl-CoA blockiert CPT-1: Aufbau und Abbau nie zugleich."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc149"
+    },
+    {
+      "card_id": "bc_150",
+      "id_status": "provisional",
+      "slug": "bc_150_hmg_coa",
+      "title": "HMG-CoA",
+      "subtitle": "β-Hydroxy-β-methylglutaryl-CoA",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "thioester",
+        "cholesterinsynthese",
+        "ketogenese",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(O)(CC(=O)[O-])CC(=O)S[*:1]",
+        "form": "as_is",
+        "structure_note": "Acylrest vollständig, Coenzym A als Abkürzung „CoA“ (Lehrbuchkonvention). Stereochemie (S) nicht dargestellt.",
+        "labels": {
+          "1": "CoA"
+        }
+      },
+      "back_sections": {
+        "classification": "Thioester · Verzweigungspunkt von Cholesterin- und Ketonkörpersynthese",
+        "general_properties": [
+          "Gleiches Molekül in Zytosol und Mitochondrium"
+        ],
+        "biochemical_relevance": [
+          "Zytosol: HMG-CoA-Reduktase → Mevalonat (Cholesterinsynthese)",
+          "Mitochondrium: HMG-CoA-Lyase → Acetoacetat (Ketogenese)"
+        ],
+        "clinical_relevance": [
+          "Statine hemmen kompetitiv die HMG-CoA-Reduktase"
+        ],
+        "mnemonic": "Ein Molekül, zwei Kompartimente, zwei Schicksale."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc150"
+    },
+    {
+      "card_id": "bc_151",
+      "id_status": "provisional",
+      "slug": "bc_151_mevalonat",
+      "title": "Mevalonat",
+      "subtitle": "Lipid",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "lipide",
+      "chapter": "biochemie/lipide",
+      "tags": [
+        "cholesterinsynthese",
+        "carbonsaeure",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@@](CCO)(CC(=O)O)O",
+        "pubchem_cid": 439230,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Hydroxycarbonsäure-Anion · erstes Produkt der Cholesterinsynthese",
+        "general_properties": [
+          "(R)-Mevalonat"
+        ],
+        "biochemical_relevance": [
+          "Entsteht durch HMG-CoA-Reduktase (2 NADPH) – geschwindigkeitsbestimmend",
+          "Weiter zu Isopentenyl-Pyrophosphat: Cholesterin, Ubichinon, Dolichol"
+        ],
+        "clinical_relevance": [
+          "Mevalonatkinase-Mangel: periodisches Fiebersyndrom (Hyper-IgD-Syndrom)"
+        ],
+        "mnemonic": "Statine bremsen auch die Ubichinon-Synthese – eine diskutierte Ursache für Myopathien."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc151"
+    },
+    {
+      "card_id": "bc_160",
+      "id_status": "provisional",
+      "slug": "bc_160_dopamin",
+      "title": "Dopamin",
+      "subtitle": "Neurotransmitter",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "biogenes-amin",
+        "katecholamin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=CC(=C(C=C1CCN)O)O",
+        "pubchem_cid": 681,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Katecholamin · biogenes Amin · Neurotransmitter",
+        "general_properties": [
+          "Catechol (1,2-Dihydroxybenzol) mit Ethylamin-Seitenkette"
+        ],
+        "biochemical_relevance": [
+          "Tyrosin → L-DOPA (Tyrosinhydroxylase, BH₄) → Dopamin (DOPA-Decarboxylase, B6)",
+          "Abbau durch MAO und COMT zu Homovanillinsäure"
+        ],
+        "clinical_relevance": [
+          "Morbus Parkinson: Dopaminmangel der Substantia nigra",
+          "Hemmt die Prolaktinsekretion; D₂-Antagonisten wirken antipsychotisch"
+        ],
+        "molecular_relevance": [
+          "D₁-artige Rezeptoren erhöhen, D₂-artige senken cAMP"
+        ],
+        "mnemonic": "Dopamin passiert die Blut-Hirn-Schranke nicht – L-DOPA schon."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc160"
+    },
+    {
+      "card_id": "bc_161",
+      "id_status": "provisional",
+      "slug": "bc_161_adrenalin",
+      "title": "Adrenalin",
+      "subtitle": "Epinephrin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "hormon",
+        "biogenes-amin",
+        "katecholamin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CNC[C@@H](C1=CC(=C(C=C1)O)O)O",
+        "pubchem_cid": 5816,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Katecholamin · Hormon des Nebennierenmarks",
+        "general_properties": [
+          "N-methyliertes Noradrenalin"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus Noradrenalin durch PNMT (SAM als Methyldonor, durch Cortisol induziert)",
+          "Stimuliert Glykogenolyse und Lipolyse"
+        ],
+        "clinical_relevance": [
+          "Notfallmedikament bei Reanimation und Anaphylaxie",
+          "Phäochromozytom: Katecholamin-Überproduktion"
+        ],
+        "molecular_relevance": [
+          "Wirkt über α- und β-Adrenozeptoren (G-Protein-gekoppelt)"
+        ],
+        "mnemonic": "‚Nor‘ = N ohne Radikal: Noradrenalin fehlt die N-Methylgruppe."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc161"
+    },
+    {
+      "card_id": "bc_162",
+      "id_status": "provisional",
+      "slug": "bc_162_noradrenalin",
+      "title": "Noradrenalin",
+      "subtitle": "Norepinephrin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "biogenes-amin",
+        "katecholamin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=CC(=C(C=C1[C@H](CN)O)O)O",
+        "pubchem_cid": 439260,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Katecholamin · Neurotransmitter des Sympathikus",
+        "general_properties": [
+          "Entsteht aus Dopamin durch Dopamin-β-Hydroxylase (Cu²⁺, Vitamin C)"
+        ],
+        "biochemical_relevance": [
+          "Abbau durch MAO und COMT, Endprodukt Vanillinmandelsäure"
+        ],
+        "clinical_relevance": [
+          "Vasopressor im septischen Schock (α₁-vermittelte Vasokonstriktion)"
+        ],
+        "molecular_relevance": [
+          "Wirkt v. a. über α₁-, α₂- und β₁-Adrenozeptoren"
+        ],
+        "mnemonic": "Vanillinmandelsäure im Urin: klassischer (heute durch Metanephrine ergänzter) Phäochromozytom-Marker."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc162"
+    },
+    {
+      "card_id": "bc_163",
+      "id_status": "provisional",
+      "slug": "bc_163_serotonin",
+      "title": "Serotonin",
+      "subtitle": "5-Hydroxytryptamin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "biogenes-amin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=CC2=C(C=C1O)C(=CN2)CCN",
+        "pubchem_cid": 5202,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Indolamin · biogenes Amin · Neurotransmitter und Gewebshormon",
+        "general_properties": [
+          "Rund 90 % in enterochromaffinen Zellen des Darms"
+        ],
+        "biochemical_relevance": [
+          "Tryptophan → 5-HTP (Tryptophanhydroxylase) → Serotonin (Decarboxylase, B6)",
+          "Abbau durch MAO-A zu 5-Hydroxyindolessigsäure (5-HIES)"
+        ],
+        "clinical_relevance": [
+          "SSRI hemmen die Wiederaufnahme (Depression)",
+          "Karzinoid-Syndrom: 5-HIES im Urin ↑"
+        ],
+        "molecular_relevance": [
+          "5-HT₃ ist ein Ionenkanal, alle übrigen 5-HT-Rezeptoren sind G-Protein-gekoppelt"
+        ],
+        "mnemonic": "Thrombozyten speichern Serotonin, bilden es aber nicht."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc163"
+    },
+    {
+      "card_id": "bc_164",
+      "id_status": "provisional",
+      "slug": "bc_164_melatonin",
+      "title": "Melatonin",
+      "subtitle": "Neurotransmitter",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "hormon",
+        "neurotransmitter"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)NCCC1=CNC2=C1C=C(C=C2)OC",
+        "pubchem_cid": 896,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Indolamin · Hormon der Zirbeldrüse (Epiphyse)",
+        "general_properties": [
+          "N-Acetyl-5-methoxytryptamin"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus Serotonin durch N-Acetylierung und O-Methylierung",
+          "Sekretion nachts, durch Licht gehemmt"
+        ],
+        "clinical_relevance": [
+          "Einsatz bei Schlafstörungen und Jetlag"
+        ],
+        "molecular_relevance": [
+          "MT₁-/MT₂-Rezeptoren (G-Protein-gekoppelt), u. a. im Nucleus suprachiasmaticus"
+        ],
+        "mnemonic": "Melatonin ist das Dunkelhormon."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc164"
+    },
+    {
+      "card_id": "bc_165",
+      "id_status": "provisional",
+      "slug": "bc_165_histamin",
+      "title": "Histamin",
+      "subtitle": "Neurotransmitter",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "biogenes-amin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=C(NC=N1)CCN",
+        "pubchem_cid": 774,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Biogenes Amin · Gewebshormon und Neurotransmitter",
+        "general_properties": [
+          "Imidazolring mit Ethylamin-Seitenkette"
+        ],
+        "biochemical_relevance": [
+          "Decarboxylierung von Histidin (Histidin-Decarboxylase, B6)",
+          "Speicherung in Mastzellen und basophilen Granulozyten"
+        ],
+        "clinical_relevance": [
+          "Allergie/Anaphylaxie: Vasodilatation, Bronchokonstriktion, Juckreiz",
+          "H₁-Antihistaminika (Allergie), H₂-Blocker (Magensäure)"
+        ],
+        "molecular_relevance": [
+          "H₁- bis H₄-Rezeptoren, alle G-Protein-gekoppelt"
+        ],
+        "mnemonic": "H₂ im Magen – H₁ in Haut und Bronchien."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc165"
+    },
+    {
+      "card_id": "bc_166",
+      "id_status": "provisional",
+      "slug": "bc_166_acetylcholin",
+      "title": "Acetylcholin",
+      "subtitle": "Neurotransmitter",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)OCC[N+](C)(C)C",
+        "pubchem_cid": 187,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Ester aus Cholin und Essigsäure · quartäres Ammoniumion · Neurotransmitter",
+        "general_properties": [
+          "Kein biogenes Amin – entsteht nicht durch Decarboxylierung"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus Cholin + Acetyl-CoA (Cholin-Acetyltransferase)",
+          "Abbau im synaptischen Spalt durch Acetylcholinesterase"
+        ],
+        "clinical_relevance": [
+          "Myasthenia gravis: Antikörper gegen nikotinische Rezeptoren",
+          "Organophosphat-Vergiftung: cholinerge Krise, Antidot Atropin"
+        ],
+        "molecular_relevance": [
+          "Nikotinische Rezeptoren: Ionenkanäle · muskarinische: G-Protein-gekoppelt"
+        ],
+        "mnemonic": "Transmitter an motorischer Endplatte, vegetativen Ganglien und Parasympathikus."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc166"
+    },
+    {
+      "card_id": "bc_167",
+      "id_status": "provisional",
+      "slug": "bc_167_gaba",
+      "title": "GABA",
+      "subtitle": "γ-Aminobuttersäure",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "neurotransmitter",
+        "nicht-proteinogen",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C(CC(=O)O)CN",
+        "pubchem_cid": 119,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "γ-Aminosäure · wichtigster hemmender Neurotransmitter im Gehirn",
+        "general_properties": [
+          "Aminogruppe am γ-C-Atom"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus Glutamat (Glutamat-Decarboxylase, B6)",
+          "Abbau über GABA-Transaminase zu Succinat (GABA-Shunt)"
+        ],
+        "clinical_relevance": [
+          "Benzodiazepine, Barbiturate und Propofol verstärken die GABA-A-Wirkung",
+          "Vitamin-B6-Mangel → GABA ↓ → Krampfanfälle"
+        ],
+        "molecular_relevance": [
+          "GABA-A: Chloridkanal · GABA-B: G-Protein-gekoppelt"
+        ],
+        "mnemonic": "Aus erregendem Glutamat wird durch Decarboxylierung hemmendes GABA."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc167"
+    },
+    {
+      "card_id": "bc_168",
+      "id_status": "provisional",
+      "slug": "bc_168_5_hydroxytryptophan",
+      "title": "5-Hydroxytryptophan (5-HTP)",
+      "subtitle": "Neurotransmitter",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "aromatisch",
+        "neurotransmitter-vorstufe"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "ring": "indol-3-yl",
+            "subs": {
+              "5": "OH"
+            }
+          }
+        ],
+        "structure_note": "Fischer-Konvention; Strukturreferenz PubChem CID 439280."
+      },
+      "back_sections": {
+        "classification": "Aromatische Aminosäure · direkte Serotonin-Vorstufe",
+        "general_properties": [
+          "Nicht proteinogen; passiert die Blut-Hirn-Schranke"
+        ],
+        "biochemical_relevance": [
+          "Entsteht aus Tryptophan (Tryptophanhydroxylase, BH₄) – geschwindigkeitsbestimmend",
+          "Decarboxylierung zu Serotonin (aromatische L-Aminosäure-Decarboxylase, B6)"
+        ],
+        "clinical_relevance": [
+          "Als Supplement verbreitet; zusammen mit SSRI droht ein Serotonin-Syndrom"
+        ],
+        "mnemonic": "Trp → 5-HTP → 5-HT: erst hydroxylieren, dann decarboxylieren."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc168"
+    },
+    {
+      "card_id": "bc_169",
+      "id_status": "provisional",
+      "slug": "bc_169_l_dopa",
+      "title": "L-DOPA",
+      "subtitle": "Levodopa",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "neurotransmitter",
+      "chapter": "biochemie/neurotransmitter",
+      "tags": [
+        "aminosaeure",
+        "nicht-proteinogen",
+        "aromatisch",
+        "neurotransmitter-vorstufe",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "ring": "phenyl",
+            "subs": {
+              "3": "OH",
+              "4": "OH"
+            }
+          }
+        ],
+        "structure_note": "Fischer-Konvention; Strukturreferenz PubChem CID 6047."
+      },
+      "back_sections": {
+        "classification": "Aromatische Aminosäure · Katecholamin-Vorstufe",
+        "general_properties": [
+          "L-3,4-Dihydroxyphenylalanin, nicht proteinogen"
+        ],
+        "biochemical_relevance": [
+          "Entsteht aus Tyrosin (Tyrosinhydroxylase, BH₄) – geschwindigkeitsbestimmend",
+          "Decarboxylierung zu Dopamin (DOPA-Decarboxylase, B6)"
+        ],
+        "clinical_relevance": [
+          "Parkinson-Therapie, kombiniert mit peripherem Decarboxylasehemmer (Carbidopa, Benserazid)"
+        ],
+        "mnemonic": "L-DOPA passiert die Blut-Hirn-Schranke – Dopamin nicht."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc169"
+    },
+    {
+      "card_id": "bc_170",
+      "id_status": "provisional",
+      "slug": "bc_170_insulin",
+      "title": "Insulin",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon",
+        "arzneimittel-target",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Insulin"
+      },
+      "back_sections": {
+        "classification": "Peptidhormon der B-Zellen des Pankreas · 51 Aminosäuren",
+        "general_properties": [
+          "A-Kette (21 AS) und B-Kette (30 AS), über zwei Disulfidbrücken verbunden",
+          "Vorstufe Proinsulin – Abspaltung des C-Peptids"
+        ],
+        "biochemical_relevance": [
+          "Fördert Glukoseaufnahme (GLUT4), Glykogen-, Lipid- und Proteinsynthese",
+          "Hemmt Glukoneogenese, Lipolyse und Ketogenese"
+        ],
+        "clinical_relevance": [
+          "Diabetes mellitus Typ 1 (Mangel) und Typ 2 (Resistenz)",
+          "C-Peptid zeigt die endogene Insulinproduktion an"
+        ],
+        "molecular_relevance": [
+          "Insulinrezeptor = Rezeptor-Tyrosinkinase → PI3K/Akt-Signalweg"
+        ],
+        "mnemonic": "Insulin ist das einzige blutzuckersenkende Hormon."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc170"
+    },
+    {
+      "card_id": "bc_171",
+      "id_status": "provisional",
+      "slug": "bc_171_glukagon",
+      "title": "Glukagon",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Glukagon"
+      },
+      "back_sections": {
+        "classification": "Peptidhormon der A-Zellen des Pankreas · 29 Aminosäuren",
+        "general_properties": [
+          "Entsteht aus Proglukagon"
+        ],
+        "biochemical_relevance": [
+          "Fördert Glykogenolyse, Glukoneogenese und Ketogenese in der Leber",
+          "Wirkt nicht auf den Skelettmuskel (kein Rezeptor)"
+        ],
+        "clinical_relevance": [
+          "Notfalltherapie der schweren Hypoglykämie (i. m., s. c. oder nasal)"
+        ],
+        "molecular_relevance": [
+          "Glukagonrezeptor (Gs) → cAMP ↑ → Proteinkinase A"
+        ],
+        "mnemonic": "Glukagon ist der Gegenspieler des Insulins – ‚Glukose geht‘ ins Blut."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc171"
+    },
+    {
+      "card_id": "bc_172",
+      "id_status": "provisional",
+      "slug": "bc_172_glp_1",
+      "title": "GLP-1",
+      "subtitle": "Glucagon-like Peptide 1",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon",
+        "inkretin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "GLP-1"
+      },
+      "back_sections": {
+        "classification": "Inkretin · Peptidhormon der L-Zellen von Ileum und Kolon",
+        "general_properties": [
+          "Entsteht aus Proglukagon; Halbwertszeit ≈ 2 min (Abbau durch DPP-4)"
+        ],
+        "biochemical_relevance": [
+          "Steigert glukoseabhängig die Insulinsekretion, hemmt Glukagon",
+          "Verzögert die Magenentleerung und fördert die Sättigung"
+        ],
+        "clinical_relevance": [
+          "GLP-1-Rezeptoragonisten (z. B. Semaglutid) bei Typ-2-Diabetes und Adipositas",
+          "DPP-4-Hemmer (Gliptine) verlängern die GLP-1-Wirkung"
+        ],
+        "molecular_relevance": [
+          "GLP-1-Rezeptor (Gs) → cAMP ↑"
+        ],
+        "mnemonic": "Inkretin-Effekt: orale Glukose setzt mehr Insulin frei als intravenöse."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc172"
+    },
+    {
+      "card_id": "bc_173",
+      "id_status": "provisional",
+      "slug": "bc_173_gip",
+      "title": "GIP",
+      "subtitle": "Glukoseabhängiges insulinotropes Peptid",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon",
+        "inkretin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "GIP"
+      },
+      "back_sections": {
+        "classification": "Inkretin · Peptidhormon der K-Zellen von Duodenum und Jejunum",
+        "general_properties": [
+          "42 Aminosäuren; Abbau durch DPP-4"
+        ],
+        "biochemical_relevance": [
+          "Steigert glukoseabhängig die Insulinsekretion",
+          "Fördert die Lipidspeicherung im Fettgewebe"
+        ],
+        "clinical_relevance": [
+          "Tirzepatid: dualer GIP-/GLP-1-Rezeptoragonist (Diabetes, Adipositas)"
+        ],
+        "molecular_relevance": [
+          "GIP-Rezeptor (Gs) → cAMP ↑"
+        ],
+        "mnemonic": "K-Zellen oben im Darm (GIP), L-Zellen weiter unten (GLP-1)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc173"
+    },
+    {
+      "card_id": "bc_174",
+      "id_status": "provisional",
+      "slug": "bc_174_ghrelin",
+      "title": "Ghrelin",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Ghrelin"
+      },
+      "back_sections": {
+        "classification": "Peptidhormon des Magens · 28 Aminosäuren · ‚Hungerhormon‘",
+        "general_properties": [
+          "Aktiv nur mit Octanoylrest an Serin 3 (Enzym GOAT)"
+        ],
+        "biochemical_relevance": [
+          "Spiegel steigen vor den Mahlzeiten und fallen danach",
+          "Stimuliert die GH-Freisetzung"
+        ],
+        "clinical_relevance": [
+          "Prader-Willi-Syndrom: stark erhöhtes Ghrelin, Hyperphagie",
+          "Nach Sleeve-Gastrektomie sinkt der Ghrelinspiegel"
+        ],
+        "molecular_relevance": [
+          "Ghrelinrezeptor GHS-R1a (Gq) im Hypothalamus"
+        ],
+        "mnemonic": "Ghrelin – ‚Grrr‘: der Magen knurrt."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc174"
+    },
+    {
+      "card_id": "bc_175",
+      "id_status": "provisional",
+      "slug": "bc_175_leptin",
+      "title": "Leptin",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon",
+        "adipokin",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Leptin"
+      },
+      "back_sections": {
+        "classification": "Proteohormon des Fettgewebes (Adipokin) · 146 Aminosäuren · ‚Sättigungshormon‘",
+        "general_properties": [
+          "Plasmaspiegel proportional zur Fettmasse"
+        ],
+        "biochemical_relevance": [
+          "Hemmt im Hypothalamus den Hunger (NPY/AgRP ↓, POMC ↑)",
+          "Signalisiert Energiereserven; beeinflusst die Fertilität"
+        ],
+        "clinical_relevance": [
+          "Adipositas meist mit Leptinresistenz (hohe Spiegel)",
+          "Angeborener Leptinmangel: Therapie mit Metreleptin"
+        ],
+        "molecular_relevance": [
+          "Leptinrezeptor → JAK2/STAT3-Signalweg"
+        ],
+        "mnemonic": "Von griech. leptos = dünn."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc175"
+    },
+    {
+      "card_id": "bc_176",
+      "id_status": "provisional",
+      "slug": "bc_176_adiponektin",
+      "title": "Adiponektin",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "peptidhormon",
+        "adipokin"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Adiponektin"
+      },
+      "back_sections": {
+        "classification": "Proteohormon des Fettgewebes (Adipokin)",
+        "general_properties": [
+          "Bildet Trimere, Hexamere und hochmolekulare Multimere",
+          "Spiegel sinken paradox mit zunehmender Fettmasse"
+        ],
+        "biochemical_relevance": [
+          "Steigert Insulinsensitivität und Fettsäureoxidation (AMPK)",
+          "Hemmt die hepatische Glukoneogenese"
+        ],
+        "clinical_relevance": [
+          "Niedrige Spiegel bei Adipositas, Typ-2-Diabetes und KHK"
+        ],
+        "molecular_relevance": [
+          "AdipoR1/AdipoR2 → Aktivierung von AMPK und PPAR-α"
+        ],
+        "mnemonic": "Mehr Fett – weniger Adiponektin."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc176"
+    },
+    {
+      "card_id": "bc_177",
+      "id_status": "provisional",
+      "slug": "bc_177_cortisol",
+      "title": "Cortisol",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "steroidhormon",
+        "arzneimittel-target",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@]12CCC(=O)C=C1CC[C@@H]3[C@@H]2[C@H](C[C@]4([C@H]3CC[C@@]4(C(=O)CO)O)C)O",
+        "pubchem_cid": 5754,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Glucocorticoid · Steroidhormon der Zona fasciculata",
+        "general_properties": [
+          "C21-Steroid, Synthese aus Cholesterin",
+          "Zirkadianer Rhythmus mit Maximum am frühen Morgen"
+        ],
+        "biochemical_relevance": [
+          "Fördert Glukoneogenese und Proteinabbau",
+          "Wirkt antiinflammatorisch und immunsuppressiv"
+        ],
+        "clinical_relevance": [
+          "Cushing-Syndrom (Überschuss), Morbus Addison (Mangel)",
+          "21-Hydroxylase-Mangel: AGS mit Cortisolmangel"
+        ],
+        "molecular_relevance": [
+          "Intrazellulärer Glucocorticoidrezeptor wirkt als Transkriptionsfaktor"
+        ],
+        "mnemonic": "Stresshormon: Zucker hoch, Abwehr runter."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc177"
+    },
+    {
+      "card_id": "bc_178",
+      "id_status": "provisional",
+      "slug": "bc_178_aldosteron",
+      "title": "Aldosteron",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "steroidhormon",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@]12CCC(=O)C=C1CC[C@@H]3[C@@H]2[C@H](C[C@]4([C@H]3CC[C@@H]4C(=O)CO)C=O)O",
+        "pubchem_cid": 5839,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Mineralocorticoid · Steroidhormon der Zona glomerulosa",
+        "general_properties": [
+          "C21-Steroid mit Aldehydgruppe an C18"
+        ],
+        "biochemical_relevance": [
+          "Fördert Na⁺-Rückresorption sowie K⁺- und H⁺-Sekretion im Sammelrohr (ENaC)",
+          "Freisetzung durch Angiotensin II und Hyperkaliämie"
+        ],
+        "clinical_relevance": [
+          "Conn-Syndrom: Hypertonie, Hypokaliämie",
+          "Spironolacton und Eplerenon: Aldosteronantagonisten"
+        ],
+        "molecular_relevance": [
+          "Intrazellulärer Mineralocorticoidrezeptor → Transkription"
+        ],
+        "mnemonic": "Aldosteron: Salz rein, Kalium raus."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "PubChem-Struktur zeigt die Aldehydform; in Lösung überwiegt die Halbacetalform – Darstellung prüfen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc178"
+    },
+    {
+      "card_id": "bc_179",
+      "id_status": "provisional",
+      "slug": "bc_179_calcitriol",
+      "title": "Calcitriol",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "steroidhormon",
+        "vitamin",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@H](CCCC(C)(C)O)[C@H]1CC[C@@H]\\2[C@@]1(CCC/C2=C\\C=C/3\\C[C@H](C[C@@H](C3=C)O)O)C",
+        "pubchem_cid": 5280453,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Aktive Form des Vitamin D · Secosteroid-Hormon",
+        "general_properties": [
+          "1,25-Dihydroxycholecalciferol"
+        ],
+        "biochemical_relevance": [
+          "Cholecalciferol → 25-OH-D (Leber) → 1,25-(OH)₂-D (Niere, 1α-Hydroxylase, PTH-stimuliert)",
+          "Steigert die intestinale Ca²⁺- und Phosphatresorption"
+        ],
+        "clinical_relevance": [
+          "Rachitis bzw. Osteomalazie bei Mangel",
+          "Niereninsuffizienz: Calcitriolmangel → sekundärer Hyperparathyreoidismus"
+        ],
+        "molecular_relevance": [
+          "Nukleärer Vitamin-D-Rezeptor (mit RXR) → Genexpression"
+        ],
+        "mnemonic": "Zur Statusbestimmung 25-OH-D messen – Calcitriol ist die Wirkform."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc179"
+    },
+    {
+      "card_id": "bc_180",
+      "id_status": "provisional",
+      "slug": "bc_180_triiodthyronin",
+      "title": "Triiodthyronin (T3)",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "schilddruesenhormon",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=CC(=C(C=C1OC2=C(C=C(C=C2I)C[C@@H](C(=O)O)N)I)I)O",
+        "pubchem_cid": 5920,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Schilddrüsenhormon · iodiertes Tyrosinderivat · aktive Form",
+        "general_properties": [
+          "Drei Iodatome",
+          "Entsteht überwiegend peripher aus T4 (selenhaltige Deiodasen)"
+        ],
+        "biochemical_relevance": [
+          "Steigert Grundumsatz, Thermogenese und Na⁺/K⁺-ATPase-Aktivität",
+          "Fördert Wachstum und ZNS-Entwicklung"
+        ],
+        "clinical_relevance": [
+          "Hyperthyreose: Tachykardie, Gewichtsverlust · Hypothyreose: Müdigkeit, Kälteintoleranz"
+        ],
+        "molecular_relevance": [
+          "Nukleärer Schilddrüsenhormonrezeptor (TR) → Transkription"
+        ],
+        "mnemonic": "T3 ist aktiv – T4 ist Speicher und Prohormon."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc180"
+    },
+    {
+      "card_id": "bc_181",
+      "id_status": "provisional",
+      "slug": "bc_181_thyroxin",
+      "title": "Thyroxin (T4)",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "schilddruesenhormon",
+        "arzneimittel-target",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=C(C=C(C(=C1I)OC2=CC(=C(C(=C2)I)O)I)I)C[C@@H](C(=O)O)N",
+        "pubchem_cid": 5819,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Schilddrüsenhormon · iodiertes Tyrosinderivat · Prohormon",
+        "general_properties": [
+          "Vier Iodatome; Hauptprodukt der Schilddrüse",
+          "Halbwertszeit ≈ 7 Tage, über 99 % proteingebunden"
+        ],
+        "biochemical_relevance": [
+          "Synthese an Thyreoglobulin: Iodierung von Tyrosylresten (TPO) und Kopplung",
+          "Aktivierung zu T3 durch Deiodasen"
+        ],
+        "clinical_relevance": [
+          "Levothyroxin: Standardtherapie der Hypothyreose",
+          "TSH und fT4: Basisdiagnostik der Schilddrüse"
+        ],
+        "mnemonic": "Wegen ≈ 7 Tagen Halbwertszeit Dosisänderungen erst nach Wochen beurteilen."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc181"
+    },
+    {
+      "card_id": "bc_182",
+      "id_status": "provisional",
+      "slug": "bc_182_testosteron",
+      "title": "Testosteron",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "steroidhormon",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=CC(=O)CC[C@]34C",
+        "pubchem_cid": 6013,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Androgen · C19-Steroidhormon",
+        "general_properties": [
+          "Bildung v. a. in den Leydig-Zellen (LH-stimuliert)"
+        ],
+        "biochemical_relevance": [
+          "5α-Reduktase → Dihydrotestosteron (stärker wirksam)",
+          "Aromatase → Östradiol"
+        ],
+        "clinical_relevance": [
+          "Hypogonadismus; Missbrauch als Anabolikum",
+          "5α-Reduktase-Hemmer bei benigner Prostatahyperplasie"
+        ],
+        "molecular_relevance": [
+          "Intrazellulärer Androgenrezeptor → Transkription"
+        ],
+        "mnemonic": "DHT formt die Prostata, Testosteron den Muskel."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc182"
+    },
+    {
+      "card_id": "bc_183",
+      "id_status": "provisional",
+      "slug": "bc_183_oestradiol",
+      "title": "Östradiol",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "steroidhormon",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O",
+        "pubchem_cid": 5757,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Östrogen · C18-Steroidhormon mit aromatischem A-Ring",
+        "general_properties": [
+          "Wichtigstes Östrogen der geschlechtsreifen Frau",
+          "Bildung durch Aromatase aus Testosteron"
+        ],
+        "biochemical_relevance": [
+          "Proliferation des Endometriums, sekundäre Geschlechtsmerkmale",
+          "Hemmt Osteoklasten und schützt so den Knochen"
+        ],
+        "clinical_relevance": [
+          "Postmenopausale Osteoporose; Aromatasehemmer beim Mammakarzinom"
+        ],
+        "molecular_relevance": [
+          "Östrogenrezeptoren ERα und ERβ (nukleär)"
+        ],
+        "mnemonic": "Phenolischer A-Ring = Erkennungszeichen der Östrogene."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc183"
+    },
+    {
+      "card_id": "bc_184",
+      "id_status": "provisional",
+      "slug": "bc_184_progesteron",
+      "title": "Progesteron",
+      "subtitle": "Hormon",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "hormone",
+      "chapter": "biochemie/hormone",
+      "tags": [
+        "hormon",
+        "steroidhormon",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC(=O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CCC4=CC(=O)CC[C@]34C)C",
+        "pubchem_cid": 5994,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Gestagen · C21-Steroidhormon",
+        "general_properties": [
+          "Bildung im Corpus luteum und in der Plazenta",
+          "Vorstufe von Cortisol, Aldosteron und Androgenen"
+        ],
+        "biochemical_relevance": [
+          "Sekretorische Umwandlung des Endometriums, erhält die Schwangerschaft",
+          "Erhöht die Basaltemperatur um ≈ 0,5 °C"
+        ],
+        "clinical_relevance": [
+          "Bestandteil hormoneller Kontrazeptiva (Gestagene)"
+        ],
+        "molecular_relevance": [
+          "Intrazellulärer Progesteronrezeptor → Transkription"
+        ],
+        "mnemonic": "Pro-Gestation: Progesteron schützt die Schwangerschaft."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc184"
+    },
+    {
+      "card_id": "bc_200",
+      "id_status": "provisional",
+      "slug": "bc_200_atp",
+      "title": "ATP",
+      "subtitle": "Adenosintriphosphat",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "nukleotid",
+        "energiestoffwechsel",
+        "atmungskette"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=NC(=C2C(=N1)N(C=N2)[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N",
+        "pubchem_cid": 5957,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Nukleosidtriphosphat · universeller Energieträger",
+        "general_properties": [
+          "Adenin + Ribose + drei Phosphate (zwei Phosphoanhydridbindungen)",
+          "ΔG°′ der Hydrolyse zu ADP ≈ −30,5 kJ/mol"
+        ],
+        "biochemical_relevance": [
+          "Bildung durch oxidative Phosphorylierung und Substratkettenphosphorylierung",
+          "Tagesumsatz etwa in Höhe des Körpergewichts"
+        ],
+        "clinical_relevance": [
+          "ATP-Mangel bei Ischämie → Versagen der Na⁺/K⁺-ATPase, Zellödem"
+        ],
+        "molecular_relevance": [
+          "Phosphatdonor für Kinasen; Baustein der RNA"
+        ],
+        "mnemonic": "ATP ist Energiewährung, kein Energiespeicher."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc200"
+    },
+    {
+      "card_id": "bc_201",
+      "id_status": "provisional",
+      "slug": "bc_201_gtp",
+      "title": "GTP",
+      "subtitle": "Guanosintriphosphat",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "nukleotid",
+        "signaltransduktion",
+        "citratzyklus"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=NC2=C(N1[C@H]3[C@@H]([C@@H]([C@H](O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N=C(NC2=O)N",
+        "pubchem_cid": 135398633,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Nukleosidtriphosphat (Guanosin)",
+        "general_properties": [
+          "Guanin + Ribose + drei Phosphate"
+        ],
+        "biochemical_relevance": [
+          "Bildung im Citratzyklus (Succinyl-CoA-Synthetase)",
+          "Energie für Translation und PEPCK; Vorstufe von cGMP und BH₄"
+        ],
+        "clinical_relevance": [
+          "Ras-Mutationen: gestörte GTPase-Aktivität → Dauersignal (Onkogen)"
+        ],
+        "molecular_relevance": [
+          "G-Proteine: mit GTP aktiv, mit GDP inaktiv"
+        ],
+        "mnemonic": "GTP ist ein Schalter: an mit GTP, aus nach der Hydrolyse."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc201"
+    },
+    {
+      "card_id": "bc_202",
+      "id_status": "provisional",
+      "slug": "bc_202_camp",
+      "title": "cAMP",
+      "subtitle": "Zyklisches Adenosinmonophosphat",
+      "module": "BC",
+      "primary_category": "molekularbio",
+      "secondary_categories": [
+        "biochemie",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "nukleotid",
+        "second-messenger",
+        "signaltransduktion",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1[C@@H]2[C@H]([C@H]([C@@H](O2)N3C=NC4=C(N=CN=C43)N)O)OP(=O)(O1)O",
+        "pubchem_cid": 6076,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Zyklisches Nukleotid · Second Messenger",
+        "general_properties": [
+          "3′,5′-zyklisches AMP"
+        ],
+        "biochemical_relevance": [
+          "Adenylatcyclase bildet cAMP aus ATP (Gs ↑, Gi ↓)",
+          "Phosphodiesterasen bauen cAMP ab (gehemmt z. B. durch Coffein)"
+        ],
+        "clinical_relevance": [
+          "Choleratoxin hält Gs aktiv → cAMP ↑ → Chloridsekretion, wässrige Diarrhö"
+        ],
+        "molecular_relevance": [
+          "Aktiviert Proteinkinase A, EPAC und CNG-Kanäle"
+        ],
+        "mnemonic": "Glukagon, Adrenalin (β), TSH und PTH signalisieren über cAMP."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc202"
+    },
+    {
+      "card_id": "bc_203",
+      "id_status": "provisional",
+      "slug": "bc_203_cgmp",
+      "title": "cGMP",
+      "subtitle": "Zyklisches Guanosinmonophosphat",
+      "module": "BC",
+      "primary_category": "molekularbio",
+      "secondary_categories": [
+        "biochemie",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "nukleotid",
+        "second-messenger",
+        "signaltransduktion",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1[C@@H]2[C@H]([C@H]([C@@H](O2)N3C=NC4=C3N=C(NC4=O)N)O)OP(=O)(O1)O",
+        "pubchem_cid": 135398570,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Zyklisches Nukleotid · Second Messenger",
+        "general_properties": [
+          "3′,5′-zyklisches GMP"
+        ],
+        "biochemical_relevance": [
+          "Bildung durch lösliche (NO) bzw. membranständige (ANP) Guanylatcyclase",
+          "Abbau durch Phosphodiesterasen (z. B. PDE5)"
+        ],
+        "clinical_relevance": [
+          "PDE-5-Hemmer (Sildenafil) bei erektiler Dysfunktion und pulmonaler Hypertonie",
+          "Nitrate → NO → cGMP ↑ → Vasodilatation"
+        ],
+        "molecular_relevance": [
+          "Aktiviert Proteinkinase G; Phototransduktion in den Stäbchen"
+        ],
+        "mnemonic": "NO und ANP sprechen cGMP."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc203"
+    },
+    {
+      "card_id": "bc_204",
+      "id_status": "provisional",
+      "slug": "bc_204_ip3",
+      "title": "Inositoltrisphosphat (IP₃)",
+      "subtitle": "Nukleotid · Coenzym · Second Messenger",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "molekularbio",
+      "secondary_categories": [
+        "biochemie",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "second-messenger",
+        "signaltransduktion",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "[C@H]1([C@@H]([C@H]([C@@H]([C@H]([C@@H]1OP(=O)(O)O)O)OP(=O)(O)O)OP(=O)(O)O)O)O",
+        "pubchem_cid": 439456,
+        "form": "physiological",
+        "layout": "rdkit"
+      },
+      "back_sections": {
+        "classification": "Inositolphosphat · Second Messenger",
+        "general_properties": [
+          "Inositol-1,4,5-trisphosphat, wasserlöslich"
+        ],
+        "biochemical_relevance": [
+          "Phospholipase C spaltet PIP₂ → IP₃ + DAG (Gq-Signalweg)",
+          "Abbau durch Phosphatasen; Lithium hemmt das Inositol-Recycling"
+        ],
+        "clinical_relevance": [
+          "Lithium bei bipolarer Störung: Inositol-Depletions-Hypothese"
+        ],
+        "molecular_relevance": [
+          "Öffnet IP₃-Rezeptoren des ER → Ca²⁺-Freisetzung"
+        ],
+        "mnemonic": "IP₃ holt Calcium aus dem Speicher."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc204"
+    },
+    {
+      "card_id": "bc_205",
+      "id_status": "provisional",
+      "slug": "bc_205_nad",
+      "title": "NAD⁺",
+      "subtitle": "Nicotinamidadenindinukleotid",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "coenzym",
+        "nukleotid",
+        "vitamin",
+        "energiestoffwechsel"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1=CC(=C[N+](=C1)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)([O-])OP(=O)(O)OC[C@@H]3[C@H]([C@H]([C@@H](O3)N4C=NC5=C(N=CN=C54)N)O)O)O)O)C(=O)N",
+        "pubchem_cid": 5892,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Dinukleotid · Coenzym von Oxidoreduktasen (Hydridakzeptor)",
+        "general_properties": [
+          "Nicotinamid- und Adenin-Nukleotid über Diphosphat verbunden",
+          "Synthese aus Niacin (B3) oder Tryptophan"
+        ],
+        "biochemical_relevance": [
+          "Nimmt bei Dehydrierungen ein Hydridion auf → NADH",
+          "Substrat von Sirtuinen und PARP"
+        ],
+        "clinical_relevance": [
+          "Niacinmangel: Pellagra (Dermatitis, Diarrhö, Demenz)"
+        ],
+        "mnemonic": "NAD⁺ katabol (Oxidation) · NADPH anabol (Synthese)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc205"
+    },
+    {
+      "card_id": "bc_206",
+      "id_status": "provisional",
+      "slug": "bc_206_nadh",
+      "title": "NADH",
+      "subtitle": "Reduziertes NAD",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "coenzym",
+        "nukleotid",
+        "atmungskette",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C1C=CN(C=C1C(=O)N)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)(O)OP(=O)(O)OC[C@@H]3[C@H]([C@H]([C@@H](O3)N4C=NC5=C(N=CN=C54)N)O)O)O)O",
+        "pubchem_cid": 439153,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Reduziertes Dinukleotid · Elektronendonor der Atmungskette",
+        "general_properties": [
+          "Absorbiert bei 340 nm – NAD⁺ nicht"
+        ],
+        "biochemical_relevance": [
+          "Liefert Elektronen an Komplex I → ≈ 2,5 ATP pro NADH",
+          "Zytosolisches NADH erreicht die Mitochondrien nur über Shuttles"
+        ],
+        "clinical_relevance": [
+          "Optischer Test: Enzymaktivitäten (z. B. LDH, ALT) über NADH bei 340 nm"
+        ],
+        "mnemonic": "NADH ist bei 340 nm messbar – Grundlage vieler Laborwerte."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc206"
+    },
+    {
+      "card_id": "bc_207",
+      "id_status": "provisional",
+      "slug": "bc_207_fad",
+      "title": "FAD",
+      "subtitle": "Flavinadenindinukleotid",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "coenzym",
+        "nukleotid",
+        "vitamin",
+        "atmungskette"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "CC1=CC2=C(C=C1C)N(C3=NC(=O)NC(=O)C3=N2)C[C@@H]([C@@H]([C@@H](COP(=O)(O)OP(=O)(O)OC[C@@H]4[C@H]([C@H]([C@@H](O4)N5C=NC6=C(N=CN=C65)N)O)O)O)O)O",
+        "pubchem_cid": 643975,
+        "form": "physiological"
+      },
+      "back_sections": {
+        "classification": "Dinukleotid · prosthetische Gruppe von Flavoproteinen",
+        "general_properties": [
+          "Riboflavin (B2) + ADP",
+          "Nimmt zwei Elektronen und zwei Protonen auf → FADH₂"
+        ],
+        "biochemical_relevance": [
+          "Succinatdehydrogenase, Acyl-CoA-Dehydrogenasen, PDH (E3)",
+          "Elektronen gelangen über Ubichinon in die Atmungskette"
+        ],
+        "clinical_relevance": [
+          "Riboflavinmangel: Mundwinkelrhagaden, Glossitis",
+          "MCAD-Mangel betrifft ein FAD-abhängiges Enzym"
+        ],
+        "mnemonic": "FAD bleibt fest am Enzym – NAD⁺ diffundiert frei."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc207"
+    },
+    {
+      "card_id": "bc_208",
+      "id_status": "provisional",
+      "slug": "bc_208_coenzym_q10",
+      "title": "Coenzym Q10",
+      "subtitle": "Ubichinon",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "coenzym",
+        "atmungskette",
+        "cholesterinsynthese"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "O=C1C(OC)=C(OC)C(=O)C(C)=C1[*:1]",
+        "form": "as_is",
+        "structure_note": "Chinonkopf vollständig; Seitenkette (10 Isopreneinheiten) abgekürzt.",
+        "labels": {
+          "1": "(C<sub>5</sub>H<sub>8</sub>)<sub>10</sub>H"
+        }
+      },
+      "back_sections": {
+        "classification": "Benzochinon mit Isoprenoid-Seitenkette · mobiler Elektronenträger",
+        "general_properties": [
+          "Seitenkette aus 10 Isopreneinheiten – stark lipophil",
+          "Körpereigene Synthese über den Mevalonatweg"
+        ],
+        "biochemical_relevance": [
+          "Übernimmt Elektronen von Komplex I und II, gibt sie an Komplex III",
+          "Redoxpaar mit Ubichinol (Q-Zyklus)"
+        ],
+        "clinical_relevance": [
+          "Primärer CoQ10-Mangel: mitochondriale Erkrankung, teils behandelbar"
+        ],
+        "mnemonic": "Q wie Quinone, 10 wie zehn Isopreneinheiten."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc208"
+    },
+    {
+      "card_id": "bc_209",
+      "id_status": "provisional",
+      "slug": "bc_209_ubichinol",
+      "title": "Ubichinol",
+      "subtitle": "QH₂",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "coenzym",
+        "atmungskette"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "OC1=C(OC)C(OC)=C(O)C(C)=C1[*:1]",
+        "form": "as_is",
+        "structure_note": "Hydrochinonkopf vollständig; Seitenkette (10 Isopreneinheiten) abgekürzt.",
+        "labels": {
+          "1": "(C<sub>5</sub>H<sub>8</sub>)<sub>10</sub>H"
+        }
+      },
+      "back_sections": {
+        "classification": "Reduzierte Form des Coenzym Q10 · Hydrochinon",
+        "general_properties": [
+          "Entsteht durch Aufnahme von 2 e⁻ und 2 H⁺"
+        ],
+        "biochemical_relevance": [
+          "Elektronendonor für Komplex III (Q-Zyklus)",
+          "Lipophiles Antioxidans in Membranen, regeneriert Vitamin E"
+        ],
+        "clinical_relevance": [
+          "Als Supplement vermarktet; Nutzen bei Statin-Myopathie nicht gesichert"
+        ],
+        "mnemonic": "-on oxidiert, -ol reduziert: Ubichinon ⇄ Ubichinol."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc209"
+    },
+    {
+      "card_id": "bc_210",
+      "id_status": "provisional",
+      "slug": "bc_210_s_adenosylmethionin",
+      "title": "S-Adenosylmethionin (SAM)",
+      "subtitle": "Nukleotid · Coenzym · Second Messenger",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "coenzym",
+        "methylierung",
+        "nukleotid"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "structure",
+      "front_content": {
+        "render": "molecule",
+        "smiles": "C[S+](CC[C@@H](C(=O)[O-])N)C[C@@H]1[C@H]([C@H]([C@@H](O1)N2C=NC3=C(N=CN=C32)N)O)O",
+        "pubchem_cid": 34755,
+        "form": "as_is"
+      },
+      "back_sections": {
+        "classification": "Sulfoniumverbindung · universeller Methylgruppendonor",
+        "general_properties": [
+          "Aus Methionin + ATP (Methionin-Adenosyltransferase)"
+        ],
+        "biochemical_relevance": [
+          "Methyliert DNA, Histone, Katecholamine (COMT, PNMT), Kreatin und Phosphatidylcholin",
+          "Wird zu S-Adenosylhomocystein und weiter zu Homocystein"
+        ],
+        "clinical_relevance": [
+          "Folat-/B12-Mangel stört die SAM-Regeneration (‚Methylfalle‘)"
+        ],
+        "molecular_relevance": [
+          "Methyldonor der DNA-Methyltransferasen (Epigenetik)"
+        ],
+        "mnemonic": "SAM gibt CH₃ ab – zurück bleibt Homocystein."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc210"
+    },
+    {
+      "card_id": "bc_211",
+      "id_status": "provisional",
+      "slug": "bc_211_calcium",
+      "title": "Calcium / Ca²⁺",
+      "subtitle": "Nukleotid · Coenzym · Second Messenger",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "molekularbio",
+      "secondary_categories": [
+        "anorganik",
+        "biochemie",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "ion",
+        "second-messenger",
+        "signaltransduktion",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "formula",
+        "text": "Ca<sup>2+</sup>"
+      },
+      "back_sections": {
+        "classification": "Erdalkalimetall-Ion · Second Messenger und Strukturelement",
+        "general_properties": [
+          "Intrazellulär ≈ 100 nmol/l, extrazellulär ≈ 1,2 mmol/l ionisiert",
+          "Rund 99 % des Körpercalciums im Knochen (Hydroxylapatit)"
+        ],
+        "biochemical_relevance": [
+          "Regulation durch PTH, Calcitriol und Calcitonin",
+          "Kofaktor der Gerinnung (Faktor IV)"
+        ],
+        "clinical_relevance": [
+          "Hypokalzämie: Tetanie, QT-Verlängerung · Hyperkalzämie: QT-Verkürzung",
+          "Maßgeblich ist das ionisierte Ca²⁺ (Gesamt-Ca hängt vom Albumin ab)"
+        ],
+        "molecular_relevance": [
+          "Freisetzung aus ER/SR über IP₃- und Ryanodinrezeptoren; Sensor Calmodulin"
+        ],
+        "mnemonic": "Ca²⁺ löst Muskelkontraktion, Exozytose und Gerinnung aus."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc211"
+    },
+    {
+      "card_id": "bc_212",
+      "id_status": "provisional",
+      "slug": "bc_212_stickstoffmonoxid",
+      "title": "Stickstoffmonoxid (NO)",
+      "subtitle": "Nukleotid · Coenzym · Second Messenger",
+      "show_subtitle": false,
+      "module": "BC",
+      "primary_category": "molekularbio",
+      "secondary_categories": [
+        "anorganik",
+        "biochemie",
+        "klinik"
+      ],
+      "topic_group": "nukleotide_coenzyme",
+      "chapter": "biochemie/nukleotide_coenzyme",
+      "tags": [
+        "gasotransmitter",
+        "second-messenger",
+        "signaltransduktion",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "formula",
+        "text": "•N=O"
+      },
+      "back_sections": {
+        "classification": "Gasförmiges Radikal · Signalmolekül (Gasotransmitter)",
+        "general_properties": [
+          "Membrangängig, Halbwertszeit wenige Sekunden"
+        ],
+        "biochemical_relevance": [
+          "NO-Synthasen (eNOS, nNOS, iNOS): Arginin → NO + Citrullin",
+          "Aktiviert die lösliche Guanylatcyclase → cGMP ↑"
+        ],
+        "clinical_relevance": [
+          "Nitroglycerin setzt NO frei (Angina pectoris)",
+          "Inhalatives NO bei pulmonaler Hypertonie des Neugeborenen"
+        ],
+        "molecular_relevance": [
+          "Endothelialer ‚relaxing factor‘ (EDRF) – Nobelpreis 1998"
+        ],
+        "mnemonic": "Ein Gas als Botenstoff: lokal, kurzlebig, direkt."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc212"
+    },
+    {
+      "card_id": "bc_256",
+      "id_status": "confirmed",
+      "slug": "bc_256_vitamin_a",
+      "title": "Vitamin A",
+      "subtitle": "Retinol",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "fettloeslich",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin A"
+      },
+      "back_sections": {
+        "classification": "Fettlösliches Vitamin · Retinoide (Retinol, Retinal, Retinsäure)",
+        "general_properties": [
+          "Vorstufe β-Carotin aus Pflanzen",
+          "Speicherung in den Ito-Zellen der Leber"
+        ],
+        "biochemical_relevance": [
+          "11-cis-Retinal + Opsin = Rhodopsin (Sehvorgang)",
+          "Retinsäure steuert die Zelldifferenzierung"
+        ],
+        "clinical_relevance": [
+          "Mangel: Nachtblindheit, Xerophthalmie",
+          "Retinoide sind teratogen – Isotretinoin in der Schwangerschaft kontraindiziert"
+        ],
+        "molecular_relevance": [
+          "Retinsäure bindet nukleäre Rezeptoren (RAR/RXR)"
+        ],
+        "mnemonic": "A wie Auge."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc256"
+    },
+    {
+      "card_id": "bc_257",
+      "id_status": "provisional",
+      "slug": "bc_257_vitamin_b1",
+      "title": "Vitamin B1",
+      "subtitle": "Thiamin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B1"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Thiamin",
+        "general_properties": [
+          "Aktive Form: Thiaminpyrophosphat (TPP)",
+          "Geringe Speicher – Mangel nach wenigen Wochen"
+        ],
+        "biochemical_relevance": [
+          "Coenzym der oxidativen Decarboxylierung (PDH, α-KGDH, BCKDH)",
+          "Transketolase im Pentosephosphatweg"
+        ],
+        "clinical_relevance": [
+          "Beriberi; Wernicke-Enzephalopathie (Alkoholabhängigkeit)",
+          "Bei Risikopatienten Thiamin vor Glucose geben"
+        ],
+        "mnemonic": "B1 vor Glucose – sonst droht Wernicke."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc257"
+    },
+    {
+      "card_id": "bc_258",
+      "id_status": "provisional",
+      "slug": "bc_258_vitamin_b2",
+      "title": "Vitamin B2",
+      "subtitle": "Riboflavin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B2"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Riboflavin",
+        "general_properties": [
+          "Gelb, fluoreszierend, lichtempfindlich"
+        ],
+        "biochemical_relevance": [
+          "Vorstufe von FMN und FAD (Flavoproteine)",
+          "Komplex I (FMN), Komplex II und β-Oxidation (FAD)"
+        ],
+        "clinical_relevance": [
+          "Mangel: Mundwinkelrhagaden, Glossitis, seborrhoische Dermatitis"
+        ],
+        "mnemonic": "B2 färbt den Urin gelb."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc258"
+    },
+    {
+      "card_id": "bc_259",
+      "id_status": "provisional",
+      "slug": "bc_259_vitamin_b3",
+      "title": "Vitamin B3",
+      "subtitle": "Niacin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B3"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Niacin (Nicotinsäure, Nicotinamid)",
+        "general_properties": [
+          "Kann aus Tryptophan gebildet werden (60 mg Trp ≈ 1 mg Niacin)"
+        ],
+        "biochemical_relevance": [
+          "Vorstufe von NAD⁺ und NADP⁺"
+        ],
+        "clinical_relevance": [
+          "Pellagra: Dermatitis, Diarrhö, Demenz",
+          "Hochdosierte Nicotinsäure verursacht Flush"
+        ],
+        "mnemonic": "Pellagra: die drei D (und unbehandelt das vierte: Death)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc259"
+    },
+    {
+      "card_id": "bc_260",
+      "id_status": "provisional",
+      "slug": "bc_260_vitamin_b5",
+      "title": "Vitamin B5",
+      "subtitle": "Pantothensäure",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B5"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Pantothensäure",
+        "general_properties": [
+          "In fast allen Lebensmitteln enthalten"
+        ],
+        "biochemical_relevance": [
+          "Baustein von Coenzym A und der Acyl-Carrier-Domäne der Fettsäuresynthase"
+        ],
+        "clinical_relevance": [
+          "Isolierter Mangel sehr selten (‚Burning-Feet‘-Syndrom)"
+        ],
+        "mnemonic": "Griech. pantothen = überall."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc260"
+    },
+    {
+      "card_id": "bc_261",
+      "id_status": "provisional",
+      "slug": "bc_261_vitamin_b6",
+      "title": "Vitamin B6",
+      "subtitle": "Pyridoxin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym",
+        "transaminierung"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B6"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Pyridoxin, Pyridoxal, Pyridoxamin",
+        "general_properties": [
+          "Aktive Form: Pyridoxalphosphat (PLP)"
+        ],
+        "biochemical_relevance": [
+          "Coenzym von Transaminasen und Decarboxylasen (GABA, Serotonin, Histamin, Dopamin)",
+          "ALA-Synthase (Häm) und Glykogenphosphorylase"
+        ],
+        "clinical_relevance": [
+          "Isoniazid verursacht B6-Mangel (Neuropathie) – Prophylaxe mit Pyridoxin",
+          "Mangel: sideroblastische Anämie, Krampfanfälle"
+        ],
+        "mnemonic": "B6 ist das Aminosäure-Vitamin."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc261"
+    },
+    {
+      "card_id": "bc_262",
+      "id_status": "provisional",
+      "slug": "bc_262_vitamin_b7",
+      "title": "Vitamin B7",
+      "subtitle": "Biotin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B7"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Biotin (früher Vitamin H)",
+        "general_properties": [
+          "Kovalent an Lysin der Carboxylasen gebunden (Biocytin)"
+        ],
+        "biochemical_relevance": [
+          "Coenzym der Carboxylierungen: Pyruvat-, Acetyl-CoA- und Propionyl-CoA-Carboxylase"
+        ],
+        "clinical_relevance": [
+          "Avidin aus rohem Eiklar bindet Biotin",
+          "Hochdosiertes Biotin verfälscht Immunoassays (z. B. TSH, Troponin)"
+        ],
+        "mnemonic": "Biotin trägt CO₂."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc262"
+    },
+    {
+      "card_id": "bc_263",
+      "id_status": "provisional",
+      "slug": "bc_263_vitamin_b9",
+      "title": "Vitamin B9",
+      "subtitle": "Folsäure",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym",
+        "nukleotidsynthese",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B9"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Folsäure / Folat",
+        "general_properties": [
+          "Aktive Form: Tetrahydrofolat (THF)"
+        ],
+        "biochemical_relevance": [
+          "Überträger von C₁-Einheiten für Purin- und Thymidinsynthese",
+          "Remethylierung von Homocystein (zusammen mit B12)"
+        ],
+        "clinical_relevance": [
+          "Mangel: megaloblastäre Anämie; Neuralrohrdefekte – Prophylaxe vor der Schwangerschaft",
+          "Methotrexat hemmt die Dihydrofolat-Reduktase"
+        ],
+        "mnemonic": "Folat für die Zellteilung – der Mangel trifft schnell teilende Gewebe."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc263"
+    },
+    {
+      "card_id": "bc_264",
+      "id_status": "provisional",
+      "slug": "bc_264_vitamin_b12",
+      "title": "Vitamin B12",
+      "subtitle": "Cobalamin",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "coenzym",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin B12"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Cobalamin (Cobalt-Corrinoid)",
+        "general_properties": [
+          "Nur von Mikroorganismen gebildet, in tierischen Lebensmitteln",
+          "Resorption im terminalen Ileum mit Intrinsic Factor"
+        ],
+        "biochemical_relevance": [
+          "Methionin-Synthase (Methylcobalamin)",
+          "Methylmalonyl-CoA-Mutase (Adenosylcobalamin)"
+        ],
+        "clinical_relevance": [
+          "Perniziöse Anämie (Autoimmungastritis, IF-Mangel)",
+          "Funikuläre Myelose; Methylmalonsäure ↑"
+        ],
+        "mnemonic": "Die Leberspeicher reichen für Jahre – der Mangel entwickelt sich langsam."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc264"
+    },
+    {
+      "card_id": "bc_265",
+      "id_status": "provisional",
+      "slug": "bc_265_vitamin_c",
+      "title": "Vitamin C",
+      "subtitle": "Ascorbinsäure",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "wasserloeslich",
+        "kollagen"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin C"
+      },
+      "back_sections": {
+        "classification": "Wasserlösliches Vitamin · Ascorbinsäure",
+        "general_properties": [
+          "Der Mensch kann es nicht synthetisieren (Gulonolacton-Oxidase fehlt)"
+        ],
+        "biochemical_relevance": [
+          "Kofaktor von Prolyl- und Lysylhydroxylase (Kollagen) und Dopamin-β-Hydroxylase",
+          "Antioxidans; fördert die Eisenresorption (Fe³⁺ → Fe²⁺)"
+        ],
+        "clinical_relevance": [
+          "Skorbut: Zahnfleischbluten, Petechien, Wundheilungsstörung"
+        ],
+        "mnemonic": "C wie Collagen."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc265"
+    },
+    {
+      "card_id": "bc_266",
+      "id_status": "provisional",
+      "slug": "bc_266_vitamin_d",
+      "title": "Vitamin D",
+      "subtitle": "Calciferol",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "fettloeslich",
+        "laborwert"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin D"
+      },
+      "back_sections": {
+        "classification": "Fettlösliches Vitamin · Calciferole (D₃ Cholecalciferol, D₂ Ergocalciferol)",
+        "general_properties": [
+          "Eigensynthese in der Haut durch UV-B aus 7-Dehydrocholesterin"
+        ],
+        "biochemical_relevance": [
+          "Aktivierung in Leber (25-Hydroxylierung) und Niere (1α-Hydroxylierung) zu Calcitriol",
+          "Fördert Calcium- und Phosphatresorption"
+        ],
+        "clinical_relevance": [
+          "Mangel: Rachitis (Kinder), Osteomalazie (Erwachsene)",
+          "Statusbestimmung über 25-OH-Vitamin D im Serum"
+        ],
+        "mnemonic": "Eigentlich ein Hormon – der Körper bildet es selbst."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc266"
+    },
+    {
+      "card_id": "bc_267",
+      "id_status": "provisional",
+      "slug": "bc_267_vitamin_e",
+      "title": "Vitamin E",
+      "subtitle": "Tocopherol",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "fettloeslich"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin E"
+      },
+      "back_sections": {
+        "classification": "Fettlösliches Vitamin · Tocopherole und Tocotrienole",
+        "general_properties": [
+          "Wichtigste Form: α-Tocopherol"
+        ],
+        "biochemical_relevance": [
+          "Wichtigstes lipophiles Antioxidans in Membranen (fängt Lipidperoxylradikale)",
+          "Regeneration durch Vitamin C"
+        ],
+        "clinical_relevance": [
+          "Mangel selten, v. a. bei Fettmalabsorption: Neuropathie, Ataxie, Hämolyse"
+        ],
+        "mnemonic": "E schützt die Membranfette."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc267"
+    },
+    {
+      "card_id": "bc_268",
+      "id_status": "provisional",
+      "slug": "bc_268_vitamin_k",
+      "title": "Vitamin K",
+      "subtitle": "Phyllochinon",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "vitamin",
+        "fettloeslich",
+        "arzneimittel-target"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin K"
+      },
+      "back_sections": {
+        "classification": "Fettlösliches Vitamin · K₁ (Phyllochinon), K₂ (Menachinone)",
+        "general_properties": [
+          "K₂ wird auch von Darmbakterien gebildet"
+        ],
+        "biochemical_relevance": [
+          "Kofaktor der γ-Carboxylierung (Faktoren II, VII, IX, X, Protein C und S)",
+          "Vitamin-K-Epoxid-Reduktase (VKOR) regeneriert die aktive Form"
+        ],
+        "clinical_relevance": [
+          "Cumarine hemmen VKOR; Antidot Vitamin K",
+          "Prophylaxe bei Neugeborenen gegen Vitamin-K-Mangelblutung"
+        ],
+        "mnemonic": "K wie Koagulation."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc268"
+    },
+    {
+      "card_id": "bc_269",
+      "id_status": "provisional",
+      "slug": "bc_269_vitamin_s",
+      "title": "Vitamin S (Schokolade)",
+      "subtitle": "Humorvolle Sonderkarte",
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "klinik"
+      ],
+      "topic_group": "vitamine",
+      "chapter": "biochemie/vitamine",
+      "tags": [
+        "sonderkarte"
+      ],
+      "difficulty": "intermediate",
+      "front_type": "term",
+      "front_content": {
+        "render": "term",
+        "text": "Vitamin S"
+      },
+      "back_sections": {
+        "classification": "Kein Vitamin · humorvolle Sonderkarte · Genussmittel aus Kakao",
+        "general_properties": [
+          "Kakao enthält Theobromin, Coffein und Flavanole",
+          "Dunkle Schokolade: höherer Kakao- und Flavanolanteil"
+        ],
+        "biochemical_relevance": [
+          "Theobromin und Coffein (Methylxanthine) blockieren Adenosinrezeptoren und hemmen Phosphodiesterasen"
+        ],
+        "clinical_relevance": [
+          "Für Hunde giftig (langsamer Theobromin-Abbau)",
+          "Energiedichte ≈ 500–550 kcal pro 100 g"
+        ],
+        "mnemonic": "Ein ‚Mangel‘, der sich besonders vor Prüfungen bemerkbar macht."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc269"
     }
   ]
 }

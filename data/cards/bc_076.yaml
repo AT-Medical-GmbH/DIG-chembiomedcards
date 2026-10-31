@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_076
+id_status: provisional
+slug: bc_076_oxalacetat
+title: Oxalacetat
+subtitle: Stoffwechsel-Zwischenprodukt
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: stoffwechsel_zentral
+chapter: biochemie/zentraler_stoffwechsel
+tags:
+- carbonsaeure
+- citratzyklus
+- glukoneogenese
+- transaminierung
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C(C(=O)C(=O)O)C(=O)O
+  pubchem_cid: 970
+  form: physiological
+back_sections:
+  classification: α-Ketodicarbonsäure-Anion · Startmolekül des Citratzyklus
+  general_properties:
+  - Passiert die innere Mitochondrienmembran nicht direkt
+  biochemical_relevance:
+  - Bildung aus Pyruvat (Pyruvatcarboxylase, Biotin) oder Malat
+  - 'Glukoneogenese: PEPCK → Phosphoenolpyruvat'
+  - Transaminierung zu Aspartat (AST)
+  clinical_relevance:
+  - 'Oxalacetatmangel bei Hunger/Diabetes: Acetyl-CoA wird zu Ketonkörpern'
+  mnemonic: ‚Fette verbrennen im Feuer der Kohlenhydrate‘ – Oxalacetat ist das Feuer.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc076

@@ -10,9 +10,10 @@ angepasst: **Produktion aus Daten startet sofort**, der Import entfällt weitgeh
 | Konzept (Phase 1) | ✅ abgeschlossen |
 | Template (Vorder-/Rückseite), Design-Tokens, Kategorien/Tags, Kartenschema | ✅ umgesetzt (`templates/`, `data/`) |
 | Generator + Validierung + Berichte (`make build`) | ✅ umgesetzt (`scripts/`) |
-| **Pilotserie: 20 proteinogene Aminosäuren** (`bc_098`–`bc_117`) | ✅ gerendert · ⏳ **Fachreview offen** (`reports/cards_review_needed.md`) |
+| Zentrale Kartenvorlage (`templates/card_template.html`, ADR-018) | ✅ umgesetzt |
+| **Handover-Soll-Liste vollständig: 116 Karten** (20 Aminosäuren + 96 weitere) | ✅ gerendert · ⏳ **Fachreview offen** (`reports/cards_review_needed.md`) |
 | Abgleich mit den Musterkarten | ⏳ wartet auf Upload der Muster |
-| Serienproduktion Handover-Soll-Liste (~170 Karten), danach Masterverzeichnis (1.452) | ⏳ nach Pilot-Freigabe |
+| Masterverzeichnis (1.452 geplant, davon 94 mit Titel) | ⏳ nach Freigabe der Soll-Liste; Titel/Umfang je Kapitel erst festlegen |
 | Print-/Moodle-Pakete, Online-MVP | ⏳ wie unten geplant |
 
 ## 1. Phasenplan (umsetzungsreihenfolge)

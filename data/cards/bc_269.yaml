@@ -1,0 +1,43 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_269
+id_status: provisional
+slug: bc_269_vitamin_s
+title: Vitamin S (Schokolade)
+subtitle: Humorvolle Sonderkarte
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- sonderkarte
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin S
+back_sections:
+  classification: Kein Vitamin · humorvolle Sonderkarte · Genussmittel aus Kakao
+  general_properties:
+  - Kakao enthält Theobromin, Coffein und Flavanole
+  - 'Dunkle Schokolade: höherer Kakao- und Flavanolanteil'
+  biochemical_relevance:
+  - Theobromin und Coffein (Methylxanthine) blockieren Adenosinrezeptoren und hemmen Phosphodiesterasen
+  clinical_relevance:
+  - Für Hunde giftig (langsamer Theobromin-Abbau)
+  - Energiedichte ≈ 500–550 kcal pro 100 g
+  mnemonic: Ein ‚Mangel‘, der sich besonders vor Prüfungen bemerkbar macht.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc269

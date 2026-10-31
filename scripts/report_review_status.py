@@ -34,7 +34,8 @@ def main() -> int:
         prov = " · ID vorläufig" if c.get("id_status") == "provisional" else ""
         lines += [f"## `{c['card_id']}` {c['title']} — {c['review_status']}{prov}", ""]
         lines += [f"- {n}" for n in c.get("review_notes") or ["(keine Hinweise)"]]
-        lines += [f"- Vorschau: [`generated/preview/{c['card_id']}.png`](../generated/preview/{c['card_id']}.png)", ""]
+        sheet = f"contact_sheet_{c.get('topic_group', 'sonstige')}.png"
+        lines += [f"- Vorschau: [`{sheet}`](../generated/preview/{sheet})", ""]
     out = ROOT / "reports" / "cards_review_needed.md"
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(lines), encoding="utf-8")

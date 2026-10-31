@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_205
+id_status: provisional
+slug: bc_205_nad
+title: NAD⁺
+subtitle: Nicotinamidadenindinukleotid
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- coenzym
+- nukleotid
+- vitamin
+- energiestoffwechsel
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C1=CC(=C[N+](=C1)[C@H]2[C@@H]([C@@H]([C@H](O2)COP(=O)([O-])OP(=O)(O)OC[C@@H]3[C@H]([C@H]([C@@H](O3)N4C=NC5=C(N=CN=C54)N)O)O)O)O)C(=O)N
+  pubchem_cid: 5892
+  form: physiological
+back_sections:
+  classification: Dinukleotid · Coenzym von Oxidoreduktasen (Hydridakzeptor)
+  general_properties:
+  - Nicotinamid- und Adenin-Nukleotid über Diphosphat verbunden
+  - Synthese aus Niacin (B3) oder Tryptophan
+  biochemical_relevance:
+  - Nimmt bei Dehydrierungen ein Hydridion auf → NADH
+  - Substrat von Sirtuinen und PARP
+  clinical_relevance:
+  - 'Niacinmangel: Pellagra (Dermatitis, Diarrhö, Demenz)'
+  mnemonic: NAD⁺ katabol (Oxidation) · NADPH anabol (Synthese).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc205

@@ -1,0 +1,45 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_262
+id_status: provisional
+slug: bc_262_vitamin_b7
+title: Vitamin B7
+subtitle: Biotin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+- laborwert
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B7
+back_sections:
+  classification: Wasserlösliches Vitamin · Biotin (früher Vitamin H)
+  general_properties:
+  - Kovalent an Lysin der Carboxylasen gebunden (Biocytin)
+  biochemical_relevance:
+  - 'Coenzym der Carboxylierungen: Pyruvat-, Acetyl-CoA- und Propionyl-CoA-Carboxylase'
+  clinical_relevance:
+  - Avidin aus rohem Eiklar bindet Biotin
+  - Hochdosiertes Biotin verfälscht Immunoassays (z. B. TSH, Troponin)
+  mnemonic: Biotin trägt CO₂.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc262

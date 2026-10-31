@@ -1,0 +1,53 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_168
+id_status: provisional
+slug: bc_168_5_hydroxytryptophan
+title: 5-Hydroxytryptophan (5-HTP)
+subtitle: Neurotransmitter
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: neurotransmitter
+chapter: biochemie/neurotransmitter
+tags:
+- aminosaeure
+- nicht-proteinogen
+- aromatisch
+- neurotransmitter-vorstufe
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - ring: indol-3-yl
+    subs:
+      '5': OH
+  structure_note: Fischer-Konvention; Strukturreferenz PubChem CID 439280.
+back_sections:
+  classification: Aromatische Aminosäure · direkte Serotonin-Vorstufe
+  general_properties:
+  - Nicht proteinogen; passiert die Blut-Hirn-Schranke
+  biochemical_relevance:
+  - Entsteht aus Tryptophan (Tryptophanhydroxylase, BH₄) – geschwindigkeitsbestimmend
+  - Decarboxylierung zu Serotonin (aromatische L-Aminosäure-Decarboxylase, B6)
+  clinical_relevance:
+  - Als Supplement verbreitet; zusammen mit SSRI droht ein Serotonin-Syndrom
+  mnemonic: 'Trp → 5-HTP → 5-HT: erst hydroxylieren, dann decarboxylieren.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc168

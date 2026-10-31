@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -113,8 +114,21 @@ def validate(project: Project) -> None:
                 names = [card["title"].lower()] + [p.strip().lower() for p in card["title"].split("/")]
                 if any(n and n in shown for n in names) or fc.get("caption"):
                     add(cid, "error", "Aminosäure-Vorderseite darf keinen Namen/keine Beschriftung tragen")
-        if card.get("front_type") == "term" and not fc.get("text"):
-            add(cid, "error", "Begriffs-Vorderseite ohne text")
+        render = fc.get("render")
+        if render == "molecule":
+            smiles = fc.get("smiles", "")
+            if not smiles:
+                add(cid, "error", "Strukturformel (render: molecule) ohne smiles")
+            placeholders = set(re.findall(r"\[\*:(\d+)\]", smiles))
+            labels = {str(k) for k in (fc.get("labels") or {})}
+            if placeholders != labels:
+                add(cid, "error", f"Platzhalter {sorted(placeholders)} und labels {sorted(labels)} passen nicht zusammen")
+            if "pubchem_cid" not in fc and not fc.get("structure_note"):
+                add(cid, "warning", "Strukturquelle undokumentiert (pubchem_cid oder structure_note angeben)")
+        if render in ("term", "formula") and not fc.get("text"):
+            add(cid, "error", f"Vorderseite ({render}) ohne text")
+        if render == "formula" and re.sub(r"</?(sub|sup)>", "", fc.get("text", "")).count("<"):
+            add(cid, "error", "Formel-Text darf nur <sub>/<sup> enthalten")
 
         back = card.get("back_sections") or {}
         if not any(back.get(k) for k in ("biochemical_relevance", "clinical_relevance", "molecular_relevance")):

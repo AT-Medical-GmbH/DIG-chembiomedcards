@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_133
+id_status: provisional
+slug: bc_133_carbamoylphosphat
+title: Carbamoylphosphat
+subtitle: Stickstoffstoffwechsel
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: stickstoffstoffwechsel
+chapter: biochemie/stickstoffstoffwechsel
+tags:
+- harnstoffzyklus
+- nukleotidsynthese
+- stoffwechseldefekt
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: C(=O)(N)OP(=O)(O)O
+  pubchem_cid: 278
+  form: physiological
+back_sections:
+  classification: Energiereiches gemischtes Säureanhydrid · Harnstoffzyklus und Pyrimidinsynthese
+  general_properties:
+  - Anhydrid aus Carbaminsäure und Phosphorsäure
+  biochemical_relevance:
+  - 'CPS I (Mitochondrium): NH₄⁺ + HCO₃⁻ + 2 ATP → Harnstoffzyklus'
+  - 'CPS II (Zytosol): Stickstoff aus Glutamin → Pyrimidinsynthese'
+  clinical_relevance:
+  - 'CPS-I-Mangel: schwere neonatale Hyperammonämie'
+  mnemonic: 'CPS I: Harnstoff im Mitochondrium · CPS II: Pyrimidine im Zytosol.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc133

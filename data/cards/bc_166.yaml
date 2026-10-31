@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_166
+id_status: provisional
+slug: bc_166_acetylcholin
+title: Acetylcholin
+subtitle: Neurotransmitter
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: neurotransmitter
+chapter: biochemie/neurotransmitter
+tags:
+- neurotransmitter
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CC(=O)OCC[N+](C)(C)C
+  pubchem_cid: 187
+  form: as_is
+back_sections:
+  classification: Ester aus Cholin und Essigsäure · quartäres Ammoniumion · Neurotransmitter
+  general_properties:
+  - Kein biogenes Amin – entsteht nicht durch Decarboxylierung
+  biochemical_relevance:
+  - Synthese aus Cholin + Acetyl-CoA (Cholin-Acetyltransferase)
+  - Abbau im synaptischen Spalt durch Acetylcholinesterase
+  clinical_relevance:
+  - 'Myasthenia gravis: Antikörper gegen nikotinische Rezeptoren'
+  - 'Organophosphat-Vergiftung: cholinerge Krise, Antidot Atropin'
+  molecular_relevance:
+  - 'Nikotinische Rezeptoren: Ionenkanäle · muskarinische: G-Protein-gekoppelt'
+  mnemonic: Transmitter an motorischer Endplatte, vegetativen Ganglien und Parasympathikus.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc166

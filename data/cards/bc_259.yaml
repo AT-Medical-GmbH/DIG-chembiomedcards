@@ -1,0 +1,44 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_259
+id_status: provisional
+slug: bc_259_vitamin_b3
+title: Vitamin B3
+subtitle: Niacin
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- coenzym
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin B3
+back_sections:
+  classification: Wasserlösliches Vitamin · Niacin (Nicotinsäure, Nicotinamid)
+  general_properties:
+  - Kann aus Tryptophan gebildet werden (60 mg Trp ≈ 1 mg Niacin)
+  biochemical_relevance:
+  - Vorstufe von NAD⁺ und NADP⁺
+  clinical_relevance:
+  - 'Pellagra: Dermatitis, Diarrhö, Demenz'
+  - Hochdosierte Nicotinsäure verursacht Flush
+  mnemonic: 'Pellagra: die drei D (und unbehandelt das vierte: Death).'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc259

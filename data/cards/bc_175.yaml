@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_175
+id_status: provisional
+slug: bc_175_leptin
+title: Leptin
+subtitle: Hormon
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: hormone
+chapter: biochemie/hormone
+tags:
+- hormon
+- peptidhormon
+- adipokin
+- arzneimittel-target
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Leptin
+back_sections:
+  classification: Proteohormon des Fettgewebes (Adipokin) · 146 Aminosäuren · ‚Sättigungshormon‘
+  general_properties:
+  - Plasmaspiegel proportional zur Fettmasse
+  biochemical_relevance:
+  - Hemmt im Hypothalamus den Hunger (NPY/AgRP ↓, POMC ↑)
+  - Signalisiert Energiereserven; beeinflusst die Fertilität
+  clinical_relevance:
+  - Adipositas meist mit Leptinresistenz (hohe Spiegel)
+  - 'Angeborener Leptinmangel: Therapie mit Metreleptin'
+  molecular_relevance:
+  - Leptinrezeptor → JAK2/STAT3-Signalweg
+  mnemonic: Von griech. leptos = dünn.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc175

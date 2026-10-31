@@ -4,8 +4,10 @@ Diese Punkte sind **bewusst nicht einseitig entschieden**, weil sie bestehende K
 berühren, externe Systeme betreffen oder eine fachliche/geschäftliche Festlegung brauchen.
 
 ## Neu seit Pilotstart (2026-10-31)
-- **A. Vorläufige IDs (ADR-016):** Sind `bc_098`–`bc_117` für die 20 proteinogenen Aminosäuren in Ordnung,
-  oder gibt es eine andere Nummerierung im Masterverzeichnis?
+- **A. Vorläufige IDs (ADR-016, ADR-020):** Sind die vergebenen ID-Blöcke (`bc_061`–`bc_269`, siehe ADR-020)
+  in Ordnung, oder gibt es eine andere Nummerierung im Masterverzeichnis?
+- **F. Darstellungskonventionen (ADR-019):** Metabolite mit „-at“-Namen in deprotonierter Form; Peptidhormone
+  vorne nur mit Bezeichnung – so gewünscht?
 - **B. Logo (ADR-017):** Freigegebene Logo-Datei (SVG) für die Kopfzone bereitstellen.
 - **C. Musterkarten:** Upload nach `input/uploaded_raw/`, um Layout und Inhaltstiefe abzugleichen.
 - **D. Fachreviewer:** Wer prüft und gibt die Pilotkarten frei (`reviewer`-Feld)?

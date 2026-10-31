@@ -1,0 +1,50 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_141
+id_status: provisional
+slug: bc_141_linolsaeure
+title: Linolsäure
+subtitle: Lipid
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: lipide
+chapter: biochemie/lipide
+tags:
+- lipid
+- fettsaeure
+- ungesaettigt
+- essenziell
+- carbonsaeure
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CCCCC/C=C\C/C=C\CCCCCCCC(=O)O
+  pubchem_cid: 5280450
+  form: as_is
+back_sections:
+  classification: Mehrfach ungesättigte Fettsäure · C18:2 ω-6 (cis,cis-Δ9,12)
+  general_properties:
+  - 'Essenziell: Säuger führen keine Doppelbindung jenseits von C9 ein'
+  biochemical_relevance:
+  - Vorstufe der Arachidonsäure (Desaturierung, Elongation)
+  - Bestandteil der Ceramide der Hautbarriere
+  clinical_relevance:
+  - 'Mangel (z. B. lange fettfreie parenterale Ernährung): schuppige Dermatitis'
+  mnemonic: 'Linolsäure → Arachidonsäure: der ω-6-Weg.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc141

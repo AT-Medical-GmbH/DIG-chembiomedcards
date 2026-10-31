@@ -1,0 +1,52 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_211
+id_status: provisional
+slug: bc_211_calcium
+title: Calcium / Ca²⁺
+subtitle: Nukleotid · Coenzym · Second Messenger
+show_subtitle: false
+module: BC
+primary_category: molekularbio
+secondary_categories:
+- anorganik
+- biochemie
+- klinik
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- ion
+- second-messenger
+- signaltransduktion
+- laborwert
+difficulty: intermediate
+front_type: term
+front_content:
+  render: formula
+  text: Ca<sup>2+</sup>
+back_sections:
+  classification: Erdalkalimetall-Ion · Second Messenger und Strukturelement
+  general_properties:
+  - Intrazellulär ≈ 100 nmol/l, extrazellulär ≈ 1,2 mmol/l ionisiert
+  - Rund 99 % des Körpercalciums im Knochen (Hydroxylapatit)
+  biochemical_relevance:
+  - Regulation durch PTH, Calcitriol und Calcitonin
+  - Kofaktor der Gerinnung (Faktor IV)
+  clinical_relevance:
+  - 'Hypokalzämie: Tetanie, QT-Verlängerung · Hyperkalzämie: QT-Verkürzung'
+  - Maßgeblich ist das ionisierte Ca²⁺ (Gesamt-Ca hängt vom Albumin ab)
+  molecular_relevance:
+  - Freisetzung aus ER/SR über IP₃- und Ryanodinrezeptoren; Sensor Calmodulin
+  mnemonic: Ca²⁺ löst Muskelkontraktion, Exozytose und Gerinnung aus.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc211

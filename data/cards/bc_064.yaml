@@ -1,0 +1,49 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_064
+id_status: provisional
+slug: bc_064_pyruvat
+title: Pyruvat
+subtitle: Stoffwechsel-Zwischenprodukt
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: stoffwechsel_zentral
+chapter: biochemie/zentraler_stoffwechsel
+tags:
+- carbonsaeure
+- glykolyse
+- citratzyklus
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CC(=O)C(=O)O
+  pubchem_cid: 1060
+  form: physiological
+back_sections:
+  classification: α-Ketosäure-Anion · Endprodukt der Glykolyse
+  general_properties:
+  - Anion der Brenztraubensäure
+  biochemical_relevance:
+  - PDH → Acetyl-CoA (Thiamin, Liponsäure, CoA, FAD, NAD⁺)
+  - Pyruvatcarboxylase → Oxalacetat (Biotin)
+  - LDH → Laktat · ALT → Alanin
+  clinical_relevance:
+  - PDH- oder Thiaminmangel → Laktatazidose
+  mnemonic: 'Pyruvat ist die Weggabelung: Acetyl-CoA, Oxalacetat, Laktat oder Alanin.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc064

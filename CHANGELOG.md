@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-31 (2)
+- Zentrale Kartenvorlage `templates/card_template.html` ersetzt die vier bisherigen Vorlagendateien
+  (ADR-018); Bedienungsanleitung `templates/README.md`
+- 96 weitere Karten der Handover-Soll-Liste: Derivate, Stickstoffstoffwechsel, Neurotransmitter, Hormone,
+  zentraler Stoffwechsel, Lipide, Nukleotide/Coenzyme/Second Messenger, Vitamine (gesamt 116, alle
+  `needs_review`, IDs vorläufig nach ADR-020)
+- Strukturformeln aus PubChem mit RDKit (`scripts/cbm/molecule.py`, ADR-019); Fischer-Projektion um
+  Ring-Substituenten und Hydroxyprolin erweitert; Vorderseitentypen `molecule` und `formula`
+- Neue automatische Prüfungen: geladene Schrift, Mindestabstand von Atombeschriftungen
+- Übersichtsbilder je Themengruppe; Einzelvorschauen nicht mehr versioniert
+
 ## 2026-10-31
 - Content-Pipeline umgesetzt: Kartenschema (`data/schema/card.schema.json`), Kategorien/Tags
   (`data/categories.yaml`, `data/tags.yaml`), Design-Tokens für Karten, HTML/CSS-Templates mit fester

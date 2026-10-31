@@ -1,0 +1,44 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_265
+id_status: provisional
+slug: bc_265_vitamin_c
+title: Vitamin C
+subtitle: Ascorbinsäure
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- wasserloeslich
+- kollagen
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin C
+back_sections:
+  classification: Wasserlösliches Vitamin · Ascorbinsäure
+  general_properties:
+  - Der Mensch kann es nicht synthetisieren (Gulonolacton-Oxidase fehlt)
+  biochemical_relevance:
+  - Kofaktor von Prolyl- und Lysylhydroxylase (Kollagen) und Dopamin-β-Hydroxylase
+  - Antioxidans; fördert die Eisenresorption (Fe³⁺ → Fe²⁺)
+  clinical_relevance:
+  - 'Skorbut: Zahnfleischbluten, Petechien, Wundheilungsstörung'
+  mnemonic: C wie Collagen.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc265

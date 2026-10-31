@@ -1,0 +1,51 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_204
+id_status: provisional
+slug: bc_204_ip3
+title: Inositoltrisphosphat (IP₃)
+subtitle: Nukleotid · Coenzym · Second Messenger
+show_subtitle: false
+module: BC
+primary_category: molekularbio
+secondary_categories:
+- biochemie
+- klinik
+topic_group: nukleotide_coenzyme
+chapter: biochemie/nukleotide_coenzyme
+tags:
+- second-messenger
+- signaltransduktion
+- arzneimittel-target
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: '[C@H]1([C@@H]([C@H]([C@@H]([C@H]([C@@H]1OP(=O)(O)O)O)OP(=O)(O)O)OP(=O)(O)O)O)O'
+  pubchem_cid: 439456
+  form: physiological
+  layout: rdkit
+back_sections:
+  classification: Inositolphosphat · Second Messenger
+  general_properties:
+  - Inositol-1,4,5-trisphosphat, wasserlöslich
+  biochemical_relevance:
+  - Phospholipase C spaltet PIP₂ → IP₃ + DAG (Gq-Signalweg)
+  - Abbau durch Phosphatasen; Lithium hemmt das Inositol-Recycling
+  clinical_relevance:
+  - 'Lithium bei bipolarer Störung: Inositol-Depletions-Hypothese'
+  molecular_relevance:
+  - Öffnet IP₃-Rezeptoren des ER → Ca²⁺-Freisetzung
+  mnemonic: IP₃ holt Calcium aus dem Speicher.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc204

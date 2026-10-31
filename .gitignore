@@ -4,4 +4,6 @@ __pycache__/
 # Build-Artefakte – reproduzierbar aus data/ + templates/ (make build)
 generated/individual/
 generated/manifest.json
-# Vorschauen (generated/preview/) werden bewusst versioniert: Review im Pull Request
+# Einzelvorschauen lokal; versioniert werden nur die Übersichten je Themengruppe (Review im PR)
+generated/preview/*
+!generated/preview/contact_sheet_*.png

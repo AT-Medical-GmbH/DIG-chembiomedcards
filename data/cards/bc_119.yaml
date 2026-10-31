@@ -1,0 +1,48 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_119
+id_status: provisional
+slug: bc_119_kreatinin
+title: Kreatinin
+subtitle: Aminosäure-Derivat
+show_subtitle: false
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeure_derivate
+chapter: biochemie/aminosaeuren
+tags:
+- nicht-proteinogen
+- laborwert
+difficulty: intermediate
+front_type: structure
+front_content:
+  render: molecule
+  smiles: CN1CC(=O)N=C1N
+  pubchem_cid: 588
+  form: as_is
+back_sections:
+  classification: Cyclisches Anhydrid des Kreatins · Ausscheidungsprodukt
+  general_properties:
+  - Entsteht nicht-enzymatisch aus Kreatin/Kreatinphosphat (≈ 1–2 % pro Tag)
+  - Bildungsrate proportional zur Muskelmasse
+  biochemical_relevance:
+  - Wird glomerulär filtriert und kaum rückresorbiert
+  clinical_relevance:
+  - 'Serumkreatinin und eGFR: Standardmaße der Nierenfunktion'
+  - Steigt erst bei deutlichem GFR-Verlust (‚kreatininblinder Bereich‘)
+  mnemonic: Mehr Muskelmasse → mehr Kreatinin – bei gleicher Nierenfunktion.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc119

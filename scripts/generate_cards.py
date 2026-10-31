@@ -4,7 +4,8 @@
 Ablauf (docs/concept/06-generation-pipeline.md):
   1. Laden + Validieren (bricht bei Fehlern ab)
   2. data/cards_master.json schreiben (kanonische Gesamtdatei)
-  3. je Karte HTML aus Templates rendern → Playwright (Chromium):
+  3. je Karte HTML aus der zentralen Vorlage templates/card_template.html
+     rendern → Playwright (Chromium):
        generated/individual/front/<id>_front.png   (300 dpi)
        generated/individual/back/<id>_back.png     (300 dpi)
        generated/individual/pdf/<id>.pdf           (Vorder- + Rückseite, 148 × 105 mm)
@@ -12,10 +13,12 @@ Ablauf (docs/concept/06-generation-pipeline.md):
        generated/individual/html/<id>.html         (Render-Quelle)
        generated/preview/<id>.png                  (Vorschau Vorder|Rück)
   4. Qualitäts-Gates: Überlauf der Rückseite, Tab-Anzahl
-  5. generated/manifest.json, generated/preview/contact_sheet.png,
+  5. generated/manifest.json, generated/preview/contact_sheet_<topic_group>.png,
      reports/layout_review.md
 
-Unveränderte Karten (gleicher Inhalts-/Template-Hash) werden übersprungen.
+Unveränderte Karten werden übersprungen. Ändert sich die Vorlage, die Tokens
+oder ein Renderer, werden alle Karten neu erzeugt; ändert sich nur eine
+Kartendatei, nur diese Karte.
 
     python3 scripts/generate_cards.py [--filter bc_1] [--force]
 """
@@ -39,6 +42,7 @@ from pypdf.generic import RectangleObject
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from cbm.fischer import fischer_svg  # noqa: E402
+from cbm.molecule import molecule_svg  # noqa: E402
 from cbm.model import ROOT, load_project  # noqa: E402
 
 TEMPLATES = ROOT / "templates"
@@ -47,12 +51,11 @@ OUT = {k: GEN / "individual" / k for k in ("front", "back", "pdf", "svg", "html"
 PREVIEW = GEN / "preview"
 REPORTS = ROOT / "reports"
 CSS_PX_PER_MM = 96 / 25.4
+TEMPLATE = "card_template.html"
 RENDER_INPUTS = [
-    TEMPLATES / "card.css",
-    TEMPLATES / "card_front_template.html",
-    TEMPLATES / "card_back_template.html",
-    TEMPLATES / "_card_header.html",
+    TEMPLATES / TEMPLATE,
     ROOT / "scripts" / "cbm" / "fischer.py",
+    ROOT / "scripts" / "cbm" / "molecule.py",
     ROOT / "scripts" / "generate_cards.py",
     ROOT / "brand" / "design-tokens" / "chembiomed.tokens.json",
     ROOT / "data" / "categories.yaml",
@@ -130,6 +133,21 @@ def preview_pair(front: Path, back: Path, dest: Path, width: int = 1100) -> None
     sheet.save(dest, optimize=True)
 
 
+def contact_sheets(cards: list[dict]) -> list[Path]:
+    """Eine Übersicht je topic_group (Review im Pull Request)."""
+    for old in PREVIEW.glob("contact_sheet*.png"):
+        old.unlink()
+    groups: dict[str, list[dict]] = {}
+    for c in cards:
+        groups.setdefault(c.get("topic_group", "sonstige"), []).append(c)
+    out = []
+    for group, members in groups.items():
+        dest = PREVIEW / f"contact_sheet_{group}.png"
+        contact_sheet(members, dest)
+        out.append(dest)
+    return out
+
+
 def contact_sheet(cards: list[dict], dest: Path, cols: int = 2) -> None:
     tiles = [Image.open(PREVIEW / f"{c['card_id']}.png") for c in cards]
     if not tiles:
@@ -171,9 +189,8 @@ def main() -> int:
         write_master(project, ROOT / "data" / "cards_master.json")
 
     env = Environment(loader=FileSystemLoader(TEMPLATES), undefined=StrictUndefined, autoescape=True)
-    front_t = env.get_template("card_front_template.html")
-    back_t = env.get_template("card_back_template.html")
-    style = css_vars(project.tokens) + (TEMPLATES / "card.css").read_text(encoding="utf-8")
+    template = env.get_template(TEMPLATE)
+    style_vars = css_vars(project.tokens)
     render_hash = sha256(b"".join(p.read_bytes() for p in RENDER_INPUTS))
     year = dt.date.today().year
 
@@ -213,17 +230,13 @@ def main() -> int:
             primary_color = next(t["color"] for t in project.tabs if t["key"] == card["primary_category"])
             ctx = {"card": card, "tabs": project.tabs, "primary_color": primary_color, "year": year}
             svg = ""
-            if card["front_content"].get("render") == "fischer_projection":
-                svg = fischer_svg(card["front_content"])
+            render = card["front_content"].get("render")
+            if render in ("fischer_projection", "molecule"):
+                svg = (fischer_svg if render == "fischer_projection" else molecule_svg)(card["front_content"])
                 paths["svg"] = OUT["svg"] / f"{cid}_front.svg"
                 paths["svg"].write_text(svg, encoding="utf-8")
-            html = (
-                "<!doctype html><html lang='de'><head><meta charset='utf-8'>"
-                f"<title>{cid}</title><style>{style}</style></head><body>"
-                + front_t.render(**ctx, front_svg=svg)
-                + back_t.render(**ctx, qr_svg=qr_svg(card["qr_url"]))
-                + "</body></html>"
-            )
+            html = template.render(**ctx, css_vars=style_vars, front_svg=svg,
+                                   qr_svg=qr_svg(card["qr_url"]))
             paths["html"].write_text(html, encoding="utf-8")
             page.set_content(html, wait_until="load")
             page.evaluate("document.fonts.ready")
@@ -235,10 +248,36 @@ def main() -> int:
                   overflow: c.scrollHeight - c.clientHeight,
                   tabs: [...document.querySelectorAll('.card')].map(s => s.querySelectorAll('.tab').length),
                   active: [...document.querySelectorAll('.card')].map(s => s.querySelectorAll('.tab.active').length),
+                  font: getComputedStyle(document.querySelector('.back h1')).fontFamily,
+                  labelOverlaps: (() => {
+                    // Beschriftungen der RDKit-Strukturformel (Pfade class="atom-N") je Atom bündeln;
+                    // gemeldet wird, wenn zwei Beschriftungen weniger als ≈ 1 mm Abstand haben
+                    const boxes = {};
+                    document.querySelectorAll('.front svg.molecule path[class^="atom-"]').forEach(el => {
+                      const r = el.getBoundingClientRect(), k = el.getAttribute('class');
+                      const b = boxes[k] || {l: r.left, t: r.top, r: r.right, b: r.bottom};
+                      boxes[k] = {l: Math.min(b.l, r.left), t: Math.min(b.t, r.top),
+                                  r: Math.max(b.r, r.right), b: Math.max(b.b, r.bottom)};
+                    });
+                    const keys = Object.keys(boxes), hits = [], pad = -3.8;  // Mindestabstand ≈ 1 mm
+                    for (let i = 0; i < keys.length; i++) for (let j = i + 1; j < keys.length; j++) {
+                      const a = boxes[keys[i]], c = boxes[keys[j]];
+                      if (a.l + pad < c.r && c.l + pad < a.r && a.t + pad < c.b && c.t + pad < a.b)
+                        hits.push(keys[i] + '/' + keys[j]);
+                    }
+                    return hits;
+                  })(),
                 };
             }""")
             if checks["overflow"] > 1:
                 card_findings.append(("error", f"Rückseite läuft um {checks['overflow']} px über die Inhaltszone"))
+            if checks["labelOverlaps"]:
+                card_findings.append(("error", "Atombeschriftungen zu dicht (< 1 mm: "
+                                      + ", ".join(checks["labelOverlaps"][:4])
+                                      + ") – front_content.layout auf 'rdkit' oder 'coordgen' setzen"))
+            expected_font = project.tokens["font_family"].split(",")[0].strip()
+            if not checks["font"].startswith(expected_font):
+                card_findings.append(("error", f"Schrift '{checks['font']}' statt '{expected_font}' – CSS-Variablen prüfen"))
             if any(n != len(project.tabs) for n in checks["tabs"]) or any(n != 1 for n in checks["active"]):
                 card_findings.append(("error", f"Tab-Leiste inkonsistent: {checks}"))
 
@@ -267,7 +306,8 @@ def main() -> int:
     if not args.filter:
         manifest["cards"] = {k: v for k, v in manifest["cards"].items() if k in current}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    contact_sheet(project.cards, PREVIEW / "contact_sheet.png")
+    if not args.filter:
+        contact_sheets(project.cards)
     if not args.filter:
         write_layout_report(project, findings)
 

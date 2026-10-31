@@ -73,7 +73,7 @@ Import-/Audit-Pipeline (Kap. 04) dient nur noch für Muster und Fremdzulieferung
 **Begründung:** Testet die strengste Darstellungsregel (Fischer-Projektion) und ein vollständiges
 Rückseitenschema, bevor die Serie skaliert.
 
-### ADR-016 — Vorläufige IDs für die Aminosäuren (`bc_098`–`bc_117`) · *proposed*
+### ADR-016 — Vorläufige IDs (Aminosäuren `bc_098`–`bc_117`, siehe auch ADR-020) · *proposed*
 **Kontext:** Das Masterverzeichnis vergibt im BC-Kapitel „Aminosäuren, Proteine und Stickstoff“ nur den
 Anker `bc_097` (Aminosäure-Grundstruktur). **Entscheidung:** fortlaufend direkt danach, als
 `id_status: provisional` markiert. **Konsequenz:** Bestätigung oder Umnummerierung vor der
@@ -83,4 +83,30 @@ Freigabe nötig; die Validierung warnt, solange IDs vorläufig sind.
 **Entscheidung:** Die Vorderseite bleibt ohne QR-Code, damit sie die Antwort nicht verrät (bewusst
 reduzierte Vorderseite). Bis ein freigegebenes Logo unter `brand/logo/` liegt, steht oben rechts eine
 Text-Wortmarke „ChemBioMed Cards · AT Medical“. **Konsequenz:** Logo-Datei nachliefern; der Austausch
-betrifft nur `templates/_card_header.html`.
+betrifft nur die Kopfzone in `templates/card_template.html`.
+
+### ADR-018 — Eine zentrale Kartenvorlage · *accepted*
+**Kontext:** Vorgabe: Layout muss auf einer zentralen Datei beruhen und jederzeit änderbar sein,
+Inhalte einzeln austauschbar. **Entscheidung:** `templates/card_template.html` enthält das gesamte
+Kartenlayout (CSS, Kopfzone, Vorder- und Rückseite); Farben/Format bleiben als Tokens getrennt, weil
+das Online-System sie mitnutzt. Inhalte liegen je Karte in `data/cards/<card_id>.yaml`.
+**Konsequenz:** Der Generator bildet einen Hash über Vorlage, Tokens und Renderer – ändert sich
+davon etwas, werden alle Karten neu erzeugt; ändert sich nur eine Kartendatei, nur diese Karte.
+
+### ADR-019 — Strukturformeln aus PubChem + RDKit, physiologische Form bei „-at“ · *accepted*
+**Entscheidung:** Für Moleküle außer α-Aminosäuren wird die Struktur aus PubChem übernommen
+(`pubchem_cid` in der Kartendatei) und mit RDKit als Skelettformel gezeichnet. Carbon-, Phosphat- und
+Sulfonsäuregruppen werden bei Namen auf „-at“ deprotoniert (`form: physiological`), Säuren mit
+„-säure“-Namen bleiben neutral. α-Aminosäuren (auch Derivate wie Homocystein, L-DOPA) folgen der
+Fischer-Konvention. Vitamine und Peptidhormone zeigen vorne nur die Bezeichnung, Ionen die Formel.
+**Begründung:** geprüfte Quelle statt abgetippter Strukturen; ein Layoutverfahren für alle.
+**Konsequenz:** Abkürzungen wie „CoA“ oder Reste R₁–R₃ über Platzhalteratome; der Generator prüft
+Atombeschriftungen auf Mindestabstand und meldet Problemfälle (`front_content.layout` als Ausweg).
+
+### ADR-020 — ID-Blöcke für die Handover-Soll-Liste · *proposed*
+**Entscheidung (vorläufig, `id_status: provisional`):** Stoffwechsel `bc_061`–`bc_081` um den Anker
+`bc_073` Acetyl-CoA (bestätigt), Derivate `bc_118`–`bc_131`, Stickstoffstoffwechsel `bc_132`–`bc_135`,
+Lipide `bc_140`–`bc_151`, Neurotransmitter `bc_160`–`bc_169`, Hormone `bc_170`–`bc_184` (vor dem Anker
+`bc_188`), Nukleotide/Coenzyme `bc_200`–`bc_212`, Vitamine `bc_256`–`bc_269` ab dem Anker `bc_256`
+Vitamin A (bestätigt). Alle Karten im Modul BC; Second Messenger mit Hauptkategorie Molekularbio.
+**Konsequenz:** Bestätigung oder Umnummerierung vor der Freigabe; Ankernummern sind unverändert.
