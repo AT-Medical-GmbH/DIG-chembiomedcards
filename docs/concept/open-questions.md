@@ -8,7 +8,9 @@ berühren, externe Systeme betreffen oder eine fachliche/geschäftliche Festlegu
   in Ordnung, oder gibt es eine andere Nummerierung im Masterverzeichnis?
 - **F. Darstellungskonventionen (ADR-019):** Metabolite mit „-at“-Namen in deprotonierter Form; Peptidhormone
   vorne nur mit Bezeichnung – so gewünscht?
-- **B. Logo (ADR-017):** Freigegebene Logo-Datei (SVG) für die Kopfzone bereitstellen.
+- ~~**B. Logo**~~ – *erledigt: offizielles Logo eingebunden (ADR-021).*
+- **G. Logo als Vektor:** SVG/PDF-Fassung des Logos für die Druckproduktion bereitstellen (bisher Rastergrafik).
+- **H. Kompaktfassung freigeben:** Logo im Kartenkopf ohne die Unterzeilen „ChemBioMed Cards / by AT Medical GmbH®“ – so in Ordnung?
 - **C. Musterkarten:** Upload nach `input/uploaded_raw/`, um Layout und Inhaltstiefe abzugleichen.
 - **D. Fachreviewer:** Wer prüft und gibt die Pilotkarten frei (`reviewer`-Feld)?
 - **E. Pharma-Modul:** PR #8 (Modul PH) aus einer anderen Session mit dieser Pipeline und der

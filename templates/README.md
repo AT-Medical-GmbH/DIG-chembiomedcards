@@ -8,6 +8,7 @@ das jeweils andere anzufassen. Hintergrund: [ADR-018](../docs/concept/decision-l
 |---|---|---|
 | **Layout** aller Karten (Aufbau, Schriftgrößen, Abstände, Boxen, Kopf-/Fußzone) | `templates/card_template.html` | alle Karten werden neu erzeugt |
 | **Farben, Kartenformat, Schrift** | `brand/design-tokens/chembiomed.tokens.json` → `card` | alle Karten (und später das Online-System) |
+| **Logo** (Datei, Höhe im Kartenkopf) | `brand/logo/`, Tokens `card.logo` | alle Karten |
 | **Register-Tabs** (Reihenfolge, Beschriftung) | `data/categories.yaml` | alle Karten |
 | **Inhalt einer einzelnen Karte** | `data/cards/<card_id>.yaml` | nur diese Karte |
 | Darstellung der Fischer-Projektion / Strukturformeln | `scripts/cbm/fischer.py` / `scripts/cbm/molecule.py` | alle Karten dieses Typs |

@@ -25,6 +25,7 @@ Kartendatei, nur diese Karte.
 from __future__ import annotations
 
 import argparse
+import base64
 import datetime as dt
 import hashlib
 import io
@@ -62,6 +63,11 @@ RENDER_INPUTS = [
 ]
 
 
+def logo_data_uri(tokens: dict) -> tuple[str, Path]:
+    path = ROOT / tokens["logo"]["card_header"]
+    return "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii"), path
+
+
 def css_vars(tokens: dict) -> str:
     c, f = tokens["colors"], tokens["format_mm"]
     pairs = {
@@ -70,6 +76,7 @@ def css_vars(tokens: dict) -> str:
         "--c-surface": c["surface"], "--c-text": c["text"], "--c-muted": c["muted"],
         "--c-brand": c["brand"], "--c-tab-bg": c["tab_inactive_bg"],
         "--c-tab-text": c["tab_inactive_text"], "--c-structure": c["text"],
+        "--logo-h": f"{tokens['logo']['header_height_mm']}mm",
     }
     for name, box in tokens["boxes"].items():
         pairs[f"--b-{name}-accent"] = box["accent"]
@@ -191,7 +198,8 @@ def main() -> int:
     env = Environment(loader=FileSystemLoader(TEMPLATES), undefined=StrictUndefined, autoescape=True)
     template = env.get_template(TEMPLATE)
     style_vars = css_vars(project.tokens)
-    render_hash = sha256(b"".join(p.read_bytes() for p in RENDER_INPUTS))
+    logo_src, logo_path = logo_data_uri(project.tokens)
+    render_hash = sha256(b"".join(p.read_bytes() for p in [*RENDER_INPUTS, logo_path]))
     year = dt.date.today().year
 
     manifest_path = GEN / "manifest.json"
@@ -235,7 +243,7 @@ def main() -> int:
                 svg = (fischer_svg if render == "fischer_projection" else molecule_svg)(card["front_content"])
                 paths["svg"] = OUT["svg"] / f"{cid}_front.svg"
                 paths["svg"].write_text(svg, encoding="utf-8")
-            html = template.render(**ctx, css_vars=style_vars, front_svg=svg,
+            html = template.render(**ctx, css_vars=style_vars, front_svg=svg, logo_src=logo_src,
                                    qr_svg=qr_svg(card["qr_url"]))
             paths["html"].write_text(html, encoding="utf-8")
             page.set_content(html, wait_until="load")
@@ -249,6 +257,15 @@ def main() -> int:
                   tabs: [...document.querySelectorAll('.card')].map(s => s.querySelectorAll('.tab').length),
                   active: [...document.querySelectorAll('.card')].map(s => s.querySelectorAll('.tab.active').length),
                   font: getComputedStyle(document.querySelector('.back h1')).fontFamily,
+                  logo: [...document.querySelectorAll('.card')].map(card => {
+                    const img = card.querySelector('img.logo');
+                    if (!img || !img.complete || img.naturalWidth === 0) return 'fehlt';
+                    const l = img.getBoundingClientRect();
+                    const hit = [...card.querySelectorAll('.stage svg, .stage .term, .stage .formula, .back h1, .back .classification, .box')]
+                      .find(el => { const r = el.getBoundingClientRect();
+                                    return r.left < l.right && l.left < r.right && r.top < l.bottom && l.top < r.bottom; });
+                    return hit ? 'überdeckt ' + (hit.className.baseVal ?? hit.className ?? hit.tagName) : 'ok';
+                  }),
                   labelOverlaps: (() => {
                     // Beschriftungen der RDKit-Strukturformel (Pfade class="atom-N") je Atom bündeln;
                     // gemeldet wird, wenn zwei Beschriftungen weniger als ≈ 1 mm Abstand haben
@@ -275,6 +292,9 @@ def main() -> int:
                 card_findings.append(("error", "Atombeschriftungen zu dicht (< 1 mm: "
                                       + ", ".join(checks["labelOverlaps"][:4])
                                       + ") – front_content.layout auf 'rdkit' oder 'coordgen' setzen"))
+            for side, state in zip(("Vorderseite", "Rückseite"), checks["logo"]):
+                if state != "ok":
+                    card_findings.append(("error", f"Logo {side}: {state}"))
             expected_font = project.tokens["font_family"].split(",")[0].strip()
             if not checks["font"].startswith(expected_font):
                 card_findings.append(("error", f"Schrift '{checks['font']}' statt '{expected_font}' – CSS-Variablen prüfen"))

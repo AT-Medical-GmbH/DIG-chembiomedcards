@@ -25,7 +25,7 @@ bestehenden `card-system/layout-standard/` und macht ihn für die automatische G
 ```
 
 Verbindlich aus dem Bestand:
-- **Logo** rechts oben, auf **beiden** Seiten.
+- **Logo** rechts oben, auf **beiden** Seiten – offizielles ChemBioMed-Cards-Logo in der Kompaktfassung (ADR-021).
 - **Inward-Tabs** oben links, vom oberen Rand in die Karte laufend.
 - **Karten-ID** dezent links unten.
 - **Copyright** rechts unten; **QR-Code** rechts unten, **ohne** Footer zu überlagern.
@@ -43,9 +43,9 @@ Verbindlich aus dem Bestand:
 
 | Bedeutung | Farbe | Einsatz |
 |-----------|-------|---------|
-| Grundinfo, Struktur, Stoffklasse | Dunkelgrau/Schwarz | Titel, Klassifikation, Eigenschaften |
-| Biochemische Relevanz | **Grün** | Box „Biochemie“, Biochemie-Tab |
-| Klinische Relevanz | **Rot** | Box „Klinik“, Klinik-Tab |
+| Grundinfo, Struktur, Stoffklasse | Dunkel – **Logo-Navy `#03204c`** | Titel, Klassifikation, Eigenschaften, Chemie-Tabs |
+| Biochemische Relevanz | **Grün-Petrol – Logo-„Bio“ `#06807d`** | Box „Biochemie“, Biochemie-Tab |
+| Klinische Relevanz | **Rot – Logo-„Med“ `#a90411`** | Box „Klinik“, Klinik-Tab |
 | Molekularbio / Signalwege / Regulation | **Blau** | Box „Molekularbio“, Molekularbio-Tab |
 | Merkhilfen / Besonderheiten / Fun Fact | **Orange/Violett** | Box „Merke / Fun Fact“ |
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-31 (3)
+- Offizielles ChemBioMed-Cards-Logo eingebunden: Original unter `brand/logo/source/`, reproduzierbar
+  abgeleitete Varianten (vollständig, kompakt, Bildmarke) per `scripts/derive_logo_assets.py`
+- Kartenkopf zeigt die Kompaktfassung statt der Text-Wortmarke; Kartenfarben aus dem Logo übernommen
+  (Navy, Petrol, Rot) – ADR-021
+- Neue automatische Prüfung: Logo geladen und ohne Überdeckung von Inhalten
+
 ## 2026-10-31 (2)
 - Zentrale Kartenvorlage `templates/card_template.html` ersetzt die vier bisherigen Vorlagendateien
   (ADR-018); Bedienungsanleitung `templates/README.md`

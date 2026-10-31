@@ -79,7 +79,7 @@ Anker `bc_097` (Aminosäure-Grundstruktur). **Entscheidung:** fortlaufend direkt
 `id_status: provisional` markiert. **Konsequenz:** Bestätigung oder Umnummerierung vor der
 Freigabe nötig; die Validierung warnt, solange IDs vorläufig sind.
 
-### ADR-017 — QR-Code nur auf der Rückseite; Wortmarke als Logo-Platzhalter · *proposed*
+### ADR-017 — QR-Code nur auf der Rückseite; Wortmarke als Logo-Platzhalter · *QR accepted, Logo-Teil abgelöst durch ADR-021*
 **Entscheidung:** Die Vorderseite bleibt ohne QR-Code, damit sie die Antwort nicht verrät (bewusst
 reduzierte Vorderseite). Bis ein freigegebenes Logo unter `brand/logo/` liegt, steht oben rechts eine
 Text-Wortmarke „ChemBioMed Cards · AT Medical“. **Konsequenz:** Logo-Datei nachliefern; der Austausch
@@ -110,3 +110,14 @@ Lipide `bc_140`–`bc_151`, Neurotransmitter `bc_160`–`bc_169`, Hormone `bc_17
 `bc_188`), Nukleotide/Coenzyme `bc_200`–`bc_212`, Vitamine `bc_256`–`bc_269` ab dem Anker `bc_256`
 Vitamin A (bestätigt). Alle Karten im Modul BC; Second Messenger mit Hauptkategorie Molekularbio.
 **Konsequenz:** Bestätigung oder Umnummerierung vor der Freigabe; Ankernummern sind unverändert.
+
+### ADR-021 — Offizielles Logo im Kartenkopf; Kartenfarben aus dem Logo · *accepted*
+**Kontext:** AT Medical hat das Logo „ChemBioMed Cards – by AT Medical GmbH®“ für die Karten
+bereitgestellt. **Entscheidung:** Rechts oben steht auf beiden Seiten die Kompaktfassung (Bildmarke +
+Wortmarke, ohne Unterzeilen, 9,6 mm hoch) statt der Text-Wortmarke. Die Kartenfarben übernehmen die
+Logofarben, die der Farblogik bereits entsprechen: Navy `#03204c` für Grundinformation/Chemie-Tabs,
+Petrol `#06807d` für Biochemie, Rot `#a90411` für Klinik; Molekularbio (Blau) und Merke (Violett)
+bleiben. **Begründung:** Das Logo kodiert Chem/Bio/Med farbig – Karten und Logo sprechen dieselbe
+Sprache. **Konsequenz:** Varianten werden reproduzierbar aus dem Original abgeleitet
+(`scripts/derive_logo_assets.py`); der Generator prüft, dass das Logo geladen ist und keine Inhalte
+überdeckt. Rückgängig/anpassbar allein über die Tokens.
