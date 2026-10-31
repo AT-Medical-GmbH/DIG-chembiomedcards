@@ -22,14 +22,18 @@ sicher, dass sie fachlich korrekt, aktuell und didaktisch nicht irreführend sin
 | Rolle | Kürzel in den Daten | Aufgabe | Benannt |
 |---|---|---|---|
 | Redaktion | `editor` | Entwurf, Formulierung, Umsetzung der Korrekturen | AT Medical GmbH |
-| Fachreviewer Pharmakologie | `reviewer_pharm` | Wirkmechanismus, Indikation, NW, KI, Interaktionen, Dosierungsprinzip | **offen** |
-| Fachreviewer Toxikologie | `reviewer_tox` | Toxidrome, Antidote, Akuttherapie, Red Flags | **offen** |
+| Fachreviewer Pharmakologie | `reviewer_pharm` | Wirkmechanismus, Indikation, NW, KI, Interaktionen, Dosierungsprinzip | Andreas Tremml (seit 2026-10-31) |
+| Fachreviewer Toxikologie | `reviewer_tox` | Toxidrome, Antidote, Akuttherapie, Red Flags | Andreas Tremml (seit 2026-10-31) |
 | Freigabe | `admin` | Setzt `approved`, wenn alle nötigen Prüfungen vorliegen | Andreas Tremml |
 
-Eine Person darf nicht ihren eigenen Entwurf fachlich freigeben (Vier-Augen-Prinzip).
+Eine Person darf nicht ihren eigenen Entwurf fachlich freigeben (Vier-Augen-Prinzip). Die Entwürfe
+stammen von der Redaktion; Andreas Tremml prüft und gibt frei.
 
-> Solange keine Fachreviewer benannt sind, bleiben alle Karten dieses Blocks auf
-> `*_review_needed`. Sie sind dann weder exportierbar noch für Lernende sichtbar.
+> **Empfehlung:** Weil Fachprüfung und Freigabe derzeit bei derselben Person liegen, sollte für
+> `critical`-Karten (Antidote, Katecholamine) zusätzlich eine zweite fachkundige Person gegenlesen.
+> Das zweite Lesen wird im Protokoll vermerkt.
+
+Wer eine Karte prüft, trägt sich erst bei der tatsächlichen Prüfung im Feld `reviewer` der Karte ein.
 
 ---
 
