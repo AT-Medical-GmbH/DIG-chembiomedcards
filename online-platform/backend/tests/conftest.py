@@ -42,9 +42,10 @@ def make_client(settings):
     def _make(**overrides):
         jwk = overrides.pop("jwk", None)
         oidc = overrides.pop("oidc", None)
+        lti_keys = overrides.pop("lti_keys", None)
         s = replace(settings, **overrides)
         app = create_app(s, create_schema=True, jwk_resolver=jwk,
-                         oidc_client=oidc(s) if callable(oidc) else oidc)
+                         oidc_client=oidc(s) if callable(oidc) else oidc, lti_key_resolver=lti_keys)
         run_seed(app.state.sessionmaker, s)
         return TestClient(app)
     return _make

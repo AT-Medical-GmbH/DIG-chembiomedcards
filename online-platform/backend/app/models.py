@@ -183,3 +183,13 @@ class ExportLog(Base):
     type: Mapped[str] = mapped_column(String(32))       # card_download | notes_export
     format: Mapped[str] = mapped_column(String(16))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class LtiLaunchState(Base):
+    """Einmaliger state/nonce zwischen LTI-Login-Start und Launch (ohne Cookies, iframe-tauglich)."""
+    __tablename__ = "lti_launch_states"
+    state: Mapped[str] = mapped_column(String(64), primary_key=True)
+    nonce: Mapped[str] = mapped_column(String(64))
+    issuer: Mapped[str] = mapped_column(String(255))
+    client_id: Mapped[str] = mapped_column(String(255))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow, index=True)

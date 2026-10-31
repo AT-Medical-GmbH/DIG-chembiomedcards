@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-31 (Online: Moodle LTI 1.3)
+- LTI 1.3 Launch und Deep Linking 2.0 (`app/lti.py`, `/api/lti/{login,launch,jwks,deep-link}`):
+  - state und nonce einmalig in der DB (Migration 0002), Prüfung von Signatur, Issuer, Audience,
+    nonce, Deployment, Version und Nachrichtentyp;
+  - App-Sitzungstoken (RS256) im URL-Fragment übergeben;
+  - Rollen nur `learner`/`teacher`, nur pseudonyme Kennung gespeichert.
+- SPA: `/lti/start` (Sitzung übernehmen), `/lti/auswahl` (Lehrende wählen Lernsets/Karten und geben
+  sie per POST an Moodle zurück), Kopfzeile „Über Moodle · Kurs“.
+- Betrieb:
+  - `docker-compose.lti.yml` mit dem Tool-Schlüssel als Docker-Secret;
+  - neue Abhängigkeit `python-multipart`;
+  - `.gitignore` sperrt jetzt `online-platform/.env`, `secrets/`, `*.pem` und `*.key`. Vorher waren
+    sie nicht ausgeschlossen.
+- Tests: API 66/66 (davon LTI 22), Browser-E2E LTI 10/10 gegen `e2e/mock_moodle.py`, Smoke 8/8.
+
 ## 2026-10-31 (Online: Anmeldung OIDC/PKCE)
 - SPA-Anmeldung über Authentik (Authorization Code + PKCE S256, öffentlicher Client):
   - `src/lib/oidc.ts`, Route `/auth/callback`, Anmeldeseite, Abmelden, Refresh;

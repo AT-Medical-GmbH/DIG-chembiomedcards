@@ -6,6 +6,7 @@ Sicherheitsregeln werden beim Start erzwungen (`validate`):
 """
 from __future__ import annotations
 
+import json
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -61,6 +62,13 @@ class Settings:
     oidc_post_logout_uri: str | None = None      # https://<host>/
     oidc_scopes: str = "openid profile email offline_access"
     oidc_discovery_url: str | None = None        # Standard: <issuer>/.well-known/openid-configuration
+    # Moodle LTI 1.3 (Launch + Deep Linking)
+    public_url: str | None = None                # https://pharma.at-medical.de (ohne / am Ende)
+    lti_enabled: bool = False
+    lti_platforms: tuple[dict, ...] = ()         # [{issuer, client_id, deployment_ids, auth_login_url, jwks_url}]
+    lti_key_file: Path | None = None             # privater RSA-Schlüssel des Tools (PEM, Secret-Mount)
+    lti_kid: str = "pharma-cards-lti-1"
+    lti_session_hours: int = 4
 
     @property
     def is_production(self) -> bool:
@@ -82,6 +90,30 @@ class Settings:
         if self.is_production and self.oidc_redirect_uri and \
                 not self.oidc_redirect_uri.startswith("https://"):
             raise RuntimeError("OIDC_REDIRECT_URI muss in Produktion https verwenden.")
+
+        if self.lti_enabled:
+            self._validate_lti()
+
+    LTI_PLATFORM_KEYS = ("issuer", "client_id", "deployment_ids", "auth_login_url", "jwks_url")
+
+    def _validate_lti(self) -> None:
+        if not self.public_url:
+            raise RuntimeError("LTI braucht PHARMA_PUBLIC_URL.")
+        if self.is_production and not self.public_url.startswith("https://"):
+            raise RuntimeError("PHARMA_PUBLIC_URL muss in Produktion https verwenden.")
+        if not self.lti_key_file or not Path(self.lti_key_file).is_file():
+            raise RuntimeError("LTI braucht LTI_KEY_FILE (privater Tool-Schlüssel, PEM).")
+        if not self.lti_platforms:
+            raise RuntimeError("LTI braucht mindestens eine Plattform in LTI_PLATFORMS.")
+        for p in self.lti_platforms:
+            missing = [k for k in self.LTI_PLATFORM_KEYS if not p.get(k)]
+            if missing:
+                raise RuntimeError(f"LTI-Plattform unvollständig: {', '.join(missing)}")
+
+    @property
+    def lti_issuer(self) -> str:
+        """Aussteller der App-Sitzungstoken nach einem LTI-Start."""
+        return f"{(self.public_url or '').rstrip('/')}/lti"
 
     @property
     def discovery_url(self) -> str | None:
@@ -117,4 +149,10 @@ def load_settings() -> Settings:
         oidc_post_logout_uri=os.environ.get("OIDC_POST_LOGOUT_URI") or None,
         oidc_scopes=os.environ.get("OIDC_SCOPES", "openid profile email offline_access"),
         oidc_discovery_url=os.environ.get("OIDC_DISCOVERY_URL") or None,
+        public_url=(os.environ.get("PHARMA_PUBLIC_URL") or "").rstrip("/") or None,
+        lti_enabled=_bool("LTI_ENABLED"),
+        lti_platforms=tuple(json.loads(os.environ.get("LTI_PLATFORMS") or "[]")),
+        lti_key_file=Path(os.environ["LTI_KEY_FILE"]) if os.environ.get("LTI_KEY_FILE") else None,
+        lti_kid=os.environ.get("LTI_KID", "pharma-cards-lti-1"),
+        lti_session_hours=int(os.environ.get("LTI_SESSION_HOURS", "4")),
     )

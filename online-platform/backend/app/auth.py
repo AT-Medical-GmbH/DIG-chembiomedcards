@@ -3,6 +3,8 @@
 AUTH_MODE=local (nur Entwicklung, in Produktion beim Start gesperrt):
     Nutzer über Header `X-User` (E-Mail/Kennung), Rolle optional über `X-Role`.
     Ohne Header: Gastnutzer `dev-learner` mit Rolle learner.
+LTI (zusätzlich, wenn LTI_ENABLED): Bearer-Token, das die API selbst nach einem geprüften
+    Moodle-Start ausgestellt hat (Issuer <PHARMA_PUBLIC_URL>/lti). Rolle nur learner/teacher.
 AUTH_MODE=oidc (Betrieb, Authentik):
     Bearer-JWT, Signatur über JWKS (RS256/ES256), Issuer und Audience geprüft. Die Rolle kommt aus
     einem Gruppen-Claim (OIDC_ROLE_CLAIM) über OIDC_ROLE_MAP; ohne Treffer: learner.
@@ -18,10 +20,12 @@ from sqlalchemy.orm import Session
 
 from .config import REVIEW_ROLES, ROLES, Settings
 from .db import get_db
+from .lti import peek_issuer
 from .models import User
 
 # Rangfolge: höchste passende Gruppe gewinnt
 ROLE_RANK = {r: i for i, r in enumerate(ROLES)}
+LTI_ROLES = {"learner", "teacher"}       # über Moodle nie Review-/Admin-Rechte
 
 
 @dataclass(frozen=True)
@@ -90,8 +94,32 @@ def _oidc_identity(request: Request, settings: Settings) -> tuple[str, str | Non
             claims.get("name") or claims.get("preferred_username"))
 
 
+def _lti_identity(request: Request, settings: Settings):
+    """App-Sitzungstoken aus einem LTI-Start; None, wenn kein solches Token vorliegt."""
+    lti_tool = getattr(request.app.state, "lti", None)
+    header = request.headers.get("Authorization", "")
+    if lti_tool is None or not header.lower().startswith("bearer "):
+        return None
+    token = header.split(" ", 1)[1]
+    if peek_issuer(token) != settings.lti_issuer:
+        return None
+    try:
+        claims = lti_tool.verify_session(token)
+    except jwt.PyJWTError as exc:
+        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Moodle-Sitzung abgelaufen – bitte in Moodle neu öffnen",
+                            headers={"WWW-Authenticate": "Bearer"}) from exc
+    if claims["role"] not in LTI_ROLES:
+        raise HTTPException(status.HTTP_401_UNAUTHORIZED, "Rolle unzulässig")
+    request.state.lti_claims = claims
+    return claims["sub"], claims["role"]
+
+
 def get_principal(request: Request, db: Session = Depends(get_db)) -> Principal:
     settings: Settings = request.app.state.settings
+    lti_id = _lti_identity(request, settings)
+    if lti_id:
+        user = _upsert_user(db, lti_id[0], None, None, lti_id[1])
+        return Principal(id=user.id, subject=user.subject, email=None, role=user.role)
     if settings.auth_mode == "oidc":
         subject, email, role, name = _oidc_identity(request, settings)
     else:

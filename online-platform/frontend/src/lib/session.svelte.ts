@@ -28,6 +28,9 @@ class Session {
   user = $state<DevUser>(stored());
   authConfig = $state<AuthConfig | null>(null);
   needsLogin = $state(false);
+  ltiExpired = $state(false);
+  viaLti = $state(false);                 // Sitzung stammt aus einem Moodle-Start
+  ltiCourse = $state<string | null>(null);
   me = $state<{ role: string; can_review: boolean; sees_unreviewed: boolean; dev_show_unreviewed: boolean; disclaimer: string } | null>(null);
   version = $state(0);  // erhöht sich beim Identitätswechsel -> Seiten laden neu
 

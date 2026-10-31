@@ -14,3 +14,11 @@ dist/
 exports/moodle/
 exports/print/
 .pytest_cache/
+
+# Betrieb Online-Plattform: Konfiguration und Schlüssel nie committen
+online-platform/.env
+online-platform/.env.*
+!online-platform/.env.example
+online-platform/secrets/
+*.pem
+*.key
