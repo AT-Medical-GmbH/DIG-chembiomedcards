@@ -1,0 +1,57 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_107
+id_status: provisional
+slug: bc_107_prolin
+title: Prolin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Pro
+  one_letter: P
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- nicht-essenziell
+- glukogen
+- kollagen
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  special: proline
+back_sections:
+  classification: Unpolar · cyclisch · sekundäre Aminogruppe · glukogen · nicht essenziell
+  general_properties:
+  - Rest bildet mit der α-Aminogruppe einen Pyrrolidinring
+  - Historisch auch ‚Iminosäure‘ genannt
+  biochemical_relevance:
+  - Synthese aus und Abbau zu Glutamat
+  - Hydroxylierung zu Hydroxyprolin im Kollagen (Vitamin C)
+  clinical_relevance:
+  - 'Skorbut: gestörte Prolylhydroxylierung bei Vitamin-C-Mangel'
+  molecular_relevance:
+  - '‚Helixbrecher‘: knickt α-Helices, häufig in β-Turns'
+  mnemonic: Einzige proteinogene Aminosäure mit sekundärer Aminogruppe.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- 'Sonderdarstellung: Aminogruppe links ist Teil des Rings (HN) – Konvention vom Reviewer bestätigen.'
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc107

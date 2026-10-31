@@ -1,0 +1,32 @@
+# Register-Tabs – feste Reihenfolge, über alle Karten identisch.
+# Quelle der Tab-Leiste; KEIN Layout-Code (docs/concept/03-taxonomy-and-tabs.md).
+# Farben werden aus brand/design-tokens/chembiomed.tokens.json (card.categories) gezogen.
+schema_version: 1
+tabs:
+  - key: allgemein
+    label: Allgemein
+    name: Allgemeine Chemie
+  - key: anorganik
+    label: Anorganik
+    name: Anorganische Chemie
+  - key: organik
+    label: Organik
+    name: Organische Chemie
+  - key: molekularbio
+    label: Molekularbio
+    name: Molekularbiologie
+  - key: biochemie
+    label: Biochemie
+    name: Biochemie
+  - key: klinik
+    label: Klinik
+    name: Klinik / Medizinische Bezüge
+
+# Distributions-/Paketcodes (bestehende Registry, cards.master.schema.json)
+modules:
+  AC: Allgemeine und anorganische Chemie
+  OC: Organische Chemie
+  BC: Biochemie
+  MB: Molekularbiologie der Zelle
+  APC: Angewandte Chemie, Ernährung & Medizin
+  PH: Pharmakologie

@@ -1,0 +1,61 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_115
+id_status: provisional
+slug: bc_115_glutamat
+title: Glutamat / Glutaminsäure
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Glu
+  one_letter: E
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- sauer
+- nicht-essenziell
+- glukogen
+- transaminierung
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: C
+    fork:
+    - label: O
+      bond: 2
+    - label: OH
+      bond: 1
+back_sections:
+  classification: Sauer (negativ geladen) · glukogen · nicht essenziell
+  general_properties:
+  - 'Rest: 2-Carboxyethylgruppe'
+  - Glutamat = deprotonierte Form bei pH 7
+  biochemical_relevance:
+  - 'Zentraler N-Sammler: Transaminierung, oxidative Desaminierung (GLDH)'
+  - Vorstufe von GABA, Glutamin, Glutathion und Prolin
+  clinical_relevance:
+  - Wichtigster erregender Neurotransmitter im ZNS (Exzitotoxizität)
+  mnemonic: Glutamat schmeckt ‚umami‘ – Geschmacksverstärker E 621.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc115

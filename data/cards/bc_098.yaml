@@ -1,0 +1,55 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_098
+id_status: provisional
+slug: bc_098_glycin
+title: Glycin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Gly
+  one_letter: G
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- nicht-essenziell
+- glukogen
+- kollagen
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: H
+back_sections:
+  classification: Kleinste proteinogene Aminosäure · unpolar · glukogen · nicht essenziell
+  general_properties:
+  - 'Rest: H – einzige achirale proteinogene Aminosäure'
+  - Hohe Flexibilität der Peptidkette (Schleifen, Turns)
+  biochemical_relevance:
+  - 'Kollagen: jede dritte Position (Gly-X-Y)'
+  - Vorstufe von Häm (δ-ALA), Purinen, Kreatin und Glutathion
+  clinical_relevance:
+  - Inhibitorischer Neurotransmitter in Rückenmark und Hirnstamm
+  - Strychnin blockiert Glycinrezeptoren → Krämpfe
+  mnemonic: Name von griech. glykys = süß – Glycin schmeckt süßlich.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc098

@@ -1,0 +1,63 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_113
+id_status: provisional
+slug: bc_113_arginin
+title: Arginin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Arg
+  one_letter: R
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- basisch
+- semi-essenziell
+- glukogen
+- harnstoffzyklus
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: CH2
+  - label: NH
+  - label: C
+    fork:
+    - label: NH
+      bond: 2
+    - label: NH2
+      bond: 1
+back_sections:
+  classification: Basisch (Guanidinogruppe) · glukogen · semi-essenziell
+  general_properties:
+  - 'Rest: 3-Guanidinopropylgruppe'
+  - Stärkste Base unter den Aminosäuren (pKₛ ≈ 12,5)
+  biochemical_relevance:
+  - 'Harnstoffzyklus: Arginase spaltet in Harnstoff und Ornithin'
+  - Substrat der NO-Synthase, Vorstufe von Kreatin
+  clinical_relevance:
+  - NO wirkt vasodilatierend (NO-cGMP-Weg)
+  mnemonic: Code R wie ‚aRginin‘ – A war schon an Alanin vergeben.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc113

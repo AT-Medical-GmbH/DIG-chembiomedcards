@@ -1,0 +1,17 @@
+{# Vorderseite – bewusst reduziert (docs/concept/05-card-layout.md §5).
+   Aminosäuren: Fischer-Projektion ohne Namen. Begriffs-Karten (z. B. Vitamine): nur Bezeichnung.
+   Kein QR-Code auf der Vorderseite, damit sie die Antwort nicht verrät. #}
+<section class="card front" style="--c-primary: {{ primary_color }}">
+  {% include "_card_header.html" %}
+  <div class="stage">
+    {% if card.front_content.get("render") == "fischer_projection" %}
+      {{ front_svg | safe }}
+    {% elif card.front_content.get("render") == "term" %}
+      <div class="term">{{ card.front_content.get("text") }}</div>
+    {% endif %}
+  </div>
+  <div class="footer">
+    <span class="card-id">{{ card.card_id }}</span>
+    <span class="right"><span>© {{ year }} AT Medical GmbH</span></span>
+  </div>
+</section>

@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+# Build-Artefakte – reproduzierbar aus data/ + templates/ (make build)
+generated/individual/
+generated/manifest.json
+# Vorschauen (generated/preview/) werden bewusst versioniert: Review im Pull Request

@@ -1,0 +1,57 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_108
+id_status: provisional
+slug: bc_108_phenylalanin
+title: Phenylalanin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Phe
+  one_letter: F
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- aromatisch
+- essenziell
+- glukogen
+- ketogen
+- stoffwechseldefekt
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - ring: phenyl
+back_sections:
+  classification: Unpolar · aromatisch · glukogen und ketogen · essenziell
+  general_properties:
+  - 'Rest: Benzylgruppe'
+  biochemical_relevance:
+  - Phenylalanin-Hydroxylase (Kofaktor BH₄) bildet Tyrosin
+  - Abbau zu Fumarat und Acetoacetat
+  clinical_relevance:
+  - 'Phenylketonurie (PKU): Neugeborenen-Screening, Phe-arme Diät'
+  - Aspartam enthält Phe – Warnhinweis bei PKU
+  mnemonic: Ein-Buchstaben-Code F wie ‚Fenyl‘ – P war schon an Prolin vergeben.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc108

@@ -1,5 +1,20 @@
 # 16 — Phasenplan, Meilensteine & Akzeptanzkriterien
 
+## 0. Aktueller Stand (2026-10-31)
+
+Wegen der korrigierten Ausgangslage (nur Muster + Planungsliste, ADR-014) wurde die Reihenfolge
+angepasst: **Produktion aus Daten startet sofort**, der Import entfällt weitgehend.
+
+| Schritt | Stand |
+|---|---|
+| Konzept (Phase 1) | ✅ abgeschlossen |
+| Template (Vorder-/Rückseite), Design-Tokens, Kategorien/Tags, Kartenschema | ✅ umgesetzt (`templates/`, `data/`) |
+| Generator + Validierung + Berichte (`make build`) | ✅ umgesetzt (`scripts/`) |
+| **Pilotserie: 20 proteinogene Aminosäuren** (`bc_098`–`bc_117`) | ✅ gerendert · ⏳ **Fachreview offen** (`reports/cards_review_needed.md`) |
+| Abgleich mit den Musterkarten | ⏳ wartet auf Upload der Muster |
+| Serienproduktion Handover-Soll-Liste (~170 Karten), danach Masterverzeichnis (1.452) | ⏳ nach Pilot-Freigabe |
+| Print-/Moodle-Pakete, Online-MVP | ⏳ wie unten geplant |
+
 ## 1. Phasenplan (umsetzungsreihenfolge)
 
 | Phase | Inhalt | Ergebnis / Gate |

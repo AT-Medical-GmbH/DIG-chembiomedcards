@@ -1,5 +1,12 @@
 # 04 — Import- & Audit-Pipeline
 
+> **Aktualisierung 2026-10-31 – Ausgangslage korrigiert.** Es gibt **keinen großen Altbestand**,
+> der übernommen werden muss, sondern nur einige **Musterkarten** und eine **Liste der zu
+> erstellenden Karten** (`cards/registry/MASTER_DIRECTORY.md`, Soll-Liste im Handover). Die Karten
+> werden daher **von Anfang an aus Daten produziert** (Kap. 06, ADR-014). Die hier beschriebene
+> Pipeline wird nur noch in kleinem Umfang gebraucht: um die Musterkarten als Gestaltungs- und
+> Inhaltsreferenz einzulesen und künftige Fremdzulieferungen zu prüfen.
+
 Die vorhandenen Karten werden **nach** dieser Konzeptphase separat hochgeladen. Dieses Kapitel
 beschreibt die automatisierte Verarbeitungskette, die dann greift. Ziel: **kein manuelles
 Sortieren von Bildern**, sondern eine saubere, reproduzierbare Pipeline mit nachvollziehbaren

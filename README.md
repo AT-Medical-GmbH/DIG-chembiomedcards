@@ -29,9 +29,12 @@ Online-Lernsystem) liegt in **[`docs/concept/`](docs/concept/README.md)**. Einst
 
 ## Projektstatus
 
-**Konzeptphase – abgeschlossen und freigabebereit.**
+**Pilotproduktion läuft.** Das Konzept ist abgeschlossen; die Content-Pipeline ist umgesetzt
+(`make build`). Pilotserie: 20 proteinogene Aminosäuren
+([Vorschau](generated/preview/contact_sheet.png), [offene Reviews](reports/cards_review_needed.md)).
 
-Das Gesamtkonzept (`docs/concept/`) ist ausgearbeitet. Die vorhandenen Karten werden laut Handover
-separat hochgeladen; die Import-/Audit-Pipeline ist so entworfen, dass sie danach automatisiert
-greift. Layoutstandards, Kartenmetadaten, Registry-Prozesse sowie Print-/Online-Schnittstellen
-sind konzeptionell festgelegt.
+Bisher existieren nur einige Musterkarten und die Planungsliste
+(`cards/registry/MASTER_DIRECTORY.md`); die Karten werden deshalb direkt aus Daten produziert
+(`data/cards/*.yaml` → `make build`). Startumfang: Handover-Soll-Liste (~170 Karten), danach das
+Masterverzeichnis. Nächste Schritte und offene Punkte:
+[Roadmap](docs/concept/16-roadmap-and-acceptance.md) · [Offene Fragen](docs/concept/open-questions.md).

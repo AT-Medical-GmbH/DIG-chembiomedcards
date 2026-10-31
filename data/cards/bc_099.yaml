@@ -1,0 +1,56 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_099
+id_status: provisional
+slug: bc_099_alanin
+title: Alanin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Ala
+  one_letter: A
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- aliphatisch
+- nicht-essenziell
+- glukogen
+- transaminierung
+- laborwert
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH3
+back_sections:
+  classification: Unpolar · aliphatisch · glukogen · nicht essenziell
+  general_properties:
+  - 'Rest: Methylgruppe (–CH₃)'
+  - Kleinste chirale proteinogene Aminosäure
+  biochemical_relevance:
+  - 'Transaminierung: Pyruvat + Glutamat ⇄ Alanin + α-Ketoglutarat (ALT)'
+  - 'Glucose-Alanin-Zyklus: Stickstofftransport Muskel → Leber'
+  clinical_relevance:
+  - 'ALT (GPT) im Serum: Marker für Leberzellschaden'
+  mnemonic: Alanin und Pyruvat trennt nur eine Transaminierung.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc099

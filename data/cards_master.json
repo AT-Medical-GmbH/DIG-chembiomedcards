@@ -1,0 +1,1524 @@
+{
+  "schema": "data/schema/card.schema.json",
+  "card_count": 20,
+  "cards_per_primary_category": {
+    "biochemie": 20
+  },
+  "cards": [
+    {
+      "card_id": "bc_098",
+      "id_status": "provisional",
+      "slug": "bc_098_glycin",
+      "title": "Glycin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Gly",
+        "one_letter": "G"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "nicht-essenziell",
+        "glukogen",
+        "kollagen"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "H"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Kleinste proteinogene Aminosäure · unpolar · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest: H – einzige achirale proteinogene Aminosäure",
+          "Hohe Flexibilität der Peptidkette (Schleifen, Turns)"
+        ],
+        "biochemical_relevance": [
+          "Kollagen: jede dritte Position (Gly-X-Y)",
+          "Vorstufe von Häm (δ-ALA), Purinen, Kreatin und Glutathion"
+        ],
+        "clinical_relevance": [
+          "Inhibitorischer Neurotransmitter in Rückenmark und Hirnstamm",
+          "Strychnin blockiert Glycinrezeptoren → Krämpfe"
+        ],
+        "mnemonic": "Name von griech. glykys = süß – Glycin schmeckt süßlich."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc098"
+    },
+    {
+      "card_id": "bc_099",
+      "id_status": "provisional",
+      "slug": "bc_099_alanin",
+      "title": "Alanin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Ala",
+        "one_letter": "A"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "aliphatisch",
+        "nicht-essenziell",
+        "glukogen",
+        "transaminierung",
+        "laborwert"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · aliphatisch · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest: Methylgruppe (–CH₃)",
+          "Kleinste chirale proteinogene Aminosäure"
+        ],
+        "biochemical_relevance": [
+          "Transaminierung: Pyruvat + Glutamat ⇄ Alanin + α-Ketoglutarat (ALT)",
+          "Glucose-Alanin-Zyklus: Stickstofftransport Muskel → Leber"
+        ],
+        "clinical_relevance": [
+          "ALT (GPT) im Serum: Marker für Leberzellschaden"
+        ],
+        "mnemonic": "Alanin und Pyruvat trennt nur eine Transaminierung."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc099"
+    },
+    {
+      "card_id": "bc_100",
+      "id_status": "provisional",
+      "slug": "bc_100_valin",
+      "title": "Valin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Val",
+        "one_letter": "V"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "verzweigtkettig",
+        "essenziell",
+        "glukogen",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH",
+            "left": "H3C",
+            "right": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · verzweigtkettig (BCAA) · glukogen · essenziell",
+        "general_properties": [
+          "Rest: Isopropylgruppe",
+          "Abbau überwiegend im Skelettmuskel"
+        ],
+        "biochemical_relevance": [
+          "Abbau über verzweigtkettige α-Ketosäure-Dehydrogenase (BCKDH)",
+          "Endprodukt Succinyl-CoA (glukogen)"
+        ],
+        "clinical_relevance": [
+          "Ahornsirupkrankheit (BCKDH-Defekt)",
+          "Sichelzellanämie: HbS mit Glu → Val an Position 6 der β-Kette"
+        ],
+        "mnemonic": "Valin trägt ein ‚V‘ – die Seitenkette ist V-förmig verzweigt."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc100"
+    },
+    {
+      "card_id": "bc_101",
+      "id_status": "provisional",
+      "slug": "bc_101_leucin",
+      "title": "Leucin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Leu",
+        "one_letter": "L"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "verzweigtkettig",
+        "essenziell",
+        "ketogen",
+        "stoffwechseldefekt",
+        "signaltransduktion"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH",
+            "left": "H3C",
+            "right": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · verzweigtkettig (BCAA) · rein ketogen · essenziell",
+        "general_properties": [
+          "Rest: Isobutylgruppe"
+        ],
+        "biochemical_relevance": [
+          "Abbau zu Acetyl-CoA und Acetoacetat (über HMG-CoA)",
+          "Aktiviert mTORC1 → fördert die Proteinsynthese"
+        ],
+        "clinical_relevance": [
+          "Ahornsirupkrankheit: Leucin wirkt am stärksten neurotoxisch"
+        ],
+        "molecular_relevance": [
+          "Leucin-Zipper: Dimerisierungsmotiv vieler Transkriptionsfaktoren"
+        ],
+        "mnemonic": "Leucin und Lysin sind die beiden rein ketogenen Aminosäuren."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc101"
+    },
+    {
+      "card_id": "bc_102",
+      "id_status": "provisional",
+      "slug": "bc_102_isoleucin",
+      "title": "Isoleucin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Ile",
+        "one_letter": "I"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "verzweigtkettig",
+        "essenziell",
+        "glukogen",
+        "ketogen",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "C",
+            "left": "H3C",
+            "right": "H"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · verzweigtkettig (BCAA) · glukogen und ketogen · essenziell",
+        "general_properties": [
+          "Rest: sec-Butylgruppe",
+          "Zweites Chiralitätszentrum am C3 (2S,3S)"
+        ],
+        "biochemical_relevance": [
+          "Abbau zu Acetyl-CoA und Propionyl-CoA → Succinyl-CoA"
+        ],
+        "clinical_relevance": [
+          "Ahornsirupkrankheit: Alloisoleucin im Plasma ist diagnostisch"
+        ],
+        "mnemonic": "Iso-Leucin ist ein Isomer von Leucin (beide C₆H₁₃NO₂)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Fischer-Darstellung C3 (CH₃ links, H rechts = 3S) vom Reviewer bestätigen lassen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc102"
+    },
+    {
+      "card_id": "bc_103",
+      "id_status": "provisional",
+      "slug": "bc_103_serin",
+      "title": "Serin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Ser",
+        "one_letter": "S"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "polar",
+        "hydroxy",
+        "nicht-essenziell",
+        "glukogen",
+        "signaltransduktion"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "OH"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Polar · ungeladen · Hydroxy-Aminosäure · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest: Hydroxymethylgruppe (–CH₂–OH)"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus 3-Phosphoglycerat",
+          "Vorstufe von Glycin (C₁-Einheit auf THF), Cystein und Sphingolipiden"
+        ],
+        "clinical_relevance": [
+          "Aktives Zentrum der Serinproteasen (z. B. Trypsin, Thrombin)",
+          "Organophosphate hemmen Acetylcholinesterase am Serin"
+        ],
+        "molecular_relevance": [
+          "Phosphorylierungsstelle von Ser/Thr-Kinasen"
+        ],
+        "mnemonic": "Name von lat. sericum = Seide (Seidenprotein Sericin)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc103"
+    },
+    {
+      "card_id": "bc_104",
+      "id_status": "provisional",
+      "slug": "bc_104_threonin",
+      "title": "Threonin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Thr",
+        "one_letter": "T"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "polar",
+        "hydroxy",
+        "essenziell",
+        "glukogen",
+        "ketogen",
+        "signaltransduktion"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "C",
+            "left": "H",
+            "right": "OH"
+          },
+          {
+            "label": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Polar · ungeladen · Hydroxy-Aminosäure · glukogen und ketogen · essenziell",
+        "general_properties": [
+          "Rest: 1-Hydroxyethylgruppe",
+          "Zweites Chiralitätszentrum am C3 (2S,3R)"
+        ],
+        "biochemical_relevance": [
+          "Abbau beim Menschen v. a. über α-Ketobutyrat zu Propionyl-CoA",
+          "O-Glykosylierung an der OH-Gruppe (z. B. Muzine)"
+        ],
+        "clinical_relevance": [
+          "Essenziell: Zufuhr über Nahrung bzw. parenterale Ernährung nötig"
+        ],
+        "molecular_relevance": [
+          "Phosphorylierungsstelle von Ser/Thr-Kinasen"
+        ],
+        "mnemonic": "Als letzte der 20 Standard-Aminosäuren entdeckt (W. C. Rose, 1935)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Einordnung ‚glukogen und ketogen‘ ist lehrbuchabhängig – mit Referenzwerk abgleichen.",
+        "Klinik-Box ist inhaltlich schwach – Reviewer soll ggf. besseren Klinikbezug vorschlagen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc104"
+    },
+    {
+      "card_id": "bc_105",
+      "id_status": "provisional",
+      "slug": "bc_105_cystein",
+      "title": "Cystein",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Cys",
+        "one_letter": "C"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "polar",
+        "schwefelhaltig",
+        "semi-essenziell",
+        "glukogen",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "SH"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Polar · schwefelhaltig (Thiol) · glukogen · semi-essenziell",
+        "general_properties": [
+          "Rest: Thiomethylgruppe (–CH₂–SH)",
+          "L-Cystein ist (R)-konfiguriert – CIP-Ausnahme"
+        ],
+        "biochemical_relevance": [
+          "Disulfidbrücken (Cystin) stabilisieren Proteine",
+          "Bestandteil von Glutathion, Vorstufe von Taurin",
+          "Synthese aus Methionin (über Homocystein) und Serin"
+        ],
+        "clinical_relevance": [
+          "Cystinurie: Transportdefekt → Cystinsteine",
+          "N-Acetylcystein: Antidot bei Paracetamol-Intoxikation"
+        ],
+        "mnemonic": "Cys + Cys → Cystin: zwei SH-Gruppen bilden eine S–S-Brücke."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc105"
+    },
+    {
+      "card_id": "bc_106",
+      "id_status": "provisional",
+      "slug": "bc_106_methionin",
+      "title": "Methionin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Met",
+        "one_letter": "M"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "schwefelhaltig",
+        "essenziell",
+        "glukogen",
+        "methylierung"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "S"
+          },
+          {
+            "label": "CH3"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · schwefelhaltig (Thioether) · glukogen · essenziell",
+        "general_properties": [
+          "Rest: 2-(Methylthio)ethylgruppe"
+        ],
+        "biochemical_relevance": [
+          "Vorstufe von S-Adenosylmethionin (SAM), wichtigster Methylgruppendonor",
+          "Abbau über Homocystein zu Succinyl-CoA (B6, B12, Folat)"
+        ],
+        "clinical_relevance": [
+          "Hyperhomocysteinämie bei B12-, Folat- oder B6-Mangel"
+        ],
+        "molecular_relevance": [
+          "Start-Aminosäure der Translation (Codon AUG)"
+        ],
+        "mnemonic": "Met steht am Anfang jedes Proteins – AUG = Start."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc106"
+    },
+    {
+      "card_id": "bc_107",
+      "id_status": "provisional",
+      "slug": "bc_107_prolin",
+      "title": "Prolin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Pro",
+        "one_letter": "P"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "nicht-essenziell",
+        "glukogen",
+        "kollagen"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "special": "proline"
+      },
+      "back_sections": {
+        "classification": "Unpolar · cyclisch · sekundäre Aminogruppe · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest bildet mit der α-Aminogruppe einen Pyrrolidinring",
+          "Historisch auch ‚Iminosäure‘ genannt"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus und Abbau zu Glutamat",
+          "Hydroxylierung zu Hydroxyprolin im Kollagen (Vitamin C)"
+        ],
+        "clinical_relevance": [
+          "Skorbut: gestörte Prolylhydroxylierung bei Vitamin-C-Mangel"
+        ],
+        "molecular_relevance": [
+          "‚Helixbrecher‘: knickt α-Helices, häufig in β-Turns"
+        ],
+        "mnemonic": "Einzige proteinogene Aminosäure mit sekundärer Aminogruppe."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Sonderdarstellung: Aminogruppe links ist Teil des Rings (HN) – Konvention vom Reviewer bestätigen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc107"
+    },
+    {
+      "card_id": "bc_108",
+      "id_status": "provisional",
+      "slug": "bc_108_phenylalanin",
+      "title": "Phenylalanin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Phe",
+        "one_letter": "F"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "aromatisch",
+        "essenziell",
+        "glukogen",
+        "ketogen",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "ring": "phenyl"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · aromatisch · glukogen und ketogen · essenziell",
+        "general_properties": [
+          "Rest: Benzylgruppe"
+        ],
+        "biochemical_relevance": [
+          "Phenylalanin-Hydroxylase (Kofaktor BH₄) bildet Tyrosin",
+          "Abbau zu Fumarat und Acetoacetat"
+        ],
+        "clinical_relevance": [
+          "Phenylketonurie (PKU): Neugeborenen-Screening, Phe-arme Diät",
+          "Aspartam enthält Phe – Warnhinweis bei PKU"
+        ],
+        "mnemonic": "Ein-Buchstaben-Code F wie ‚Fenyl‘ – P war schon an Prolin vergeben."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc108"
+    },
+    {
+      "card_id": "bc_109",
+      "id_status": "provisional",
+      "slug": "bc_109_tyrosin",
+      "title": "Tyrosin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Tyr",
+        "one_letter": "Y"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "polar",
+        "aromatisch",
+        "semi-essenziell",
+        "glukogen",
+        "ketogen",
+        "neurotransmitter-vorstufe",
+        "signaltransduktion"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "ring": "4-hydroxyphenyl"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Polar · aromatisch (Phenol) · glukogen und ketogen · semi-essenziell",
+        "general_properties": [
+          "Rest: 4-Hydroxybenzylgruppe",
+          "Entsteht aus Phenylalanin (PAH)"
+        ],
+        "biochemical_relevance": [
+          "Vorstufe von Katecholaminen, Schilddrüsenhormonen und Melanin"
+        ],
+        "clinical_relevance": [
+          "Albinismus (Tyrosinase-Defekt)",
+          "Alkaptonurie im Tyrosin-Abbau"
+        ],
+        "molecular_relevance": [
+          "Ziel von Tyrosinkinasen und Tyrosinkinase-Inhibitoren"
+        ],
+        "mnemonic": "Name von griech. tyros = Käse – zuerst aus Käse isoliert."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc109"
+    },
+    {
+      "card_id": "bc_110",
+      "id_status": "provisional",
+      "slug": "bc_110_tryptophan",
+      "title": "Tryptophan",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Trp",
+        "one_letter": "W"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "unpolar",
+        "aromatisch",
+        "essenziell",
+        "glukogen",
+        "ketogen",
+        "neurotransmitter-vorstufe",
+        "stoffwechseldefekt"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "ring": "indol-3-yl"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Unpolar · aromatisch (Indol) · glukogen und ketogen · essenziell",
+        "general_properties": [
+          "Rest: Indol-3-ylmethylgruppe",
+          "Größte proteinogene Aminosäure"
+        ],
+        "biochemical_relevance": [
+          "Vorstufe von Serotonin und Melatonin",
+          "Kynurenin-Weg: endogene NAD⁺-Synthese"
+        ],
+        "clinical_relevance": [
+          "Hartnup-Krankheit: Transportdefekt, Pellagra-ähnlich",
+          "Karzinoid: Trp-Verbrauch für Serotonin → Niacinmangel möglich"
+        ],
+        "mnemonic": "W für ‚tWo rings‘ – das Indol hat zwei Ringe."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc110"
+    },
+    {
+      "card_id": "bc_111",
+      "id_status": "provisional",
+      "slug": "bc_111_histidin",
+      "title": "Histidin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "His",
+        "one_letter": "H"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "basisch",
+        "aromatisch",
+        "essenziell",
+        "glukogen"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "ring": "imidazol-4-yl"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Basisch · aromatisch (Imidazol) · glukogen · essenziell",
+        "general_properties": [
+          "Rest: Imidazol-4-ylmethylgruppe",
+          "pKₛ der Seitenkette ≈ 6"
+        ],
+        "biochemical_relevance": [
+          "Puffer und Säure-Base-Katalysator in aktiven Zentren",
+          "Decarboxylierung zu Histamin"
+        ],
+        "clinical_relevance": [
+          "Proximales His (F8) bindet das Häm-Eisen im Hämoglobin",
+          "Histamin: Mediator allergischer Reaktionen"
+        ],
+        "mnemonic": "Einzige Aminosäure, die bei pH 7 nennenswert puffert."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.",
+        "Gezeichnetes Tautomer (H an N1) ist eine Konvention – vom Reviewer bestätigen."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc111"
+    },
+    {
+      "card_id": "bc_112",
+      "id_status": "provisional",
+      "slug": "bc_112_lysin",
+      "title": "Lysin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Lys",
+        "one_letter": "K"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "basisch",
+        "essenziell",
+        "ketogen",
+        "kollagen"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "NH2"
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Basisch (positiv geladen) · rein ketogen · essenziell",
+        "general_properties": [
+          "Rest: 4-Aminobutylgruppe (ε-Aminogruppe)"
+        ],
+        "biochemical_relevance": [
+          "Hydroxylysin vernetzt Kollagenfasern",
+          "Vorstufe von Carnitin"
+        ],
+        "clinical_relevance": [
+          "Limitierende Aminosäure in Getreide (z. B. Weizen)"
+        ],
+        "molecular_relevance": [
+          "Acetylierung/Methylierung von Histon-Lysinen (Epigenetik)"
+        ],
+        "mnemonic": "Code K – L war schon an Leucin vergeben."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc112"
+    },
+    {
+      "card_id": "bc_113",
+      "id_status": "provisional",
+      "slug": "bc_113_arginin",
+      "title": "Arginin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Arg",
+        "one_letter": "R"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "basisch",
+        "semi-essenziell",
+        "glukogen",
+        "harnstoffzyklus"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "NH"
+          },
+          {
+            "label": "C",
+            "fork": [
+              {
+                "label": "NH",
+                "bond": 2
+              },
+              {
+                "label": "NH2",
+                "bond": 1
+              }
+            ]
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Basisch (Guanidinogruppe) · glukogen · semi-essenziell",
+        "general_properties": [
+          "Rest: 3-Guanidinopropylgruppe",
+          "Stärkste Base unter den Aminosäuren (pKₛ ≈ 12,5)"
+        ],
+        "biochemical_relevance": [
+          "Harnstoffzyklus: Arginase spaltet in Harnstoff und Ornithin",
+          "Substrat der NO-Synthase, Vorstufe von Kreatin"
+        ],
+        "clinical_relevance": [
+          "NO wirkt vasodilatierend (NO-cGMP-Weg)"
+        ],
+        "mnemonic": "Code R wie ‚aRginin‘ – A war schon an Alanin vergeben."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc113"
+    },
+    {
+      "card_id": "bc_114",
+      "id_status": "provisional",
+      "slug": "bc_114_aspartat",
+      "title": "Aspartat / Asparaginsäure",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Asp",
+        "one_letter": "D"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "sauer",
+        "nicht-essenziell",
+        "glukogen",
+        "transaminierung",
+        "harnstoffzyklus",
+        "laborwert"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "C",
+            "fork": [
+              {
+                "label": "O",
+                "bond": 2
+              },
+              {
+                "label": "OH",
+                "bond": 1
+              }
+            ]
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Sauer (negativ geladen) · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest: Carboxymethylgruppe (–CH₂–COOH)",
+          "Aspartat = deprotonierte Form bei pH 7"
+        ],
+        "biochemical_relevance": [
+          "Transaminierung mit Oxalacetat (AST)",
+          "Liefert das zweite N-Atom im Harnstoffzyklus",
+          "Malat-Aspartat-Shuttle"
+        ],
+        "clinical_relevance": [
+          "AST (GOT): Marker für Leber- und Muskelschaden"
+        ],
+        "mnemonic": "D wie ‚asparDic acid‘ – A war schon vergeben."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc114"
+    },
+    {
+      "card_id": "bc_115",
+      "id_status": "provisional",
+      "slug": "bc_115_glutamat",
+      "title": "Glutamat / Glutaminsäure",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Glu",
+        "one_letter": "E"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "sauer",
+        "nicht-essenziell",
+        "glukogen",
+        "transaminierung"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "C",
+            "fork": [
+              {
+                "label": "O",
+                "bond": 2
+              },
+              {
+                "label": "OH",
+                "bond": 1
+              }
+            ]
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Sauer (negativ geladen) · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest: 2-Carboxyethylgruppe",
+          "Glutamat = deprotonierte Form bei pH 7"
+        ],
+        "biochemical_relevance": [
+          "Zentraler N-Sammler: Transaminierung, oxidative Desaminierung (GLDH)",
+          "Vorstufe von GABA, Glutamin, Glutathion und Prolin"
+        ],
+        "clinical_relevance": [
+          "Wichtigster erregender Neurotransmitter im ZNS (Exzitotoxizität)"
+        ],
+        "mnemonic": "Glutamat schmeckt ‚umami‘ – Geschmacksverstärker E 621."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc115"
+    },
+    {
+      "card_id": "bc_116",
+      "id_status": "provisional",
+      "slug": "bc_116_asparagin",
+      "title": "Asparagin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Asn",
+        "one_letter": "N"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik",
+        "molekularbio"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "polar",
+        "amid",
+        "nicht-essenziell",
+        "glukogen"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "C",
+            "fork": [
+              {
+                "label": "O",
+                "bond": 2
+              },
+              {
+                "label": "NH2",
+                "bond": 1
+              }
+            ]
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Polar · ungeladen (Amid) · glukogen · nicht essenziell",
+        "general_properties": [
+          "Rest: Carbamoylmethylgruppe (–CH₂–CO–NH₂)"
+        ],
+        "biochemical_relevance": [
+          "Synthese aus Aspartat (Asparagin-Synthetase, N aus Glutamin)"
+        ],
+        "clinical_relevance": [
+          "Asparaginase in der Therapie der akuten lymphatischen Leukämie"
+        ],
+        "molecular_relevance": [
+          "N-Glykosylierung an Asn (Sequon Asn-X-Ser/Thr)"
+        ],
+        "mnemonic": "Erstmals aus Spargelsaft isoliert (1806)."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc116"
+    },
+    {
+      "card_id": "bc_117",
+      "id_status": "provisional",
+      "slug": "bc_117_glutamin",
+      "title": "Glutamin",
+      "subtitle": "Proteinogene Aminosäure",
+      "identifiers": {
+        "three_letter": "Gln",
+        "one_letter": "Q"
+      },
+      "module": "BC",
+      "primary_category": "biochemie",
+      "secondary_categories": [
+        "organik",
+        "klinik"
+      ],
+      "topic_group": "aminosaeuren_proteinogen",
+      "chapter": "biochemie/aminosaeuren",
+      "tags": [
+        "aminosaeure",
+        "proteinogen",
+        "polar",
+        "amid",
+        "semi-essenziell",
+        "glukogen"
+      ],
+      "difficulty": "beginner",
+      "front_type": "structure",
+      "front_content": {
+        "render": "fischer_projection",
+        "caption": "",
+        "side_chain": [
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "CH2"
+          },
+          {
+            "label": "C",
+            "fork": [
+              {
+                "label": "O",
+                "bond": 2
+              },
+              {
+                "label": "NH2",
+                "bond": 1
+              }
+            ]
+          }
+        ]
+      },
+      "back_sections": {
+        "classification": "Polar · ungeladen (Amid) · glukogen · bedingt essenziell",
+        "general_properties": [
+          "Rest: 2-Carbamoylethylgruppe",
+          "Häufigste freie Aminosäure im Plasma"
+        ],
+        "biochemical_relevance": [
+          "Ungiftige Transportform von Ammoniak (Glutamin-Synthetase)",
+          "N-Donor für Purin- und Pyrimidinsynthese"
+        ],
+        "clinical_relevance": [
+          "Renale Ammoniumausscheidung (Glutaminase) im Säure-Basen-Haushalt",
+          "Energiequelle für Enterozyten und Lymphozyten"
+        ],
+        "mnemonic": "Code Q wie ‚Q-tamine‘ – G war schon an Glycin vergeben."
+      },
+      "references": [],
+      "review_status": "needs_review",
+      "review_notes": [
+        "Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend."
+      ],
+      "version": "0.1.0",
+      "author": "AT Medical GmbH",
+      "reviewer": "",
+      "created_at": "2026-10-31",
+      "updated_at": "2026-10-31",
+      "print_status": "draft",
+      "web_status": "draft",
+      "qr_url": "https://chembiomed-cards.de/c/bc117"
+    }
+  ]
+}

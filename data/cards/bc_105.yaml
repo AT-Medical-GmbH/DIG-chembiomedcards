@@ -1,0 +1,58 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_105
+id_status: provisional
+slug: bc_105_cystein
+title: Cystein
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Cys
+  one_letter: C
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- polar
+- schwefelhaltig
+- semi-essenziell
+- glukogen
+- stoffwechseldefekt
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: SH
+back_sections:
+  classification: Polar · schwefelhaltig (Thiol) · glukogen · semi-essenziell
+  general_properties:
+  - 'Rest: Thiomethylgruppe (–CH₂–SH)'
+  - L-Cystein ist (R)-konfiguriert – CIP-Ausnahme
+  biochemical_relevance:
+  - Disulfidbrücken (Cystin) stabilisieren Proteine
+  - Bestandteil von Glutathion, Vorstufe von Taurin
+  - Synthese aus Methionin (über Homocystein) und Serin
+  clinical_relevance:
+  - 'Cystinurie: Transportdefekt → Cystinsteine'
+  - 'N-Acetylcystein: Antidot bei Paracetamol-Intoxikation'
+  mnemonic: 'Cys + Cys → Cystin: zwei SH-Gruppen bilden eine S–S-Brücke.'
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc105

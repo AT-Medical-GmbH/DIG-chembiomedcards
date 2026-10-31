@@ -19,3 +19,7 @@ jobs:
           python-version: '3.x'
       - name: Validate card registry metadata
         run: python3 scripts/validate_card_metadata.py --csv cards/registry/cards.master.csv
+      - name: Install card pipeline dependencies (validation only)
+        run: pip install pyyaml jsonschema
+      - name: Validate card data (data/cards/*.yaml)
+        run: python3 scripts/validate_cards.py

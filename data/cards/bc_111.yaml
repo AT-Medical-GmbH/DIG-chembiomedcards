@@ -1,0 +1,57 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_111
+id_status: provisional
+slug: bc_111_histidin
+title: Histidin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: His
+  one_letter: H
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- basisch
+- aromatisch
+- essenziell
+- glukogen
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - ring: imidazol-4-yl
+back_sections:
+  classification: Basisch · aromatisch (Imidazol) · glukogen · essenziell
+  general_properties:
+  - 'Rest: Imidazol-4-ylmethylgruppe'
+  - pKₛ der Seitenkette ≈ 6
+  biochemical_relevance:
+  - Puffer und Säure-Base-Katalysator in aktiven Zentren
+  - Decarboxylierung zu Histamin
+  clinical_relevance:
+  - Proximales His (F8) bindet das Häm-Eisen im Hämoglobin
+  - 'Histamin: Mediator allergischer Reaktionen'
+  mnemonic: Einzige Aminosäure, die bei pH 7 nennenswert puffert.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- Gezeichnetes Tautomer (H an N1) ist eine Konvention – vom Reviewer bestätigen.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc111

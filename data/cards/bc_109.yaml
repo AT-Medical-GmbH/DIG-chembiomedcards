@@ -1,0 +1,61 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_109
+id_status: provisional
+slug: bc_109_tyrosin
+title: Tyrosin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Tyr
+  one_letter: Y
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- polar
+- aromatisch
+- semi-essenziell
+- glukogen
+- ketogen
+- neurotransmitter-vorstufe
+- signaltransduktion
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - ring: 4-hydroxyphenyl
+back_sections:
+  classification: Polar · aromatisch (Phenol) · glukogen und ketogen · semi-essenziell
+  general_properties:
+  - 'Rest: 4-Hydroxybenzylgruppe'
+  - Entsteht aus Phenylalanin (PAH)
+  biochemical_relevance:
+  - Vorstufe von Katecholaminen, Schilddrüsenhormonen und Melanin
+  clinical_relevance:
+  - Albinismus (Tyrosinase-Defekt)
+  - Alkaptonurie im Tyrosin-Abbau
+  molecular_relevance:
+  - Ziel von Tyrosinkinasen und Tyrosinkinase-Inhibitoren
+  mnemonic: Name von griech. tyros = Käse – zuerst aus Käse isoliert.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc109

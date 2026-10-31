@@ -1,0 +1,59 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_110
+id_status: provisional
+slug: bc_110_tryptophan
+title: Tryptophan
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Trp
+  one_letter: W
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- aromatisch
+- essenziell
+- glukogen
+- ketogen
+- neurotransmitter-vorstufe
+- stoffwechseldefekt
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - ring: indol-3-yl
+back_sections:
+  classification: Unpolar · aromatisch (Indol) · glukogen und ketogen · essenziell
+  general_properties:
+  - 'Rest: Indol-3-ylmethylgruppe'
+  - Größte proteinogene Aminosäure
+  biochemical_relevance:
+  - Vorstufe von Serotonin und Melatonin
+  - 'Kynurenin-Weg: endogene NAD⁺-Synthese'
+  clinical_relevance:
+  - 'Hartnup-Krankheit: Transportdefekt, Pellagra-ähnlich'
+  - 'Karzinoid: Trp-Verbrauch für Serotonin → Niacinmangel möglich'
+  mnemonic: W für ‚tWo rings‘ – das Indol hat zwei Ringe.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc110

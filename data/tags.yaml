@@ -1,0 +1,31 @@
+# Kontrolliertes Tag-Vokabular. Der Build bricht ab, wenn eine Karte ein hier
+# nicht gelistetes Tag nutzt (docs/concept/03-taxonomy-and-tabs.md §6).
+stoffklasse:
+  - aminosaeure
+  - proteinogen
+eigenschaft:
+  - unpolar
+  - polar
+  - sauer
+  - basisch
+  - aromatisch
+  - aliphatisch
+  - verzweigtkettig
+  - schwefelhaltig
+  - hydroxy
+  - amid
+  - essenziell
+  - semi-essenziell
+  - nicht-essenziell
+  - glukogen
+  - ketogen
+pathway:
+  - harnstoffzyklus
+  - transaminierung
+  - kollagen
+  - neurotransmitter-vorstufe
+  - methylierung
+  - signaltransduktion
+klinik:
+  - laborwert
+  - stoffwechseldefekt

@@ -3,6 +3,15 @@
 Diese Punkte sind **bewusst nicht einseitig entschieden**, weil sie bestehende Konventionen
 berühren, externe Systeme betreffen oder eine fachliche/geschäftliche Festlegung brauchen.
 
+## Neu seit Pilotstart (2026-10-31)
+- **A. Vorläufige IDs (ADR-016):** Sind `bc_098`–`bc_117` für die 20 proteinogenen Aminosäuren in Ordnung,
+  oder gibt es eine andere Nummerierung im Masterverzeichnis?
+- **B. Logo (ADR-017):** Freigegebene Logo-Datei (SVG) für die Kopfzone bereitstellen.
+- **C. Musterkarten:** Upload nach `input/uploaded_raw/`, um Layout und Inhaltstiefe abzugleichen.
+- **D. Fachreviewer:** Wer prüft und gibt die Pilotkarten frei (`reviewer`-Feld)?
+- **E. Pharma-Modul:** PR #8 (Modul PH) aus einer anderen Session mit dieser Pipeline und der
+  Tab-/Modul-Entscheidung (ADR-004) abstimmen.
+
 ## Taxonomie & Inhalt
 1. **Tab- vs. Modulstruktur (ADR-004):** Soll die sichtbare Tab-Leiste exakt die 6 Handover-Tabs
    zeigen, während die Modulcodes (AC/OC/BC/MB/APC/PH) als Paketdimension bleiben? Sollen **APC**
@@ -39,8 +48,8 @@ berühren, externe Systeme betreffen oder eine fachliche/geschäftliche Festlegu
     bestätigen.
 
 ## Vorgehen
-14. **Reihenfolge nach Upload:** Zuerst **Print-/Moodle-Linie** fertigstellen (schneller sichtbarer
-    Wert) oder parallel **Online-MVP** starten? (Konzept erlaubt beides unabhängig.)
+14. ~~Reihenfolge nach Upload~~ – *entschieden (ADR-014/015): Produktion aus Daten, Pilot Aminosäuren.*
+15. **Print-/Moodle-Linie zuerst oder parallel Online-MVP?** (Konzept erlaubt beides unabhängig.)
 
 > Bis zur Klärung bleiben die betroffenen Punkte im Konzept als *proposed* markiert; es werden
 > **keine** Live-Systeme verändert und **keine** bestehenden IDs/Registry stillschweigend

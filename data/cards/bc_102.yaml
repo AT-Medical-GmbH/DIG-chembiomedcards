@@ -1,0 +1,60 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_102
+id_status: provisional
+slug: bc_102_isoleucin
+title: Isoleucin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Ile
+  one_letter: I
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- verzweigtkettig
+- essenziell
+- glukogen
+- ketogen
+- stoffwechseldefekt
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: C
+    left: H3C
+    right: H
+  - label: CH2
+  - label: CH3
+back_sections:
+  classification: Unpolar · verzweigtkettig (BCAA) · glukogen und ketogen · essenziell
+  general_properties:
+  - 'Rest: sec-Butylgruppe'
+  - Zweites Chiralitätszentrum am C3 (2S,3S)
+  biochemical_relevance:
+  - Abbau zu Acetyl-CoA und Propionyl-CoA → Succinyl-CoA
+  clinical_relevance:
+  - 'Ahornsirupkrankheit: Alloisoleucin im Plasma ist diagnostisch'
+  mnemonic: Iso-Leucin ist ein Isomer von Leucin (beide C₆H₁₃NO₂).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- Fischer-Darstellung C3 (CH₃ links, H rechts = 3S) vom Reviewer bestätigen lassen.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc102

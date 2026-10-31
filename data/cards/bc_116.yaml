@@ -1,0 +1,61 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_116
+id_status: provisional
+slug: bc_116_asparagin
+title: Asparagin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Asn
+  one_letter: N
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- polar
+- amid
+- nicht-essenziell
+- glukogen
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: C
+    fork:
+    - label: O
+      bond: 2
+    - label: NH2
+      bond: 1
+back_sections:
+  classification: Polar · ungeladen (Amid) · glukogen · nicht essenziell
+  general_properties:
+  - 'Rest: Carbamoylmethylgruppe (–CH₂–CO–NH₂)'
+  biochemical_relevance:
+  - Synthese aus Aspartat (Asparagin-Synthetase, N aus Glutamin)
+  clinical_relevance:
+  - Asparaginase in der Therapie der akuten lymphatischen Leukämie
+  molecular_relevance:
+  - N-Glykosylierung an Asn (Sequon Asn-X-Ser/Thr)
+  mnemonic: Erstmals aus Spargelsaft isoliert (1806).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc116

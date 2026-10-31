@@ -1,0 +1,63 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_104
+id_status: provisional
+slug: bc_104_threonin
+title: Threonin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Thr
+  one_letter: T
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- molekularbio
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- polar
+- hydroxy
+- essenziell
+- glukogen
+- ketogen
+- signaltransduktion
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: C
+    left: H
+    right: OH
+  - label: CH3
+back_sections:
+  classification: Polar · ungeladen · Hydroxy-Aminosäure · glukogen und ketogen · essenziell
+  general_properties:
+  - 'Rest: 1-Hydroxyethylgruppe'
+  - Zweites Chiralitätszentrum am C3 (2S,3R)
+  biochemical_relevance:
+  - Abbau beim Menschen v. a. über α-Ketobutyrat zu Propionyl-CoA
+  - O-Glykosylierung an der OH-Gruppe (z. B. Muzine)
+  clinical_relevance:
+  - 'Essenziell: Zufuhr über Nahrung bzw. parenterale Ernährung nötig'
+  molecular_relevance:
+  - Phosphorylierungsstelle von Ser/Thr-Kinasen
+  mnemonic: Als letzte der 20 Standard-Aminosäuren entdeckt (W. C. Rose, 1935).
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+- Einordnung ‚glukogen und ketogen‘ ist lehrbuchabhängig – mit Referenzwerk abgleichen.
+- Klinik-Box ist inhaltlich schwach – Reviewer soll ggf. besseren Klinikbezug vorschlagen.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc104

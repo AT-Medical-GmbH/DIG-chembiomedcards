@@ -1,10 +1,19 @@
 {
   "project": "ChemBioMed Cards",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "tokens": {
-    "spacing": { "xs": 4, "sm": 8, "md": 16, "lg": 24 },
-    "radius": { "card": 8 },
-    "typography": { "base_size": 16 },
+    "spacing": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24
+    },
+    "radius": {
+      "card": 8
+    },
+    "typography": {
+      "base_size": 16
+    },
     "colors": {
       "surface": "#FFFFFF",
       "text_primary": "#1A1A1A",
@@ -14,6 +23,57 @@
       "accent_mb": "#8E24AA",
       "accent_apc": "#00897B",
       "accent_ph": "#E53935"
+    },
+    "card": {
+      "$comment": "Kartenlayout-Tokens (docs/concept/05-card-layout.md). Grundfarben an ATMED-web angelehnt; Kategorie-/Boxfarben gemäß Farblogik.",
+      "format_mm": {
+        "width": 148,
+        "height": 105,
+        "bleed": 3,
+        "safe": 4
+      },
+      "export_dpi": 300,
+      "font_family": "Inter, 'Liberation Sans', Arial, sans-serif",
+      "colors": {
+        "surface": "#ffffff",
+        "surface_alt": "#f0f4f8",
+        "text": "#1a202c",
+        "muted": "#6b7280",
+        "border": "#d1d5db",
+        "brand": "#0a7ea4",
+        "tab_inactive_bg": "#eef1f5",
+        "tab_inactive_text": "#6b7280"
+      },
+      "categories": {
+        "allgemein": "#2b2f36",
+        "anorganik": "#2b2f36",
+        "organik": "#2b2f36",
+        "molekularbio": "#2563eb",
+        "biochemie": "#059669",
+        "klinik": "#dc2626"
+      },
+      "boxes": {
+        "properties": {
+          "accent": "#2b2f36",
+          "bg": "#f3f4f6"
+        },
+        "biochemical": {
+          "accent": "#059669",
+          "bg": "#ecfdf5"
+        },
+        "clinical": {
+          "accent": "#dc2626",
+          "bg": "#fef2f2"
+        },
+        "molecular": {
+          "accent": "#2563eb",
+          "bg": "#eff6ff"
+        },
+        "mnemonic": {
+          "accent": "#7c3aed",
+          "bg": "#f5f3ff"
+        }
+      }
     }
   }
 }

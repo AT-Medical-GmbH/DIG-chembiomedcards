@@ -1,0 +1,60 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_106
+id_status: provisional
+slug: bc_106_methionin
+title: Methionin
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Met
+  one_letter: M
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+- molekularbio
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- unpolar
+- schwefelhaltig
+- essenziell
+- glukogen
+- methylierung
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: CH2
+  - label: S
+  - label: CH3
+back_sections:
+  classification: Unpolar · schwefelhaltig (Thioether) · glukogen · essenziell
+  general_properties:
+  - 'Rest: 2-(Methylthio)ethylgruppe'
+  biochemical_relevance:
+  - Vorstufe von S-Adenosylmethionin (SAM), wichtigster Methylgruppendonor
+  - Abbau über Homocystein zu Succinyl-CoA (B6, B12, Folat)
+  clinical_relevance:
+  - Hyperhomocysteinämie bei B12-, Folat- oder B6-Mangel
+  molecular_relevance:
+  - Start-Aminosäure der Translation (Codon AUG)
+  mnemonic: Met steht am Anfang jedes Proteins – AUG = Start.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc106

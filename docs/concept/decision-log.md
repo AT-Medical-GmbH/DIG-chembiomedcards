@@ -60,3 +60,27 @@ Moodle-Betrieb nötig (Version/Plugin/AGS).
 **Entscheidung:** Implementierung in `app/`, bestehende Notizen in `online-platform/` verweisen
 darauf. **Begründung:** nichts stillschweigend löschen. **Konsequenz:** spätere Konsolidierung
 offen (siehe offene Fragen).
+
+### ADR-014 — Produktion aus Daten statt Altbestand-Übernahme · *accepted*
+**Kontext:** Es gibt nur Musterkarten und eine Planungsliste, keinen großen Altbestand (Klärung
+2026-10-31). **Entscheidung:** Karten werden direkt als Datensätze angelegt und generiert; die
+Import-/Audit-Pipeline (Kap. 04) dient nur noch für Muster und Fremdzulieferungen.
+**Konsequenz:** Serienproduktion kann ohne Upload beginnen; Muster werden zum Layout-Abgleich genutzt.
+
+### ADR-015 — Startumfang: Handover-Soll-Liste vor Masterverzeichnis · *accepted*
+**Entscheidung:** Zuerst die ~170 Karten der Handover-Soll-Liste (Kap. 14 §2), danach schrittweise die
+1.452 Karten aus `MASTER_DIRECTORY.md`. Pilot: 20 proteinogene Aminosäuren.
+**Begründung:** Testet die strengste Darstellungsregel (Fischer-Projektion) und ein vollständiges
+Rückseitenschema, bevor die Serie skaliert.
+
+### ADR-016 — Vorläufige IDs für die Aminosäuren (`bc_098`–`bc_117`) · *proposed*
+**Kontext:** Das Masterverzeichnis vergibt im BC-Kapitel „Aminosäuren, Proteine und Stickstoff“ nur den
+Anker `bc_097` (Aminosäure-Grundstruktur). **Entscheidung:** fortlaufend direkt danach, als
+`id_status: provisional` markiert. **Konsequenz:** Bestätigung oder Umnummerierung vor der
+Freigabe nötig; die Validierung warnt, solange IDs vorläufig sind.
+
+### ADR-017 — QR-Code nur auf der Rückseite; Wortmarke als Logo-Platzhalter · *proposed*
+**Entscheidung:** Die Vorderseite bleibt ohne QR-Code, damit sie die Antwort nicht verrät (bewusst
+reduzierte Vorderseite). Bis ein freigegebenes Logo unter `brand/logo/` liegt, steht oben rechts eine
+Text-Wortmarke „ChemBioMed Cards · AT Medical“. **Konsequenz:** Logo-Datei nachliefern; der Austausch
+betrifft nur `templates/_card_header.html`.

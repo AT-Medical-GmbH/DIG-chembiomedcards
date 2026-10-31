@@ -1,0 +1,209 @@
+/* ChemBioMed Cards – gemeinsames Kartenlayout (Print, PNG, Online).
+   Werte als CSS-Variablen; der Generator setzt sie aus
+   brand/design-tokens/chembiomed.tokens.json (card.*). Layoutregeln:
+   docs/concept/05-card-layout.md */
+
+@page { size: var(--card-w) var(--card-h); margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { background: transparent; }
+
+body {
+  font-family: var(--font);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 0, "ss01" 1;
+}
+
+.card {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+  background: var(--c-surface);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  /* Registereffekt: farbiger oberer Kartenrand in der Hauptkategorie */
+  border-top: 1.1mm solid var(--c-primary);
+}
+.card:last-child { page-break-after: auto; break-after: auto; }
+
+/* ---------- Kopfzone: Inward-Tabs (oben links) + Wortmarke (oben rechts) ---------- */
+.tabs {
+  position: absolute;
+  top: 0;
+  left: 4mm;
+  display: flex;
+  gap: 0.8mm;
+}
+.tab {
+  width: 15.6mm;
+  height: 4.4mm;
+  border-radius: 0 0 1.1mm 1.1mm;
+  background: var(--c-tab-bg);
+  color: var(--c-tab-text);
+  font-size: 4.9pt;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7mm;
+  white-space: nowrap;
+}
+.tab.secondary {
+  background: color-mix(in srgb, var(--tab-color) 12%, #ffffff);
+  color: color-mix(in srgb, var(--tab-color) 80%, #1a202c);
+}
+.tab.secondary::before {
+  content: "";
+  width: 1.1mm;
+  height: 1.1mm;
+  border-radius: 50%;
+  background: var(--tab-color);
+}
+.tab.active {
+  height: 5.6mm;
+  background: var(--tab-color);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.wordmark {
+  position: absolute;
+  top: 1.4mm;
+  right: 4mm;
+  text-align: right;
+  line-height: 1;
+}
+.wordmark .name {
+  font-size: 6.4pt;
+  font-weight: 700;
+  color: var(--c-brand);
+  letter-spacing: -0.01em;
+}
+.wordmark .owner {
+  margin-top: 0.6mm;
+  font-size: 4.3pt;
+  font-weight: 500;
+  color: var(--c-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ---------- Fußzone ---------- */
+.footer {
+  position: absolute;
+  left: 4mm;
+  right: 4mm;
+  bottom: 2.6mm;
+  height: 4mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 4.6pt;
+  color: var(--c-muted);
+}
+.footer .card-id { font-family: "DejaVu Sans Mono", monospace; letter-spacing: 0.02em; }
+.footer .right { display: flex; align-items: flex-end; gap: 1.6mm; }
+.qr { width: 10.5mm; height: 10.5mm; display: block; }
+.qr svg { width: 100%; height: 100%; display: block; }
+
+/* ---------- Vorderseite ---------- */
+.front .stage {
+  position: absolute;
+  top: 8.5mm;
+  bottom: 8mm;
+  left: 10mm;
+  right: 10mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-structure);
+}
+.front .stage svg { max-width: 100%; max-height: 100%; }
+.front .term {
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  text-align: center;
+  color: var(--c-text);
+}
+
+/* ---------- Rückseite ---------- */
+.back .content {
+  position: absolute;
+  top: 7.4mm;
+  left: 4mm;
+  right: 4mm;
+  bottom: 14.2mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3mm;
+  overflow: hidden;
+}
+.back .head { padding-right: 24mm; }
+.back .title-row { display: flex; align-items: baseline; gap: 2mm; }
+.back h1 {
+  font-size: 14pt;
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--c-text);
+}
+.back .codes {
+  font-size: 7.6pt;
+  font-weight: 600;
+  color: var(--c-muted);
+}
+.back .classification {
+  margin-top: 0.7mm;
+  font-size: 7.1pt;
+  font-weight: 500;
+  color: #374151;
+}
+
+.box {
+  border-left: 0.75mm solid var(--box-accent);
+  background: var(--box-bg);
+  border-radius: 0 1mm 1mm 0;
+  padding: 1mm 1.6mm 1.1mm 1.6mm;
+  min-width: 0;
+}
+.box h2 {
+  font-size: 5.4pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--box-accent);
+  margin-bottom: 0.45mm;
+}
+.box ul { list-style: none; }
+.box li {
+  position: relative;
+  padding-left: 1.9mm;
+  font-size: 6.9pt;
+  line-height: 1.28;
+}
+.box li + li { margin-top: 0.25mm; }
+.box li::before {
+  content: "";
+  position: absolute;
+  left: 0.2mm;
+  top: 1.1mm;
+  width: 0.9mm;
+  height: 0.85mm;
+  border-radius: 50%;
+  background: var(--box-accent);
+}
+.box p { font-size: 6.9pt; line-height: 1.28; }
+
+.box.properties  { --box-accent: var(--b-properties-accent);  --box-bg: var(--b-properties-bg); }
+.box.biochemical { --box-accent: var(--b-biochemical-accent); --box-bg: var(--b-biochemical-bg); }
+.box.clinical    { --box-accent: var(--b-clinical-accent);    --box-bg: var(--b-clinical-bg); }
+.box.molecular   { --box-accent: var(--b-molecular-accent);   --box-bg: var(--b-molecular-bg); }
+.box.mnemonic    { --box-accent: var(--b-mnemonic-accent);    --box-bg: var(--b-mnemonic-bg); }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3mm; }
+.box.mnemonic p { font-style: italic; }

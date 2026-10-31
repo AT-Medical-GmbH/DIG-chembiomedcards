@@ -1,0 +1,63 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_114
+id_status: provisional
+slug: bc_114_aspartat
+title: Aspartat / Asparaginsäure
+subtitle: Proteinogene Aminosäure
+identifiers:
+  three_letter: Asp
+  one_letter: D
+module: BC
+primary_category: biochemie
+secondary_categories:
+- organik
+- klinik
+topic_group: aminosaeuren_proteinogen
+chapter: biochemie/aminosaeuren
+tags:
+- aminosaeure
+- proteinogen
+- sauer
+- nicht-essenziell
+- glukogen
+- transaminierung
+- harnstoffzyklus
+- laborwert
+difficulty: beginner
+front_type: structure
+front_content:
+  render: fischer_projection
+  caption: ''
+  side_chain:
+  - label: CH2
+  - label: C
+    fork:
+    - label: O
+      bond: 2
+    - label: OH
+      bond: 1
+back_sections:
+  classification: Sauer (negativ geladen) · glukogen · nicht essenziell
+  general_properties:
+  - 'Rest: Carboxymethylgruppe (–CH₂–COOH)'
+  - Aspartat = deprotonierte Form bei pH 7
+  biochemical_relevance:
+  - Transaminierung mit Oxalacetat (AST)
+  - Liefert das zweite N-Atom im Harnstoffzyklus
+  - Malat-Aspartat-Shuttle
+  clinical_relevance:
+  - 'AST (GOT): Marker für Leber- und Muskelschaden'
+  mnemonic: D wie ‚asparDic acid‘ – A war schon vergeben.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc114
