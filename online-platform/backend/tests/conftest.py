@@ -41,8 +41,10 @@ def settings(tmp_path: Path, cards_dir: Path) -> Settings:
 def make_client(settings):
     def _make(**overrides):
         jwk = overrides.pop("jwk", None)
+        oidc = overrides.pop("oidc", None)
         s = replace(settings, **overrides)
-        app = create_app(s, create_schema=True, jwk_resolver=jwk)
+        app = create_app(s, create_schema=True, jwk_resolver=jwk,
+                         oidc_client=oidc(s) if callable(oidc) else oidc)
         run_seed(app.state.sessionmaker, s)
         return TestClient(app)
     return _make

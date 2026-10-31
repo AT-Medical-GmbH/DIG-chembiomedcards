@@ -2,19 +2,33 @@
   import '../app.css';
   import { page } from '$app/state';
   import { api } from '$lib/api';
+  import { displayName, loadTokens, login, logout, type AuthConfig } from '$lib/oidc';
   import { DEV_USERS, session } from '$lib/session.svelte';
 
   let { children } = $props();
   let ready = $state(false);
   let startError = $state<string | null>(null);
+  const isCallback = $derived(page.url.pathname === '/auth/callback');
 
   $effect(() => {
-    void session.version;  // bei Identitätswechsel neu laden
-    api<{ auth_mode: 'local' | 'oidc' }>('/api/health')
-      .then((h) => { session.authMode = h.auth_mode; return api<typeof session.me>('/api/me'); })
-      .then((me) => { session.me = me; ready = true; })
-      .catch((e) => (startError = e.message));
+    void session.version;  // bei Identitätswechsel/Anmeldung neu laden
+    if (isCallback) return; // die Callback-Seite tauscht erst den Code
+    ready = false;
+    api<{ mode: 'local' } | AuthConfig>('/api/auth/config')
+      .then((cfg) => {
+        session.authMode = cfg.mode;
+        session.authConfig = cfg.mode === 'oidc' ? cfg : null;
+        if (cfg.mode === 'oidc' && !loadTokens()) { session.needsLogin = true; return null; }
+        session.needsLogin = false;
+        return api<typeof session.me>('/api/me');
+      })
+      .then((me) => { if (me) { session.me = me; ready = true; } })
+      .catch((e) => { if (!session.needsLogin) startError = e.message; });
   });
+
+  function signIn() {
+    if (session.authConfig) login(session.authConfig, page.url.pathname + page.url.search);
+  }
 
   const nav = [
     { href: '/', label: 'Übersicht' },
@@ -46,6 +60,11 @@
           {#each DEV_USERS as u}<option value={u.subject}>{u.label}</option>{/each}
         </select>
       </label>
+    {:else if session.authMode === 'oidc' && session.authConfig && !session.needsLogin && ready}
+      <div class="dev small">
+        <span class="muted">{displayName() ?? 'Angemeldet'}</span>
+        <button class="btn small" type="button" onclick={() => logout(session.authConfig!)}>Abmelden</button>
+      </div>
     {/if}
   </div>
 </header>
@@ -57,7 +76,15 @@
 {/if}
 
 <main id="main" class="container">
-  {#if startError}
+  {#if isCallback}
+    {@render children()}
+  {:else if session.needsLogin}
+    <div class="panel login">
+      <h1>Anmeldung</h1>
+      <p>Pharma Cards nutzt das AT-Medical-Konto (Single Sign-on).</p>
+      <button class="btn primary big" type="button" onclick={signIn}>Mit AT-Medical-Konto anmelden</button>
+    </div>
+  {:else if startError}
     <p class="banner" role="alert">Die Anwendung konnte nicht starten: {startError}</p>
   {:else if ready}
     {#key session.version}{@render children()}{/key}
@@ -89,6 +116,8 @@
   .dev { margin-left: auto; display: flex; align-items: center; gap: 8px; }
   .dev select { min-height: 36px; width: auto; padding: 4px 8px; }
   .devwarn { padding-bottom: 0; }
+  .login { max-width: 520px; margin: var(--sp-4) auto; text-align: center; }
+  .login .big { min-height: 52px; padding: 0 28px; }
   .foot { padding-top: 0; border-top: 1px solid var(--app-line); margin-top: var(--sp-4); padding-top: var(--sp-3); }
   @media (max-width: 640px) { .dev { margin-left: 0; width: 100%; } }
 </style>

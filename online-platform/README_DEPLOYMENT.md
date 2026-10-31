@@ -42,7 +42,7 @@ Fachreview Pharmakologie/Toxikologie, Admin).
 Tests:
 
 ```bash
-cd online-platform/backend && pytest -q                     # 33 Tests (SQLite)
+cd online-platform/backend && pytest -q                     # 44 Tests (SQLite)
 cd online-platform/frontend && npm run check && npm run build
 python3 online-platform/e2e/smoke.py --url http://127.0.0.1:8000   # Browser-E2E (laufende Instanz)
 ```
@@ -90,17 +90,46 @@ Certresolver müssen zur bestehenden Traefik-Instanz passen (Annahmen in `.env.e
 | Modus | Einsatz | Verhalten |
 |---|---|---|
 | `AUTH_MODE=local` | Entwicklung, **Staging hinter Zugangsschutz** | Identität per Header (Test-Identitäten). In `PHARMA_ENV=production` verweigert die API den Start. |
-| `AUTH_MODE=oidc` | Betrieb | Bearer-Token von Authentik. Signatur (JWKS), Ablauf, Issuer und Audience werden geprüft. Rolle aus `OIDC_ROLE_CLAIM` über `OIDC_ROLE_MAP`, sonst `learner`. |
+| `AUTH_MODE=oidc` | Betrieb | Anmeldung im Browser über Authentik (Authorization Code + PKCE). Die API prüft bei jedem Aufruf das Bearer-Token: Signatur (JWKS), Ablauf, Issuer, Audience. Rolle aus `OIDC_ROLE_CLAIM` über `OIDC_ROLE_MAP`, sonst `learner`. |
 
-Authentik vorbereiten: OAuth2/OpenID-Provider `pharma-cards` anlegen, die Gruppen `pharma-admin`,
-`pharma-editor`, `pharma-reviewer-pharm`, `pharma-reviewer-tox`, `pharma-teacher` und
-`pharma-learner` anlegen und den Gruppen-Claim im Token freigeben. Issuer- und JWKS-URL kommen in
-die `.env`.
+**Ablauf der Browser-Anmeldung:** Die SPA holt `/api/auth/config` (nur öffentliche Werte) und leitet
+zu Authentik. Code-Verifier, `state` und `nonce` liegen dabei in `sessionStorage`. Zurück auf
+`/auth/callback` tauscht die SPA den Code über `POST /api/auth/token`. Die API reicht nur die
+erlaubten Felder an den Token-Endpunkt weiter und prüft dabei die Redirect-URI. Dadurch bleibt die
+CSP der SPA bei `connect-src 'self'`, und es braucht keine CORS-Freigabe in Authentik. Tokens liegen
+nur in `sessionStorage` (je Tab), nie in `localStorage`. Läuft das Access-Token ab, erneuert die SPA
+es per Refresh-Token. Abmelden führt über den End-Session-Endpunkt von Authentik.
 
-**Offen (nächster Schritt):** Die Browser-Anmeldung der SPA (Authorization Code + PKCE gegen
-Authentik) ist noch nicht gebaut. Bis dahin läuft die Anwendung als **Staging** mit
-`AUTH_MODE=local` und einem vorgeschalteten Zugangsschutz (`TRAEFIK_MIDDLEWARES`, z. B.
-Authentik-Forward-Auth). Die API-Seite (Tokenprüfung, Rollen) ist fertig und getestet.
+Authentik vorbereiten:
+
+1. OAuth2/OpenID-Provider `pharma-cards` anlegen.
+   - Client-Typ **Public** (kein Secret).
+   - Redirect-URI exakt `https://<PHARMA_HOST>/auth/callback`.
+   - Signierschlüssel RS256.
+   - Scopes `openid`, `profile`, `email`, `offline_access`.
+   - Der Gruppen-Claim `groups` muss im Token stehen.
+2. Anwendung `pharma-cards` mit diesem Provider anlegen.
+3. Gruppen anlegen: `pharma-admin`, `pharma-editor`, `pharma-reviewer-pharm`, `pharma-reviewer-tox`,
+   `pharma-teacher`, `pharma-learner`.
+4. Werte in die `.env` übernehmen:
+   - `OIDC_ISSUER` und `OIDC_JWKS_URL`;
+   - `OIDC_CLIENT_ID` und `OIDC_AUDIENCE`: beide die Client-ID;
+   - `OIDC_REDIRECT_URI` und `OIDC_POST_LOGOUT_URI`.
+
+Die API muss Authentik ausgehend erreichen (JWKS, Discovery, Token-Endpunkt). In Produktion verlangt
+sie eine `https`-Redirect-URI und startet sonst nicht.
+
+Verifiziert am 2026-10-31 gegen einen simulierten Provider:
+- Browser-E2E 10/10:
+  - Anmeldeseite ohne Token;
+  - Rücksprung auf die Ursprungsseite;
+  - Rolle aus dem Gruppen-Claim;
+  - Refresh nach Ablauf;
+  - fremder `state` wird abgewiesen;
+  - Abmelden.
+- Der lokale Smoke-Test besteht weiter mit 8/8.
+
+Der Test gegen das echte Authentik steht aus (Staging).
 
 **Erster Admin:** im lokalen Modus `PHARMA_BOOTSTRAP_ADMIN=<kennung>`, im OIDC-Modus über die
 Authentik-Gruppe `pharma-admin`. Es gibt keine Standardpasswörter.
@@ -135,7 +164,7 @@ Wiederherstellen: `pg_restore -U pharma -d pharma_cards --clean <datei>`, dann A
 
 ## 8. Bekannte Grenzen des MVP
 
-- SPA-Login (OIDC/PKCE) offen, siehe Abschnitt 4.
+- SPA-Login (OIDC/PKCE) ist gebaut, aber noch nicht gegen das echte Authentik getestet (Staging).
 - PNG/PDF-Downloads starten je Anfrage einen Chromium-Prozess. Das reicht für Einzelkarten. Für
   große Exporte ist die Druckpipeline (`make ph-print`) gedacht.
 - Annotationen: Datenmodell und API speichern `annotation_data` (JSON-Overlay). Die

@@ -26,6 +26,7 @@ def token(key=KEY, **claims):
 def oidc_client(make_client):
     return make_client(
         auth_mode="oidc", oidc_issuer=ISSUER, oidc_audience=AUD, oidc_jwks_url="https://unused",
+        oidc_client_id=AUD, oidc_redirect_uri="https://pharma.example.org/auth/callback",
         oidc_role_map={"pharma-learner": "learner", "pharma-reviewer-tox": "reviewer_tox",
                        "pharma-admin": "admin"},
         jwk=lambda _t: KEY.public_key())

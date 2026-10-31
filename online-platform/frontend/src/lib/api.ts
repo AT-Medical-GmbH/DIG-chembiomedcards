@@ -1,5 +1,6 @@
 // API-Client der Pharma Cards SPA. Im lokalen Entwicklungsmodus wird die gewählte Test-Identität
-// als X-User/X-Role mitgeschickt; im Betrieb (OIDC) ein Bearer-Token.
+// als X-User/X-Role mitgeschickt; im Betrieb (OIDC) ein Bearer-Token (bei Bedarf erneuert).
+import { accessToken, clearTokens } from './oidc';
 import { session } from './session.svelte';
 
 export type Progress = {
@@ -29,23 +30,33 @@ export class ApiError extends Error {
   constructor(public status: number, message: string) { super(message); }
 }
 
-function headers(extra: Record<string, string> = {}): Record<string, string> {
+async function headers(extra: Record<string, string> = {}): Promise<Record<string, string>> {
   const h: Record<string, string> = { ...extra };
   if (session.authMode === 'local') {
     h['X-User'] = session.user.subject;
     h['X-Role'] = session.user.role;
-  } else if (session.token) {
-    h['Authorization'] = `Bearer ${session.token}`;
+  } else if (session.authMode === 'oidc') {
+    const t = await accessToken();
+    if (t) h['Authorization'] = `Bearer ${t}`;
   }
   return h;
+}
+
+/** 401 im OIDC-Modus: Sitzung abgelaufen -> Tokens verwerfen, Layout bietet Anmeldung an. */
+function unauthorized(res: Response) {
+  if (res.status === 401 && session.authMode === 'oidc') {
+    clearTokens();
+    session.needsLogin = true;
+  }
 }
 
 export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const res = await fetch(path, {
     ...init,
-    headers: headers({ ...(init.body ? { 'Content-Type': 'application/json' } : {}),
-                       ...(init.headers as Record<string, string> | undefined) })
+    headers: await headers({ ...(init.body ? { 'Content-Type': 'application/json' } : {}),
+                             ...(init.headers as Record<string, string> | undefined) })
   });
+  unauthorized(res);
   if (!res.ok) {
     let msg = `${res.status} ${res.statusText}`;
     try { const j = await res.json(); if (j?.detail) msg = typeof j.detail === 'string' ? j.detail : JSON.stringify(j.detail); } catch { /* kein JSON */ }
@@ -61,7 +72,8 @@ export const del = (path: string) => api<void>(path, { method: 'DELETE' });
 
 /** Download mit Auth-Headern (ein normaler Link könnte die Header nicht mitsenden). */
 export async function download(path: string, fallbackName: string): Promise<void> {
-  const res = await fetch(path, { headers: headers() });
+  const res = await fetch(path, { headers: await headers() });
+  unauthorized(res);
   if (!res.ok) {
     let msg = `${res.status}`;
     try { msg = (await res.json()).detail ?? msg; } catch { /* */ }
