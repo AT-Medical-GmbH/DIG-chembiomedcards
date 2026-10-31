@@ -14,7 +14,8 @@ front_type: toxidrome
 level: clinical
 difficulty: intermediate
 monitoring: Atmung, Blutzucker, Alkoholspiegel; Mischintoxikation und Schädel-Hirn-Trauma ausschließen.
-emergency_relevance: Supportiv, Atemwegsschutz, Aspirationsprophylaxe.
+emergency_relevance: Supportiv, Atemwegsschutz, Aspirationsprophylaxe. Flumazenil nur ausnahmsweise (Krampfgefahr
+  bei Abhängigkeit oder prokonvulsiver Ko-Intoxikation).
 toxicology_relevance: Verstärkung der GABAergen Hemmung (Benzodiazepine, Z-Substanzen, Barbiturate, Alkohol).
 antidote: flumazenil
 toxidrome: sedativ_hypnotisch
@@ -41,11 +42,8 @@ back_sections:
 - key: akuttherapie
   label: Akuttherapie
   color_role: clinic
-  text: Supportiv, Atemwegsschutz, Aspirationsprophylaxe.
-- key: antidot
-  label: Antidot
-  color_role: antidote
-  text: Flumazenil nur in ausgewählten Fällen (Krampfgefahr bei Abhängigkeit oder prokonvulsiver Ko-Intoxikation).
+  text: Supportiv, Atemwegsschutz, Aspirationsprophylaxe. Flumazenil nur ausnahmsweise (Krampfgefahr bei
+    Abhängigkeit oder prokonvulsiver Ko-Intoxikation).
 - key: red_flags
   label: Red Flags
   color_role: risk
@@ -70,7 +68,7 @@ review_focus:
 dose_contains_numeric: false
 references: []
 source_status: draft
-version: 0.1.0
+version: 0.1.1
 author: AT Medical GmbH
 reviewer: ''
 created_at: '2026-10-31'

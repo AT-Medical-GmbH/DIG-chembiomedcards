@@ -14,7 +14,8 @@ front_type: toxidrome
 level: clinical
 difficulty: intermediate
 monitoring: Klinik, Temperatur, EKG (bei TZA auf QRS-Verbreiterung achten).
-emergency_relevance: Supportiv, Kühlung, Benzodiazepine bei Agitation.
+emergency_relevance: Supportiv, Kühlung, Benzodiazepine bei Agitation. Physostigmin nur nach toxikologischer
+  Rücksprache, nicht bei TZA mit QRS-Verbreiterung.
 toxicology_relevance: Blockade muskarinischer Acetylcholinrezeptoren (z. B. Antihistaminika, trizyklische
   Antidepressiva, Nachtschattengewächse).
 toxidrome: anticholinerg
@@ -42,12 +43,8 @@ back_sections:
 - key: akuttherapie
   label: Akuttherapie
   color_role: clinic
-  text: Supportiv, Kühlung, Benzodiazepine bei Agitation.
-- key: antidot
-  label: Antidot
-  color_role: antidote
-  text: Physostigmin nur in ausgewählten Fällen nach toxikologischer Rücksprache; nicht bei TZA-Intoxikation
-    mit QRS-Verbreiterung.
+  text: Supportiv, Kühlung, Benzodiazepine bei Agitation. Physostigmin nur nach toxikologischer Rücksprache,
+    nicht bei TZA mit QRS-Verbreiterung.
 - key: red_flags
   label: Red Flags
   color_role: risk
@@ -72,7 +69,7 @@ review_focus:
 dose_contains_numeric: false
 references: []
 source_status: draft
-version: 0.1.0
+version: 0.1.1
 author: AT Medical GmbH
 reviewer: ''
 created_at: '2026-10-31'
