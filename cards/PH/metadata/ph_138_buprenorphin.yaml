@@ -1,0 +1,83 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_138
+slug: ph_138_buprenorphin
+title: Buprenorphin
+subtitle: Partieller µ-Agonist
+module: PH
+primary_category: analgetika
+secondary_categories: []
+chapter: pharmakologie/analgetika
+drug_class: opioide
+substance_name: Buprenorphin
+generic_name: Buprenorphin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Partialagonist am µ-Rezeptor mit sehr hoher Affinität, Antagonist am κ-Rezeptor.
+indications: '- starke chronische Schmerzen (transdermal, sublingual)
+
+  - Substitution bei Opioidabhängigkeit'
+contraindications: Kann bei Abhängigen unter Vollagonisten einen Entzug auslösen.
+adverse_effects: Übelkeit, Schwindel, Obstipation; Atemdepression geringer (Ceiling-Effekt), aber möglich.
+interactions: Additiv mit Benzodiazepinen; Vollagonisten wirken unter Buprenorphin schlechter.
+monitoring: Atmung bei Kombinationen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: Wegen hoher Affinität verdrängt Naloxon es nur schwer.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Partialagonist am µ-Rezeptor mit sehr hoher Affinität, Antagonist am κ-Rezeptor.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- starke chronische Schmerzen (transdermal, sublingual)
+
+    - Substitution bei Opioidabhängigkeit'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Übelkeit, Schwindel, Obstipation; Atemdepression geringer (Ceiling-Effekt), aber möglich.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Kann bei Abhängigen unter Vollagonisten einen Entzug auslösen.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additiv mit Benzodiazepinen; Vollagonisten wirken unter Buprenorphin schlechter. Atmung bei Kombinationen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Wegen hoher Affinität verdrängt Naloxon es nur schwer.
+tags:
+- agonist
+- rezeptor
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_008
+- ph_100
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Aussage zur Naloxon-Antagonisierbarkeit mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_138_buprenorphin_front.png
+back_asset: cards/PH/back/ph_138_buprenorphin_back.png
+qr_url: https://chembiomed-cards.de/c/ph138
+lms_url: https://lms.at-medical.example/ph/buprenorphin

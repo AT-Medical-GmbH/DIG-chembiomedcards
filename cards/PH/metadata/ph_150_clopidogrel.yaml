@@ -1,0 +1,82 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_150
+slug: ph_150_clopidogrel
+title: Clopidogrel
+subtitle: P2Y12-Hemmer (Prodrug)
+module: PH
+primary_category: thrombozytenaggregationshemmer
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: thrombozytenhemmer
+substance_name: Clopidogrel
+generic_name: Clopidogrel
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Prodrug; der aktive Metabolit blockiert irreversibel den thrombozytären P2Y12-ADP-Rezeptor.
+indications: '- akutes Koronarsyndrom und nach Stent (meist mit ASS)
+
+  - Sekundärprophylaxe nach Schlaganfall oder bei pAVK'
+contraindications: Aktive Blutung, schwere Leberinsuffizienz.
+adverse_effects: Blutung, Magen-Darm-Beschwerden, selten thrombotisch-thrombozytopenische Purpura.
+interactions: 'Aktivierung über CYP2C19: Hemmer und genetische Varianten schwächen die Wirkung.'
+monitoring: Blutungszeichen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Bei schlechten CYP2C19-Metabolisierern wirkt es nicht zuverlässig.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Prodrug; der aktive Metabolit blockiert irreversibel den thrombozytären P2Y12-ADP-Rezeptor.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- akutes Koronarsyndrom und nach Stent (meist mit ASS)
+
+    - Sekundärprophylaxe nach Schlaganfall oder bei pAVK'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Blutung, Magen-Darm-Beschwerden, selten thrombotisch-thrombozytopenische Purpura.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Aktive Blutung, schwere Leberinsuffizienz.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: 'Aktivierung über CYP2C19: Hemmer und genetische Varianten schwächen die Wirkung. Blutungszeichen.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Bei schlechten CYP2C19-Metabolisierern wirkt es nicht zuverlässig.
+tags:
+- prodrug
+- cyp450
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_151
+- ph_134
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- PPI-Interaktion (Omeprazol vs. Pantoprazol) nach aktuellem Stand prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_150_clopidogrel_front.png
+back_asset: cards/PH/back/ph_150_clopidogrel_back.png
+qr_url: https://chembiomed-cards.de/c/ph150
+lms_url: https://lms.at-medical.example/ph/clopidogrel

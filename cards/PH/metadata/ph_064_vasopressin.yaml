@@ -1,0 +1,79 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_064
+slug: ph_064_vasopressin
+title: Vasopressin
+subtitle: Nicht-adrenerger Vasopressor
+module: PH
+primary_category: intensivpharmakologie
+secondary_categories:
+- katecholamine_vasopressoren
+chapter: pharmakologie/intensivmedizin
+drug_class: vasopressoren
+substance_name: Vasopressin
+generic_name: Vasopressin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Agonist an V1-Rezeptoren der Gefäßmuskulatur: Vasokonstriktion unabhängig von Adrenozeptoren.'
+indications: '- vasodilatatorischer (septischer) Schock als Ergänzung zu Noradrenalin'
+contraindications: Vorsicht bei KHK und pAVK; Volumenstatus zuerst prüfen.
+adverse_effects: Periphere, mesenteriale und myokardiale Ischämie, Hyponatriämie, Bradykardie.
+interactions: Verstärkt andere Vasopressoren.
+monitoring: Invasiver Blutdruck, Perfusion, Natrium.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Katecholaminsparend; ersetzt Noradrenalin nicht, sondern ergänzt es.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Agonist an V1-Rezeptoren der Gefäßmuskulatur: Vasokonstriktion unabhängig von Adrenozeptoren.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- vasodilatatorischer (septischer) Schock als Ergänzung zu Noradrenalin'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Periphere, mesenteriale und myokardiale Ischämie, Hyponatriämie, Bradykardie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Vorsicht bei KHK und pAVK; Volumenstatus zuerst prüfen.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Verstärkt andere Vasopressoren. Invasiver Blutdruck, Perfusion, Natrium.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Katecholaminsparend; ersetzt Noradrenalin nicht, sondern ergänzt es.
+tags:
+- intensivmedizin
+- agonist
+- hochrisiko
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_041
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Stellenwert gegen aktuelle Sepsis-Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_064_vasopressin_front.png
+back_asset: cards/PH/back/ph_064_vasopressin_back.png
+qr_url: https://chembiomed-cards.de/c/ph064
+lms_url: https://lms.at-medical.example/ph/vasopressin

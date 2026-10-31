@@ -1,0 +1,80 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_136
+slug: ph_136_oxycodon
+title: Oxycodon
+subtitle: Starkes Opioid
+module: PH
+primary_category: analgetika
+secondary_categories: []
+chapter: pharmakologie/analgetika
+drug_class: opioide
+substance_name: Oxycodon
+generic_name: Oxycodon
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: µ-Opioidrezeptor-Agonist mit hoher oraler Bioverfügbarkeit.
+indications: '- starke Schmerzen (oral, retardiert oder schnell freisetzend)'
+contraindications: Schwere Ateminsuffizienz, paralytischer Ileus.
+adverse_effects: Atemdepression, Obstipation, Übelkeit, Sedierung, Abhängigkeit.
+interactions: CYP3A4-Inhibitoren erhöhen den Spiegel.
+monitoring: Retardtabletten nicht teilen oder zerkauen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: Fixkombination mit Naloxon mindert die Obstipation, weil Naloxon oral kaum systemisch
+  wirkt.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: µ-Opioidrezeptor-Agonist mit hoher oraler Bioverfügbarkeit.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- starke Schmerzen (oral, retardiert oder schnell freisetzend)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Atemdepression, Obstipation, Übelkeit, Sedierung, Abhängigkeit.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Schwere Ateminsuffizienz, paralytischer Ileus.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: CYP3A4-Inhibitoren erhöhen den Spiegel. Retardtabletten nicht teilen oder zerkauen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Fixkombination mit Naloxon mindert die Obstipation, weil Naloxon oral kaum systemisch wirkt.
+tags:
+- agonist
+- cyp450
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_135
+- ph_014
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Aussage zur Naloxon-Fixkombination mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_136_oxycodon_front.png
+back_asset: cards/PH/back/ph_136_oxycodon_back.png
+qr_url: https://chembiomed-cards.de/c/ph136
+lms_url: https://lms.at-medical.example/ph/oxycodon

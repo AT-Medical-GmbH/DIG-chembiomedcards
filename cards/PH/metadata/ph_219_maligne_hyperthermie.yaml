@@ -1,0 +1,71 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_219
+slug: ph_219_maligne_hyperthermie
+title: Maligne Hyperthermie
+subtitle: Pharmakogenetische Narkosekomplikation
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- anaesthesiepharmakologie
+- pharmakogenetik
+chapter: pharmakologie/sicherheit
+card_type: overview
+front_type: case
+level: clinical
+difficulty: intermediate
+emergency_relevance: Trigger stoppen, mit hohem Frischgasfluss und 100 % O₂ beatmen, Dantrolen, kühlen,
+  Hyperkaliämie behandeln.
+toxicology_relevance: 'Unkontrollierte Calciumfreisetzung im Skelettmuskel: Hypermetabolismus.'
+clinical_pearls: Steigendes endtidales CO₂ ist ein frühes Zeichen, die Temperatur steigt oft erst spät.
+front_content:
+  prompt: 'Unter Sevofluran steigen endtidales CO₂ und Herzfrequenz, der Masseter ist rigide: woran denken?'
+back_sections:
+- key: ausloeser
+  label: Auslöser
+  color_role: risk
+  text: Volatile Anästhetika und Succinylcholin bei genetischer Disposition (v. a. RYR1-Varianten).
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: 'Unkontrollierte Calciumfreisetzung im Skelettmuskel: Hypermetabolismus.'
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: Anstieg des endtidalen CO₂, Tachykardie, Rigor, Azidose, Hyperkaliämie; Hyperthermie oft spät.
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Trigger stoppen, mit hohem Frischgasfluss und 100 % O₂ beatmen, Dantrolen, kühlen, Hyperkaliämie
+    behandeln.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Steigendes endtidales CO₂ ist ein frühes Zeichen, die Temperatur steigt oft erst spät.
+tags:
+- anaesthesie
+- hochrisiko
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_052
+- ph_057
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Notfallablauf gegen aktuelle MH-Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_219_maligne_hyperthermie_front.png
+back_asset: cards/PH/back/ph_219_maligne_hyperthermie_back.png
+qr_url: https://chembiomed-cards.de/c/ph219
+lms_url: https://lms.at-medical.example/ph/maligne-hyperthermie

@@ -112,6 +112,7 @@ future_categories:
   - { slug: antiarrhythmika, name: "Antiarrhythmika", release: R3 }
   - { slug: antihypertensiva, name: "Antihypertensiva", release: R3 }
   - { slug: antikoagulanzien, name: "Antikoagulanzien", release: R2 }
+  - { slug: thrombozytenaggregationshemmer, name: "Thrombozytenaggregationshemmer", release: R2 }
   - { slug: antiepileptika, name: "Antiepileptika", release: R3 }
   - { slug: psychopharmaka, name: "Psychopharmaka", release: R3 }
   - { slug: endokrinologie, name: "Endokrinologische Medikamente", release: R3 }
