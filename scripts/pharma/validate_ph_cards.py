@@ -9,6 +9,7 @@ Prüft jede Karte in cards/PH/metadata/*.yaml gegen:
   - Governance-Regeln (Dosierung erfordert Quelle + Review; critical erfordert approved
     für Export; Antidot/Katecholamin -> warning_level >= high; Rückseitenlänge)
   - eindeutige card_id / slug
+  - Verknüpfungsstandard QR → WikiMedica v0.2 (wirkstoff_slug/begriff_slug, qr_url daraus)
 
 Exit 0 = alles gültig; Exit 1 = Fehler gefunden. Warnungen brechen nicht ab.
 
@@ -26,6 +27,9 @@ try:
     import yaml
 except ImportError:  # pragma: no cover
     sys.exit("PyYAML fehlt: pip install pyyaml")
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import wiki_links  # noqa: E402  Verknüpfungsstandard QR → WikiMedica v0.2
 
 CARD_ID = re.compile(r"^ph_[0-9]{3}$")
 
@@ -146,6 +150,11 @@ def validate_card(card: dict, scope: dict) -> tuple[list[str], list[str]]:
     # Export-Gating-Vorbedingung (nur Hinweis hier; hart in validate_output.py)
     if wl in GATE_APPROVED_ONLY and card.get("review_status") != "approved":
         warnings.append(f"{cid}: warning_level '{wl}' -> Export erst nach review_status=approved")
+
+    # QR-Ziel nach Verknüpfungsstandard v0.2
+    e, w = wiki_links.check(card)
+    errors += e
+    warnings += w
 
     return errors, warnings
 

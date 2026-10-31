@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_107
 slug: ph_107_digoxin_fab
+wirkstoff_slug: digoxin-spezifische-fab-fragmente
 title: Digoxin-spezifische Fab-Fragmente
 subtitle: Antikörperfragmente
 module: PH
@@ -77,5 +78,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_107_digoxin_fab_front.png
 back_asset: cards/PH/back/ph_107_digoxin_fab_back.png
-qr_url: https://chembiomed-cards.de/c/ph107
+qr_url: https://at-medical.de/w/wirkstoff/digoxin-spezifische-fab-fragmente
 lms_url: https://lms.at-medical.example/ph/digoxin-fab

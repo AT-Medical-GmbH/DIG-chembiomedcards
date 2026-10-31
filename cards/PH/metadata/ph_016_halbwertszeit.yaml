@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_016
 slug: ph_016_halbwertszeit
+begriff_slug: halbwertszeit
 title: Halbwertszeit
 subtitle: t½
 module: PH
@@ -55,5 +56,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_016_halbwertszeit_front.png
 back_asset: cards/PH/back/ph_016_halbwertszeit_back.png
-qr_url: https://chembiomed-cards.de/c/ph016
+qr_url: https://at-medical.de/w/begriff/halbwertszeit
 lms_url: https://lms.at-medical.example/ph/halbwertszeit

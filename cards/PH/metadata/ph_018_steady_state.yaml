@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_018
 slug: ph_018_steady_state
+begriff_slug: steady-state
 title: Steady State
 subtitle: Fließgleichgewicht
 module: PH
@@ -53,5 +54,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_018_steady_state_front.png
 back_asset: cards/PH/back/ph_018_steady_state_back.png
-qr_url: https://chembiomed-cards.de/c/ph018
+qr_url: https://at-medical.de/w/begriff/steady-state
 lms_url: https://lms.at-medical.example/ph/steady_state

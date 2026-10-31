@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_020
 slug: ph_020_ladme_prinzip
+begriff_slug: ladme-prinzip
 title: LADME-Prinzip
 subtitle: Die fünf PK-Schritte
 module: PH
@@ -59,5 +60,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_020_ladme_prinzip_front.png
 back_asset: cards/PH/back/ph_020_ladme_prinzip_back.png
-qr_url: https://chembiomed-cards.de/c/ph020
+qr_url: https://at-medical.de/w/begriff/ladme-prinzip
 lms_url: https://lms.at-medical.example/ph/ladme_prinzip

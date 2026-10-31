@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_104
 slug: ph_104_hydroxocobalamin
+wirkstoff_slug: hydroxocobalamin
 title: Hydroxocobalamin
 subtitle: Cyanid-Antidot
 module: PH
@@ -74,5 +75,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_104_hydroxocobalamin_front.png
 back_asset: cards/PH/back/ph_104_hydroxocobalamin_back.png
-qr_url: https://chembiomed-cards.de/c/ph104
+qr_url: https://at-medical.de/w/wirkstoff/hydroxocobalamin
 lms_url: https://lms.at-medical.example/ph/hydroxocobalamin

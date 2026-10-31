@@ -180,10 +180,15 @@ html, body { margin: 0; padding: 0; background: var(--surface-2); }
 }
 .footer .cid { font-weight: 600; letter-spacing: 0.03em; }
 .footer .right { display: flex; align-items: center; gap: 1.6mm; }
-/* QR: mind. 15×15 mm, schwarz auf weiß, Ruhezone im SVG enthalten
-   (print-production/specs/qr-print-spec.md) */
+/* QR nach Verknüpfungsstandard QR → WikiMedica v0.2: Code ≥ 15 × 15 mm + 4 Module Ruhezone
+   (Gesamtmaß --qr-size kommt vom Renderer, ca. 18–19 mm), #0b4f8a auf Weiß, darunter
+   Bezeichnung und Kurz-URL im Klartext. Nur Vorderseite. */
+.footer .qr-block {
+  margin: 0; flex: none; width: var(--qr-size, 18.5mm);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4mm;
+}
 .footer .qr {
-  width: 15mm; height: 15mm; flex: none;
+  width: var(--qr-size, 18.5mm); height: var(--qr-size, 18.5mm);
   background: #fff;
 }
 .footer .qr svg { display: block; width: 100%; height: 100%; }
@@ -192,9 +197,15 @@ html, body { margin: 0; padding: 0; background: var(--surface-2); }
   display: flex; align-items: center; justify-content: center;
   font-size: 1.6mm; color: var(--ink-soft); text-align: center;
 }
+.footer .qr-block figcaption {
+  display: flex; flex-direction: column; align-items: flex-end;
+  font-size: 1.5mm; line-height: 1.2; color: #0b4f8a; text-align: right;
+  overflow-wrap: anywhere;
+  width: 30mm; /* darf über den Code hinausragen, bleibt rechts in der Sicherheitszone */
+  align-self: flex-end;
+}
+.footer .qr-block figcaption .lbl { font-weight: 600; }
 .footer .copy { max-width: 60mm; text-align: right; line-height: 1.25; }
-.footer .copy .url { font-size: 1.7mm; }
-.card.back .footer .copy .url { display: none; }
 
 /* Logo-Platzhalter rechts oben (über Badge-Zeile hinweg dezent) */
 .logo {

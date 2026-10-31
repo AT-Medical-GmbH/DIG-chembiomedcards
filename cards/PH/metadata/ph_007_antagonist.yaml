@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_007
 slug: ph_007_antagonist
+begriff_slug: antagonist
 title: Antagonist
 subtitle: Bindung ohne Aktivierung
 module: PH
@@ -59,5 +60,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_007_antagonist_front.png
 back_asset: cards/PH/back/ph_007_antagonist_back.png
-qr_url: https://chembiomed-cards.de/c/ph007
+qr_url: https://at-medical.de/w/begriff/antagonist
 lms_url: https://lms.at-medical.example/ph/antagonist

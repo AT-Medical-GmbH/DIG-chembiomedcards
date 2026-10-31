@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_108
 slug: ph_108_glucagon
+wirkstoff_slug: glucagon
 title: Glucagon
 subtitle: Antidot bei Betablocker-Intoxikation
 module: PH
@@ -76,5 +77,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_108_glucagon_front.png
 back_asset: cards/PH/back/ph_108_glucagon_back.png
-qr_url: https://chembiomed-cards.de/c/ph108
+qr_url: https://at-medical.de/w/wirkstoff/glucagon
 lms_url: https://lms.at-medical.example/ph/glucagon

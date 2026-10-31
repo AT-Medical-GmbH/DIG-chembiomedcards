@@ -27,7 +27,8 @@ def card(cid="ph_900", wl="low", rs="approved", cat="allgemeine_pharmakologie", 
         "primary_category": cat, "secondary_categories": sec or [], "card_type": "overview",
         "front_type": "principle", "warning_level": wl, "review_status": rs,
         "front_content": {"question": "Frage?"}, "updated_at": "2026-10-31", "version": "0.1.0",
-        "qr_url": f"https://chembiomed-cards.de/c/{cid.replace('_', '')}",
+        "begriff_slug": f"test-{cid.replace('_', '-')}",
+        "qr_url": f"https://at-medical.de/w/begriff/test-{cid.replace('_', '-')}",
         "back_sections": [
             {"key": "kernaussage", "label": "Kern", "color_role": "base", "text": "Zeile\tmit Tab"},
             {"key": "merke", "label": "Merke", "color_role": "antidote", "text": "- a\n- b"},
@@ -158,16 +159,69 @@ def test_back_slot_direction():
 # ---------------- QR ----------------
 
 def test_qr_svg_is_real_code_or_placeholder():
-    svg = render_cards.qr_svg("https://chembiomed-cards.de/c/ph100")
+    res = render_cards.qr_svg("https://at-medical.de/w/wirkstoff/naloxon")
     try:
         import qrcode  # noqa: F401
     except ImportError:
-        assert svg is None
+        assert res is None
         assert "placeholder" in render_cards.footer_html(card(), with_qr=True)
         return
-    assert svg.startswith("<svg") and "viewBox" in svg and 'fill="#000"' in svg
-    assert 'class="qr"' in render_cards.footer_html(card(), with_qr=True)
+    svg, mm = res
+    assert svg.startswith("<svg") and "viewBox" in svg and 'fill="#0b4f8a"' in svg
+    # Code selbst >= 15 mm, Gesamtmaß inkl. 4 Module Ruhezone darüber
+    n = int(svg.split('viewBox="0 0 ')[1].split(" ")[0])
+    assert mm * (n - 8) / n >= 15.0 - 1e-6 and mm > 15
+    foot = render_cards.footer_html(card(), with_qr=True)
+    assert 'class="qr"' in foot and "Begriff: Test ph_900" in foot
+    assert "at-medical.de/w/begriff/test-ph-900" in foot and "https://" not in foot.split("figcaption")[1]
     assert 'class="qr' not in render_cards.footer_html(card(), with_qr=False)
+
+
+def test_qr_error_correction_m():
+    pytest.importorskip("qrcode")
+    import qrcode
+    url = "https://at-medical.de/w/wirkstoff/naloxon"
+    m = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=4)
+    m.add_data(url)
+    m.make(fit=True)
+    svg, _ = render_cards.qr_svg(url)
+    assert f'viewBox="0 0 {len(m.get_matrix())} ' in svg
+
+
+# ---------------- Verknüpfungsstandard v0.2 ----------------
+
+import wiki_links  # noqa: E402
+
+
+@pytest.mark.parametrize("name,slug", [
+    ("Naloxon", "naloxon"),
+    ("Vitamin K (Phytomenadion)", "vitamin-k"),
+    ("Bioverfügbarkeit", "bioverfuegbarkeit"),
+    ("Pharmakodynamik – Überblick", "pharmakodynamik-ueberblick"),
+    ("Loading Dose / Erhaltungsdosis", "loading-dose-erhaltungsdosis"),
+    ("β-Blocker", "beta-blocker"),
+    ("µ-Opioidrezeptor", "my-opioidrezeptor"),
+    ("Fuß", "fuss"),
+])
+def test_slug_rule(name, slug):
+    assert wiki_links.slugify(name) == slug
+
+
+def test_link_check():
+    sub = {"card_id": "ph_100", "title": "Naloxon", "substance_name": "Naloxon",
+           "wirkstoff_slug": "naloxon", "qr_url": "https://at-medical.de/w/wirkstoff/naloxon"}
+    assert wiki_links.check(sub) == ([], [])
+    errs, _ = wiki_links.check({**sub, "qr_url": "https://chembiomed-cards.de/c/ph100"})
+    assert any("qr_url" in e for e in errs)
+    errs, _ = wiki_links.check({**sub, "wirkstoff_slug": None})
+    assert any("wirkstoff_slug fehlt" in e for e in errs)
+    errs, _ = wiki_links.check({**sub, "begriff_slug": "naloxon"})
+    assert any("begriff_slug gesetzt" in e for e in errs)
+    # Registerabweichung: nur Warnung
+    reg = {**sub, "wirkstoff_slug": "naloxonhydrochlorid",
+           "qr_url": "https://at-medical.de/w/wirkstoff/naloxonhydrochlorid"}
+    errs, warns = wiki_links.check(reg)
+    assert errs == [] and warns
 
 
 # ---------------- Rendering (Chromium) ----------------

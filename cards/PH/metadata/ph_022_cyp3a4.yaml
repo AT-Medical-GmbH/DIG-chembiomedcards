@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_022
 slug: ph_022_cyp3a4
+begriff_slug: cyp3a4
 title: CYP3A4
 subtitle: Wichtigstes CYP-Isoenzym
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_022_cyp3a4_front.png
 back_asset: cards/PH/back/ph_022_cyp3a4_back.png
-qr_url: https://chembiomed-cards.de/c/ph022
+qr_url: https://at-medical.de/w/begriff/cyp3a4
 lms_url: https://lms.at-medical.example/ph/cyp3a4

@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_002
 slug: ph_002_pharmakokinetik_ueberblick
+begriff_slug: pharmakokinetik-ueberblick
 title: Pharmakokinetik – Überblick
 subtitle: Was der Körper mit dem Wirkstoff macht
 module: PH
@@ -60,5 +61,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_002_pharmakokinetik_ueberblick_front.png
 back_asset: cards/PH/back/ph_002_pharmakokinetik_ueberblick_back.png
-qr_url: https://chembiomed-cards.de/c/ph002
+qr_url: https://at-medical.de/w/begriff/pharmakokinetik-ueberblick
 lms_url: https://lms.at-medical.example/ph/pharmakokinetik_ueberblick

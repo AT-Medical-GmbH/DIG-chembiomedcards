@@ -18,6 +18,7 @@ PYR       ?= $(PY)
 help:
 	@echo "Pharma Cards (PH) Ziele:"
 	@echo "  make ph-validate        - PH-Kartendaten gegen Schema + Scope prüfen"
+	@echo "  make ph-qr-sync         - wirkstoff_/begriff_slug ergänzen, qr_url daraus erzeugen"
 	@echo "  make ph-registry        - ph_*-Zeilen in $(REGISTRY) aus YAML aktualisieren"
 	@echo "  make ph-registry-check  - prüft, ob die Registry aktuell ist (CI-Gate)"
 	@echo "  make ph-render          - Vorder-/Rückseiten als HTML erzeugen"
@@ -39,6 +40,9 @@ help:
 
 ph-validate:
 	$(PY) scripts/pharma/validate_ph_cards.py --cards $(PH_CARDS) --scope $(PH_SCOPE)
+
+ph-qr-sync:
+	$(PY) scripts/pharma/sync_qr_urls.py --cards $(PH_CARDS)
 
 ph-registry:
 	$(PY) scripts/pharma/build_registry.py --cards $(PH_CARDS) --csv $(REGISTRY)

@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_028
 slug: ph_028_proteinbindung
+begriff_slug: proteinbindung
 title: Proteinbindung
 subtitle: Freie vs. gebundene Fraktion
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_028_proteinbindung_front.png
 back_asset: cards/PH/back/ph_028_proteinbindung_back.png
-qr_url: https://chembiomed-cards.de/c/ph028
+qr_url: https://at-medical.de/w/begriff/proteinbindung
 lms_url: https://lms.at-medical.example/ph/proteinbindung

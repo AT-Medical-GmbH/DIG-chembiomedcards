@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_112
 slug: ph_112_vitamin_k
+wirkstoff_slug: vitamin-k
 title: Vitamin K (Phytomenadion)
 subtitle: Antidot bei Vitamin-K-Antagonisten
 module: PH
@@ -72,5 +73,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_112_vitamin_k_front.png
 back_asset: cards/PH/back/ph_112_vitamin_k_back.png
-qr_url: https://chembiomed-cards.de/c/ph112
+qr_url: https://at-medical.de/w/wirkstoff/vitamin-k
 lms_url: https://lms.at-medical.example/ph/vitamin-k

@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_011
 slug: ph_011_nichtkompetitive_hemmung
+begriff_slug: nichtkompetitive-hemmung
 title: Nichtkompetitive Hemmung
 subtitle: Nicht verdrängbar
 module: PH
@@ -53,5 +54,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_011_nichtkompetitive_hemmung_front.png
 back_asset: cards/PH/back/ph_011_nichtkompetitive_hemmung_back.png
-qr_url: https://chembiomed-cards.de/c/ph011
+qr_url: https://at-medical.de/w/begriff/nichtkompetitive-hemmung
 lms_url: https://lms.at-medical.example/ph/nichtkompetitive_hemmung

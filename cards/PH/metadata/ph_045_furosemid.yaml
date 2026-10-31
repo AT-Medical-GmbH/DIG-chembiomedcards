@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_045
 slug: ph_045_furosemid
+wirkstoff_slug: furosemid
 title: Furosemid
 subtitle: Schleifendiuretikum
 module: PH
@@ -89,5 +90,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_045_furosemid_front.png
 back_asset: cards/PH/back/ph_045_furosemid_back.png
-qr_url: https://chembiomed-cards.de/c/ph045
+qr_url: https://at-medical.de/w/wirkstoff/furosemid
 lms_url: https://lms.at-medical.example/ph/furosemid

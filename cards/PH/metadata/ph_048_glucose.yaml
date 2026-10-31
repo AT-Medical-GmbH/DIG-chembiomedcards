@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_048
 slug: ph_048_glucose
+wirkstoff_slug: glucose
 title: Glucose
 subtitle: Energieträger, Hypoglykämie-Therapie
 module: PH
@@ -76,5 +77,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_048_glucose_front.png
 back_asset: cards/PH/back/ph_048_glucose_back.png
-qr_url: https://chembiomed-cards.de/c/ph048
+qr_url: https://at-medical.de/w/wirkstoff/glucose
 lms_url: https://lms.at-medical.example/ph/glucose

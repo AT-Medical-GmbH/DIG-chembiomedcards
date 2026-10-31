@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_008
 slug: ph_008_partialagonist
+begriff_slug: partialagonist
 title: Partialagonist
 subtitle: Submaximale Wirkung
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_008_partialagonist_front.png
 back_asset: cards/PH/back/ph_008_partialagonist_back.png
-qr_url: https://chembiomed-cards.de/c/ph008
+qr_url: https://at-medical.de/w/begriff/partialagonist
 lms_url: https://lms.at-medical.example/ph/partialagonist

@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_009
 slug: ph_009_inverser_agonist
+begriff_slug: inverser-agonist
 title: Inverser Agonist
 subtitle: Wirkung unter Basalaktivität
 module: PH
@@ -57,5 +58,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_009_inverser_agonist_front.png
 back_asset: cards/PH/back/ph_009_inverser_agonist_back.png
-qr_url: https://chembiomed-cards.de/c/ph009
+qr_url: https://at-medical.de/w/begriff/inverser-agonist
 lms_url: https://lms.at-medical.example/ph/inverser_agonist
