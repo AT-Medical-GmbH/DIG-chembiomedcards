@@ -21,11 +21,25 @@ Stand: 2026-10-31. Quelle: `AT-Medical-GmbH/DIG-chembiomedcards`, Branch `claude
 
 | Punkt | Vorschlag | Status |
 |---|---|---|
-| Zielhost | eigener Staging-Host oder isoliertes Compose-Projekt auf einem Host mit Traefik; **nicht** ATINFRA-backup/-mail | offen |
-| Hostname | z. B. `pharma-staging.at-medical.de` (DNS-Eintrag nötig) | offen |
+| Zielhost | **ATMED-core** (Entscheidung Andreas, 2026-10-31): isoliertes Compose-Projekt `pharma-cards-staging` am bestehenden Traefik | entschieden |
+| Hostname | **`pharma-staging.at-medical.de`** (DNS-Eintrag nötig) | entschieden |
 | Authentik | eigener Provider `pharma-cards-staging` (Public Client) | offen |
 | Moodle | Test-Kurs auf `moodle.at-medical.de` oder Moodle-Staging | offen |
 | Zusätzlicher Zugangsschutz | `TRAEFIK_MIDDLEWARES` (z. B. IP-Allowlist) während Staging | optional |
+
+### Auflagen, weil ATMED-core ein Produktivserver ist
+
+Auf ATMED-core laufen produktive Dienste (u. a. Moodle, WordPress). Deshalb gilt zusätzlich:
+
+- Nur das eigene Compose-Projekt `pharma-cards-staging` anlegen; bestehende Container, Compose-Projekte,
+  Volumes und die Traefik-Basiskonfiguration **nicht** ändern oder neu starten.
+- Keine veröffentlichten Ports; erreichbar nur über Traefik-Labels.
+- Vor dem Start lesend prüfen: freier Plattenplatz, RAM-Auslastung, Name des Traefik-Netzes.
+  Bei < 5 GB frei oder dauerhaft hoher Last abbrechen und Andreas melden.
+- Ressourcen begrenzen (z. B. `mem_limit`/`cpus` per Override), damit Staging die Produktion nicht verdrängt.
+- `docker system prune`, `docker compose down` ohne `-p pharma-cards-staging` und ähnliche
+  hostweite Befehle sind **verboten**.
+- Moodle-Anbindung (Schritt 7) nur gegen einen **Test-Kurs**, nie gegen Produktivkurse.
 
 ## 3. Ablauf
 
