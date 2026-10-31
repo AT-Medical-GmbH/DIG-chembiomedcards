@@ -92,6 +92,7 @@ Jede PH-Karte ist ein YAML-Dokument. Felder (⟳ = aus Scope-Konfig validiert, s
 | `warning_level` | enum ⟳ | ✓ | `low` \| `moderate` \| `high` \| `critical` (aus `warning_levels.yaml`). |
 | `review_status` | enum ⟳ | ✓ | `draft` \| `needs_review` \| `clinical_review_needed` \| `toxicology_review_needed` \| `reviewed` \| `approved` \| `deprecated` \| `archived`. |
 | `references` | object[] | bedingt | Quellen (Titel, Herausgeber, Jahr, URL/DOI). **Pflicht, sobald konkrete Dosierungen geführt werden.** |
+| `review_focus` | string[] | – | Konkrete Prüfpunkte für das Fachreview (z. B. „Applikationsweg gegen aktuelle Leitlinie prüfen“). Wird in `reports/cards_review_needed.md` ausgewertet. |
 | `source_status` | enum | ✓ | `draft` \| `approved` \| `published`. |
 | `dose_contains_numeric` | bool | ✓ | Flag: enthält konkrete Zahlendosen → erzwingt Quelle + Review. |
 | `version` | semver string | ✓ | z. B. `0.1.0`. |

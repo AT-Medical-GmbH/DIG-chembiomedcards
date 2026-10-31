@@ -9,10 +9,10 @@ Die erste produktive Tranche (Release R1) umfasst die Blöcke **Allgemeine Pharm
 (`ph_001`–`ph_019`) und **Pharmakokinetik/Pharmakodynamik-Mechanismen** (`ph_020`–`ph_030`) als
 `needs_review`, ohne finale Dosierungen.
 
-Die klinisch kritischen Blöcke (**Notfallmedikamente, Toxidrome, Antidote**) werden bewusst erst nach
-dem Fachreview-Workflow (siehe `docs/pharma-cards/10_review-sicherheit-und-governance.md`) als
-`approved` ausgespielt. Die Antidot-Karte **Naloxon** (Warnlevel `critical`,
-`toxicology_review_needed`) wird mit diesem Block im Antidot-ID-Bereich (`ph_1xx`) angelegt.
+Die klinisch kritischen Blöcke (**Notfallmedikamente `ph_040`–`ph_049`, Toxidrome `ph_080`–`ph_086`,
+Antidote `ph_100`–`ph_112`**) liegen als Entwürfe vor. Sie werden erst nach dem Fachreview-Workflow
+(`docs/pharma-cards/review/`) als `approved` ausgespielt. Die frühere Beispielkarte Naloxon ist jetzt
+`ph_100`.
 
 Als Schema-Referenz dient `docs/pharma-cards/02_datenmodell.md` sowie jede Datei in
 `cards/PH/metadata/`.

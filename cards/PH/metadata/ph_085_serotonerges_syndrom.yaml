@@ -1,0 +1,83 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_085
+slug: ph_085_serotonerges_syndrom
+title: Serotonerges Syndrom
+subtitle: Serotonin-Überschuss
+module: PH
+primary_category: toxikologie
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/toxidrome
+card_type: toxidrome
+front_type: toxidrome
+level: clinical
+difficulty: intermediate
+monitoring: Klinische Diagnose (z. B. Hunter-Kriterien), Temperatur, CK.
+emergency_relevance: Serotonerge Substanzen absetzen, Benzodiazepine, Kühlung; Cyproheptadin nach Rücksprache.
+toxicology_relevance: Erhöhte serotonerge Aktivität durch Kombination oder Dosissteigerung (z. B. SSRI,
+  MAO-Hemmer, Tramadol, Linezolid).
+toxidrome: serotonerg
+clinical_pearls: Rascher Beginn mit Klonus und Hyperreflexie; MNS dagegen langsam mit Rigor.
+front_content:
+  prompt: 'Leitsymptome: Klonus (induzierbar, okulär), Hyperreflexie, Tremor … Welches Toxidrom?'
+back_sections:
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: '- Klonus (induzierbar, okulär), Hyperreflexie, Tremor
+
+    - Hyperthermie, Tachykardie, Schwitzen, Diarrhö
+
+    - Agitation, Verwirrtheit'
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: Erhöhte serotonerge Aktivität durch Kombination oder Dosissteigerung (z. B. SSRI, MAO-Hemmer,
+    Tramadol, Linezolid).
+- key: diagnostik_monitoring
+  label: Diagnostik / Monitoring
+  color_role: interaction
+  text: Klinische Diagnose (z. B. Hunter-Kriterien), Temperatur, CK.
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Serotonerge Substanzen absetzen, Benzodiazepine, Kühlung; Cyproheptadin nach Rücksprache.
+- key: antidot
+  label: Antidot
+  color_role: antidote
+  text: Kein klassisches Antidot; Cyproheptadin als Serotoninantagonist nach toxikologischer Rücksprache.
+- key: red_flags
+  label: Red Flags
+  color_role: risk
+  text: Hyperthermie, Rigor, Krampfanfälle.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Rascher Beginn mit Klonus und Hyperreflexie; MNS dagegen langsam mit Rigor.
+tags:
+- toxidrom
+- intoxikation
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_086
+warning_level: high
+review_status: toxicology_review_needed
+review_focus:
+- Diagnosekriterien und Auslöserliste nach aktuellem Stand prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_085_serotonerges_syndrom_front.png
+back_asset: cards/PH/back/ph_085_serotonerges_syndrom_back.png
+qr_url: https://chembiomed-cards.de/c/ph085
+lms_url: https://lms.at-medical.example/ph/serotonerges-syndrom

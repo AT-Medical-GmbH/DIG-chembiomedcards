@@ -1,0 +1,95 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_046
+slug: ph_046_midazolam
+title: Midazolam
+subtitle: Kurzwirksames Benzodiazepin
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- anaesthesiepharmakologie
+- intensivpharmakologie
+chapter: pharmakologie/notfallmedikamente
+drug_class: benzodiazepine
+substance_name: Midazolam
+generic_name: Midazolam
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Positiv allosterischer Modulator am GABA-A-Rezeptor: sedierend, anxiolytisch, antikonvulsiv,
+  amnestisch.'
+indications: '- Sedierung/Prämedikation
+
+  - Krampfanfall/Status epilepticus
+
+  - Narkoseeinleitung (Ko-Medikation)'
+contraindications: Schwere respiratorische Insuffizienz ohne Atemwegssicherung, Myasthenia gravis.
+adverse_effects: Atemdepression (besonders mit Opioiden), Hypotonie, paradoxe Erregung, anterograde Amnesie.
+interactions: CYP3A4-Inhibitoren verstärken die Wirkung; Opioide/Alkohol additive Atemdepression.
+monitoring: Atmung, SpO₂, Vigilanz; Atemwegsmanagement bereithalten.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: Ältere und kritisch Kranke reagieren empfindlicher. Antagonisierung mit Flumazenil nur
+  zurückhaltend.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Positiv allosterischer Modulator am GABA-A-Rezeptor: sedierend, anxiolytisch, antikonvulsiv,
+    amnestisch.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Sedierung/Prämedikation
+
+    - Krampfanfall/Status epilepticus
+
+    - Narkoseeinleitung (Ko-Medikation)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Atemdepression (besonders mit Opioiden), Hypotonie, paradoxe Erregung, anterograde Amnesie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Schwere respiratorische Insuffizienz ohne Atemwegssicherung, Myasthenia gravis.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: CYP3A4-Inhibitoren verstärken die Wirkung; Opioide/Alkohol additive Atemdepression. Atmung, SpO₂,
+    Vigilanz; Atemwegsmanagement bereithalten.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Ältere und kritisch Kranke reagieren empfindlicher. Antagonisierung mit Flumazenil nur zurückhaltend.
+tags:
+- notfall
+- anaesthesie
+- interaktion
+- cyp450
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_101
+- ph_084
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Applikationswege beim Status epilepticus (z. B. bukkal/intranasal/i.m.) gegen aktuelle Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_046_midazolam_front.png
+back_asset: cards/PH/back/ph_046_midazolam_back.png
+qr_url: https://chembiomed-cards.de/c/ph046
+lms_url: https://lms.at-medical.example/ph/midazolam

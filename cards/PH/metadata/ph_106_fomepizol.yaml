@@ -1,0 +1,75 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_106
+slug: ph_106_fomepizol
+title: Fomepizol
+subtitle: Alkoholdehydrogenase-Hemmer
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Fomepizol
+generic_name: Fomepizol
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Hemmt die Alkoholdehydrogenase und verhindert so die Bildung toxischer Metaboliten.
+indications: 'Bei Verdacht früh, häufig kombiniert mit Hämodialyse. Alternative: Ethanol.'
+adverse_effects: 'Bereits gebildete Metaboliten bleiben wirksam: Dialyse und Azidosekorrektur nötig.'
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Methanol- und Ethylenglykolintoxikation.
+antidote: fomepizol
+toxidrome: methanol
+clinical_pearls: 'Hinweise: metabolische Azidose mit erhöhter Anionenlücke und osmotischer Lücke.'
+front_content:
+  prompt: 'Methanol- oder Ethylenglykol-Vergiftung: welches Antidot?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Methanol- und Ethylenglykolintoxikation.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Hemmt die Alkoholdehydrogenase und verhindert so die Bildung toxischer Metaboliten.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: 'Bei Verdacht früh, häufig kombiniert mit Hämodialyse. Alternative: Ethanol.'
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: 'Bereits gebildete Metaboliten bleiben wirksam: Dialyse und Azidosekorrektur nötig.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Hinweise: metabolische Azidose mit erhöhter Anionenlücke und osmotischer Lücke.'
+tags:
+- antidot
+- intoxikation
+- entgiftung
+- pruefungsrelevant
+related_cards: []
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Dialyse-Indikationen nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_106_fomepizol_front.png
+back_asset: cards/PH/back/ph_106_fomepizol_back.png
+qr_url: https://chembiomed-cards.de/c/ph106
+lms_url: https://lms.at-medical.example/ph/fomepizol

@@ -22,7 +22,7 @@ Erweiterung vorgemerkt. Kategorien/Vokabulare stammen aus Konfiguration, nicht a
 Wirkstoff · Wirkmechanismus · Toxidrom · Antidot · Interaktion · Fall · Übersicht/Prinzip
 (`card_types.yaml`).
 
-## Produktionsstand
-Aktuell 0 produzierte PH-Karten (nur Anker `ph_001`–`ph_005` im Masterverzeichnis reserviert) +
-2 ausmodellierte Beispielkarten (`cards/PH/examples/`, Status `needs_review`). Produktion beginnt mit
-R1 nach Konzeptfreigabe.
+## Produktionsstand (2026-10-31)
+R1 ist mit 60 Karten vollständig als Entwurf angelegt (`cards/PH/metadata/`). Freigegeben ist noch
+keine Karte. 30 Grundlagen-/PK-PD-Karten warten auf allgemeines Fachreview, 30 klinische Karten auf
+pharmakologische bzw. toxikologische Prüfung. Details: `missing_cards.md`, `cards_review_needed.md`.

@@ -1,0 +1,90 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_042
+slug: ph_042_amiodaron
+title: Amiodaron
+subtitle: Klasse-III-Antiarrhythmikum
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/notfallmedikamente
+drug_class: antiarrhythmika
+substance_name: Amiodaron
+generic_name: Amiodaron
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Blockade von Kaliumkanälen (Repolarisation verlängert), zusätzlich Na⁺-, Ca²⁺-Kanal-
+  und β-blockierende Effekte.
+indications: '- schockrefraktäres Kammerflimmern/pulslose VT in der Reanimation
+
+  - tachykarde Rhythmusstörungen'
+contraindications: Bradykardie/AV-Block ohne Schrittmacher, Schilddrüsenfunktionsstörung (relativ), QT-Verlängerung.
+adverse_effects: 'Hypotonie, Bradykardie, QT-Verlängerung. Langzeit: Schilddrüse, Lunge, Leber, Haut/Kornea.'
+interactions: 'CYP-Hemmung: Spiegel von Vitamin-K-Antagonisten und Digoxin steigen; additive QT-Verlängerung.'
+monitoring: EKG (QT), Blutdruck; bei Langzeitgabe Schilddrüse, Leber, Lunge.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: 'Sehr lange Halbwertszeit (Wochen): Wirkungen und Interaktionen halten lange an.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Blockade von Kaliumkanälen (Repolarisation verlängert), zusätzlich Na⁺-, Ca²⁺-Kanal- und β-blockierende
+    Effekte.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- schockrefraktäres Kammerflimmern/pulslose VT in der Reanimation
+
+    - tachykarde Rhythmusstörungen'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: 'Hypotonie, Bradykardie, QT-Verlängerung. Langzeit: Schilddrüse, Lunge, Leber, Haut/Kornea.'
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Bradykardie/AV-Block ohne Schrittmacher, Schilddrüsenfunktionsstörung (relativ), QT-Verlängerung.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: 'CYP-Hemmung: Spiegel von Vitamin-K-Antagonisten und Digoxin steigen; additive QT-Verlängerung.
+    EKG (QT), Blutdruck; bei Langzeitgabe Schilddrüse, Leber, Lunge.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Sehr lange Halbwertszeit (Wochen): Wirkungen und Interaktionen halten lange an.'
+tags:
+- notfall
+- qt_verlaengerung
+- interaktion
+- cyp450
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_043
+- ph_021
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Position im aktuellen Reanimationsalgorithmus prüfen
+- Interaktionsliste auf Vollständigkeit/Relevanz prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_042_amiodaron_front.png
+back_asset: cards/PH/back/ph_042_amiodaron_back.png
+qr_url: https://chembiomed-cards.de/c/ph042
+lms_url: https://lms.at-medical.example/ph/amiodaron

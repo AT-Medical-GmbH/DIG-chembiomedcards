@@ -9,7 +9,7 @@ HTML_OUT  ?= exports/web/ph/html
 PNG_OUT   ?= exports/preview/ph
 
 .PHONY: help ph-validate ph-registry ph-registry-check ph-render ph-render-png \
-        ph-output-check ph-release-check ph-all registry-validate
+        ph-output-check ph-release-check ph-review-report ph-all registry-validate
 
 help:
 	@echo "Pharma Cards (PH) Ziele:"
@@ -20,6 +20,7 @@ help:
 	@echo "  make ph-render-png      - zusätzlich PNG/PDF (braucht Playwright+Chromium)"
 	@echo "  make ph-output-check    - erzeugte Ausgabe + Export-Gating prüfen"
 	@echo "  make ph-release-check   - Export-Gating hart (nur approved/reviewed) erzwingen"
+	@echo "  make ph-review-report   - Liste offener Reviews mit Prüfschwerpunkten erzeugen"
 	@echo "  make ph-all             - validate -> registry -> render -> output-check"
 	@echo "  make registry-validate  - bestehender Registry-CSV-Validator (alle Module)"
 
@@ -45,8 +46,11 @@ ph-output-check:
 ph-release-check:
 	$(PY) scripts/pharma/validate_output.py --cards $(PH_CARDS) --html $(HTML_OUT) --require-exportable
 
+ph-review-report:
+	$(PY) scripts/pharma/review_report.py --cards $(PH_CARDS) --out docs/pharma-cards/reports/cards_review_needed.md
+
 registry-validate:
 	$(PY) scripts/validate_card_metadata.py --csv $(REGISTRY)
 
-ph-all: ph-validate ph-registry ph-render ph-output-check registry-validate
+ph-all: ph-validate ph-registry ph-render ph-output-check ph-review-report registry-validate
 	@echo "Pharma-Cards-Pipeline durchlaufen."

@@ -13,11 +13,14 @@ Produktive Tranche R1 in `cards/PH/metadata/`:
 |---|---|---|---|
 | Allgemeine Pharmakologie | `ph_001`–`ph_019` (19) | low/moderate | needs_review |
 | Pharmakokinetik/-dynamik-Mechanismen | `ph_020`–`ph_030` (11) | low/moderate | needs_review |
+| Notfallmedikamente | `ph_040`–`ph_049` (10) | moderate–critical | clinical_review_needed |
+| Toxidrome | `ph_080`–`ph_086` (7) | high | toxicology_review_needed |
+| Antidote | `ph_100`–`ph_112` (13) | high/critical | toxicology_review_needed |
 
-Klinisch kritische Blöcke (Notfallmedikamente, Toxidrome, Antidote) folgen über den
-Fachreview-Workflow; die Antidot-Karte Naloxon (`critical`, `toxicology_review_needed`) wird im
-Antidot-ID-Bereich (`ph_1xx`) angelegt. Status je Karte wird durch
-`scripts/pharma/validate_output.py` gegen das Export-Gating geprüft.
+Die klinischen Blöcke sind Entwürfe ohne Zahlendosen. Jede Karte trägt in `review_focus` die
+konkreten Punkte, die das Fachreview klären muss. Die vollständige Liste steht in
+`cards_review_needed.md` (automatisch erzeugt). Den Status je Karte prüft
+`scripts/pharma/validate_output.py` gegen das Export-Gating.
 
 ## Prüfregeln (werden automatisiert angewandt)
 

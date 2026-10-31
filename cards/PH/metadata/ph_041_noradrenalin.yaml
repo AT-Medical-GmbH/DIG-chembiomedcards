@@ -1,0 +1,88 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_041
+slug: ph_041_noradrenalin
+title: Noradrenalin
+subtitle: Vasopressor, vorwiegend α1-Agonist
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- intensivpharmakologie
+- anaesthesiepharmakologie
+chapter: pharmakologie/notfallmedikamente
+drug_class: vasopressoren
+substance_name: Noradrenalin
+generic_name: Noradrenalin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Vorwiegend α1-Agonist (Vasokonstriktion, Anstieg des peripheren Widerstands), geringer
+  β1-Effekt.
+indications: '- Hypotonie bei Vasodilatation (z. B. septischer Schock)
+
+  - Kreislaufstabilisierung in Anästhesie/Intensiv'
+contraindications: Unkorrigierte Hypovolämie (Volumenstatus zuerst prüfen).
+adverse_effects: Periphere Minderperfusion, Arrhythmien, Reflexbradykardie, Gewebsnekrose bei Paravasat.
+interactions: Wirkverstärkung durch MAO-Hemmer/TZA möglich.
+monitoring: Invasive Blutdruckmessung; Gabe möglichst über zentralen Zugang.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: Vasopressor ersetzt kein Volumen; Paravasat vermeiden.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Vorwiegend α1-Agonist (Vasokonstriktion, Anstieg des peripheren Widerstands), geringer β1-Effekt.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Hypotonie bei Vasodilatation (z. B. septischer Schock)
+
+    - Kreislaufstabilisierung in Anästhesie/Intensiv'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Periphere Minderperfusion, Arrhythmien, Reflexbradykardie, Gewebsnekrose bei Paravasat.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Unkorrigierte Hypovolämie (Volumenstatus zuerst prüfen).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Wirkverstärkung durch MAO-Hemmer/TZA möglich. Invasive Blutdruckmessung; Gabe möglichst über zentralen
+    Zugang.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Vasopressor ersetzt kein Volumen; Paravasat vermeiden.
+tags:
+- notfall
+- intensivmedizin
+- hochrisiko
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_040
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Aktuelle Empfehlung zur peripheren vs. zentralen Gabe prüfen
+- Stellenwert im septischen Schock gegen aktuelle Sepsis-Leitlinie abgleichen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_041_noradrenalin_front.png
+back_asset: cards/PH/back/ph_041_noradrenalin_back.png
+qr_url: https://chembiomed-cards.de/c/ph041
+lms_url: https://lms.at-medical.example/ph/noradrenalin

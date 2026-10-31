@@ -53,11 +53,13 @@ def load_yaml(path: Path):
 def load_scope(scope_dir: Path):
     cats = load_yaml(scope_dir / "categories.yaml") or {}
     wls = load_yaml(scope_dir / "warning_levels.yaml") or {}
+    dcs = load_yaml(scope_dir / "drug_classes.yaml") or {}
     color = {}
     for c in cats.get("categories", []):
         color[c["slug"]] = c.get("color", "#37474F")
     warn = {w["key"]: w for w in wls.get("warning_levels", [])}
-    return {"category_color": color, "warning_levels": warn}
+    dc_name = {d["slug"]: d.get("name", d["slug"]) for d in dcs.get("drug_classes", [])}
+    return {"category_color": color, "warning_levels": warn, "drug_class_name": dc_name}
 
 
 def esc(x) -> str:
@@ -152,7 +154,8 @@ def front_inner(card: dict, scope: dict) -> str:
     if ft in {"substance", "structure", "drug_class"} and not prompt:
         center = f'<div class="prompt">{esc(card.get("substance_name") or card.get("title"))}</div>'
         if card.get("drug_class"):
-            center += f'<div class="hint">{esc(card["drug_class"])}</div>'
+            name = scope["drug_class_name"].get(card["drug_class"], card["drug_class"])
+            center += f'<div class="hint">{esc(name)}</div>'
     else:
         text = prompt or card.get("title", "")
         center = f'<div class="prompt">{esc(text)}</div>'
