@@ -45,6 +45,11 @@ dokumentiert. Nur Karten, die das Export-Gate erfüllen (Dok. 10), werden aufgen
 
 ---
 
+**Umsetzungsstand (2026-10-31):** Stufe A ist implementiert (`scripts/pharma/generate_moodle_import.py`,
+`make ph-moodle` / `make ph-moodle-preview`). Die Paketzuschnitte kommen aus
+`cards/PH/scope/packages.yaml`. ZIPs sind byte-reproduzierbar (feste Zeitstempel). Getestet sind
+CRLF, BOM und Spaltenstruktur.
+
 ## 3. Stufe B — Architekturentscheidung Live-Integration
 
 ### 3.1 Optionen und Bewertung

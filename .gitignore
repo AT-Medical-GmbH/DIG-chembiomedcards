@@ -8,3 +8,9 @@ exports/web/ph/html/
 exports/preview/
 exports/pdf/**/*.pdf
 exports/**/*.png
+
+# Erzeugte Export-/Druckpakete (reproduzierbar via make ph-moodle / ph-print)
+dist/
+exports/moodle/
+exports/print/
+.pytest_cache/

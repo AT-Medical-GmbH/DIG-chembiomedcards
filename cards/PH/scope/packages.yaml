@@ -1,0 +1,61 @@
+# Pharma Cards — Export-Pakete (PH)
+# Fasst Scope-Kategorien zu Moodle- und Druckpaketen zusammen. Eine Karte gehört zu einem Paket,
+# wenn ihre primary_category ODER eine ihrer secondary_categories in `categories` steht.
+# `label` bestimmt den Dateinamen: Pharma_Cards_<Moodle|Print>_<label>.zip
+# Neue Pakete = neuer Eintrag hier, kein Code-Change.
+schema_version: "1.0.0"
+module: PH
+
+packages:
+  - slug: allgemeine_pharmakologie
+    name: Allgemeine Pharmakologie
+    label: Allgemeine_Pharmakologie
+    categories: [allgemeine_pharmakologie]
+  - slug: pk_pd
+    name: Pharmakokinetik / Pharmakodynamik
+    label: Pharmakokinetik_Pharmakodynamik
+    categories: [pharmakokinetik, pharmakodynamik, pharmakogenetik]
+  - slug: notfallmedikamente
+    name: Notfallmedikamente
+    label: Notfallmedikamente
+    categories: [notfallmedikamente]
+  - slug: anaesthesie_intensiv
+    name: Anästhesie / Intensivmedizin
+    label: Anaesthesie_Intensivmedizin
+    categories: [anaesthesiepharmakologie, intensivpharmakologie]
+  - slug: analgetika
+    name: Analgetika
+    label: Analgetika
+    categories: [analgetika]
+  - slug: antibiotika
+    name: Antibiotika / Antiinfektiva
+    label: Antibiotika_Antiinfektiva
+    categories: [antibiotika_antiinfektiva]
+  - slug: herz_kreislauf
+    name: Herz-Kreislauf
+    label: Herz_Kreislauf
+    categories: [katecholamine_vasopressoren, antiarrhythmika, antihypertensiva, antikoagulanzien]
+  - slug: endokrinologie
+    name: Endokrinologie / Stoffwechsel
+    label: Endokrinologie_Stoffwechsel
+    categories: [endokrinologie, diabetologie]
+  - slug: psychopharmaka
+    name: Psychopharmaka / Neurologie
+    label: Psychopharmaka_Neurologie
+    categories: [psychopharmaka, antiepileptika, sedativa_hypnotika]
+  - slug: toxikologie
+    name: Toxikologie
+    label: Toxikologie
+    categories: [toxikologie, notfalltoxikologie, drogen_alkohol_intoxikationen]
+  - slug: antidote
+    name: Antidote
+    label: Antidote
+    categories: [antidote]
+  - slug: interaktionen
+    name: Arzneimittelsicherheit / Interaktionen
+    label: Interaktionen
+    categories: [arzneimittelinteraktionen, arzneimittelsicherheit, nebenwirkungen_kontraindikationen]
+  - slug: gesamtset
+    name: Gesamtset
+    label: Gesamtset
+    categories: ["*"]   # alle Karten

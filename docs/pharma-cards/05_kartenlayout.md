@@ -133,3 +133,20 @@ Dieselbe HTML/CSS-Struktur wird für die Online-Ansicht wiederverwendet (respons
 - `card-system/card-types/` — je Kartentyp eine Konfigurations-/Beispielansicht.
 - CSS-Design-Tokens (`brand/design-tokens/`, `brand/colors/`) liefern Farben/Typografie — Templates
   referenzieren Tokens, keine Inline-Farben.
+
+---
+
+## 8. Umsetzung und Messung (Stand 2026-10-31)
+
+Festlegungen, die bei der Umsetzung der Druckpipeline getroffen und gemessen wurden:
+
+| Punkt | Festlegung | Begründung |
+|---|---|---|
+| Sicherheitszone | Alle Inhalte (Tabs, Titel, Badge, Boxen, ID, ©, QR) ≥ 5 mm von der Schnittkante | `print-production/specs/bleed-and-safe-zone.md`; frühere 4-mm-Ränder waren zu knapp |
+| QR-Code | echter Code, 15 × 15 mm, Fehlerkorrektur Q, Ruhezone 4 Module, **nur Vorderseite** rechts unten | Spezifikation verlangt ≥ 15 mm; auf der dichten Rückseite fehlte dafür der Platz. Der Standard fordert „rechts unten“, nicht „beidseitig“. |
+| Rückseite | Kern- und Merke-Box über volle Breite, dazwischen **Zweispaltenfluss** | Starre Paarzeilen verschenkten Höhe; der Fluss senkte den gemessenen Überlauf von 16 auf 4 Karten, ohne die Schrift zu verkleinern |
+| Schriftgröße Boxtext | 2,75 mm (≈ 7,8 pt) | Untergrenze für Lesbarkeit im Druck nicht unterschritten |
+| Toxidrom ohne klassisches Antidot | Antidot-Hinweis in die Akuttherapie-Box statt eigener Box | hielt die Rückseite druckfähig, ohne Sicherheitsaussagen zu streichen |
+| Überlaufschutz | `scripts/pharma/check_layout.py` misst jede Kartenseite in Chromium; `make ph-print` läuft nur ohne Befund | Karte hat `overflow: hidden` – abgeschnittener Text wäre sonst unbemerkt gedruckt worden |
+
+Aktueller Messstand: `reports/layout_review.md`.

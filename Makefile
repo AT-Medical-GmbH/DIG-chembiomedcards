@@ -7,9 +7,12 @@ PH_SCOPE  ?= cards/PH/scope
 REGISTRY  ?= cards/registry/cards.master.csv
 HTML_OUT  ?= exports/web/ph/html
 PNG_OUT   ?= exports/preview/ph
+# Python mit Playwright (+ qrcode) für Rendering, Druck, Moodle-Bilder, Layoutprüfung
+PYR       ?= $(PY)
 
 .PHONY: help ph-validate ph-registry ph-registry-check ph-render ph-render-png \
-        ph-output-check ph-release-check ph-review-report ph-all registry-validate
+        ph-output-check ph-release-check ph-review-report ph-layout-check \
+        ph-moodle ph-moodle-preview ph-print ph-print-preview ph-test ph-all registry-validate
 
 help:
 	@echo "Pharma Cards (PH) Ziele:"
@@ -21,6 +24,12 @@ help:
 	@echo "  make ph-output-check    - erzeugte Ausgabe + Export-Gating prüfen"
 	@echo "  make ph-release-check   - Export-Gating hart (nur approved/reviewed) erzwingen"
 	@echo "  make ph-review-report   - Liste offener Reviews mit Prüfschwerpunkten erzeugen"
+	@echo "  make ph-layout-check    - Überlauf + Sicherheitszone in Chromium messen (Report)"
+	@echo "  make ph-moodle          - Moodle-Pakete, nur freigegebene Karten -> dist/moodle"
+	@echo "  make ph-moodle-preview  - Moodle-Vorschau inkl. Karten im Review -> dist/preview"
+	@echo "  make ph-print           - Druckpakete, nur freigegebene Karten -> dist/print"
+	@echo "  make ph-print-preview   - Druckvorschau mit ENTWURF-Wasserzeichen -> dist/preview"
+	@echo "  make ph-test            - Tests der Pharma-Pipeline (pytest)"
 	@echo "  make ph-all             - validate -> registry -> render -> output-check"
 	@echo "  make registry-validate  - bestehender Registry-CSV-Validator (alle Module)"
 
@@ -48,6 +57,24 @@ ph-release-check:
 
 ph-review-report:
 	$(PY) scripts/pharma/review_report.py --cards $(PH_CARDS) --out docs/pharma-cards/reports/cards_review_needed.md
+
+ph-layout-check:
+	$(PYR) scripts/pharma/check_layout.py --cards $(PH_CARDS) --strict
+
+ph-moodle:
+	$(PYR) scripts/pharma/generate_moodle_import.py --cards $(PH_CARDS)
+
+ph-moodle-preview:
+	$(PYR) scripts/pharma/generate_moodle_import.py --cards $(PH_CARDS) --preview
+
+ph-print: ph-layout-check
+	$(PYR) scripts/pharma/generate_print_sheets.py --cards $(PH_CARDS)
+
+ph-print-preview:
+	$(PYR) scripts/pharma/generate_print_sheets.py --cards $(PH_CARDS) --preview
+
+ph-test:
+	$(PYR) -m pytest scripts/pharma/tests -q
 
 registry-validate:
 	$(PY) scripts/validate_card_metadata.py --csv $(REGISTRY)
