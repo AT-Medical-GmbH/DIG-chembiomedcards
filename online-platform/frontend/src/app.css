@@ -1,0 +1,116 @@
+/* Pharma Cards – App-Oberfläche.
+   Tokens aus brand/design-tokens/chembiomed.tokens.json (Fläche, Text, Radius 8, Raster 4/8/16/24,
+   Grundschrift 16 px). Rot ist auf den Karten für Warnungen reserviert und erscheint in der UI
+   nur als kleine Modulmarke. Primärfarbe der UI ist das ruhige Schiefergrau der Grundinformation. */
+
+:root {
+  --app-bg: #f4f6f7;
+  --app-surface: #ffffff;
+  --app-surface-2: #eef1f3;
+  --app-text: #1a1a1a;
+  --app-text-soft: #55636b;
+  --app-line: #dde3e6;
+  --app-primary: #37474f;
+  --app-primary-ink: #ffffff;
+  --app-focus: #1e88e5;
+  --app-ph: #e53935;
+  --app-ok: #2e7d32;
+  --app-warn-bg: #fff4e5;
+  --app-warn-line: #f0b25a;
+  --app-warn-ink: #6b4500;
+  --app-critical: #b71c1c;
+  --r-again: #c62828;
+  --r-hard: #ef6c00;
+  --r-good: #2e7d32;
+  --r-easy: #1565c0;
+  --radius: 8px;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --shadow: 0 1px 2px rgba(16, 24, 32, .06), 0 4px 16px rgba(16, 24, 32, .06);
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: var(--app-bg);
+  color: var(--app-text);
+  font: 16px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--app-primary); }
+h1, h2, h3 { line-height: 1.25; margin: 0 0 var(--sp-2); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0 0 var(--sp-2); }
+
+:focus-visible { outline: 3px solid var(--app-focus); outline-offset: 2px; border-radius: 4px; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: var(--sp-4) var(--sp-3); }
+
+.panel {
+  background: var(--app-surface);
+  border: 1px solid var(--app-line);
+  border-radius: var(--radius);
+  padding: var(--sp-3);
+  box-shadow: var(--shadow);
+}
+
+.grid { display: grid; gap: var(--sp-3); }
+.grid.cols-auto { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+  min-height: 44px; padding: 0 var(--sp-3);
+  border: 1px solid var(--app-line); border-radius: var(--radius);
+  background: var(--app-surface); color: var(--app-text);
+  font: 600 0.95rem/1 var(--font); cursor: pointer; text-decoration: none;
+  transition: background .15s, border-color .15s, transform .05s;
+}
+.btn:hover { background: var(--app-surface-2); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--app-primary); border-color: var(--app-primary); color: var(--app-primary-ink); }
+.btn.primary:hover { background: #2b3940; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+.btn.small { min-height: 36px; padding: 0 12px; font-size: .875rem; }
+.btn[aria-pressed="true"] { background: #e3edf9; border-color: #90b8e8; }
+
+input[type="search"], input[type="text"], select, textarea {
+  font: inherit; color: inherit; background: var(--app-surface);
+  border: 1px solid var(--app-line); border-radius: var(--radius);
+  min-height: 44px; padding: 8px 12px; width: 100%;
+}
+textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600;
+  background: var(--app-surface-2); color: var(--app-text-soft); border: 1px solid var(--app-line);
+}
+.chip.critical { background: #fdecea; color: var(--app-critical); border-color: #f5c2bd; }
+.chip.high { background: #fdf0ec; color: #c43d1f; border-color: #f6cdbf; }
+.chip.moderate { background: #fff6e8; color: #8a5300; border-color: #f2d3a3; }
+.chip.low { background: #ecf6ee; color: var(--app-ok); border-color: #c8e3cc; }
+.chip.draft { background: var(--app-warn-bg); color: var(--app-warn-ink); border-color: var(--app-warn-line); }
+
+.banner {
+  display: flex; gap: var(--sp-2); align-items: flex-start;
+  padding: 12px 16px; border-radius: var(--radius);
+  background: var(--app-warn-bg); border: 1px solid var(--app-warn-line); color: var(--app-warn-ink);
+}
+.muted { color: var(--app-text-soft); }
+.small { font-size: .875rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.progress { height: 8px; background: var(--app-surface-2); border-radius: 999px; overflow: hidden; }
+.progress > span { display: block; height: 100%; background: var(--app-primary); transition: width .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

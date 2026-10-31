@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-10-31 (P5 Online-MVP)
+- `online-platform/backend/`: FastAPI-API mit SQLAlchemy/Alembic (PostgreSQL 16, SQLite für Tests).
+  Seed aus `cards/PH` (idempotent, Versions-Snapshots, Deaktivierung statt Löschen). Freigabe-Gating:
+  Lernende sehen nur `approved`. Wiederholung nach SM-2 oder Leitner, Markierungen, Lernsets,
+  Statistik, Notizen inkl. Kursnotizen und Markdown-Export, Review-Protokoll und Änderungsverlauf
+  für Review-Rollen, Downloads (HTML/PDF/PNG, Entwurfs-Wasserzeichen) über den gemeinsamen Renderer.
+  Anmeldung lokal (nur Entwicklung/Staging) oder OIDC/Authentik (JWKS, Issuer/Audience, Rollen aus
+  Gruppen). Startsperren in Produktion; der Container endet bei unsicherer Konfiguration mit Exit 1.
+- `online-platform/frontend/`: SvelteKit-Oberfläche – Übersicht mit Tagesziel und Kategoriefortschritt,
+  Lernmodus (Flip per Klick/Leertaste/Wischen, Bewertung 1–4, Fokusmodus), Kartensuche mit Filtern,
+  Kartendetail mit Fachreview-Formular, Antidot-/Toxidrom-Übersicht, Notizen. Druckgetreue Karte im
+  Shadow DOM ab Tablet-Breite, responsive Leseansicht (16 px) auf Smartphones. CSP mit Hashes.
+- Betrieb: Dockerfiles (API, Web/nginx), `docker-compose.yml`, Traefik-Overlay, `.env.example`,
+  `online-platform/README_DEPLOYMENT.md`.
+- Tests: 33 API-Tests (u. a. Gating, OIDC-Ablehnung, Rollen, Seed), Browser-E2E 8/8 gegen
+  PostgreSQL und gegen den gebauten Docker-Stack.
+
 ## 2026-10-31 (P4 Export: Moodle + Druck)
 - `scripts/pharma/generate_moodle_import.py`: Moodle-Pakete je Paket aus
   `cards/PH/scope/packages.yaml` (import.csv, import_html.csv, TAB-/Semikolon-Zweispaltenimport mit

@@ -195,3 +195,21 @@ teacher_comments(id PK, teacher_id FK, card_id FK, comment)
 
 Kartendaten sind reproduzierbar; Nutzer-/Lizenz-/Review-Daten sind der schützenswerte, nicht
 reproduzierbare Teil und bestimmen die Backup-Strategie (Dok. 09).
+
+---
+
+## 4. Umsetzung im MVP (Stand 2026-10-31)
+
+Implementiert in `online-platform/backend/app/models.py`, Migration `migrations/versions/0001_*`.
+Gegen PostgreSQL 16 geprüft (Upgrade, Downgrade, Upgrade; JSON-Felder als `jsonb`).
+Abweichungen und Ergänzungen gegenüber §3:
+
+| Punkt | Umsetzung | Grund |
+|---|---|---|
+| Markierungen | `user_progress.flags` (favorit, klinisch_wichtig, pruefungsrelevant, spaeter) zusätzlich zu `status` | Eine Karte kann „unsicher“ **und** „klinisch wichtig“ sein; ein einziges Statusfeld reicht nicht. |
+| Lernhistorie | Tabelle `study_events` (eine Zeile je Bewertung) statt `learning_sessions` | Lernhistorie pro Karte und Tagesstatistik brauchen die Einzelbewertung. |
+| Nebenkategorien | Zuordnungstabelle `card_secondary_categories` | Das Notfallset schließt Antidote über die Nebenkategorie ein. |
+| Volltextsuche | `cards.search_text` (normalisiert) | Suche über Wirkstoff, Klasse, Indikation, NW, Antidot, Toxidrom ohne Zusatzdienst. |
+| Review-Status | `review_events` ist ein Protokoll; `cards.review_status` kommt ausschließlich aus den YAML-Daten | Eine Quelle der Wahrheit; der Git-Verlauf ist der Audit-Trail. |
+| Rollen | `users.role` aus OIDC-Gruppen (lokal nur in Entwicklung/Staging) | Rechteverwaltung bleibt in Authentik. |
+| `substances`, `interaction_pairs`, `course_assignments`, `moodle_contexts` | noch nicht angelegt | erst mit Karteneditor bzw. LTI nötig. |

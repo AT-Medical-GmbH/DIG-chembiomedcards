@@ -12,7 +12,8 @@ PYR       ?= $(PY)
 
 .PHONY: help ph-validate ph-registry ph-registry-check ph-render ph-render-png \
         ph-output-check ph-release-check ph-review-report ph-layout-check \
-        ph-moodle ph-moodle-preview ph-print ph-print-preview ph-test ph-all registry-validate
+        ph-moodle ph-moodle-preview ph-print ph-print-preview ph-test ph-all registry-validate \
+        app-test app-web app-e2e
 
 help:
 	@echo "Pharma Cards (PH) Ziele:"
@@ -32,6 +33,9 @@ help:
 	@echo "  make ph-test            - Tests der Pharma-Pipeline (pytest)"
 	@echo "  make ph-all             - validate -> registry -> render -> output-check"
 	@echo "  make registry-validate  - bestehender Registry-CSV-Validator (alle Module)"
+	@echo "  make app-test           - Tests der Online-API (pytest, SQLite)"
+	@echo "  make app-web            - Frontend prüfen und bauen (svelte-check, vite build)"
+	@echo "  make app-e2e URL=...    - Browser-Smoke-Test gegen laufende Instanz"
 
 ph-validate:
 	$(PY) scripts/pharma/validate_ph_cards.py --cards $(PH_CARDS) --scope $(PH_SCOPE)
@@ -81,3 +85,15 @@ registry-validate:
 
 ph-all: ph-validate ph-registry ph-render ph-output-check ph-review-report registry-validate
 	@echo "Pharma-Cards-Pipeline durchlaufen."
+
+# ---- Online-Lernsystem (online-platform/) ----
+URL ?= http://127.0.0.1:8000
+
+app-test:
+	cd online-platform/backend && $(PYR) -m pytest tests -q
+
+app-web:
+	cd online-platform/frontend && npm ci && npm run check && npm run build
+
+app-e2e:
+	$(PYR) online-platform/e2e/smoke.py --url $(URL)
