@@ -7,15 +7,21 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: validate-metadata-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    # Eigener Runner (docs/ci/self-hosted-runner.md). PRs aus Forks laufen nie auf dem eigenen Runner.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, chembiomed]
+    container: python:3.12-slim
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          persist-credentials: false
       - name: Validate card registry metadata
         run: python3 scripts/validate_card_metadata.py --csv cards/registry/cards.master.csv

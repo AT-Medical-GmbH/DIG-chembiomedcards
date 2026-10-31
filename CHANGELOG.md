@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-31 (CI: eigener Runner)
+- CI läuft auf einem eigenen Runner, weil die GitHub-Runner wegen Billing gesperrt sind:
+  `runs-on: [self-hosted, linux, chembiomed]`, jeder Job im Container, nie für Fork-PRs, nur
+  Leserechte.
+- Neu `.github/workflows/pharma-ci.yml` mit den Jobs pipeline, api und web. Schritte ohne passende
+  Dateien überspringen sich selbst.
+- `docs/ci/self-hosted-runner.md`: Sicherheitsmodell, GitHub-Einstellungen (zuerst Repo privat),
+  VM-Einrichtung, Wartung, Rückweg.
+
 ## 2026-10-09
 - Pharma Cards (Modul PH) — vollständiges Konzeptdossier unter `docs/pharma-cards/` (18 Phasen:
   Analyse/Architektur, Datenmodell, fachliche Zielstruktur, kuratierte Startliste, Layout, Generierung
