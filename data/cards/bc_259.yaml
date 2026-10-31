@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_259
-id_status: provisional
+id_status: confirmed
 slug: bc_259_vitamin_b3
 title: Vitamin B3
 subtitle: Niacin

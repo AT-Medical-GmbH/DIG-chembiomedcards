@@ -375,3 +375,176 @@ PH ist als spätere eigene Produktlinie vorgesehen. Sie ist strukturell im Repos
 ## Hinweis
 
 Dieses Masterverzeichnis ist absichtlich menschenlesbar. Für Automatisierung, QR-Erzeugung, Export und Webplattform bleibt eine maschinenlesbare Registry zusätzlich erforderlich.
+
+---
+
+<!-- PRODUZIERTE-KARTEN:START -->
+
+## Produzierte Karten (automatisch aus `data/cards/`)
+
+_Erzeugt von `scripts/update_master_directory.py` – nicht von Hand bearbeiten. Quelle der Wahrheit sind die Kartendateien._
+
+Stand: **116 Karten**.
+
+### stoffwechsel_zentral
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_061` | `bc_061_glucose` | Glucose | biochemie | needs_review |
+| `bc_062` | `bc_062_glucose_6_phosphat` | Glucose-6-phosphat | biochemie | needs_review |
+| `bc_063` | `bc_063_fructose_6_phosphat` | Fructose-6-phosphat | biochemie | needs_review |
+| `bc_064` | `bc_064_pyruvat` | Pyruvat | biochemie | needs_review |
+| `bc_065` | `bc_065_laktat` | Laktat | biochemie | needs_review |
+| `bc_073` | `bc_073_acetyl_coa` | Acetyl-CoA | biochemie | needs_review |
+| `bc_074` | `bc_074_coenzym_a` | Coenzym A | biochemie | needs_review |
+| `bc_075` | `bc_075_citrat` | Citrat | biochemie | needs_review |
+| `bc_076` | `bc_076_oxalacetat` | Oxalacetat | biochemie | needs_review |
+| `bc_077` | `bc_077_alpha_ketoglutarat` | α-Ketoglutarat | biochemie | needs_review |
+| `bc_078` | `bc_078_succinyl_coa` | Succinyl-CoA | biochemie | needs_review |
+| `bc_079` | `bc_079_succinat` | Succinat | biochemie | needs_review |
+| `bc_080` | `bc_080_fumarat` | Fumarat | biochemie | needs_review |
+| `bc_081` | `bc_081_malat` | Malat | biochemie | needs_review |
+
+### aminosaeuren_proteinogen
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_098` | `bc_098_glycin` | Glycin | biochemie | needs_review |
+| `bc_099` | `bc_099_alanin` | Alanin | biochemie | needs_review |
+| `bc_100` | `bc_100_valin` | Valin | biochemie | needs_review |
+| `bc_101` | `bc_101_leucin` | Leucin | biochemie | needs_review |
+| `bc_102` | `bc_102_isoleucin` | Isoleucin | biochemie | needs_review |
+| `bc_103` | `bc_103_serin` | Serin | biochemie | needs_review |
+| `bc_104` | `bc_104_threonin` | Threonin | biochemie | needs_review |
+| `bc_105` | `bc_105_cystein` | Cystein | biochemie | needs_review |
+| `bc_106` | `bc_106_methionin` | Methionin | biochemie | needs_review |
+| `bc_107` | `bc_107_prolin` | Prolin | biochemie | needs_review |
+| `bc_108` | `bc_108_phenylalanin` | Phenylalanin | biochemie | needs_review |
+| `bc_109` | `bc_109_tyrosin` | Tyrosin | biochemie | needs_review |
+| `bc_110` | `bc_110_tryptophan` | Tryptophan | biochemie | needs_review |
+| `bc_111` | `bc_111_histidin` | Histidin | biochemie | needs_review |
+| `bc_112` | `bc_112_lysin` | Lysin | biochemie | needs_review |
+| `bc_113` | `bc_113_arginin` | Arginin | biochemie | needs_review |
+| `bc_114` | `bc_114_aspartat` | Aspartat / Asparaginsäure | biochemie | needs_review |
+| `bc_115` | `bc_115_glutamat` | Glutamat / Glutaminsäure | biochemie | needs_review |
+| `bc_116` | `bc_116_asparagin` | Asparagin | biochemie | needs_review |
+| `bc_117` | `bc_117_glutamin` | Glutamin | biochemie | needs_review |
+
+### aminosaeure_derivate
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_118` | `bc_118_kreatin` | Kreatin | biochemie | needs_review |
+| `bc_119` | `bc_119_kreatinin` | Kreatinin | biochemie | needs_review |
+| `bc_120` | `bc_120_homocystein` | Homocystein | biochemie | needs_review |
+| `bc_121` | `bc_121_taurin` | Taurin | biochemie | needs_review |
+| `bc_122` | `bc_122_beta_alanin` | β-Alanin | biochemie | needs_review |
+| `bc_123` | `bc_123_hydroxyprolin` | Hydroxyprolin | biochemie | needs_review |
+| `bc_124` | `bc_124_hydroxylysin` | Hydroxylysin | biochemie | needs_review |
+| `bc_125` | `bc_125_selenocystein` | Selenocystein | biochemie | needs_review |
+| `bc_126` | `bc_126_selenomethionin` | Selenomethionin | biochemie | needs_review |
+| `bc_127` | `bc_127_ornithin` | Ornithin | biochemie | needs_review |
+| `bc_128` | `bc_128_citrullin` | Citrullin | biochemie | needs_review |
+| `bc_129` | `bc_129_argininosuccinat` | Argininosuccinat | biochemie | needs_review |
+| `bc_130` | `bc_130_n_acetylglutamat` | N-Acetylglutamat | biochemie | needs_review |
+| `bc_131` | `bc_131_n_acetylaspartat` | N-Acetylaspartat | biochemie | needs_review |
+
+### stickstoffstoffwechsel
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_132` | `bc_132_ammoniak_ammonium` | Ammoniak / Ammonium | biochemie | needs_review |
+| `bc_133` | `bc_133_carbamoylphosphat` | Carbamoylphosphat | biochemie | needs_review |
+| `bc_134` | `bc_134_harnstoff` | Harnstoff | biochemie | needs_review |
+| `bc_135` | `bc_135_orotat` | Orotat | biochemie | needs_review |
+
+### lipide
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_140` | `bc_140_oelsaeure` | Ölsäure | biochemie | needs_review |
+| `bc_141` | `bc_141_linolsaeure` | Linolsäure | biochemie | needs_review |
+| `bc_142` | `bc_142_arachidonsaeure` | Arachidonsäure | biochemie | needs_review |
+| `bc_143` | `bc_143_triacylglycerid` | Triacylglycerid (TAG) | biochemie | needs_review |
+| `bc_144` | `bc_144_diacylglycerin` | Diacylglycerin (DAG) | biochemie | needs_review |
+| `bc_145` | `bc_145_prostaglandin_e2` | Prostaglandin E2 | biochemie | needs_review |
+| `bc_146` | `bc_146_thromboxan_a2` | Thromboxan A2 | biochemie | needs_review |
+| `bc_147` | `bc_147_leukotrien_b4` | Leukotrien B4 | biochemie | needs_review |
+| `bc_148` | `bc_148_beta_hydroxybutyrat` | β-Hydroxybutyrat | biochemie | needs_review |
+| `bc_149` | `bc_149_malonyl_coa` | Malonyl-CoA | biochemie | needs_review |
+| `bc_150` | `bc_150_hmg_coa` | HMG-CoA | biochemie | needs_review |
+| `bc_151` | `bc_151_mevalonat` | Mevalonat | biochemie | needs_review |
+
+### neurotransmitter
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_160` | `bc_160_dopamin` | Dopamin | biochemie | needs_review |
+| `bc_161` | `bc_161_adrenalin` | Adrenalin | biochemie | needs_review |
+| `bc_162` | `bc_162_noradrenalin` | Noradrenalin | biochemie | needs_review |
+| `bc_163` | `bc_163_serotonin` | Serotonin | biochemie | needs_review |
+| `bc_164` | `bc_164_melatonin` | Melatonin | biochemie | needs_review |
+| `bc_165` | `bc_165_histamin` | Histamin | biochemie | needs_review |
+| `bc_166` | `bc_166_acetylcholin` | Acetylcholin | biochemie | needs_review |
+| `bc_167` | `bc_167_gaba` | GABA | biochemie | needs_review |
+| `bc_168` | `bc_168_5_hydroxytryptophan` | 5-Hydroxytryptophan (5-HTP) | biochemie | needs_review |
+| `bc_169` | `bc_169_l_dopa` | L-DOPA | biochemie | needs_review |
+
+### hormone
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_170` | `bc_170_insulin` | Insulin | biochemie | needs_review |
+| `bc_171` | `bc_171_glukagon` | Glukagon | biochemie | needs_review |
+| `bc_172` | `bc_172_glp_1` | GLP-1 | biochemie | needs_review |
+| `bc_173` | `bc_173_gip` | GIP | biochemie | needs_review |
+| `bc_174` | `bc_174_ghrelin` | Ghrelin | biochemie | needs_review |
+| `bc_175` | `bc_175_leptin` | Leptin | biochemie | needs_review |
+| `bc_176` | `bc_176_adiponektin` | Adiponektin | biochemie | needs_review |
+| `bc_177` | `bc_177_cortisol` | Cortisol | biochemie | needs_review |
+| `bc_178` | `bc_178_aldosteron` | Aldosteron | biochemie | needs_review |
+| `bc_179` | `bc_179_calcitriol` | Calcitriol | biochemie | needs_review |
+| `bc_180` | `bc_180_triiodthyronin` | Triiodthyronin (T3) | biochemie | needs_review |
+| `bc_181` | `bc_181_thyroxin` | Thyroxin (T4) | biochemie | needs_review |
+| `bc_182` | `bc_182_testosteron` | Testosteron | biochemie | needs_review |
+| `bc_183` | `bc_183_oestradiol` | Östradiol | biochemie | needs_review |
+| `bc_184` | `bc_184_progesteron` | Progesteron | biochemie | needs_review |
+
+### nukleotide_coenzyme
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_200` | `bc_200_atp` | ATP | biochemie | needs_review |
+| `bc_201` | `bc_201_gtp` | GTP | biochemie | needs_review |
+| `bc_202` | `bc_202_camp` | cAMP | molekularbio | needs_review |
+| `bc_203` | `bc_203_cgmp` | cGMP | molekularbio | needs_review |
+| `bc_204` | `bc_204_ip3` | Inositoltrisphosphat (IP₃) | molekularbio | needs_review |
+| `bc_205` | `bc_205_nad` | NAD⁺ | biochemie | needs_review |
+| `bc_206` | `bc_206_nadh` | NADH | biochemie | needs_review |
+| `bc_207` | `bc_207_fad` | FAD | biochemie | needs_review |
+| `bc_208` | `bc_208_coenzym_q10` | Coenzym Q10 | biochemie | needs_review |
+| `bc_209` | `bc_209_ubichinol` | Ubichinol | biochemie | needs_review |
+| `bc_210` | `bc_210_s_adenosylmethionin` | S-Adenosylmethionin (SAM) | biochemie | needs_review |
+| `bc_211` | `bc_211_calcium` | Calcium / Ca²⁺ | molekularbio | needs_review |
+| `bc_212` | `bc_212_stickstoffmonoxid` | Stickstoffmonoxid (NO) | molekularbio | needs_review |
+
+### vitamine
+
+| ID | Slug / Dateiname | Titel | Tab | Review |
+|---|---|---|---|---|
+| `bc_256` | `bc_256_vitamin_a` | Vitamin A | biochemie | needs_review |
+| `bc_257` | `bc_257_vitamin_b1` | Vitamin B1 | biochemie | needs_review |
+| `bc_258` | `bc_258_vitamin_b2` | Vitamin B2 | biochemie | needs_review |
+| `bc_259` | `bc_259_vitamin_b3` | Vitamin B3 | biochemie | needs_review |
+| `bc_260` | `bc_260_vitamin_b5` | Vitamin B5 | biochemie | needs_review |
+| `bc_261` | `bc_261_vitamin_b6` | Vitamin B6 | biochemie | needs_review |
+| `bc_262` | `bc_262_vitamin_b7` | Vitamin B7 | biochemie | needs_review |
+| `bc_263` | `bc_263_vitamin_b9` | Vitamin B9 | biochemie | needs_review |
+| `bc_264` | `bc_264_vitamin_b12` | Vitamin B12 | biochemie | needs_review |
+| `bc_265` | `bc_265_vitamin_c` | Vitamin C | biochemie | needs_review |
+| `bc_266` | `bc_266_vitamin_d` | Vitamin D | biochemie | needs_review |
+| `bc_267` | `bc_267_vitamin_e` | Vitamin E | biochemie | needs_review |
+| `bc_268` | `bc_268_vitamin_k` | Vitamin K | biochemie | needs_review |
+| `bc_269` | `bc_269_vitamin_s` | Vitamin S (Schokolade) | biochemie | needs_review |
+
+<!-- PRODUZIERTE-KARTEN:END -->

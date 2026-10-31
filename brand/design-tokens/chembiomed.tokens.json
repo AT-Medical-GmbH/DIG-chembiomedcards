@@ -45,8 +45,7 @@
         "tab_inactive_text": "#6b7280"
       },
       "categories": {
-        "allgemein": "#03204c",
-        "anorganik": "#03204c",
+        "allgemein_anorganik": "#03204c",
         "organik": "#03204c",
         "molekularbio": "#2563eb",
         "biochemie": "#06807d",

@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_105
-id_status: provisional
+id_status: confirmed
 slug: bc_105_cystein
 title: Cystein
 subtitle: Proteinogene Aminosäure

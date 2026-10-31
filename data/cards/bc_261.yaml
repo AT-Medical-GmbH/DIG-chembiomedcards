@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_261
-id_status: provisional
+id_status: confirmed
 slug: bc_261_vitamin_b6
 title: Vitamin B6
 subtitle: Pyridoxin

@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_130
-id_status: provisional
+id_status: confirmed
 slug: bc_130_n_acetylglutamat
 title: N-Acetylglutamat
 subtitle: Aminosäure-Derivat

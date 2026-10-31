@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_181
-id_status: provisional
+id_status: confirmed
 slug: bc_181_thyroxin
 title: Thyroxin (T4)
 subtitle: Hormon

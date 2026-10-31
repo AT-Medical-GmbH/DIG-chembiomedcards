@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_111
-id_status: provisional
+id_status: confirmed
 slug: bc_111_histidin
 title: Histidin
 subtitle: Proteinogene Aminosäure

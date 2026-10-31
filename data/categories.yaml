@@ -3,12 +3,9 @@
 # Farben werden aus brand/design-tokens/chembiomed.tokens.json (card.categories) gezogen.
 schema_version: 1
 tabs:
-  - key: allgemein
-    label: Allgemein
-    name: Allgemeine Chemie
-  - key: anorganik
-    label: Anorganik
-    name: Anorganische Chemie
+  - key: allgemein_anorganik
+    label: Allg./Anorganik
+    name: Allgemeine und anorganische Chemie   # ein gemeinsamer Tab (Entscheidung 2026-10-31, ADR-022)
   - key: organik
     label: Organik
     name: Organische Chemie

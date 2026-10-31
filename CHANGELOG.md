@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-31 (4)
+- Alle offenen Fragen in einer strukturierten Abfrage entschieden; `open-questions.md` neu gefasst,
+  ADR-022 (gemeinsamer Tab Allg./Anorganik) und ADR-023 (Entscheidungspaket)
+- Tab-Leiste auf fünf Tabs umgestellt; alle 116 Karten-IDs bestätigt
+- Masterverzeichnis: automatisch gepflegter Abschnitt „Produzierte Karten“
+  (`scripts/update_master_directory.py`, Teil von `make reports`)
+- Logo-Vektorfassung als Nachzeichnung (`scripts/vectorize_logo.py`), Abnahme offen
+
 ## 2026-10-31 (3)
 - Offizielles ChemBioMed-Cards-Logo eingebunden: Original unter `brand/logo/source/`, reproduzierbar
   abgeleitete Varianten (vollständig, kompakt, Bildmarke) per `scripts/derive_logo_assets.py`

@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_078
-id_status: provisional
+id_status: confirmed
 slug: bc_078_succinyl_coa
 title: Succinyl-CoA
 subtitle: Stoffwechsel-Zwischenprodukt

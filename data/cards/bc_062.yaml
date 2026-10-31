@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_062
-id_status: provisional
+id_status: confirmed
 slug: bc_062_glucose_6_phosphat
 title: Glucose-6-phosphat
 subtitle: Stoffwechsel-Zwischenprodukt

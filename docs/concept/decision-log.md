@@ -20,7 +20,7 @@ Online-Export → pixelgleiche Ergebnisse. **Konsequenz:** gemeinsame Template-/
 **Entscheidung:** 148 × 105 mm + 3 mm Beschnitt, auf A4/A3-Bögen montiert. **Begründung:**
 bestehender Repo-Standard, druck- und online-tauglich. **Konsequenz:** Print-Montagelogik Kap. 07.
 
-### ADR-004 — Tab-Taxonomie folgt Handover, Modulcodes bleiben · *proposed*
+### ADR-004 — Tab-Taxonomie folgt Handover, Modulcodes bleiben · *accepted 2026-10-31 (mit ADR-022)*
 **Kontext:** Handover-Tabs (6) vs. bestehende Modulcodes (AC/OC/BC/MB/APC/PH). **Entscheidung:**
 sichtbare Tabs = Handover (Allgemein/Anorganik/Organik/Molekularbio/Biochemie/Klinik);
 Modul-/Paketcodes unverändert; Mapping in Kap. 03 §4. **Begründung:** erfüllt Handover **und**
@@ -38,7 +38,7 @@ hält IDs/Registry stabil. **Konsequenz:** zwei getrennte Dimensionen; Bestätig
 **Begründung:** gleiche Sprache wie Pipeline → geteilter Code (Schema/Export); OpenAPI-nativ.
 **Konsequenz:** ein Python-Monorepo-Teil für Pipeline + API.
 
-### ADR-008 — Moodle: LTI 1.3 strategisch, Importpakete interim · *proposed*
+### ADR-008 — Moodle: LTI 1.3 strategisch, Importpakete interim · *accepted 2026-10-31 (zunächst ohne Notenrückgabe)*
 **Entscheidung:** LTI-1.3-Tool (SSO, Deep Linking, AGS) als Hauptpfad; CSV/H5P/iframe ergänzend.
 **Begründung:** vermeidet Plugin-Pflege über Moodle-Versionen. **Konsequenz:** Abstimmung mit
 Moodle-Betrieb nötig (Version/Plugin/AGS).
@@ -73,7 +73,7 @@ Import-/Audit-Pipeline (Kap. 04) dient nur noch für Muster und Fremdzulieferung
 **Begründung:** Testet die strengste Darstellungsregel (Fischer-Projektion) und ein vollständiges
 Rückseitenschema, bevor die Serie skaliert.
 
-### ADR-016 — Vorläufige IDs (Aminosäuren `bc_098`–`bc_117`, siehe auch ADR-020) · *proposed*
+### ADR-016 — IDs der Aminosäuren `bc_098`–`bc_117` · *accepted 2026-10-31*
 **Kontext:** Das Masterverzeichnis vergibt im BC-Kapitel „Aminosäuren, Proteine und Stickstoff“ nur den
 Anker `bc_097` (Aminosäure-Grundstruktur). **Entscheidung:** fortlaufend direkt danach, als
 `id_status: provisional` markiert. **Konsequenz:** Bestätigung oder Umnummerierung vor der
@@ -103,7 +103,7 @@ Fischer-Konvention. Vitamine und Peptidhormone zeigen vorne nur die Bezeichnung,
 **Konsequenz:** Abkürzungen wie „CoA“ oder Reste R₁–R₃ über Platzhalteratome; der Generator prüft
 Atombeschriftungen auf Mindestabstand und meldet Problemfälle (`front_content.layout` als Ausweg).
 
-### ADR-020 — ID-Blöcke für die Handover-Soll-Liste · *proposed*
+### ADR-020 — ID-Blöcke für die Handover-Soll-Liste · *accepted 2026-10-31*
 **Entscheidung (vorläufig, `id_status: provisional`):** Stoffwechsel `bc_061`–`bc_081` um den Anker
 `bc_073` Acetyl-CoA (bestätigt), Derivate `bc_118`–`bc_131`, Stickstoffstoffwechsel `bc_132`–`bc_135`,
 Lipide `bc_140`–`bc_151`, Neurotransmitter `bc_160`–`bc_169`, Hormone `bc_170`–`bc_184` (vor dem Anker
@@ -121,3 +121,17 @@ bleiben. **Begründung:** Das Logo kodiert Chem/Bio/Med farbig – Karten und Lo
 Sprache. **Konsequenz:** Varianten werden reproduzierbar aus dem Original abgeleitet
 (`scripts/derive_logo_assets.py`); der Generator prüft, dass das Logo geladen ist und keine Inhalte
 überdeckt. Rückgängig/anpassbar allein über die Tokens.
+
+### ADR-022 — „Allgemein“ und „Anorganik“ als ein gemeinsamer Tab · *accepted*
+**Kontext:** Entscheidung von Andreas am 2026-10-31. **Entscheidung:** Die Tab-Leiste hat fünf Tabs:
+Allg./Anorganik · Organik · Molekularbio · Biochemie · Klinik (Schlüssel `allgemein_anorganik`).
+Sie deckt sich damit mit dem Modul AC. **Konsequenz:** Tabs sind breiter (18 mm); APC/PH bleiben
+vorerst unter „Klinik“ und werden neu bewertet, wenn dort Inhalte entstehen.
+
+### ADR-023 — Entscheidungspaket vom 2026-10-31 · *accepted*
+Fachreview durch Andreas · Musterkarten nicht mehr nötig · Pharma-PR #8 getrennt · Druck-/Moodle-Pakete
+und Online-MVP parallel · Druck: RGB jetzt, CMYK mit der Druckerei; Standard 4 × A6 pro A4, Duplex
+über die lange Kante · Lizenzen pro Modul (WooCommerce-Webhook) · Nutzer-Uploads mit Kontingent
+(Virenprüfung, Löschkonzept) · Authentik-Application `chembiomed-cards` mit Gruppen
+`chembiomed-admins/-editors/-reviewers/-dozenten` · Server-Prüfungen nur lesend · Logo-Vektorfassung
+per automatischer Nachzeichnung (`scripts/vectorize_logo.py`), Abnahme durch AT Medical.

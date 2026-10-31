@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_114
-id_status: provisional
+id_status: confirmed
 slug: bc_114_aspartat
 title: Aspartat / Asparaginsäure
 subtitle: Proteinogene Aminosäure

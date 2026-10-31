@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_074
-id_status: provisional
+id_status: confirmed
 slug: bc_074_coenzym_a
 title: Coenzym A
 subtitle: Stoffwechsel-Zwischenprodukt

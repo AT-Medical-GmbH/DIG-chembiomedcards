@@ -21,6 +21,7 @@ cards-force:
 
 reports:
 	$(PY) scripts/report_review_status.py
+	$(PY) scripts/update_master_directory.py
 
 build: validate cards reports
 

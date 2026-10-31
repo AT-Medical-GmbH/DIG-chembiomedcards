@@ -8,7 +8,7 @@
   "cards": [
     {
       "card_id": "bc_061",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_061_glucose",
       "title": "Glucose",
       "subtitle": "Traubenzucker",
@@ -65,7 +65,7 @@
     },
     {
       "card_id": "bc_062",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_062_glucose_6_phosphat",
       "title": "Glucose-6-phosphat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -122,7 +122,7 @@
     },
     {
       "card_id": "bc_063",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_063_fructose_6_phosphat",
       "title": "Fructose-6-phosphat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -178,7 +178,7 @@
     },
     {
       "card_id": "bc_064",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_064_pyruvat",
       "title": "Pyruvat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -235,7 +235,7 @@
     },
     {
       "card_id": "bc_065",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_065_laktat",
       "title": "Laktat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -358,7 +358,7 @@
     },
     {
       "card_id": "bc_074",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_074_coenzym_a",
       "title": "Coenzym A",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -415,7 +415,7 @@
     },
     {
       "card_id": "bc_075",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_075_citrat",
       "title": "Citrat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -472,7 +472,7 @@
     },
     {
       "card_id": "bc_076",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_076_oxalacetat",
       "title": "Oxalacetat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -530,7 +530,7 @@
     },
     {
       "card_id": "bc_077",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_077_alpha_ketoglutarat",
       "title": "α-Ketoglutarat",
       "subtitle": "2-Oxoglutarat",
@@ -589,7 +589,7 @@
     },
     {
       "card_id": "bc_078",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_078_succinyl_coa",
       "title": "Succinyl-CoA",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -650,7 +650,7 @@
     },
     {
       "card_id": "bc_079",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_079_succinat",
       "title": "Succinat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -710,7 +710,7 @@
     },
     {
       "card_id": "bc_080",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_080_fumarat",
       "title": "Fumarat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -768,7 +768,7 @@
     },
     {
       "card_id": "bc_081",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_081_malat",
       "title": "Malat",
       "subtitle": "Stoffwechsel-Zwischenprodukt",
@@ -826,7 +826,7 @@
     },
     {
       "card_id": "bc_098",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_098_glycin",
       "title": "Glycin",
       "subtitle": "Proteinogene Aminosäure",
@@ -893,7 +893,7 @@
     },
     {
       "card_id": "bc_099",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_099_alanin",
       "title": "Alanin",
       "subtitle": "Proteinogene Aminosäure",
@@ -961,7 +961,7 @@
     },
     {
       "card_id": "bc_100",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_100_valin",
       "title": "Valin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1031,7 +1031,7 @@
     },
     {
       "card_id": "bc_101",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_101_leucin",
       "title": "Leucin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1107,7 +1107,7 @@
     },
     {
       "card_id": "bc_102",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_102_isoleucin",
       "title": "Isoleucin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1183,7 +1183,7 @@
     },
     {
       "card_id": "bc_103",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_103_serin",
       "title": "Serin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1257,7 +1257,7 @@
     },
     {
       "card_id": "bc_104",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_104_threonin",
       "title": "Threonin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1335,7 +1335,7 @@
     },
     {
       "card_id": "bc_105",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_105_cystein",
       "title": "Cystein",
       "subtitle": "Proteinogene Aminosäure",
@@ -1407,7 +1407,7 @@
     },
     {
       "card_id": "bc_106",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_106_methionin",
       "title": "Methionin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1486,7 +1486,7 @@
     },
     {
       "card_id": "bc_107",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_107_prolin",
       "title": "Prolin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1553,7 +1553,7 @@
     },
     {
       "card_id": "bc_108",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_108_phenylalanin",
       "title": "Phenylalanin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1624,7 +1624,7 @@
     },
     {
       "card_id": "bc_109",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_109_tyrosin",
       "title": "Tyrosin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1700,7 +1700,7 @@
     },
     {
       "card_id": "bc_110",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_110_tryptophan",
       "title": "Tryptophan",
       "subtitle": "Proteinogene Aminosäure",
@@ -1773,7 +1773,7 @@
     },
     {
       "card_id": "bc_111",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_111_histidin",
       "title": "Histidin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1844,7 +1844,7 @@
     },
     {
       "card_id": "bc_112",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_112_lysin",
       "title": "Lysin",
       "subtitle": "Proteinogene Aminosäure",
@@ -1925,7 +1925,7 @@
     },
     {
       "card_id": "bc_113",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_113_arginin",
       "title": "Arginin",
       "subtitle": "Proteinogene Aminosäure",
@@ -2013,7 +2013,7 @@
     },
     {
       "card_id": "bc_114",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_114_aspartat",
       "title": "Aspartat / Asparaginsäure",
       "subtitle": "Proteinogene Aminosäure",
@@ -2095,7 +2095,7 @@
     },
     {
       "card_id": "bc_115",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_115_glutamat",
       "title": "Glutamat / Glutaminsäure",
       "subtitle": "Proteinogene Aminosäure",
@@ -2177,7 +2177,7 @@
     },
     {
       "card_id": "bc_116",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_116_asparagin",
       "title": "Asparagin",
       "subtitle": "Proteinogene Aminosäure",
@@ -2258,7 +2258,7 @@
     },
     {
       "card_id": "bc_117",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_117_glutamin",
       "title": "Glutamin",
       "subtitle": "Proteinogene Aminosäure",
@@ -2341,7 +2341,7 @@
     },
     {
       "card_id": "bc_118",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_118_kreatin",
       "title": "Kreatin",
       "subtitle": "Aminosäure-Derivat",
@@ -2398,7 +2398,7 @@
     },
     {
       "card_id": "bc_119",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_119_kreatinin",
       "title": "Kreatinin",
       "subtitle": "Aminosäure-Derivat",
@@ -2454,7 +2454,7 @@
     },
     {
       "card_id": "bc_120",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_120_homocystein",
       "title": "Homocystein",
       "subtitle": "Aminosäure-Derivat",
@@ -2522,7 +2522,7 @@
     },
     {
       "card_id": "bc_121",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_121_taurin",
       "title": "Taurin",
       "subtitle": "Aminosäure-Derivat",
@@ -2579,7 +2579,7 @@
     },
     {
       "card_id": "bc_122",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_122_beta_alanin",
       "title": "β-Alanin",
       "subtitle": "Aminosäure-Derivat",
@@ -2635,7 +2635,7 @@
     },
     {
       "card_id": "bc_123",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_123_hydroxyprolin",
       "title": "Hydroxyprolin",
       "subtitle": "Aminosäure-Derivat",
@@ -2694,7 +2694,7 @@
     },
     {
       "card_id": "bc_124",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_124_hydroxylysin",
       "title": "Hydroxylysin",
       "subtitle": "Aminosäure-Derivat",
@@ -2771,7 +2771,7 @@
     },
     {
       "card_id": "bc_125",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_125_selenocystein",
       "title": "Selenocystein",
       "subtitle": "Aminosäure-Derivat",
@@ -2840,7 +2840,7 @@
     },
     {
       "card_id": "bc_126",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_126_selenomethionin",
       "title": "Selenomethionin",
       "subtitle": "Aminosäure-Derivat",
@@ -2910,7 +2910,7 @@
     },
     {
       "card_id": "bc_127",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_127_ornithin",
       "title": "Ornithin",
       "subtitle": "Aminosäure-Derivat",
@@ -2981,7 +2981,7 @@
     },
     {
       "card_id": "bc_128",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_128_citrullin",
       "title": "Citrullin",
       "subtitle": "Aminosäure-Derivat",
@@ -3064,7 +3064,7 @@
     },
     {
       "card_id": "bc_129",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_129_argininosuccinat",
       "title": "Argininosuccinat",
       "subtitle": "Aminosäure-Derivat",
@@ -3121,7 +3121,7 @@
     },
     {
       "card_id": "bc_130",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_130_n_acetylglutamat",
       "title": "N-Acetylglutamat",
       "subtitle": "Aminosäure-Derivat",
@@ -3177,7 +3177,7 @@
     },
     {
       "card_id": "bc_131",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_131_n_acetylaspartat",
       "title": "N-Acetylaspartat",
       "subtitle": "Aminosäure-Derivat",
@@ -3233,7 +3233,7 @@
     },
     {
       "card_id": "bc_132",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_132_ammoniak_ammonium",
       "title": "Ammoniak / Ammonium",
       "subtitle": "Stickstoffstoffwechsel",
@@ -3241,7 +3241,7 @@
       "module": "BC",
       "primary_category": "biochemie",
       "secondary_categories": [
-        "anorganik",
+        "allgemein_anorganik",
         "klinik"
       ],
       "topic_group": "stickstoffstoffwechsel",
@@ -3289,7 +3289,7 @@
     },
     {
       "card_id": "bc_133",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_133_carbamoylphosphat",
       "title": "Carbamoylphosphat",
       "subtitle": "Stickstoffstoffwechsel",
@@ -3345,7 +3345,7 @@
     },
     {
       "card_id": "bc_134",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_134_harnstoff",
       "title": "Harnstoff",
       "subtitle": "Stickstoffstoffwechsel",
@@ -3400,7 +3400,7 @@
     },
     {
       "card_id": "bc_135",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_135_orotat",
       "title": "Orotat",
       "subtitle": "Stickstoffstoffwechsel",
@@ -3457,7 +3457,7 @@
     },
     {
       "card_id": "bc_140",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_140_oelsaeure",
       "title": "Ölsäure",
       "subtitle": "Lipid",
@@ -3515,7 +3515,7 @@
     },
     {
       "card_id": "bc_141",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_141_linolsaeure",
       "title": "Linolsäure",
       "subtitle": "Lipid",
@@ -3573,7 +3573,7 @@
     },
     {
       "card_id": "bc_142",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_142_arachidonsaeure",
       "title": "Arachidonsäure",
       "subtitle": "Lipid",
@@ -3633,7 +3633,7 @@
     },
     {
       "card_id": "bc_143",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_143_triacylglycerid",
       "title": "Triacylglycerid (TAG)",
       "subtitle": "Lipid",
@@ -3695,7 +3695,7 @@
     },
     {
       "card_id": "bc_144",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_144_diacylglycerin",
       "title": "Diacylglycerin (DAG)",
       "subtitle": "Lipid",
@@ -3758,7 +3758,7 @@
     },
     {
       "card_id": "bc_145",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_145_prostaglandin_e2",
       "title": "Prostaglandin E2",
       "subtitle": "Lipid",
@@ -3818,7 +3818,7 @@
     },
     {
       "card_id": "bc_146",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_146_thromboxan_a2",
       "title": "Thromboxan A2",
       "subtitle": "Lipid",
@@ -3878,7 +3878,7 @@
     },
     {
       "card_id": "bc_147",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_147_leukotrien_b4",
       "title": "Leukotrien B4",
       "subtitle": "Lipid",
@@ -3938,7 +3938,7 @@
     },
     {
       "card_id": "bc_148",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_148_beta_hydroxybutyrat",
       "title": "β-Hydroxybutyrat",
       "subtitle": "Lipid",
@@ -3996,7 +3996,7 @@
     },
     {
       "card_id": "bc_149",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_149_malonyl_coa",
       "title": "Malonyl-CoA",
       "subtitle": "Lipid",
@@ -4059,7 +4059,7 @@
     },
     {
       "card_id": "bc_150",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_150_hmg_coa",
       "title": "HMG-CoA",
       "subtitle": "β-Hydroxy-β-methylglutaryl-CoA",
@@ -4118,7 +4118,7 @@
     },
     {
       "card_id": "bc_151",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_151_mevalonat",
       "title": "Mevalonat",
       "subtitle": "Lipid",
@@ -4174,7 +4174,7 @@
     },
     {
       "card_id": "bc_160",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_160_dopamin",
       "title": "Dopamin",
       "subtitle": "Neurotransmitter",
@@ -4235,7 +4235,7 @@
     },
     {
       "card_id": "bc_161",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_161_adrenalin",
       "title": "Adrenalin",
       "subtitle": "Epinephrin",
@@ -4296,7 +4296,7 @@
     },
     {
       "card_id": "bc_162",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_162_noradrenalin",
       "title": "Noradrenalin",
       "subtitle": "Norepinephrin",
@@ -4354,7 +4354,7 @@
     },
     {
       "card_id": "bc_163",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_163_serotonin",
       "title": "Serotonin",
       "subtitle": "5-Hydroxytryptamin",
@@ -4413,7 +4413,7 @@
     },
     {
       "card_id": "bc_164",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_164_melatonin",
       "title": "Melatonin",
       "subtitle": "Neurotransmitter",
@@ -4471,7 +4471,7 @@
     },
     {
       "card_id": "bc_165",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_165_histamin",
       "title": "Histamin",
       "subtitle": "Neurotransmitter",
@@ -4531,7 +4531,7 @@
     },
     {
       "card_id": "bc_166",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_166_acetylcholin",
       "title": "Acetylcholin",
       "subtitle": "Neurotransmitter",
@@ -4591,7 +4591,7 @@
     },
     {
       "card_id": "bc_167",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_167_gaba",
       "title": "GABA",
       "subtitle": "γ-Aminobuttersäure",
@@ -4650,7 +4650,7 @@
     },
     {
       "card_id": "bc_168",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_168_5_hydroxytryptophan",
       "title": "5-Hydroxytryptophan (5-HTP)",
       "subtitle": "Neurotransmitter",
@@ -4717,7 +4717,7 @@
     },
     {
       "card_id": "bc_169",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_169_l_dopa",
       "title": "L-DOPA",
       "subtitle": "Levodopa",
@@ -4785,7 +4785,7 @@
     },
     {
       "card_id": "bc_170",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_170_insulin",
       "title": "Insulin",
       "subtitle": "Hormon",
@@ -4845,7 +4845,7 @@
     },
     {
       "card_id": "bc_171",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_171_glukagon",
       "title": "Glukagon",
       "subtitle": "Hormon",
@@ -4902,7 +4902,7 @@
     },
     {
       "card_id": "bc_172",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_172_glp_1",
       "title": "GLP-1",
       "subtitle": "Glucagon-like Peptide 1",
@@ -4960,7 +4960,7 @@
     },
     {
       "card_id": "bc_173",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_173_gip",
       "title": "GIP",
       "subtitle": "Glukoseabhängiges insulinotropes Peptid",
@@ -5017,7 +5017,7 @@
     },
     {
       "card_id": "bc_174",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_174_ghrelin",
       "title": "Ghrelin",
       "subtitle": "Hormon",
@@ -5074,7 +5074,7 @@
     },
     {
       "card_id": "bc_175",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_175_leptin",
       "title": "Leptin",
       "subtitle": "Hormon",
@@ -5133,7 +5133,7 @@
     },
     {
       "card_id": "bc_176",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_176_adiponektin",
       "title": "Adiponektin",
       "subtitle": "Hormon",
@@ -5191,7 +5191,7 @@
     },
     {
       "card_id": "bc_177",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_177_cortisol",
       "title": "Cortisol",
       "subtitle": "Hormon",
@@ -5254,7 +5254,7 @@
     },
     {
       "card_id": "bc_178",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_178_aldosteron",
       "title": "Aldosteron",
       "subtitle": "Hormon",
@@ -5316,7 +5316,7 @@
     },
     {
       "card_id": "bc_179",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_179_calcitriol",
       "title": "Calcitriol",
       "subtitle": "Hormon",
@@ -5378,7 +5378,7 @@
     },
     {
       "card_id": "bc_180",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_180_triiodthyronin",
       "title": "Triiodthyronin (T3)",
       "subtitle": "Hormon",
@@ -5439,7 +5439,7 @@
     },
     {
       "card_id": "bc_181",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_181_thyroxin",
       "title": "Thyroxin (T4)",
       "subtitle": "Hormon",
@@ -5499,7 +5499,7 @@
     },
     {
       "card_id": "bc_182",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_182_testosteron",
       "title": "Testosteron",
       "subtitle": "Hormon",
@@ -5560,7 +5560,7 @@
     },
     {
       "card_id": "bc_183",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_183_oestradiol",
       "title": "Östradiol",
       "subtitle": "Hormon",
@@ -5621,7 +5621,7 @@
     },
     {
       "card_id": "bc_184",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_184_progesteron",
       "title": "Progesteron",
       "subtitle": "Hormon",
@@ -5682,7 +5682,7 @@
     },
     {
       "card_id": "bc_200",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_200_atp",
       "title": "ATP",
       "subtitle": "Adenosintriphosphat",
@@ -5742,7 +5742,7 @@
     },
     {
       "card_id": "bc_201",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_201_gtp",
       "title": "GTP",
       "subtitle": "Guanosintriphosphat",
@@ -5801,7 +5801,7 @@
     },
     {
       "card_id": "bc_202",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_202_camp",
       "title": "cAMP",
       "subtitle": "Zyklisches Adenosinmonophosphat",
@@ -5860,7 +5860,7 @@
     },
     {
       "card_id": "bc_203",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_203_cgmp",
       "title": "cGMP",
       "subtitle": "Zyklisches Guanosinmonophosphat",
@@ -5920,7 +5920,7 @@
     },
     {
       "card_id": "bc_204",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_204_ip3",
       "title": "Inositoltrisphosphat (IP₃)",
       "subtitle": "Nukleotid · Coenzym · Second Messenger",
@@ -5980,7 +5980,7 @@
     },
     {
       "card_id": "bc_205",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_205_nad",
       "title": "NAD⁺",
       "subtitle": "Nicotinamidadenindinukleotid",
@@ -6038,7 +6038,7 @@
     },
     {
       "card_id": "bc_206",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_206_nadh",
       "title": "NADH",
       "subtitle": "Reduziertes NAD",
@@ -6094,7 +6094,7 @@
     },
     {
       "card_id": "bc_207",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_207_fad",
       "title": "FAD",
       "subtitle": "Flavinadenindinukleotid",
@@ -6152,7 +6152,7 @@
     },
     {
       "card_id": "bc_208",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_208_coenzym_q10",
       "title": "Coenzym Q10",
       "subtitle": "Ubichinon",
@@ -6212,7 +6212,7 @@
     },
     {
       "card_id": "bc_209",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_209_ubichinol",
       "title": "Ubichinol",
       "subtitle": "QH₂",
@@ -6269,7 +6269,7 @@
     },
     {
       "card_id": "bc_210",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_210_s_adenosylmethionin",
       "title": "S-Adenosylmethionin (SAM)",
       "subtitle": "Nukleotid · Coenzym · Second Messenger",
@@ -6329,7 +6329,7 @@
     },
     {
       "card_id": "bc_211",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_211_calcium",
       "title": "Calcium / Ca²⁺",
       "subtitle": "Nukleotid · Coenzym · Second Messenger",
@@ -6337,7 +6337,7 @@
       "module": "BC",
       "primary_category": "molekularbio",
       "secondary_categories": [
-        "anorganik",
+        "allgemein_anorganik",
         "biochemie",
         "klinik"
       ],
@@ -6390,7 +6390,7 @@
     },
     {
       "card_id": "bc_212",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_212_stickstoffmonoxid",
       "title": "Stickstoffmonoxid (NO)",
       "subtitle": "Nukleotid · Coenzym · Second Messenger",
@@ -6398,7 +6398,7 @@
       "module": "BC",
       "primary_category": "molekularbio",
       "secondary_categories": [
-        "anorganik",
+        "allgemein_anorganik",
         "biochemie",
         "klinik"
       ],
@@ -6508,7 +6508,7 @@
     },
     {
       "card_id": "bc_257",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_257_vitamin_b1",
       "title": "Vitamin B1",
       "subtitle": "Thiamin",
@@ -6562,7 +6562,7 @@
     },
     {
       "card_id": "bc_258",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_258_vitamin_b2",
       "title": "Vitamin B2",
       "subtitle": "Riboflavin",
@@ -6614,7 +6614,7 @@
     },
     {
       "card_id": "bc_259",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_259_vitamin_b3",
       "title": "Vitamin B3",
       "subtitle": "Niacin",
@@ -6666,7 +6666,7 @@
     },
     {
       "card_id": "bc_260",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_260_vitamin_b5",
       "title": "Vitamin B5",
       "subtitle": "Pantothensäure",
@@ -6717,7 +6717,7 @@
     },
     {
       "card_id": "bc_261",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_261_vitamin_b6",
       "title": "Vitamin B6",
       "subtitle": "Pyridoxin",
@@ -6771,7 +6771,7 @@
     },
     {
       "card_id": "bc_262",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_262_vitamin_b7",
       "title": "Vitamin B7",
       "subtitle": "Biotin",
@@ -6824,7 +6824,7 @@
     },
     {
       "card_id": "bc_263",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_263_vitamin_b9",
       "title": "Vitamin B9",
       "subtitle": "Folsäure",
@@ -6880,7 +6880,7 @@
     },
     {
       "card_id": "bc_264",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_264_vitamin_b12",
       "title": "Vitamin B12",
       "subtitle": "Cobalamin",
@@ -6935,7 +6935,7 @@
     },
     {
       "card_id": "bc_265",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_265_vitamin_c",
       "title": "Vitamin C",
       "subtitle": "Ascorbinsäure",
@@ -6987,7 +6987,7 @@
     },
     {
       "card_id": "bc_266",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_266_vitamin_d",
       "title": "Vitamin D",
       "subtitle": "Calciferol",
@@ -7041,7 +7041,7 @@
     },
     {
       "card_id": "bc_267",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_267_vitamin_e",
       "title": "Vitamin E",
       "subtitle": "Tocopherol",
@@ -7092,7 +7092,7 @@
     },
     {
       "card_id": "bc_268",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_268_vitamin_k",
       "title": "Vitamin K",
       "subtitle": "Phyllochinon",
@@ -7145,7 +7145,7 @@
     },
     {
       "card_id": "bc_269",
-      "id_status": "provisional",
+      "id_status": "confirmed",
       "slug": "bc_269_vitamin_s",
       "title": "Vitamin S (Schokolade)",
       "subtitle": "Humorvolle Sonderkarte",

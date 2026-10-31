@@ -9,3 +9,4 @@ qrcode[pil]>=7.4
 pillow>=10.0
 pypdf>=4.0
 rdkit>=2024.3
+vtracer>=0.6        # nur für scripts/vectorize_logo.py

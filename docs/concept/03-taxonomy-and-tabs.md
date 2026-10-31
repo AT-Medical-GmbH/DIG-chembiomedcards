@@ -16,12 +16,14 @@ Organik/Klinik dezent markiert.
 
 ## 2. Register-Tabs (fest, über alle Karten identisch)
 
+> **Stand 2026-10-31 (ADR-022):** „Allgemein“ und „Anorganik“ sind zu einem Tab zusammengelegt – die
+> Leiste hat fünf Tabs. Maßgeblich ist `data/categories.yaml`; die Tabelle unten ist entsprechend angepasst.
+
 Gemäß Handover sind die **sechs festen Tabs** (Reihenfolge verbindlich):
 
 | Reihenfolge | Tab-Label | `primary_category`-Wert | Farbe (Akzent) |
 |:-:|-----------|-------------------------|----------------|
-| 1 | **Allgemein** | `allgemein` | Dunkelgrau/Schwarz |
-| 2 | **Anorganik** | `anorganik` | Dunkelgrau/Schwarz |
+| 1 | **Allg./Anorganik** | `allgemein_anorganik` | Logo-Navy (ADR-022: ein gemeinsamer Tab) |
 | 3 | **Organik** | `organik` | Dunkelgrau/Schwarz |
 | 4 | **Molekularbio** | `molekularbio` | Blau |
 | 5 | **Biochemie** | `biochemie` | Grün |

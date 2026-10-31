@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_063
-id_status: provisional
+id_status: confirmed
 slug: bc_063_fructose_6_phosphat
 title: Fructose-6-phosphat
 subtitle: Stoffwechsel-Zwischenprodukt

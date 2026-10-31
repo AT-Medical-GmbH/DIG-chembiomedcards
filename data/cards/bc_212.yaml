@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_212
-id_status: provisional
+id_status: confirmed
 slug: bc_212_stickstoffmonoxid
 title: Stickstoffmonoxid (NO)
 subtitle: Nukleotid · Coenzym · Second Messenger
@@ -9,7 +9,7 @@ show_subtitle: false
 module: BC
 primary_category: molekularbio
 secondary_categories:
-- anorganik
+- allgemein_anorganik
 - biochemie
 - klinik
 topic_group: nukleotide_coenzyme

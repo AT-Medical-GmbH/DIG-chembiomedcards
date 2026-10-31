@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_145
-id_status: provisional
+id_status: confirmed
 slug: bc_145_prostaglandin_e2
 title: Prostaglandin E2
 subtitle: Lipid

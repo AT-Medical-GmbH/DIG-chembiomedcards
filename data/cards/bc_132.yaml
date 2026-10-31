@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_132
-id_status: provisional
+id_status: confirmed
 slug: bc_132_ammoniak_ammonium
 title: Ammoniak / Ammonium
 subtitle: Stickstoffstoffwechsel
@@ -9,7 +9,7 @@ show_subtitle: false
 module: BC
 primary_category: biochemie
 secondary_categories:
-- anorganik
+- allgemein_anorganik
 - klinik
 topic_group: stickstoffstoffwechsel
 chapter: biochemie/stickstoffstoffwechsel

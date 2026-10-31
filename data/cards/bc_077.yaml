@@ -1,7 +1,7 @@
 # ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
 # Schema: data/schema/card.schema.json
 card_id: bc_077
-id_status: provisional
+id_status: confirmed
 slug: bc_077_alpha_ketoglutarat
 title: α-Ketoglutarat
 subtitle: 2-Oxoglutarat
