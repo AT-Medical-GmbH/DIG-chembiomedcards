@@ -10,6 +10,8 @@
 - Layoutmessung: 110/110 Karten ohne Überlauf, alle Inhalte in der 5-mm-Sicherheitszone.
 - Reports `missing_cards`, `content_review`, `content_scope`, `cards_review_needed`, `layout_review`
   aktualisiert; Registry um 50 PH-Zeilen erweitert.
+- `scripts/pharma/review_packet.py` + `make ph-review-packet`: Review-PDF für das Fachreview
+  (110 Karten, 113 A4-Seiten, ENTWURF-Wasserzeichen, Prüfschwerpunkte und Ergebnisfelder je Karte).
 
 ## 2026-10-31 (P4 Export: Moodle + Druck)
 - `scripts/pharma/generate_moodle_import.py`: Moodle-Pakete je Paket aus

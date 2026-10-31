@@ -101,3 +101,4 @@ Wer prüft, trägt sich in `reviewer` ein. Bei jeder inhaltlichen Änderung wird
 | `checkliste_klinische_sicherheit.md` | Querschnittsprüfung Sicherheit und Didaktik |
 | `review_protokoll_vorlage.md` | Protokoll je Karte bzw. je Prüfrunde |
 | `../reports/cards_review_needed.md` | automatisch erzeugte Liste aller offenen Karten mit Prüfschwerpunkten (`make ph-review-report`) |
+| `dist/review/Pharma_Cards_Review.pdf` | Review-Paket: eine A4-Seite je offener Karte (Vorder-/Rückseite mit ENTWURF-Wasserzeichen, Prüfschwerpunkte, Ergebnisfeld, Quelle, Anmerkungen), Inhaltsverzeichnis nach Prüfrolle (`make ph-review-packet`, nicht versioniert) |
