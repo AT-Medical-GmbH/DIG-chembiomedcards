@@ -85,6 +85,12 @@ Das Overlay entfernt den lokalen Port und setzt Traefik-Labels für `PHARMA_HOST
 API und Datenbank bleiben unerreichbar von außen. Vorher prüfen: Netzname, Entrypoint und
 Certresolver müssen zur bestehenden Traefik-Instanz passen (Annahmen in `.env.example`).
 
+### Staging
+
+Die Übergabe für die Server-Sitzung steht in `ops/staging/STAGING_HANDOVER.md`. Sie enthält
+offene Entscheidungen, den Ablauf mit der rein lesenden Vorabprüfung `ops/staging/preflight.sh`,
+die Konfigurationsvorlage `ops/staging/staging.env.example`, die Ergebnisprüfung und den Rückweg.
+
 ## 4. Anmeldung und Rollen
 
 | Modus | Einsatz | Verhalten |

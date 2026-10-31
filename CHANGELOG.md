@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-31 (Online: Staging-Übergabe)
+- `online-platform/ops/staging/`:
+  - `STAGING_HANDOVER.md` für die Server-Sitzung: offene Entscheidungen, Ablauf in Einzelschritten,
+    Ergebnisprüfung, Rückweg, Rückmeldeformat;
+  - `staging.env.example`: OIDC aktiv, Entwürfe für Lernende gesperrt, LTI vorbereitet;
+  - `preflight.sh`: nur lesend; prüft Docker, Platz, Traefik-Netz, DNS, Authentik-Discovery und den
+    Checkout.
+
 ## 2026-10-31 (Online: Moodle LTI 1.3)
 - LTI 1.3 Launch und Deep Linking 2.0 (`app/lti.py`, `/api/lti/{login,launch,jwks,deep-link}`):
   - state und nonce einmalig in der DB (Migration 0002), Prüfung von Signatur, Issuer, Audience,
