@@ -7,10 +7,17 @@ Dieser Report wird in Folgephasen durch `audit_cards.py` erzeugt und listet je K
 
 ## Übersicht
 
-| Karte | Typ | warning_level | review_status | Hinweis |
-|---|---|---|---|---|
-| `cards/PH/examples/ph_020_naloxon.yaml` | antidote | critical | toxicology_review_needed | Beispielkarte, fachliche Freigabe ausstehend |
-| `cards/PH/examples/ph_006_agonist.yaml` | overview | low | needs_review | Beispielkarte, didaktische Prinzipkarte |
+Produktive Tranche R1 in `cards/PH/metadata/`:
+
+| Block | Karten | warning_level | review_status |
+|---|---|---|---|
+| Allgemeine Pharmakologie | `ph_001`–`ph_019` (19) | low/moderate | needs_review |
+| Pharmakokinetik/-dynamik-Mechanismen | `ph_020`–`ph_030` (11) | low/moderate | needs_review |
+
+Klinisch kritische Blöcke (Notfallmedikamente, Toxidrome, Antidote) folgen über den
+Fachreview-Workflow; die Antidot-Karte Naloxon (`critical`, `toxicology_review_needed`) wird im
+Antidot-ID-Bereich (`ph_1xx`) angelegt. Status je Karte wird durch
+`scripts/pharma/validate_output.py` gegen das Export-Gating geprüft.
 
 ## Prüfregeln (werden automatisiert angewandt)
 

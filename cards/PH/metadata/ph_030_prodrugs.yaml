@@ -1,0 +1,59 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_030
+slug: ph_030_prodrugs
+title: Prodrugs
+subtitle: Erst durch Metabolismus wirksam
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/metabolismus
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Was kennzeichnet ein Prodrug?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Ein Prodrug ist selbst inaktiv oder wenig aktiv und wird erst durch Metabolismus in die Wirkform
+    überführt.
+- key: vertiefung
+  label: Zweck
+  color_role: pkpd
+  text: Verbesserung von Resorption, Verträglichkeit oder Zielsteuerung.
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Hängt die Aktivierung von einem polymorphen Enzym (z. B. CYP2D6) ab, variiert die Wirkung individuell.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Prodrug: Aktivierung erforderlich, bevor es wirkt.'
+learning_objectives:
+- Prodrug-Prinzip erklären
+- Abhängigkeit von der Metabolisierung benennen
+tags:
+- prodrug
+- cyp450
+- pruefungsrelevant
+related_cards:
+- ph_023
+- ph_029
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_030_prodrugs_front.png
+back_asset: cards/PH/back/ph_030_prodrugs_back.png
+qr_url: https://chembiomed-cards.de/c/ph030
+lms_url: https://lms.at-medical.example/ph/prodrugs

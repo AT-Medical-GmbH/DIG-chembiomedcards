@@ -1,0 +1,63 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_020
+slug: ph_020_ladme_prinzip
+title: LADME-Prinzip
+subtitle: Die fünf PK-Schritte
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: grundlagen
+difficulty: beginner
+front_content:
+  question: Wofür steht LADME?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: LADME gliedert den Weg eines Arzneistoffs durch den Körper in fünf Schritte.
+- key: vertiefung
+  label: Schritte
+  color_role: pkpd
+  text: '- Liberation (Freisetzung)
+
+    - Absorption (Aufnahme)
+
+    - Distribution (Verteilung)
+
+    - Metabolismus (Umwandlung)
+
+    - Elimination (Ausscheidung)'
+- key: klinischer_bezug
+  label: Nutzen
+  color_role: clinic
+  text: Ordnet Kenngrößen und Interaktionen ihren PK-Schritten zu.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Merkwort: LADME.'
+learning_objectives:
+- Die fünf LADME-Schritte benennen und zuordnen
+tags:
+- pruefungsrelevant
+related_cards:
+- ph_002
+- ph_013
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_020_ladme_prinzip_front.png
+back_asset: cards/PH/back/ph_020_ladme_prinzip_back.png
+qr_url: https://chembiomed-cards.de/c/ph020
+lms_url: https://lms.at-medical.example/ph/ladme_prinzip

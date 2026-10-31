@@ -1,2 +1,10 @@
 __pycache__/
 *.pyc
+
+# Generierte Artefakte (reproduzierbar via scripts/pharma/render_cards.py).
+# Quelle der Wahrheit sind Daten (cards/PH/metadata) + Templates + Skripte.
+# Committete, ansehbare Beispielrenders liegen unter card-system/examples/pharma/.
+exports/web/ph/html/
+exports/preview/
+exports/pdf/**/*.pdf
+exports/**/*.png

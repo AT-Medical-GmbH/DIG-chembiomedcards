@@ -1,0 +1,57 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_018
+slug: ph_018_steady_state
+title: Steady State
+subtitle: Fließgleichgewicht
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Wann ist der Steady State erreicht?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Im Steady State sind zugeführte und eliminierte Wirkstoffmenge gleich; die mittlere Konzentration
+    bleibt konstant.
+- key: vertiefung
+  label: Zeit
+  color_role: pkpd
+  text: Wird nach ~4–5 Halbwertszeiten erreicht – unabhängig von der Dosisgröße (nur schneller mit Aufsättigung).
+- key: klinischer_bezug
+  label: Konsequenz
+  color_role: clinic
+  text: Erklärt, warum Wirkung erst verzögert voll einsetzt und wann Spiegelkontrollen sinnvoll sind.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Aufsättigungsdosis bringt den Spiegel schneller, nicht höher.
+learning_objectives:
+- Steady State definieren
+- Zeit bis Steady State abschätzen
+tags:
+- pruefungsrelevant
+related_cards:
+- ph_016
+- ph_019
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_018_steady_state_front.png
+back_asset: cards/PH/back/ph_018_steady_state_back.png
+qr_url: https://chembiomed-cards.de/c/ph018
+lms_url: https://lms.at-medical.example/ph/steady_state

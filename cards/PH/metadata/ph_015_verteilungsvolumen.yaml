@@ -1,0 +1,59 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_015
+slug: ph_015_verteilungsvolumen
+title: Verteilungsvolumen
+subtitle: Scheinbares Vd
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Was sagt ein großes Verteilungsvolumen aus?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Das Verteilungsvolumen (Vd) ist ein scheinbares Volumen, das Wirkstoffmenge im Körper und Plasmakonzentration
+    verknüpft.
+- key: vertiefung
+  label: Interpretation
+  color_role: pkpd
+  text: '- kleines Vd: v. a. intravasal (hohe Proteinbindung)
+
+    - großes Vd: starke Gewebebindung/Lipophilie'
+- key: klinischer_bezug
+  label: Konsequenz
+  color_role: clinic
+  text: Großes Vd erschwert die Elimination durch Dialyse; beeinflusst die Aufsättigungsdosis (Prinzip).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Vd ist ein Rechenvolumen, kein anatomisches.
+learning_objectives:
+- Vd interpretieren
+- Bezug zu Proteinbindung/Lipophilie herstellen
+tags:
+- pruefungsrelevant
+related_cards:
+- ph_016
+- ph_019
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_015_verteilungsvolumen_front.png
+back_asset: cards/PH/back/ph_015_verteilungsvolumen_back.png
+qr_url: https://chembiomed-cards.de/c/ph015
+lms_url: https://lms.at-medical.example/ph/verteilungsvolumen
