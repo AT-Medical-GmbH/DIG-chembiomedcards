@@ -1,0 +1,116 @@
+# BEISPIELKARTE — demonstriert eine Antidot-/Hochrisikokarte nach erweitertem PH-Schema.
+# WICHTIG: Ausbildungs-/Lernmaterial, KEINE Therapieanweisung. Keine finalen Dosierungen.
+# Status: toxicology_review_needed — fachliche Freigabe zwingend vor Export (Export-Gate: approved_only).
+card_id: ph_020
+slug: ph_020_naloxon
+title: Naloxon
+subtitle: Opioid-Antagonist / Antidot
+module: PH
+primary_category: antidote
+secondary_categories:
+  - notfallmedikamente
+  - notfalltoxikologie
+topic_group: antidote
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Naloxon
+generic_name: Naloxon
+trade_names_optional: []     # optional/illustrativ; bewusst leer gelassen
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+
+mechanism_of_action: |
+  Kompetitiver **Antagonist** an Opioidrezeptoren (vorwiegend μ). Verdrängt Opioide vom Rezeptor und
+  hebt deren Wirkung — insbesondere die **Atemdepression** — auf.
+pharmacodynamics: |
+  Rascher Wirkeintritt; **kurze Wirkdauer**, die kürzer sein kann als die des auslösenden Opioids →
+  Gefahr des Wirkungs-„Rebounds“ (erneute Atemdepression).
+pharmacokinetics: |
+  Parenterale Gabe üblich; ausgeprägter First-Pass-Effekt bei oraler Gabe. Kurze Halbwertszeit →
+  ggf. wiederholte Gabe oder kontinuierliche Strategie (fachlich zu steuern).
+indications: |
+  Verdacht auf **Opioidintoxikation** mit relevanter Atemdepression / reduzierter Vigilanz.
+contraindications: |
+  Relative Vorsicht bei bekannter Opioidabhängigkeit (Entzugssymptomatik möglich). Keine Anwendung
+  ersetzt Basismaßnahmen (Atemweg/Beatmung).
+adverse_effects: |
+  Akutes **Entzugssyndrom** (Agitation, Tachykardie, Hypertonie, Erbrechen), Rebound-Atemdepression
+  nach Nachlassen der Wirkung.
+interactions: |
+  Hebt Wirkung aller Opioide (auch Analgesie) auf; Interaktion mit partialagonistischen Opioiden
+  möglich.
+monitoring: |
+  Engmaschige Überwachung von **Atmung, Vigilanz, Kreislauf** über die Wirkdauer des Opioids hinaus
+  (Rebound-Gefahr).
+dose_principles: |
+  Titrieren nach Wirkung mit dem Ziel ausreichender **Spontanatmung**, nicht zwingend vollständiger
+  Vigilanz. Konkrete Dosierungen sind bewusst NICHT angegeben und einer freigegebenen Quelle/Leitlinie
+  vorbehalten (siehe review_status).
+renal_adjustment: null
+hepatic_adjustment: null
+pregnancy_lactation_notes: |
+  In vitaler Indikation (Atemdepression) ist die Behandlung der Mutter vorrangig; fachliche Prüfung
+  erforderlich.
+emergency_relevance: |
+  Zentrales Notfall-Antidot bei Opioidintoxikation.
+toxicology_relevance: |
+  Spezifisches Antidot des **Opioid-Toxidroms** (Miosis, Atemdepression, reduzierte Vigilanz).
+antidote: naloxon
+toxidrome: opioid
+clinical_pearls: |
+  Wirkdauer von Naloxon kann **kürzer** sein als die des Opioids → Patient kann erneut eintrüben.
+  Nachbeobachtung/Nachgabe-Strategie fachlich festlegen.
+mnemonic: "Kurz wirksam — nicht nach einmaliger Besserung entlassen."
+
+front_content:
+  prompt: "Opioidintoxikation mit Atemdepression — welches spezifische Antidot?"
+
+back_sections:
+  - { key: zielintoxikation, color_role: risk,
+      text: "Opioidintoxikation (Opioid-Toxidrom: Miosis, Atemdepression, reduzierte Vigilanz)." }
+  - { key: wirkprinzip, color_role: pkpd,
+      text: "Kompetitiver μ-Opioidrezeptor-Antagonist; hebt Atemdepression auf." }
+  - { key: anwendungskontext, color_role: clinic,
+      text: "Titration nach Spontanatmung; Basismaßnahmen (Atemweg/Beatmung) zuerst." }
+  - { key: risiken_cave, color_role: risk,
+      text: "Entzugssymptomatik; Rebound-Atemdepression wegen kurzer Wirkdauer — nachbeobachten." }
+  - { key: merke, color_role: antidote,
+      text: "Besserung ≠ Entwarnung: Opioid kann länger wirken als Naloxon." }
+
+learning_objectives:
+  - Naloxon als spezifisches Antidot des Opioid-Toxidroms einordnen
+  - Rebound-Risiko durch kurze Wirkdauer erklären
+  - Titrationsziel (Spontanatmung) benennen
+tags:
+  - antidot
+  - notfall
+  - antagonist
+  - intoxikation
+  - hochrisiko
+  - pruefungsrelevant
+related_cards:
+  - ph_083   # Opioid-Toxidrom (geplant)
+  - ph_101   # Flumazenil (geplant, Analogie Antidot)
+
+warning_level: critical
+review_status: toxicology_review_needed
+dose_contains_numeric: false        # bewusst keine Zahlendosen → sonst references + Review Pflicht
+references:
+  - title: "Fachliche Freigabe/Quelle ausstehend (z. B. aktuelle Reanimations-/Toxikologie-Leitlinie)"
+    publisher: "TBD im Fachreview"
+    year: null
+    url: null
+source_status: draft
+version: "0.1.0"
+author: "AT Medical GmbH"
+reviewer: ""
+created_at: "2026-10-09"
+updated_at: "2026-10-09"
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_020_naloxon_front.png
+back_asset: cards/PH/back/ph_020_naloxon_back.png
+qr_url: https://chembiomed-cards.de/c/ph020
+lms_url: https://lms.at-medical.example/ph/naloxon
