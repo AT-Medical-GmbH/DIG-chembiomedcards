@@ -6,6 +6,14 @@
 - Konfiguration aus `svelte.config.js` in `sveltekit({...})` in `vite.config.ts` verschoben (CSP und
   SPA-Fallback unverändert); `$lib` → Subpath-Import `#lib`; `tsconfig.json` erweitert `$app/tsconfig`.
 - Geprüft: `npm run check` 0 Fehler, Build ok, CSP-Hash im `index.html`, E2E-Smoke 8/8.
+## 2026-10-31 (CI: eigener Runner)
+- CI läuft auf einem eigenen Runner, weil die GitHub-Runner wegen Billing gesperrt sind:
+  `runs-on: [self-hosted, linux, chembiomed]`, jeder Job im Container, nie für Fork-PRs, nur
+  Leserechte.
+- Neu `.github/workflows/pharma-ci.yml` mit den Jobs pipeline, api und web. Schritte ohne passende
+  Dateien überspringen sich selbst.
+- `docs/ci/self-hosted-runner.md`: Sicherheitsmodell, GitHub-Einstellungen (zuerst Repo privat),
+  VM-Einrichtung, Wartung, Rückweg.
 
 ## 2026-10-31 (Online: Staging-Übergabe)
 - `online-platform/ops/staging/`:
