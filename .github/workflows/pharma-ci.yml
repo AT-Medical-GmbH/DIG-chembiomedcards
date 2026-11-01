@@ -50,7 +50,7 @@ jobs:
         if: hashFiles('online-platform/backend/requirements-dev.txt') != ''
         working-directory: online-platform/backend
         run: |
-          pip install -q -r requirements.txt pytest==8.4.2 httpx==0.27.2
+          pip install -q -r requirements.txt pytest==9.0.3 httpx==0.27.2
           python -m pytest -q
 
   web:

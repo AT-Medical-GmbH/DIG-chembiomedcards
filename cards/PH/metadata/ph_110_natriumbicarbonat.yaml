@@ -1,0 +1,81 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_110
+slug: ph_110_natriumbicarbonat
+wirkstoff_slug: natriumbicarbonat
+title: Natriumbicarbonat
+subtitle: Natriumlast und Alkalisierung
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfallmedikamente
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Natriumbicarbonat
+generic_name: Natriumbicarbonat
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Natriumlast und Alkalisierung überwinden die Natriumkanal-Blockade; bei Salicylaten
+  weniger ZNS-Übertritt und mehr renale Ausscheidung.
+indications: Bei QRS-Verbreiterung oder Arrhythmien unter TZA; Alkalisierung bei Salicylatintoxikation.
+adverse_effects: Hypokaliämie, Hypernatriämie, Alkalose, Volumenbelastung.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Trizyklika-Intoxikation; außerdem Salicylatintoxikation.
+antidote: natriumbicarbonat
+toxidrome: trizyklika
+clinical_pearls: Die QRS-Breite im EKG ist bei TZA die Steuergröße.
+front_content:
+  prompt: 'TZA-Intoxikation mit verbreitertem QRS-Komplex: welches Antidot?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Trizyklika-Intoxikation; außerdem Salicylatintoxikation.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Natriumlast und Alkalisierung überwinden die Natriumkanal-Blockade; bei Salicylaten weniger ZNS-Übertritt
+    und mehr renale Ausscheidung.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Bei QRS-Verbreiterung oder Arrhythmien unter TZA; Alkalisierung bei Salicylatintoxikation.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Hypokaliämie, Hypernatriämie, Alkalose, Volumenbelastung.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Die QRS-Breite im EKG ist bei TZA die Steuergröße.
+tags:
+- antidot
+- intoxikation
+- notfall
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_081
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Ziel-pH bzw. Steuerkriterien nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_110_natriumbicarbonat_front.png
+back_asset: cards/PH/back/ph_110_natriumbicarbonat_back.png
+qr_url: https://at-medical.de/w/wirkstoff/natriumbicarbonat
+lms_url: https://lms.at-medical.example/ph/natriumbicarbonat

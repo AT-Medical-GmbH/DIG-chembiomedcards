@@ -1,0 +1,61 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_027
+slug: ph_027_hepatische_metabolisierung
+begriff_slug: hepatische-metabolisierung
+title: Hepatische Metabolisierung
+subtitle: Phase I und II
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/metabolismus
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Was leisten Phase I und Phase II in der Leber?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Die Leber wandelt Wirkstoffe in Phase I (z. B. CYP-Oxidation) und Phase II (Konjugation) in meist
+    besser ausscheidbare Formen um.
+- key: vertiefung
+  label: Phasen
+  color_role: pkpd
+  text: '- Phase I: Oxidation/Reduktion/Hydrolyse (oft CYP)
+
+    - Phase II: Konjugation (z. B. Glucuronidierung)'
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Leberinsuffizienz kann den Abbau verlangsamen → Kumulation/Toxizität, Dosisanpassung prüfen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Phase I funktionalisiert, Phase II konjugiert.
+learning_objectives:
+- Phase-I- und Phase-II-Reaktionen unterscheiden
+- Konsequenz der Leberinsuffizienz benennen
+tags:
+- leberinsuffizienz
+- pruefungsrelevant
+related_cards:
+- ph_021
+- ph_026
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_027_hepatische_metabolisierung_front.png
+back_asset: cards/PH/back/ph_027_hepatische_metabolisierung_back.png
+qr_url: https://at-medical.de/w/begriff/hepatische-metabolisierung
+lms_url: https://lms.at-medical.example/ph/hepatische_metabolisierung

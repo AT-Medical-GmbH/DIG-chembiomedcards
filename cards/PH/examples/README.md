@@ -1,17 +1,18 @@
 # PH Beispielkarten
 
-Vollständig ausmodellierte Beispielkarten nach dem erweiterten PH-Content-Schema
-(`docs/pharma-cards/02_datenmodell.md`). Sie demonstrieren das **data-first**-Prinzip: Karten werden
-aus strukturierten Daten erzeugt, nicht als Bilder gepflegt.
+> **Hinweis:** Die ursprünglichen Beispiel-YAML (`ph_006_agonist.yaml`, `ph_020_naloxon.yaml`)
+> sind in den produktiven Bestand übergegangen. Produktive Karten liegen jetzt in
+> `cards/PH/metadata/` und werden durch die Pipeline (`scripts/pharma/`) validiert, in die Registry
+> übernommen und gerendert.
 
-| Datei | Typ | Zweck |
-|---|---|---|
-| `ph_006_agonist.yaml` | overview/principle | Didaktische Prinzipkarte (low risk), Status `needs_review` |
-| `ph_020_naloxon.yaml` | antidote | Hochrisiko-/Antidotkarte (critical), Status `toxicology_review_needed` |
+Die erste produktive Tranche (Release R1) umfasst die Blöcke **Allgemeine Pharmakologie**
+(`ph_001`–`ph_019`) und **Pharmakokinetik/Pharmakodynamik-Mechanismen** (`ph_020`–`ph_030`) als
+`needs_review`, ohne finale Dosierungen.
 
-**Wichtig:** Dies sind **Beispiele**, kein freigegebener medizinischer Inhalt. Beide stehen bewusst auf
-einem Review-Status < `approved` und enthalten **keine finalen Dosierungsangaben**. Vor einer
-Produktion/Freigabe müssen sie den Fachreview-Workflow (Dok. 10) durchlaufen.
+Die klinisch kritischen Blöcke (**Notfallmedikamente `ph_040`–`ph_049`, Toxidrome `ph_080`–`ph_086`,
+Antidote `ph_100`–`ph_112`**) liegen als Entwürfe vor. Sie werden erst nach dem Fachreview-Workflow
+(`docs/pharma-cards/review/`) als `approved` ausgespielt. Die frühere Beispielkarte Naloxon ist jetzt
+`ph_100`.
 
-Beim Start der Produktion (Roadmap P2) werden Karten als `cards/PH/metadata/ph_###_<slug>.yaml`
-angelegt; diese Beispiele dienen als Vorlage.
+Als Schema-Referenz dient `docs/pharma-cards/02_datenmodell.md` sowie jede Datei in
+`cards/PH/metadata/`.

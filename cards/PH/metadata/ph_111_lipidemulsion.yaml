@@ -1,0 +1,79 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_111
+slug: ph_111_lipidemulsion
+wirkstoff_slug: lipidemulsion
+title: Lipidemulsion
+subtitle: Lipid-Rescue
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfalltoxikologie
+- anaesthesiepharmakologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Lipidemulsion
+generic_name: Lipidemulsion
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Bindet lipophile Wirkstoffe im Plasma („lipid sink“); zusätzliche kardiale und metabolische
+  Effekte.
+indications: Bei LAST mit ZNS- oder kardialen Symptomen nach Leitlinie, parallel zu Basismaßnahmen.
+adverse_effects: Störung von Laborwerten, Pankreatitis, pulmonale Komplikationen bei großen Mengen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Lokalanästhetika-Intoxikation (LAST).
+antidote: lipidemulsion
+toxidrome: last
+clinical_pearls: Bei LAST Reanimation verlängert fortführen und Lipid früh einsetzen.
+front_content:
+  prompt: 'Krampfanfall und Kreislaufstillstand nach Regionalanästhesie: welche spezifische Therapie?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Lokalanästhetika-Intoxikation (LAST).
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Bindet lipophile Wirkstoffe im Plasma („lipid sink“); zusätzliche kardiale und metabolische Effekte.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Bei LAST mit ZNS- oder kardialen Symptomen nach Leitlinie, parallel zu Basismaßnahmen.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Störung von Laborwerten, Pankreatitis, pulmonale Komplikationen bei großen Mengen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Bei LAST Reanimation verlängert fortführen und Lipid früh einsetzen.
+tags:
+- antidot
+- intoxikation
+- anaesthesie
+- hochrisiko
+- pruefungsrelevant
+related_cards: []
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Aktuelle LAST-Leitlinie (Anästhesie-Fachgesellschaft) als Quelle eintragen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_111_lipidemulsion_front.png
+back_asset: cards/PH/back/ph_111_lipidemulsion_back.png
+qr_url: https://at-medical.de/w/wirkstoff/lipidemulsion
+lms_url: https://lms.at-medical.example/ph/lipidemulsion

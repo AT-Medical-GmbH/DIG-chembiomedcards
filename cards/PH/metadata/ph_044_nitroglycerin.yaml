@@ -1,0 +1,86 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_044
+slug: ph_044_nitroglycerin
+wirkstoff_slug: nitroglycerin
+title: Nitroglycerin (Glyceroltrinitrat)
+subtitle: NO-Donor, Nitrat
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/notfallmedikamente
+drug_class: nitrate
+substance_name: Nitroglycerin
+generic_name: Nitroglycerin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Freisetzung von NO → cGMP ↑ → Relaxation glatter Gefäßmuskulatur, vor allem venös
+  (Vorlastsenkung).
+indications: '- Angina pectoris / akutes Koronarsyndrom (symptomatisch)
+
+  - akute Herzinsuffizienz mit Lungenödem und Hypertonie'
+contraindications: Hypotonie, Rechtsherzinfarkt, kürzliche Einnahme von PDE-5-Hemmern, schwere Aortenstenose.
+adverse_effects: Kopfschmerz, Hypotonie, Reflextachykardie, Schwindel.
+interactions: 'PDE-5-Hemmer (z. B. Sildenafil): schwere Hypotonie.'
+monitoring: Blutdruck vor und nach Gabe.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: Vor Gabe immer nach PDE-5-Hemmern fragen.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Freisetzung von NO → cGMP ↑ → Relaxation glatter Gefäßmuskulatur, vor allem venös (Vorlastsenkung).
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Angina pectoris / akutes Koronarsyndrom (symptomatisch)
+
+    - akute Herzinsuffizienz mit Lungenödem und Hypertonie'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Kopfschmerz, Hypotonie, Reflextachykardie, Schwindel.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Hypotonie, Rechtsherzinfarkt, kürzliche Einnahme von PDE-5-Hemmern, schwere Aortenstenose.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: 'PDE-5-Hemmer (z. B. Sildenafil): schwere Hypotonie. Blutdruck vor und nach Gabe.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Vor Gabe immer nach PDE-5-Hemmern fragen.
+tags:
+- notfall
+- kontraindikation
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_045
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Zeitfenster der PDE-5-Hemmer-Kontraindikation je Substanz nach Fachinformation prüfen
+- Blutdruckgrenzen nicht ohne Quelle angeben
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_044_nitroglycerin_front.png
+back_asset: cards/PH/back/ph_044_nitroglycerin_back.png
+qr_url: https://at-medical.de/w/wirkstoff/nitroglycerin
+lms_url: https://lms.at-medical.example/ph/nitroglycerin

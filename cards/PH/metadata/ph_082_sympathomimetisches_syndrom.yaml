@@ -1,0 +1,84 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_082
+slug: ph_082_sympathomimetisches_syndrom
+begriff_slug: sympathomimetisches-syndrom
+title: Sympathomimetisches Syndrom
+subtitle: Gesteigerte adrenerge Aktivität
+module: PH
+primary_category: toxikologie
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/toxidrome
+card_type: toxidrome
+front_type: toxidrome
+level: clinical
+difficulty: intermediate
+monitoring: EKG, Temperatur, CK; bei Thoraxschmerz Troponin.
+emergency_relevance: Benzodiazepine gegen Agitation, aktive Kühlung, Volumen.
+toxicology_relevance: Verstärkte adrenerge Wirkung, z. B. durch Kokain, Amphetamine, MDMA.
+toxidrome: sympathomimetisch
+clinical_pearls: Haut feucht (sympathomimetisch) vs. trocken (anticholinerg).
+front_content:
+  prompt: 'Leitsymptome: Mydriasis, Tachykardie, Hypertonie … Welches Toxidrom?'
+back_sections:
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: '- Mydriasis, Tachykardie, Hypertonie
+
+    - Hyperthermie, Schwitzen
+
+    - Agitation, Tremor, Krampfanfälle'
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: Verstärkte adrenerge Wirkung, z. B. durch Kokain, Amphetamine, MDMA.
+- key: diagnostik_monitoring
+  label: Diagnostik / Monitoring
+  color_role: interaction
+  text: EKG, Temperatur, CK; bei Thoraxschmerz Troponin.
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Benzodiazepine gegen Agitation, aktive Kühlung, Volumen.
+- key: antidot
+  label: Antidot
+  color_role: antidote
+  text: Kein spezifisches Antidot.
+- key: red_flags
+  label: Red Flags
+  color_role: risk
+  text: Hyperthermie, akutes Koronarsyndrom, Krampfanfall, Rhabdomyolyse.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Haut feucht (sympathomimetisch) vs. trocken (anticholinerg).
+tags:
+- toxidrom
+- intoxikation
+- notfall
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_081
+warning_level: high
+review_status: toxicology_review_needed
+review_focus:
+- Aussage zu Betablockern bei Kokain-Intoxikation nach aktuellem Stand formulieren
+- Temperaturgrenzen nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_082_sympathomimetisches_syndrom_front.png
+back_asset: cards/PH/back/ph_082_sympathomimetisches_syndrom_back.png
+qr_url: https://at-medical.de/w/begriff/sympathomimetisches-syndrom
+lms_url: https://lms.at-medical.example/ph/sympathomimetisches-syndrom

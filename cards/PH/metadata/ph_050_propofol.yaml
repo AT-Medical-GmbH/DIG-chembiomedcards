@@ -1,0 +1,89 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_050
+slug: ph_050_propofol
+wirkstoff_slug: propofol
+title: Propofol
+subtitle: Intravenöses Hypnotikum
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/anaesthesie
+drug_class: hypnotika_iv
+substance_name: Propofol
+generic_name: Propofol
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Positiver allosterischer Modulator am GABA-A-Rezeptor: rasch einsetzende, gut steuerbare
+  Hypnose ohne Analgesie.'
+indications: '- Narkoseeinleitung und -aufrechterhaltung (TIVA)
+
+  - Sedierung auf Intensivstation'
+contraindications: Allergie gegen Bestandteile der Emulsion; Vorsicht bei Hypovolämie und Herzinsuffizienz.
+adverse_effects: Hypotonie, Atemdepression bis Apnoe, Injektionsschmerz; bei langer, hoch dosierter Gabe
+  Propofol-Infusionssyndrom.
+interactions: Additiv mit Opioiden und Benzodiazepinen.
+monitoring: Kreislauf, Atmung; bei Langzeitsedierung Laktat, CK, Triglyceride.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: 'Keine Analgesie. Infusionssyndrom: metabolische Azidose, Rhabdomyolyse, Herzversagen.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Positiver allosterischer Modulator am GABA-A-Rezeptor: rasch einsetzende, gut steuerbare Hypnose
+    ohne Analgesie.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Narkoseeinleitung und -aufrechterhaltung (TIVA)
+
+    - Sedierung auf Intensivstation'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Hypotonie, Atemdepression bis Apnoe, Injektionsschmerz; bei langer, hoch dosierter Gabe Propofol-Infusionssyndrom.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Allergie gegen Bestandteile der Emulsion; Vorsicht bei Hypovolämie und Herzinsuffizienz.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additiv mit Opioiden und Benzodiazepinen. Kreislauf, Atmung; bei Langzeitsedierung Laktat, CK,
+    Triglyceride.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Keine Analgesie. Infusionssyndrom: metabolische Azidose, Rhabdomyolyse, Herzversagen.'
+tags:
+- anaesthesie
+- intensivmedizin
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_046
+- ph_051
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Allergie-Aussage (Ei/Soja) nach aktueller Fachinformation prüfen
+- Risikofaktoren des Infusionssyndroms mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_050_propofol_front.png
+back_asset: cards/PH/back/ph_050_propofol_back.png
+qr_url: https://at-medical.de/w/wirkstoff/propofol
+lms_url: https://lms.at-medical.example/ph/propofol

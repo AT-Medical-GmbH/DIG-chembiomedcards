@@ -1,0 +1,64 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_007
+slug: ph_007_antagonist
+begriff_slug: antagonist
+title: Antagonist
+subtitle: Bindung ohne Aktivierung
+module: PH
+primary_category: pharmakodynamik
+chapter: pharmakologie/pharmakodynamik
+card_type: overview
+front_type: principle
+level: grundlagen
+difficulty: beginner
+front_content:
+  question: Wie wirkt ein Antagonist am Rezeptor?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Ein Antagonist bindet an den Rezeptor (Affinität), aktiviert ihn aber nicht (keine intrinsische
+    Aktivität) und blockiert Agonisten.
+- key: vertiefung
+  label: Formen
+  color_role: pkpd
+  text: '- kompetitiv: verdrängbar, Rechtsverschiebung der Kurve
+
+    - nichtkompetitiv: nicht verdrängbar, Emax sinkt
+
+    - funktionell/physiologisch: gegensätzliche Wirkung über anderen Weg'
+- key: klinischer_bezug
+  label: Beispiele
+  color_role: clinic
+  text: Betablocker, Antihistaminika, Opioid-Antagonisten (z. B. Naloxon).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Antagonist = andockt, aber nicht auslöst.
+learning_objectives:
+- Antagonist definieren
+- kompetitiv und nichtkompetitiv unterscheiden
+tags:
+- rezeptor
+- antagonist
+- pruefungsrelevant
+related_cards:
+- ph_006
+- ph_010
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_007_antagonist_front.png
+back_asset: cards/PH/back/ph_007_antagonist_back.png
+qr_url: https://at-medical.de/w/begriff/antagonist
+lms_url: https://lms.at-medical.example/ph/antagonist

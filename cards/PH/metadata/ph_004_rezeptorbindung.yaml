@@ -1,0 +1,63 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_004
+slug: ph_004_rezeptorbindung
+begriff_slug: rezeptorbindung
+title: Rezeptorbindung
+subtitle: Affinität, Besetzung und Wirkung
+module: PH
+primary_category: pharmakodynamik
+chapter: pharmakologie/pharmakodynamik
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Wovon hängt die Wirkung einer Rezeptorbindung ab?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Viele Arzneistoffe wirken durch reversible Bindung an Rezeptoren; die Wirkung hängt von Affinität
+    und intrinsischer Aktivität ab.
+- key: vertiefung
+  label: Bindungstypen
+  color_role: pkpd
+  text: '- reversibel: nicht-kovalent, konzentrationsabhängig
+
+    - irreversibel: kovalent, Wirkung bis zur Rezeptorneusynthese
+
+    - Rezeptorfamilien: ionotrop, G-Protein-gekoppelt, enzymgekoppelt, nukleär'
+- key: klinischer_bezug
+  label: Konsequenz
+  color_role: clinic
+  text: Reversible Bindung erlaubt Steuerbarkeit; irreversible Hemmung wirkt lang (z. B. ASS auf COX).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Affinität = Andocken, intrinsische Aktivität = Auslösen.
+learning_objectives:
+- Bindungstypen unterscheiden
+- Rezeptorfamilien benennen
+tags:
+- rezeptor
+- pruefungsrelevant
+related_cards:
+- ph_006
+- ph_007
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_004_rezeptorbindung_front.png
+back_asset: cards/PH/back/ph_004_rezeptorbindung_back.png
+qr_url: https://at-medical.de/w/begriff/rezeptorbindung
+lms_url: https://lms.at-medical.example/ph/rezeptorbindung

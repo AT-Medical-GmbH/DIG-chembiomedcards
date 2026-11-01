@@ -1,0 +1,20 @@
+# Overlay: Moodle LTI 1.3 aktivieren. Der private Tool-Schlüssel kommt als Docker-Secret aus einer
+# Datei außerhalb des Repos (nie committen, Backup in Vaultwarden).
+#   openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out secrets/lti_tool.pem
+#   sudo chown 10001:10001 secrets/lti_tool.pem && chmod 400 secrets/lti_tool.pem   # Container-User pharma
+#   docker compose -f docker-compose.yml [-f docker-compose.traefik.yml] -f docker-compose.lti.yml \
+#     --env-file .env up -d
+services:
+  pharma-api:
+    environment:
+      LTI_ENABLED: "true"
+      PHARMA_PUBLIC_URL: ${PHARMA_PUBLIC_URL:?PHARMA_PUBLIC_URL setzen (https://<host>)}
+      LTI_PLATFORMS: ${LTI_PLATFORMS:?LTI_PLATFORMS setzen (JSON, siehe .env.example)}
+      LTI_KEY_FILE: /run/secrets/lti_tool_key
+      LTI_KID: ${LTI_KID:-pharma-cards-lti-1}
+      LTI_SESSION_HOURS: ${LTI_SESSION_HOURS:-4}
+    secrets: [lti_tool_key]
+
+secrets:
+  lti_tool_key:
+    file: ${LTI_KEY_PATH:-./secrets/lti_tool.pem}

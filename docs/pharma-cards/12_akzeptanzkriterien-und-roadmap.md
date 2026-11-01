@@ -73,3 +73,23 @@ Eingebettet in die bestehende ChemBioMed-Roadmap (dort Phase 8 = „PH-Erweiteru
 
 Freigabe dieses Konzepts durch Andreas / Fachreview-Team. Danach Start mit **P1 (Pipeline)** und
 **P2 (Pilot-Content R1)** — datenmodell-getrieben, Karten aus Daten generiert, nichts manuell gebaut.
+
+---
+
+## 5. Stand nach Umsetzung (2026-10-31)
+
+| # | Kriterium | Stand | Nachweis |
+|---|---|---|---|
+| 4–6 | Einheitliches Layout, Tabs, Front/Back | ✅ | `card.css`, `render_cards.py`; Layoutprüfung 110/110 ohne Überlauf |
+| 7–8 | Review-Status, kritische Karten markiert | ✅ | 110 Karten mit Status, Warnlevel, `review_focus`; Prozess in `review/` |
+| 9 | Moodle-Importpakete | ✅ Generator | `generate_moodle_import.py`; Release leer, bis Karten freigegeben sind |
+| 10–11 | Druck-PDFs, Einzel-PNG/PDF | ✅ Generator | `generate_print_sheets.py`; Vorschau visuell geprüft |
+| 12–13 | Online-Lernsystem: lernen, markieren, wiederholen | ✅ MVP | API + SvelteKit; SM-2/Leitner; Browser-E2E 8/8 (auch gegen den Docker-Stack) |
+| 14 | Notizen unter Karten | ✅ | Autospeicherung, Kursnotizen, Markdown-Export |
+| 15 | Annotationen | ✅ vorbereitet | `annotation_data` in DB/API; Zeichenwerkzeuge offen |
+| 16 | Download PNG/PDF online | ✅ | `/api/cards/{id}/download`, getestet (auch im Container) |
+| 17 | Kategorien/Tags/Gruppen/Review bearbeitbar | 🟡 | über Scope-Konfiguration + Pull Request; Admin-UI offen |
+| 19 | Deployment | ✅ | Dockerfiles, Compose, Traefik-Overlay, `online-platform/README_DEPLOYMENT.md` |
+
+**Offen für den Produktivbetrieb:** SPA-Login über Authentik (OIDC/PKCE), Freigabe der ersten Karten
+durch das Fachreview, LTI-1.3-Endpunkte für Moodle, Annotationswerkzeuge, Admin-UI.

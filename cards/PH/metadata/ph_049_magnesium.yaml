@@ -1,0 +1,95 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_049
+slug: ph_049_magnesium
+wirkstoff_slug: magnesium
+title: Magnesium (Magnesiumsulfat)
+subtitle: Elektrolyt mit antiarrhythmischer Wirkung
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/notfallmedikamente
+substance_name: Magnesium
+generic_name: Magnesium
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Physiologischer Calciumantagonist: stabilisiert Membranen, wirkt antiarrhythmisch,
+  bronchodilatatorisch und antikonvulsiv.'
+indications: '- Torsade de pointes
+
+  - (Prä-)Eklampsie
+
+  - schwerer Asthmaanfall (Ko-Therapie)
+
+  - Hypomagnesiämie'
+contraindications: Niereninsuffizienz (Kumulation), Myasthenia gravis, höhergradiger AV-Block.
+adverse_effects: Hypotonie, Flush, Reflexabschwächung, AV-Blockierung; bei Überdosierung Atemdepression.
+interactions: Verstärkt Muskelrelaxanzien.
+monitoring: Reflexe, Atmung, Blutdruck, ggf. Serumspiegel. Bei Überdosierung Calcium als Gegenmittel.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: Abgeschwächte Sehnenreflexe sind ein frühes Zeichen der Überdosierung.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Physiologischer Calciumantagonist: stabilisiert Membranen, wirkt antiarrhythmisch, bronchodilatatorisch
+    und antikonvulsiv.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Torsade de pointes
+
+    - (Prä-)Eklampsie
+
+    - schwerer Asthmaanfall (Ko-Therapie)
+
+    - Hypomagnesiämie'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Hypotonie, Flush, Reflexabschwächung, AV-Blockierung; bei Überdosierung Atemdepression.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Niereninsuffizienz (Kumulation), Myasthenia gravis, höhergradiger AV-Block.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Verstärkt Muskelrelaxanzien. Reflexe, Atmung, Blutdruck, ggf. Serumspiegel. Bei Überdosierung
+    Calcium als Gegenmittel.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Abgeschwächte Sehnenreflexe sind ein frühes Zeichen der Überdosierung.
+tags:
+- notfall
+- monitoring
+- niereninsuffizienz
+- schwangerschaft
+- pruefungsrelevant
+related_cards:
+- ph_109
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Indikation Eklampsie gegen aktuelle geburtshilfliche Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_049_magnesium_front.png
+back_asset: cards/PH/back/ph_049_magnesium_back.png
+qr_url: https://at-medical.de/w/wirkstoff/magnesium
+lms_url: https://lms.at-medical.example/ph/magnesium

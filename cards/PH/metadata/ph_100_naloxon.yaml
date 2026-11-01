@@ -1,0 +1,84 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_100
+slug: ph_100_naloxon
+wirkstoff_slug: naloxon
+title: Naloxon
+subtitle: Opioid-Antagonist
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfallmedikamente
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Naloxon
+generic_name: Naloxon
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Kompetitiver Antagonist an µ-Opioidrezeptoren; hebt die Atemdepression auf.
+indications: Titration auf ausreichende Spontanatmung; Beatmung/Oxygenierung zuerst.
+adverse_effects: Akuter Entzug bei Abhängigkeit; erneute Atemdepression, weil Naloxon kürzer wirken kann
+  als das Opioid.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Opioidintoxikation (Miosis, Atemdepression, reduzierte Vigilanz).
+antidote: naloxon
+toxidrome: opioid
+clinical_pearls: 'Besserung heißt nicht Entwarnung: das Opioid kann länger wirken als Naloxon.'
+front_content:
+  prompt: 'Opioidintoxikation mit Atemdepression: welches spezifische Antidot?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Opioidintoxikation (Miosis, Atemdepression, reduzierte Vigilanz).
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Kompetitiver Antagonist an µ-Opioidrezeptoren; hebt die Atemdepression auf.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Titration auf ausreichende Spontanatmung; Beatmung/Oxygenierung zuerst.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Akuter Entzug bei Abhängigkeit; erneute Atemdepression, weil Naloxon kürzer wirken kann als das
+    Opioid.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Besserung heißt nicht Entwarnung: das Opioid kann länger wirken als Naloxon.'
+tags:
+- antidot
+- notfall
+- antagonist
+- intoxikation
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_083
+- ph_101
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Applikationswege (i.v./i.m./intranasal) nach aktueller Leitlinie prüfen
+- Nachbeobachtung nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_100_naloxon_front.png
+back_asset: cards/PH/back/ph_100_naloxon_back.png
+qr_url: https://at-medical.de/w/wirkstoff/naloxon
+lms_url: https://lms.at-medical.example/ph/naloxon

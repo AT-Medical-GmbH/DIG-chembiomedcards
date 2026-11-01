@@ -1,0 +1,72 @@
+# Pharma Cards – Online-Lernsystem (lokal/Staging).
+#   cp .env.example .env   # Werte setzen
+#   docker compose -f online-platform/docker-compose.yml --env-file online-platform/.env up -d --build
+# Produktion hinter Traefik: zusätzlich -f online-platform/docker-compose.traefik.yml
+# Getrennt: Web (nginx, statisch), API (FastAPI), Datenbank (PostgreSQL). Nur pharma-web ist
+# von außen erreichbar; API und Datenbank liegen im internen Netz.
+name: pharma-cards
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-pharma_cards}
+      POSTGRES_USER: ${POSTGRES_USER:-pharma}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD setzen}
+    volumes:
+      - pharma-db:/var/lib/postgresql/data
+    networks: [internal]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  pharma-api:
+    build:
+      context: ..
+      dockerfile: online-platform/backend/Dockerfile
+      args:
+        WITH_PLAYWRIGHT: ${WITH_PLAYWRIGHT:-1}
+    image: pharma-cards-api:${PHARMA_VERSION:-local}
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PHARMA_ENV: ${PHARMA_ENV:-development}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-pharma}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-pharma_cards}
+      AUTH_MODE: ${AUTH_MODE:-local}
+      PHARMA_SHOW_UNREVIEWED: ${PHARMA_SHOW_UNREVIEWED:-false}
+      PHARMA_BOOTSTRAP_ADMIN: ${PHARMA_BOOTSTRAP_ADMIN:-}
+      PHARMA_DAILY_GOAL: ${PHARMA_DAILY_GOAL:-20}
+      OIDC_ISSUER: ${OIDC_ISSUER:-}
+      OIDC_AUDIENCE: ${OIDC_AUDIENCE:-}
+      OIDC_JWKS_URL: ${OIDC_JWKS_URL:-}
+      OIDC_ROLE_CLAIM: ${OIDC_ROLE_CLAIM:-groups}
+      OIDC_ROLE_MAP: ${OIDC_ROLE_MAP:-}
+      OIDC_CLIENT_ID: ${OIDC_CLIENT_ID:-}
+      OIDC_REDIRECT_URI: ${OIDC_REDIRECT_URI:-}
+      OIDC_POST_LOGOUT_URI: ${OIDC_POST_LOGOUT_URI:-}
+      OIDC_SCOPES: ${OIDC_SCOPES:-openid profile email offline_access}
+      UVICORN_WORKERS: ${UVICORN_WORKERS:-2}
+    networks: [internal]
+
+  pharma-web:
+    build: ./frontend
+    image: pharma-cards-web:${PHARMA_VERSION:-local}
+    restart: unless-stopped
+    depends_on: [pharma-api]
+    environment:
+      PHARMA_API_UPSTREAM: pharma-api:8000
+      FRAME_ANCESTORS: ${FRAME_ANCESTORS:-'self'}
+    ports:
+      - "127.0.0.1:${PHARMA_WEB_PORT:-8080}:8080"
+    networks: [internal]
+
+volumes:
+  pharma-db:
+
+networks:
+  internal:

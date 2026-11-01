@@ -1,0 +1,79 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_104
+slug: ph_104_hydroxocobalamin
+wirkstoff_slug: hydroxocobalamin
+title: Hydroxocobalamin
+subtitle: Cyanid-Antidot
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Hydroxocobalamin
+generic_name: Hydroxocobalamin
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Bindet Cyanid zu Cyanocobalamin, das renal ausgeschieden wird.
+indications: Bei begründetem Verdacht früh, parallel zu Sauerstoff und Basismaßnahmen.
+adverse_effects: Rotfärbung von Haut und Urin, Störung kolorimetrischer Laborwerte, Blutdruckanstieg.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Cyanidintoxikation, z. B. nach Rauchgasinhalation.
+antidote: hydroxocobalamin
+toxidrome: cyanid
+clinical_pearls: 'Rauchgas: an CO und Cyanid denken.'
+front_content:
+  prompt: 'Rauchgasinhalation mit Laktatanstieg und Kreislaufinsuffizienz: an welches Gift und welches
+    Antidot denken?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Cyanidintoxikation, z. B. nach Rauchgasinhalation.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Bindet Cyanid zu Cyanocobalamin, das renal ausgeschieden wird.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Bei begründetem Verdacht früh, parallel zu Sauerstoff und Basismaßnahmen.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Rotfärbung von Haut und Urin, Störung kolorimetrischer Laborwerte, Blutdruckanstieg.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Rauchgas: an CO und Cyanid denken.'
+tags:
+- antidot
+- intoxikation
+- notfall
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_105
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Verdachtskriterien (z. B. Laktat) nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_104_hydroxocobalamin_front.png
+back_asset: cards/PH/back/ph_104_hydroxocobalamin_back.png
+qr_url: https://at-medical.de/w/wirkstoff/hydroxocobalamin
+lms_url: https://lms.at-medical.example/ph/hydroxocobalamin

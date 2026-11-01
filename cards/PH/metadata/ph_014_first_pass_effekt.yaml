@@ -1,0 +1,59 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_014
+slug: ph_014_first_pass_effekt
+begriff_slug: first-pass-effekt
+title: First-Pass-Effekt
+subtitle: Präsystemische Metabolisierung
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Warum senkt der First-Pass-Effekt die orale Bioverfügbarkeit?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Oral aufgenommene Wirkstoffe passieren Leber (und Darmwand), bevor sie den Kreislauf erreichen;
+    ein Teil wird dort metabolisiert.
+- key: vertiefung
+  label: Folge
+  color_role: pkpd
+  text: Starker First-Pass-Effekt senkt die orale Bioverfügbarkeit erheblich (z. B. bei bestimmten Opioiden,
+    Nitraten).
+- key: klinischer_bezug
+  label: Umgehung
+  color_role: clinic
+  text: Sublinguale, transdermale oder parenterale Gabe umgeht den First-Pass-Effekt.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Erst die Leber, dann der Kreislauf – bei oraler Gabe.
+learning_objectives:
+- First-Pass-Effekt erklären
+- Applikationswege zur Umgehung nennen
+tags:
+- pruefungsrelevant
+related_cards:
+- ph_013
+- ph_002
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_014_first_pass_effekt_front.png
+back_asset: cards/PH/back/ph_014_first_pass_effekt_back.png
+qr_url: https://at-medical.de/w/begriff/first-pass-effekt
+lms_url: https://lms.at-medical.example/ph/first_pass_effekt

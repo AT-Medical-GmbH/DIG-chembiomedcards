@@ -1,0 +1,59 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_026
+slug: ph_026_renale_elimination
+begriff_slug: renale-elimination
+title: Renale Elimination
+subtitle: Ausscheidung über die Niere
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/elimination
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Wie beeinflusst die Nierenfunktion die Elimination?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Viele Wirkstoffe/Metaboliten werden renal ausgeschieden (glomeruläre Filtration, tubuläre Sekretion/Reabsorption).
+- key: vertiefung
+  label: Einfluss
+  color_role: pkpd
+  text: Nierenfunktion (GFR) bestimmt die Clearance renal eliminierter Stoffe.
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Niereninsuffizienz → Kumulation renal eliminierter Wirkstoffe → Dosisanpassung nötig (Prinzip).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Renal eliminiert + eingeschränkte Niere = anpassen.
+learning_objectives:
+- renale Eliminationswege benennen
+- Bedeutung der GFR für die Dosierung erklären
+tags:
+- niereninsuffizienz
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_017
+- ph_027
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_026_renale_elimination_front.png
+back_asset: cards/PH/back/ph_026_renale_elimination_back.png
+qr_url: https://at-medical.de/w/begriff/renale-elimination
+lms_url: https://lms.at-medical.example/ph/renale_elimination
