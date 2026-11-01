@@ -6,7 +6,7 @@ alembic==1.14.1
 psycopg[binary]==3.2.13
 pydantic==2.14.2
 pyyaml==6.0.3
-pyjwt[crypto]==2.10.1
+pyjwt[crypto]==2.15.0
 python-multipart==0.0.20        # LTI-Launch (form_post)
 qrcode==8.2
 # optional für PNG/PDF-Downloads (im Docker-Image per Build-Argument WITH_PLAYWRIGHT=1)
