@@ -1,0 +1,80 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_048
+slug: ph_048_glucose
+title: Glucose
+subtitle: Energieträger, Hypoglykämie-Therapie
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- klinische_pharmakologie
+chapter: pharmakologie/notfallmedikamente
+substance_name: Glucose
+generic_name: Glucose
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Direkte Zufuhr von Glucose hebt den Blutzucker und versorgt das ZNS.
+indications: '- Hypoglykämie (auch bei unklarer Bewusstseinsstörung nach BZ-Messung)'
+contraindications: Hyperglykämie. Bei Alkoholabusus/Mangelernährung Thiaminmangel bedenken (Wernicke).
+adverse_effects: Venenreizung, Thrombophlebitis, Gewebeschaden bei Paravasat hochprozentiger Lösungen,
+  Hyperglykämie.
+interactions: Keine relevanten pharmakologischen Interaktionen im Akutsetting.
+monitoring: Wiederholte BZ-Kontrollen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: 'Bei jeder Bewusstseinsstörung den Blutzucker messen: Hypoglykämie ist schnell behebbar.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Direkte Zufuhr von Glucose hebt den Blutzucker und versorgt das ZNS.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Hypoglykämie (auch bei unklarer Bewusstseinsstörung nach BZ-Messung)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Venenreizung, Thrombophlebitis, Gewebeschaden bei Paravasat hochprozentiger Lösungen, Hyperglykämie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Hyperglykämie. Bei Alkoholabusus/Mangelernährung Thiaminmangel bedenken (Wernicke).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Keine relevanten pharmakologischen Interaktionen im Akutsetting. Wiederholte BZ-Kontrollen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Bei jeder Bewusstseinsstörung den Blutzucker messen: Hypoglykämie ist schnell behebbar.'
+tags:
+- notfall
+- praeklinik
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_108
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Reihenfolge Thiamin/Glucose nach aktuellem Stand formulieren
+- Konzentrationsangaben nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_048_glucose_front.png
+back_asset: cards/PH/back/ph_048_glucose_back.png
+qr_url: https://chembiomed-cards.de/c/ph048
+lms_url: https://lms.at-medical.example/ph/glucose

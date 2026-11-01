@@ -1,0 +1,94 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_040
+slug: ph_040_adrenalin
+title: Adrenalin
+subtitle: Katecholamin, α- und β-Agonist
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/notfallmedikamente
+drug_class: katecholamine
+substance_name: Adrenalin
+generic_name: Adrenalin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Agonist an α1-, β1- und β2-Adrenozeptoren: Vasokonstriktion, positiv inotrop/chronotrop,
+  Bronchodilatation.'
+indications: '- Reanimation
+
+  - Anaphylaxie
+
+  - schwere Hypotonie/Schock'
+contraindications: In vitaler Indikation keine absolute KI. Vorsicht bei KHK und Tachyarrhythmie.
+adverse_effects: Tachykardie, Arrhythmien, Hypertonie, erhöhter myokardialer O₂-Bedarf, Hyperglykämie,
+  Hypokaliämie.
+interactions: Wirkverstärkung durch MAO-Hemmer/TZA möglich.
+monitoring: Kontinuierlich EKG und Blutdruck.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: 'Applikationsweg und Konzentration unterscheiden sich je Indikation (Anaphylaxie vs.
+  Reanimation): Verwechslungsgefahr.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Agonist an α1-, β1- und β2-Adrenozeptoren: Vasokonstriktion, positiv inotrop/chronotrop, Bronchodilatation.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Reanimation
+
+    - Anaphylaxie
+
+    - schwere Hypotonie/Schock'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Tachykardie, Arrhythmien, Hypertonie, erhöhter myokardialer O₂-Bedarf, Hyperglykämie, Hypokaliämie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: In vitaler Indikation keine absolute KI. Vorsicht bei KHK und Tachyarrhythmie.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Wirkverstärkung durch MAO-Hemmer/TZA möglich. Kontinuierlich EKG und Blutdruck.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Applikationsweg und Konzentration unterscheiden sich je Indikation (Anaphylaxie vs. Reanimation):
+    Verwechslungsgefahr.'
+tags:
+- notfall
+- hochrisiko
+- agonist
+- rezeptor
+- pruefungsrelevant
+related_cards:
+- ph_041
+- ph_006
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Indikationsspezifische Applikationswege gegen aktuelle ERC-/Anaphylaxie-Leitlinie prüfen
+- Verwechslungsgefahr der Konzentrationen eindeutig formulieren
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_040_adrenalin_front.png
+back_asset: cards/PH/back/ph_040_adrenalin_back.png
+qr_url: https://chembiomed-cards.de/c/ph040
+lms_url: https://lms.at-medical.example/ph/adrenalin

@@ -1,0 +1,81 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_107
+slug: ph_107_digoxin_fab
+title: Digoxin-spezifische Fab-Fragmente
+subtitle: Antikörperfragmente
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Digoxin-spezifische Fab-Fragmente
+generic_name: Digoxin-spezifische Fab-Fragmente
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Fab-Fragmente binden das Glykosid zu einem inaktiven Komplex, der renal eliminiert
+  wird.
+indications: Bei lebensbedrohlichen Rhythmusstörungen oder ausgeprägter Hyperkaliämie, nach toxikologischer
+  Rücksprache.
+adverse_effects: Spiegelmessung danach unzuverlässig; Hypokaliämie und Verschlechterung der Herzinsuffizienz
+  möglich.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Digitalisintoxikation (Digoxin, Digitoxin).
+antidote: digoxin_fab
+toxidrome: digitalis
+clinical_pearls: Hyperkaliämie ist bei akuter Digitalisintoxikation ein wichtiger Prognosemarker.
+front_content:
+  prompt: 'Digitalisintoxikation mit lebensbedrohlicher Rhythmusstörung: welches Antidot?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Digitalisintoxikation (Digoxin, Digitoxin).
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Fab-Fragmente binden das Glykosid zu einem inaktiven Komplex, der renal eliminiert wird.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Bei lebensbedrohlichen Rhythmusstörungen oder ausgeprägter Hyperkaliämie, nach toxikologischer
+    Rücksprache.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Spiegelmessung danach unzuverlässig; Hypokaliämie und Verschlechterung der Herzinsuffizienz möglich.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Hyperkaliämie ist bei akuter Digitalisintoxikation ein wichtiger Prognosemarker.
+tags:
+- antidot
+- intoxikation
+- enge_therapeutische_breite
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_045
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Indikationskriterien nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_107_digoxin_fab_front.png
+back_asset: cards/PH/back/ph_107_digoxin_fab_back.png
+qr_url: https://chembiomed-cards.de/c/ph107
+lms_url: https://lms.at-medical.example/ph/digoxin-fab

@@ -8,6 +8,10 @@ farbrollen-codierte Boxen, Footer mit ID/QR/Copyright) für Fachreview und Abnah
 |---|---|---|
 | `ph_006_front.html` / `ph_006_back.html` | Agonist | Prinzip/Übersicht |
 | `ph_020_front.html` / `ph_020_back.html` | LADME-Prinzip | Prinzip/Übersicht |
+| `ph_040_front.html` / `ph_040_back.html` | Adrenalin | Wirkstoffkarte, `critical` (Entwurf) |
+| `ph_100_front.html` / `ph_100_back.html` | Naloxon | Antidotkarte, `critical` (Entwurf) |
+
+Die klinischen Beispiele sind **Entwürfe vor dem Fachreview** und dienen nur der Layoutabnahme.
 
 Der vollständige Satz wird reproduzierbar erzeugt und ist nicht eingecheckt:
 

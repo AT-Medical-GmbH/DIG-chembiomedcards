@@ -1,0 +1,76 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_105
+slug: ph_105_sauerstoff
+title: Sauerstoff
+subtitle: Antidot bei CO-Intoxikation
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/antidote
+substance_name: Sauerstoff
+generic_name: Sauerstoff
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Verdrängt CO vom Hämoglobin und verkürzt die Halbwertszeit von CO-Hb deutlich.
+indications: Hochkonzentriert so früh wie möglich; hyperbare Therapie in ausgewählten Fällen nach Rücksprache.
+adverse_effects: Pulsoxymetrie zeigt trotz Vergiftung normale Werte; CO-Oxymetrie nötig.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Kohlenmonoxidintoxikation.
+antidote: sauerstoff
+toxidrome: co
+clinical_pearls: Normale SpO₂ schließt eine CO-Vergiftung nicht aus.
+front_content:
+  prompt: 'CO-Vergiftung bei normaler Pulsoxymetrie: welches Antidot?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Kohlenmonoxidintoxikation.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Verdrängt CO vom Hämoglobin und verkürzt die Halbwertszeit von CO-Hb deutlich.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Hochkonzentriert so früh wie möglich; hyperbare Therapie in ausgewählten Fällen nach Rücksprache.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Pulsoxymetrie zeigt trotz Vergiftung normale Werte; CO-Oxymetrie nötig.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Normale SpO₂ schließt eine CO-Vergiftung nicht aus.
+tags:
+- antidot
+- intoxikation
+- notfall
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_104
+warning_level: high
+review_status: toxicology_review_needed
+review_focus:
+- Indikationen für hyperbare Therapie nach aktuellem Stand prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_105_sauerstoff_front.png
+back_asset: cards/PH/back/ph_105_sauerstoff_back.png
+qr_url: https://chembiomed-cards.de/c/ph105
+lms_url: https://lms.at-medical.example/ph/sauerstoff

@@ -10,6 +10,7 @@ Bilder/HTML sind **Export-Artefakte**.
 | `build_registry.py` | ph_*-Zeilen in `cards/registry/cards.master.csv` aus YAML erzeugen (Nicht-PH unangetastet) |
 | `render_cards.py` | Vorder-/Rückseiten als self-contained HTML; optional PNG/PDF via Chromium |
 | `validate_output.py` | erzeugte Ausgabe + Export-Gating (critical → nur approved) |
+| `review_report.py` | Liste offener Reviews mit Prüfschwerpunkten → `docs/pharma-cards/reports/cards_review_needed.md` |
 
 ## Schnellstart
 

@@ -1,0 +1,82 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_081
+slug: ph_081_anticholinerges_syndrom
+title: Anticholinerges Syndrom
+subtitle: Muskarinrezeptor-Blockade
+module: PH
+primary_category: toxikologie
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/toxidrome
+card_type: toxidrome
+front_type: toxidrome
+level: clinical
+difficulty: intermediate
+monitoring: Klinik, Temperatur, EKG (bei TZA auf QRS-Verbreiterung achten).
+emergency_relevance: Supportiv, Kühlung, Benzodiazepine bei Agitation. Physostigmin nur nach toxikologischer
+  Rücksprache, nicht bei TZA mit QRS-Verbreiterung.
+toxicology_relevance: Blockade muskarinischer Acetylcholinrezeptoren (z. B. Antihistaminika, trizyklische
+  Antidepressiva, Nachtschattengewächse).
+toxidrome: anticholinerg
+clinical_pearls: Haut trocken (anticholinerg) vs. feucht (sympathomimetisch).
+front_content:
+  prompt: 'Leitsymptome: Mydriasis, trockene gerötete Haut, Hyperthermie … Welches Toxidrom?'
+back_sections:
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: '- Mydriasis, trockene gerötete Haut, Hyperthermie
+
+    - Tachykardie, Harnverhalt, fehlende Darmgeräusche
+
+    - Agitation, Delir'
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: Blockade muskarinischer Acetylcholinrezeptoren (z. B. Antihistaminika, trizyklische Antidepressiva,
+    Nachtschattengewächse).
+- key: diagnostik_monitoring
+  label: Diagnostik / Monitoring
+  color_role: interaction
+  text: Klinik, Temperatur, EKG (bei TZA auf QRS-Verbreiterung achten).
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Supportiv, Kühlung, Benzodiazepine bei Agitation. Physostigmin nur nach toxikologischer Rücksprache,
+    nicht bei TZA mit QRS-Verbreiterung.
+- key: red_flags
+  label: Red Flags
+  color_role: risk
+  text: Hyperthermie, Krampfanfälle, Rhythmusstörungen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Haut trocken (anticholinerg) vs. feucht (sympathomimetisch).
+tags:
+- toxidrom
+- intoxikation
+- notfall
+- pruefungsrelevant
+related_cards:
+- ph_082
+- ph_110
+warning_level: high
+review_status: toxicology_review_needed
+review_focus:
+- Indikationsgrenzen für Physostigmin nach aktuellem Stand prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.1
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_081_anticholinerges_syndrom_front.png
+back_asset: cards/PH/back/ph_081_anticholinerges_syndrom_back.png
+qr_url: https://chembiomed-cards.de/c/ph081
+lms_url: https://lms.at-medical.example/ph/anticholinerges-syndrom

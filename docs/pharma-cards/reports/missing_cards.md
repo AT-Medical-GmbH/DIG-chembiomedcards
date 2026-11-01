@@ -1,33 +1,33 @@
 # Report — Missing Cards (PH / Pharma Cards)
 
-**Stand:** 2026-10-09 · **Bedeutung:** Geplante, aber noch nicht produzierte Karten.
+**Stand:** 2026-10-31 · **Bedeutung:** Geplante Karten, die noch fehlen, und Karten, die zwar angelegt,
+aber noch nicht freigegeben sind.
 
-Dieser Report wird in Folgephasen durch `audit_cards.py` automatisch gegen den kuratierten Soll-Stand
-(`04_startliste-kuratiert.md`) erzeugt. Aktueller Stand: **gesamter R1-Pilot fehlt noch** (Produktion
-startet nach Konzeptfreigabe).
+## Release R1 — als Entwurf vollständig angelegt
 
-## R1 — Pilot (fehlend, priorisiert)
+| Block | IDs | Anzahl | Status |
+|---|---|---:|---|
+| Allgemeine Pharmakologie | `ph_001`–`ph_019` | 19 | `needs_review` |
+| PK/PD-Mechanismen | `ph_020`–`ph_030` | 11 | `needs_review` |
+| Notfallmedikamente (Wirkstoffkarten) | `ph_040`–`ph_049` | 10 | `clinical_review_needed` |
+| Toxidrome | `ph_080`–`ph_086` | 7 | `toxicology_review_needed` |
+| Antidote | `ph_100`–`ph_112` | 13 | `toxicology_review_needed` |
+| **Summe R1** | | **60** | **0 freigegeben** |
 
-### Allgemeine Pharmakologie (`ph_001`–`ph_019`)
-Agonist · Antagonist · Partialagonist · inverser Agonist · kompetitive/nichtkompetitive Hemmung ·
-therapeutische Breite · Bioverfügbarkeit · First-Pass-Effekt · Verteilungsvolumen · Halbwertszeit ·
-Clearance · Steady State · Loading/Erhaltungsdosis · Rezeptor-Down-/Upregulation.
-*(ph_001–ph_005 sind als Anker reserviert, aber noch nicht produziert.)*
+Die Notfallmedikamente Naloxon, Flumazenil, Atropin, Glucagon, Calcium und Natriumbicarbonat sind
+nicht doppelt angelegt. Es gibt sie nur als Antidotkarte; über die Nebenkategorie
+`notfallmedikamente` erscheinen sie auch im Notfallset.
 
-### PK/PD (`ph_020`–`ph_030`)
-LADME · CYP450/CYP3A4/CYP2D6/CYP2C9 · P-Glykoprotein · renale Elimination · hepatische
-Metabolisierung · Proteinbindung · aktive Metaboliten · Prodrugs.
+**Was in R1 fehlt, ist die Freigabe, nicht der Inhalt.** Offene Prüfungen mit Schwerpunkten:
+`cards_review_needed.md`.
 
-### Notfallmedikamente-Kern (`ph_040`–`ph_060`)
-Adrenalin · Noradrenalin · Atropin · Amiodaron · Adenosin · Nitroglycerin · Furosemid · Midazolam ·
-Ketamin · Naloxon · Flumazenil · Glucose · Glucagon · Calcium · Magnesium · Natriumbicarbonat.
+## Release R2 — fehlt noch
 
-### Toxidrome (`ph_080`–`ph_086`)
-cholinerg · anticholinerg · sympathomimetisch · Opioid · sedativ-hypnotisch · serotonerg · MNS.
+Anästhesie/Intensiv (u. a. Propofol, Etomidat, Sevofluran, Fentanyl/Sufentanil/Remifentanil,
+Rocuronium, Succinylcholin, Sugammadex, Dexmedetomidin, Dobutamin, Levosimendan), Analgetika,
+Herz-Kreislauf inkl. Intoxikationskarten, Arzneimittelsicherheit/Interaktionen.
+Siehe `../04_startliste-kuratiert.md` §3.
 
-### Antidote (`ph_100`–`ph_112`)
-Naloxon · Flumazenil · N-Acetylcystein · Atropin · Hydroxocobalamin · Sauerstoff · Fomepizol ·
-Digoxin-Fab · Glucagon · Calcium · Natriumbicarbonat · Lipidemulsion · Vitamin K.
+## Release R3 / R4 — fehlt noch
 
-## R2 / R3 / R4
-Siehe `04_startliste-kuratiert.md` §3–§5. Werden nach R1 geplant.
+Siehe `../04_startliste-kuratiert.md` §4–§5.

@@ -1,0 +1,196 @@
+<!doctype html><html lang=de><head><meta charset=utf-8><title>ph_040</title><style>/* Pharma Cards — gemeinsames Kartenlayout (DIN A6 quer, 148×105 mm)
+ * Ein Layout für Print und Online. Farbrollen und Kategoriefarbe werden vom
+ * Render-Skript als CSS-Variablen injiziert (Werte kommen aus cards/PH/scope/).
+ * Siehe docs/pharma-cards/05_kartenlayout.md.
+ */
+
+:root {
+  /* Farbrollen (Default; können pro Karte überschrieben werden) */
+  --role-base:        #37474F;
+  --role-pkpd:        #1E88E5;
+  --role-clinic:      #43A047;
+  --role-risk:        #E53935;
+  --role-risk-crit:   #B71C1C;
+  --role-interaction: #FB8C00;
+  --role-antidote:    #8E24AA;
+
+  /* Kategorie-Akzent (vom Render-Skript gesetzt) */
+  --accent: #37474F;
+
+  --ink:       #1c2529;
+  --ink-soft:  #5b6b73;
+  --surface:   #ffffff;
+  --surface-2: #f5f7f8;
+  --line:      #dfe5e8;
+
+  --radius: 2.4mm;
+  --gap: 2.2mm;
+  --pad: 4mm;
+
+  --font: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+@page { size: 148mm 105mm; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; background: var(--surface-2); }
+
+.card {
+  position: relative;
+  width: 148mm;
+  height: 105mm;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 3.1mm;
+  line-height: 1.32;
+  overflow: hidden;
+  /* farbiger oberer Kartenrand = Registereffekt (Inward-Tabs-Standard) */
+  border-top: 2.2mm solid var(--accent);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Tab-Leiste (oben, über alle Karten identisch) ---- */
+.tabs {
+  display: flex;
+  gap: 0.6mm;
+  padding: 1.6mm var(--pad) 0 var(--pad);
+  background: var(--surface);
+}
+.tab {
+  font-size: 2.3mm;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 1mm 1.8mm 1.4mm 1.8mm;
+  border-radius: 1mm 1mm 0 0;
+  color: var(--ink-soft);
+  background: var(--surface-2);
+  border: 0.2mm solid var(--line);
+  border-bottom: none;
+  opacity: 0.55;
+  white-space: nowrap;
+}
+.tab.secondary { opacity: 0.9; }
+.tab.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+/* ---- Titelbereich ---- */
+.head {
+  padding: 2.2mm var(--pad) 0 var(--pad);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+.head .title { font-size: 5.2mm; font-weight: 700; line-height: 1.1; }
+.head .subtitle { font-size: 3mm; color: var(--ink-soft); margin-top: 0.6mm; }
+.badge {
+  flex: none;
+  font-size: 2.3mm;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  padding: 0.8mm 1.6mm;
+  border-radius: 1mm;
+}
+.badge.low { background: var(--role-clinic); }
+.badge.moderate { background: var(--role-interaction); }
+.badge.high { background: var(--role-risk); }
+.badge.critical { background: var(--role-risk-crit); }
+
+/* ---- Inhaltsbereich ---- */
+.body {
+  flex: 1;
+  padding: 2mm var(--pad) 0 var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  min-height: 0;
+}
+.front-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 6mm;
+}
+.front-center .prompt { font-size: 4.2mm; font-weight: 600; color: var(--ink); }
+.front-center .hint { font-size: 2.8mm; color: var(--ink-soft); margin-top: 2mm; }
+
+.grid2 { display: flex; gap: var(--gap); }
+.grid2 > .box { flex: 1; }
+
+.box {
+  border: 0.2mm solid var(--line);
+  border-left: 1mm solid var(--role-base);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 1.8mm 2.2mm;
+}
+.box.wide { width: 100%; }
+.box .box-title {
+  font-size: 2.4mm;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--role-base);
+  margin-bottom: 0.8mm;
+}
+.box .box-content { font-size: 2.9mm; }
+.box .box-content ul { margin: 0; padding-left: 3.4mm; }
+.box .box-content li { margin: 0.3mm 0; }
+
+/* Farbrollen je Box */
+.box.role-base        { border-left-color: var(--role-base); }
+.box.role-base .box-title { color: var(--role-base); }
+.box.role-pkpd        { border-left-color: var(--role-pkpd); }
+.box.role-pkpd .box-title { color: var(--role-pkpd); }
+.box.role-clinic      { border-left-color: var(--role-clinic); }
+.box.role-clinic .box-title { color: var(--role-clinic); }
+.box.role-risk        { border-left-color: var(--role-risk); }
+.box.role-risk .box-title { color: var(--role-risk); }
+.box.role-interaction { border-left-color: var(--role-interaction); }
+.box.role-interaction .box-title { color: var(--role-interaction); }
+.box.role-antidote    { border-left-color: var(--role-antidote); background: #faf6fc; }
+.box.role-antidote .box-title { color: var(--role-antidote); }
+
+/* ---- Footer: ID links, QR + Copyright rechts ---- */
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1.4mm var(--pad) 2mm var(--pad);
+  font-size: 2.1mm;
+  color: var(--ink-soft);
+}
+.footer .cid { font-weight: 600; letter-spacing: 0.03em; }
+.footer .right { display: flex; align-items: center; gap: 1.6mm; }
+.footer .qr {
+  width: 11mm; height: 11mm;
+  border: 0.2mm solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6mm; color: var(--ink-soft); text-align: center;
+}
+.footer .copy { max-width: 46mm; text-align: right; }
+
+/* Logo-Platzhalter rechts oben (über Badge-Zeile hinweg dezent) */
+.logo {
+  position: absolute; top: 3mm; right: var(--pad);
+  font-size: 2.3mm; font-weight: 800; letter-spacing: 0.02em;
+  color: var(--accent); opacity: 0.0; /* echtes Logo ersetzt dies; aus brand/ */
+}
+
+/* Online/Screen: Karten nebeneinander mit leichtem Schatten */
+@media screen {
+  body { padding: 6mm; display: flex; gap: 6mm; flex-wrap: wrap; }
+  .card { box-shadow: 0 1mm 4mm rgba(0,0,0,0.12); }
+}
+</style></head><body><div class="card" style="--accent:#E53935"><div class="tabs"><span class="tab ">Allgemein</span><span class="tab secondary">PK/PD</span><span class="tab active">Wirkstoff</span><span class="tab secondary">Klinik</span><span class="tab secondary">Tox</span><span class="tab secondary">Antidot</span><span class="tab secondary">Interaktion</span></div><div class="head"><div><div class="title">Adrenalin</div><div class="subtitle">Katecholamin, α- und β-Agonist</div></div><span class="badge critical">Kritisch</span></div><div class="body"><div class="grid2" style="flex-direction:column"><div class="box role-pkpd"><div class="box-title">Wirkmechanismus</div><div class="box-content">Agonist an α1-, β1- und β2-Adrenozeptoren: Vasokonstriktion, positiv inotrop/chronotrop, Bronchodilatation.</div></div></div><div class="grid2"><div class="box role-clinic"><div class="box-title">Indikationen</div><div class="box-content"><ul><li>Reanimation</li><li>Anaphylaxie</li><li>schwere Hypotonie/Schock</li></ul></div></div><div class="box role-risk"><div class="box-title">Nebenwirkungen</div><div class="box-content">Tachykardie, Arrhythmien, Hypertonie, erhöhter myokardialer O₂-Bedarf, Hyperglykämie, Hypokaliämie.</div></div></div><div class="grid2"><div class="box role-risk"><div class="box-title">Kontraindikationen / Cave</div><div class="box-content">In vitaler Indikation keine absolute KI. Vorsicht bei KHK und Tachyarrhythmie.</div></div><div class="box role-interaction"><div class="box-title">Interaktionen / Monitoring</div><div class="box-content">Wirkverstärkung durch MAO-Hemmer/TZA möglich. Kontinuierlich EKG und Blutdruck.</div></div></div><div class="grid2" style="flex-direction:column"><div class="box role-antidote"><div class="box-title">Merke</div><div class="box-content">Applikationsweg und Konzentration unterscheiden sich je Indikation (Anaphylaxie vs. Reanimation): Verwechslungsgefahr.</div></div></div></div><div class="footer"><div class="cid">ph_040</div><div class="right"><div class="qr">QR<br>ph_040</div><div class="copy">© 2026 Andreas Tremml · AT Medical GmbH<br><span style="font-size:1.7mm">https://chembiomed-cards.de/c/ph040</span></div></div></div></div></body></html>

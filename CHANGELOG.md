@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-10-31 (Fachreview-Vorlauf)
+- Pharma Cards – Fachreview-Prozess unter `docs/pharma-cards/review/`: Ablauf und Rollen,
+  Checklisten Pharmakologie, Toxikologie und klinische Sicherheit, Protokollvorlage.
+- Klinische R1-Entwürfe (30 Karten) in `cards/PH/metadata/`: Notfallmedikamente `ph_040`–`ph_049`
+  (`clinical_review_needed`), Toxidrome `ph_080`–`ph_086` und Antidote `ph_100`–`ph_112`
+  (`toxicology_review_needed`). Keine Zahlendosen; konkrete Prüfpunkte je Karte in `review_focus`.
+- `scripts/pharma/review_report.py` + `make ph-review-report` erzeugen
+  `docs/pharma-cards/reports/cards_review_needed.md`.
+- Render: Vorderseite zeigt Namen der Wirkstoffgruppe statt Slug.
+- Scope: Intoxikationsbild `cyanid` ergänzt (Zielgift des Antidots Hydroxocobalamin).
+- Reports `missing_cards`, `content_review`, `content_scope` auf Stand R1 (60 Entwürfe) gebracht.
+
 ## 2026-10-31
 - Pharma Cards (Modul PH) – P1 Pipeline: reproduzierbare Erzeugung unter `scripts/pharma/`
   (`validate_ph_cards.py`, `build_registry.py`, `render_cards.py`, `validate_output.py`) + `Makefile`

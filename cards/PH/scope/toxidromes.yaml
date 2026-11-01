@@ -32,6 +32,7 @@ intoxications:
   - { slug: salicylat,        name: "Salicylatintoxikation" }
   - { slug: paracetamol,      name: "Paracetamolintoxikation" }
   - { slug: co,               name: "CO-Intoxikation" }
+  - { slug: cyanid,           name: "Cyanidintoxikation (z. B. Rauchgas)" }
   - { slug: methanol,         name: "Methanolintoxikation" }
   - { slug: ethylenglykol,    name: "Ethylenglykolintoxikation" }
   - { slug: digitalis,        name: "Digitalisintoxikation" }

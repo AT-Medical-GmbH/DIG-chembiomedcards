@@ -1,0 +1,81 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_101
+slug: ph_101_flumazenil
+title: Flumazenil
+subtitle: Benzodiazepin-Antagonist
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfallmedikamente
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Flumazenil
+generic_name: Flumazenil
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Kompetitiver Antagonist an der Benzodiazepin-Bindungsstelle des GABA-A-Rezeptors.
+indications: Vor allem bei iatrogener Übersedierung nicht abhängiger Patienten.
+adverse_effects: Krampfanfälle bei Benzodiazepin-Abhängigkeit oder Ko-Intoxikation mit prokonvulsiven
+  Stoffen (z. B. TZA); Resedierung wegen kurzer Wirkdauer.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Benzodiazepin-Intoxikation, vor allem iatrogene Übersedierung.
+antidote: flumazenil
+toxidrome: benzodiazepin
+clinical_pearls: Nicht routinemäßig bei unklarer Intoxikation einsetzen.
+front_content:
+  prompt: 'Iatrogene Benzodiazepin-Überdosierung: welches Antidot – und wann nicht?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Benzodiazepin-Intoxikation, vor allem iatrogene Übersedierung.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Kompetitiver Antagonist an der Benzodiazepin-Bindungsstelle des GABA-A-Rezeptors.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Vor allem bei iatrogener Übersedierung nicht abhängiger Patienten.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Krampfanfälle bei Benzodiazepin-Abhängigkeit oder Ko-Intoxikation mit prokonvulsiven Stoffen (z.
+    B. TZA); Resedierung wegen kurzer Wirkdauer.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Nicht routinemäßig bei unklarer Intoxikation einsetzen.
+tags:
+- antidot
+- antagonist
+- intoxikation
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_084
+- ph_046
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Indikationsgrenzen nach aktueller toxikologischer Empfehlung prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_101_flumazenil_front.png
+back_asset: cards/PH/back/ph_101_flumazenil_back.png
+qr_url: https://chembiomed-cards.de/c/ph101
+lms_url: https://lms.at-medical.example/ph/flumazenil
