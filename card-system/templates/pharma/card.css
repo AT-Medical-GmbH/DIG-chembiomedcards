@@ -24,8 +24,8 @@
   --line:      #dfe5e8;
 
   --radius: 2.4mm;
-  --gap: 2.2mm;
-  --pad: 4mm;
+  --gap: 1.8mm;
+  --pad: 5mm;   /* Sicherheitszone 5 mm ab Schnittkante (print-production/specs) */
 
   --font: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -56,7 +56,8 @@ html, body { margin: 0; padding: 0; background: var(--surface-2); }
 .tabs {
   display: flex;
   gap: 0.6mm;
-  padding: 1.6mm var(--pad) 0 var(--pad);
+  /* Oberkante: 2.2 mm Farbrand + 2.8 mm = 5 mm Sicherheitszone */
+  padding: 2.8mm var(--pad) 0 var(--pad);
   background: var(--surface);
 }
 .tab {
@@ -133,7 +134,7 @@ html, body { margin: 0; padding: 0; background: var(--surface-2); }
   border-left: 1mm solid var(--role-base);
   border-radius: var(--radius);
   background: var(--surface);
-  padding: 1.8mm 2.2mm;
+  padding: 1.3mm 2mm 1.4mm 2mm;
 }
 .box.wide { width: 100%; }
 .box .box-title {
@@ -142,11 +143,17 @@ html, body { margin: 0; padding: 0; background: var(--surface-2); }
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--role-base);
-  margin-bottom: 0.8mm;
+  margin-bottom: 0.4mm;
 }
-.box .box-content { font-size: 2.9mm; }
+.box .box-content { font-size: 2.75mm; line-height: 1.28; }
 .box .box-content ul { margin: 0; padding-left: 3.4mm; }
-.box .box-content li { margin: 0.3mm 0; }
+.box .box-content li { margin: 0.1mm 0; }
+
+/* Rückseite: Zweispaltenfluss, Kern- und Merke-Box über volle Breite */
+.flow { column-count: 2; column-gap: var(--gap); }
+.flow > .box { break-inside: avoid; margin: 0 0 var(--gap) 0; }
+.flow > .box.span { column-span: all; }
+.flow > .box:last-child { margin-bottom: 0; }
 
 /* Farbrollen je Box */
 .box.role-base        { border-left-color: var(--role-base); }
@@ -167,19 +174,27 @@ html, body { margin: 0; padding: 0; background: var(--surface-2); }
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 1.4mm var(--pad) 2mm var(--pad);
+  padding: 1mm var(--pad) var(--pad) var(--pad);
   font-size: 2.1mm;
   color: var(--ink-soft);
 }
 .footer .cid { font-weight: 600; letter-spacing: 0.03em; }
 .footer .right { display: flex; align-items: center; gap: 1.6mm; }
+/* QR: mind. 15×15 mm, schwarz auf weiß, Ruhezone im SVG enthalten
+   (print-production/specs/qr-print-spec.md) */
 .footer .qr {
-  width: 11mm; height: 11mm;
-  border: 0.2mm solid var(--line);
+  width: 15mm; height: 15mm; flex: none;
+  background: #fff;
+}
+.footer .qr svg { display: block; width: 100%; height: 100%; }
+.footer .qr.placeholder {
+  border: 0.2mm dashed var(--line);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.6mm; color: var(--ink-soft); text-align: center;
 }
-.footer .copy { max-width: 46mm; text-align: right; }
+.footer .copy { max-width: 60mm; text-align: right; line-height: 1.25; }
+.footer .copy .url { font-size: 1.7mm; }
+.card.back .footer .copy .url { display: none; }
 
 /* Logo-Platzhalter rechts oben (über Badge-Zeile hinweg dezent) */
 .logo {

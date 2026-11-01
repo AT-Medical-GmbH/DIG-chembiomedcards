@@ -123,26 +123,62 @@ def head_html(card: dict, scope: dict) -> str:
     )
 
 
-def footer_html(card: dict) -> str:
+def qr_svg(url: str) -> str | None:
+    """QR-Code als SVG (schwarz auf weiß, Fehlerkorrektur Q, Ruhezone 4 Module).
+
+    Entspricht print-production/specs/qr-print-spec.md. Gibt None zurück, wenn die
+    optionale Bibliothek `qrcode` fehlt; dann wird ein Platzhalter gerendert.
+    """
+    if not url:
+        return None
+    try:
+        import qrcode
+    except ImportError:
+        return None
+    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q, border=4)
+    qr.add_data(url)
+    qr.make(fit=True)
+    matrix = qr.get_matrix()  # inkl. Ruhezone
+    n = len(matrix)
+    rects = "".join(f"M{x} {y}h1v1h-1z" for y, row in enumerate(matrix)
+                    for x, dark in enumerate(row) if dark)
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {n} {n}" '
+            f'shape-rendering="crispEdges" role="img" aria-label="QR-Code {esc(url)}">'
+            f'<rect width="{n}" height="{n}" fill="#fff"/><path d="{rects}" fill="#000"/></svg>')
+
+
+def footer_html(card: dict, with_qr: bool = True) -> str:
+    """Fußzeile: ID links, © rechts; QR-Code nur auf der Vorderseite (with_qr)."""
     cid = esc(card.get("card_id", ""))
-    qr = esc(card.get("qr_url", ""))
+    url = card.get("qr_url", "")
+    qr = ""
+    if with_qr:
+        svg = qr_svg(url)
+        qr = f'<div class="qr">{svg}</div>' if svg else f'<div class="qr placeholder">QR<br>{cid}</div>'
     return (
         '<div class="footer"><div class="cid">' + cid + "</div>"
         '<div class="right">'
-        f'<div class="qr">QR<br>{cid}</div>'
         '<div class="copy">© 2026 Andreas Tremml · AT Medical GmbH<br>'
-        f'<span style="font-size:1.7mm">{qr}</span></div>'
-        "</div></div>"
+        f'<span class="url">{esc(url)}</span></div>'
+        + qr + "</div></div>"
     )
 
 
-def shell(card: dict, scope: dict, inner: str, css: str) -> str:
+def card_div(card: dict, scope: dict, inner: str, side: str = "front",
+             extra_class: str = "") -> str:
+    """Eine Kartenseite als <div class="card"> (ohne HTML-Dokument drumherum)."""
     accent = scope["category_color"].get(card.get("primary_category", ""), "#37474F")
+    cls = f"card {side} {extra_class}".strip()
+    return (f'<div class="{cls}" data-card="{esc(card.get("card_id", ""))}" '
+            f'data-side="{side}" style="--accent:{accent}">'
+            + tabs_html(card) + inner + footer_html(card, with_qr=(side == "front")) + "</div>")
+
+
+def shell(card: dict, scope: dict, inner: str, css: str, side: str = "front") -> str:
     return (
         "<!doctype html><html lang=de><head><meta charset=utf-8>"
         f"<title>{esc(card.get('card_id',''))}</title><style>{css}</style></head><body>"
-        f'<div class="card" style="--accent:{accent}">'
-        + tabs_html(card) + inner + footer_html(card) + "</div></body></html>"
+        + card_div(card, scope, inner, side) + "</body></html>"
     )
 
 
@@ -165,42 +201,31 @@ def front_inner(card: dict, scope: dict) -> str:
     return head + f'<div class="body"><div class="front-center"><div>{center}</div></div></div>'
 
 
-def box_html(title: str, content: str, role: str) -> str:
+def box_html(title: str, content: str, role: str, extra_class: str = "") -> str:
     role = role if role in VALID_ROLES else "base"
+    cls = f"box role-{role} {extra_class}".strip()
     return (
-        f'<div class="box role-{role}"><div class="box-title">{esc(title)}</div>'
+        f'<div class="{cls}"><div class="box-title">{esc(title)}</div>'
         f'<div class="box-content">{render_inline(content)}</div></div>'
     )
 
 
 def back_inner(card: dict, scope: dict) -> str:
+    """Rückseite: erste Box (Kern) und letzte Box (Merke) volle Breite, dazwischen
+    Zweispaltenfluss. Der Fluss verteilt Boxen nach Höhe und verschenkt keinen Platz
+    wie eine starre Paarzeile (siehe docs/pharma-cards/05_kartenlayout.md)."""
     head = head_html(card, scope)
-    secs = card.get("back_sections") or []
     boxes = []
-    for sec in secs:
+    for sec in card.get("back_sections") or []:
         label = sec.get("label") or sec.get("key", "")
         text = sec.get("text") or sec.get("content") or ""
         boxes.append((label, text, sec.get("color_role", "base")))
-    body = ['<div class="body">']
-    if boxes:
-        # erste Box breit (Kernaussage/Kernmechanismus)
-        body.append('<div class="grid2" style="flex-direction:column">')
-        body.append(box_html(*boxes[0]))
-        body.append("</div>")
-        mid = boxes[1:-1] if len(boxes) > 2 else boxes[1:]
-        # mittlere Boxen paarweise
-        for i in range(0, len(mid), 2):
-            pair = mid[i:i + 2]
-            body.append('<div class="grid2">')
-            for b in pair:
-                body.append(box_html(*b))
-            body.append("</div>")
-        if len(boxes) > 2:
-            body.append('<div class="grid2" style="flex-direction:column">')
-            body.append(box_html(*boxes[-1]))
-            body.append("</div>")
-    body.append("</div>")
-    return head + "".join(body)
+    parts = ['<div class="body"><div class="flow">']
+    for i, b in enumerate(boxes):
+        span = (i == 0) or (i == len(boxes) - 1 and len(boxes) > 2)
+        parts.append(box_html(*b, extra_class="span" if span else ""))
+    parts.append("</div></div>")
+    return head + "".join(parts)
 
 
 def maybe_render_binaries(html_paths, png_dir: Path, do_png, do_pdf):
@@ -257,7 +282,8 @@ def main() -> int:
         fp = out / f"{card['card_id']}_front.html"
         bp = out / f"{card['card_id']}_back.html"
         fp.write_text(shell(card, scope, front_inner(card, scope), css), encoding="utf-8")
-        bp.write_text(shell(card, scope, back_inner(card, scope), css), encoding="utf-8")
+        bp.write_text(shell(card, scope, back_inner(card, scope), css, side="back"),
+                      encoding="utf-8")
         html_paths.extend([fp, bp])
         print(f"OK  {card['card_id']}: {fp.name}, {bp.name}")
 

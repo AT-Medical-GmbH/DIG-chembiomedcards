@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-10-31 (P4 Export: Moodle + Druck)
+- `scripts/pharma/generate_moodle_import.py`: Moodle-Pakete je Paket aus
+  `cards/PH/scope/packages.yaml` (import.csv, import_html.csv, TAB-/Semikolon-Zweispaltenimport mit
+  CRLF bzw. BOM, PNG-Bilder, manifest.json mit SHA-256, README_IMPORT.md, byte-reproduzierbares ZIP).
+- `scripts/pharma/generate_print_sheets.py`: Druckpakete mit A4/A3-Bögen 2/4/8-up (automatisch
+  maximaler Maßstab, A4 2-up in 100 %), Duplex-Spiegelung je Wendekante, Schnittmarken im Außenrand,
+  3 mm Beschnitt, Einzelkarten-PDF, PNG, README_PRINT.md, Manifest.
+- Export-Gating in beiden Generatoren über dieselbe Regel (`validate_output.is_exportable`);
+  `--preview` getrennt unter `dist/preview/` mit ENTWURF-Vermerk bzw. -Wasserzeichen.
+- `scripts/pharma/check_layout.py`: misst in Chromium Überlauf und 5-mm-Sicherheitszone;
+  `make ph-print` druckt nur ohne Befund. Report `docs/pharma-cards/reports/layout_review.md`.
+- Layout korrigiert: 5-mm-Sicherheitszone eingehalten (vorher 4 mm), echter QR-Code
+  (15 × 15 mm, Fehlerkorrektur Q) auf der Vorderseite, Rückseite als Zweispaltenfluss.
+  Messung: Überlauf von 16 auf 0 Karten (4 Toxidromkarten in PR #10 gekürzt).
+- 33 pytest-Tests (`scripts/pharma/tests/`), Makefile-Ziele `ph-layout-check`, `ph-moodle(-preview)`,
+  `ph-print(-preview)`, `ph-test`.
+
 ## 2026-10-31 (Fachreview-Vorlauf)
 - Pharma Cards – Fachreview-Prozess unter `docs/pharma-cards/review/`: Ablauf und Rollen,
   Checklisten Pharmakologie, Toxikologie und klinische Sicherheit, Protokollvorlage.

@@ -105,3 +105,26 @@ Druckpakete. `validate_output.py` bricht ab, wenn eine `critical`-Karte ohne `ap
 | `validate_output.py` | **neu** | Vollständigkeit/Abmessungen/Gating der Artefakte |
 
 Alle Skripte: idempotent, `--help`, keine Netzabhängigkeit beim Rendern, CI-aufrufbar.
+
+---
+
+## 4. Umsetzungsstand (2026-10-31)
+
+Implementiert und getestet (`scripts/pharma/tests/`, 33 Tests):
+
+| Variante | Papier | Raster | Maßstab | Marken/Beschnitt |
+|---|---|---|---:|---|
+| `A4_2up_Schnittmarken` | A4 hoch | 1 × 2 | **100 %** | ja, 3 mm |
+| `A4_2up_ohne_Marken` | A4 hoch | 1 × 2 | **100 %** | nein |
+| `A4_4up_Schnittmarken` | A4 quer | 2 × 2 | 82 % | ja, 3 mm |
+| `A4_8up_kompakt` | A4 hoch | 2 × 4 | 58 % | ja – kleine Schrift, nur Wiederholungsdruck |
+| `A3_8up_Schnittmarken` | A3 hoch | 2 × 4 | 88 % | ja, 3 mm |
+
+- Ausrichtung und Raster wählt `compute_layout()` automatisch für den größtmöglichen Maßstab ≤ 100 %.
+  DIN A6 passt genau viermal auf A4. Mit Beschnitt und Schnittmarken geht das nur verkleinert.
+- Duplex: Rückseitenbögen sind je Wendekante gespiegelt (`--flip long|short`).
+- Schnittmarken liegen nur im Außenrand an den Schnittlinien, nie im Beschnitt einer Nachbarkarte.
+- **Farbraum:** Chromium erzeugt RGB-PDFs. Für Offsetdruck ist die Wandlung nach PDF/X-4 CMYK
+  (ISO Coated v2) in der Druckvorstufe nötig; das steht in jedem `README_PRINT.md`.
+- Gating: Release-Pakete enthalten nur exportierbare Karten. Vorschaupakete (`--preview`) liegen
+  getrennt unter `dist/preview/` und tragen ein ENTWURF-Wasserzeichen.
