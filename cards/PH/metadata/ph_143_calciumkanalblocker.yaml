@@ -2,7 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_143
 slug: ph_143_calciumkanalblocker
-wirkstoff_slug: calciumkanalblocker
+begriff_slug: calciumkanalblocker
 title: Calciumkanalblocker
 subtitle: L-Typ-Calciumkanal-Blocker
 module: PH
@@ -88,5 +88,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_143_calciumkanalblocker_front.png
 back_asset: cards/PH/back/ph_143_calciumkanalblocker_back.png
-qr_url: https://at-medical.de/w/wirkstoff/calciumkanalblocker
+qr_url: https://at-medical.de/w/begriff/calciumkanalblocker
 lms_url: https://lms.at-medical.example/ph/calciumkanalblocker

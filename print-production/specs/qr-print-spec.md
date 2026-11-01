@@ -24,7 +24,7 @@ von „Schwarz auf Weiß“ der Verknüpfungsstandard v0.2 (Entscheidung Andreas
 | Punkt | Vorgabe |
 |---|---|
 | Ziel Wirkstoffkarten | `https://at-medical.de/w/wirkstoff/<wirkstoff_slug>` |
-| Ziel übrige Karten | `https://at-medical.de/w/begriff/<begriff_slug>` |
+| Ziel übrige Karten | `https://at-medical.de/w/begriff/<begriff_slug>`, auch Wirkstoffgruppen (`front_type: drug_class`) |
 | Slug-Regel | Kleinschreibung, ä→ae, ö→oe, ü→ue, ß→ss, Klammerzusätze weg, griechische Buchstaben ausgeschrieben, sonst Bindestrich; deutsche INN |
 | Pflege | Slug-Feld in der Karten-YAML; `qr_url` wird mit `make ph-qr-sync` daraus erzeugt, der Validator prüft die Übereinstimmung |
 | Größe | Code ≥ 15 × 15 mm plus 4 Module Ruhezone (gesamt ca. 18–19 mm); darunter Bezeichnung und Kurz-URL im Klartext |
