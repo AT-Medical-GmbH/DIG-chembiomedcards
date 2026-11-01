@@ -1,0 +1,76 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_151
+slug: ph_151_ticagrelor
+title: Ticagrelor
+subtitle: Direkter P2Y12-Hemmer
+module: PH
+primary_category: thrombozytenaggregationshemmer
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: thrombozytenhemmer
+substance_name: Ticagrelor
+generic_name: Ticagrelor
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Direkter, reversibler P2Y12-Antagonist; kein Prodrug.
+indications: '- akutes Koronarsyndrom (in Kombination mit ASS)'
+contraindications: Aktive Blutung, intrakranielle Blutung in der Anamnese, schwere Leberinsuffizienz.
+adverse_effects: Blutung, Dyspnoe, Bradyarrhythmien, Anstieg der Harnsäure.
+interactions: Starke CYP3A4-Hemmer und -Induktoren.
+monitoring: Blutungszeichen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Dyspnoe ist häufig und meist harmlos – trotzdem abklären.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Direkter, reversibler P2Y12-Antagonist; kein Prodrug.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- akutes Koronarsyndrom (in Kombination mit ASS)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Blutung, Dyspnoe, Bradyarrhythmien, Anstieg der Harnsäure.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Aktive Blutung, intrakranielle Blutung in der Anamnese, schwere Leberinsuffizienz.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Starke CYP3A4-Hemmer und -Induktoren. Blutungszeichen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Dyspnoe ist häufig und meist harmlos – trotzdem abklären.
+tags:
+- cyp450
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_150
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Hinweis zur ASS-Begleitdosis nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_151_ticagrelor_front.png
+back_asset: cards/PH/back/ph_151_ticagrelor_back.png
+qr_url: https://chembiomed-cards.de/c/ph151
+lms_url: https://lms.at-medical.example/ph/ticagrelor
