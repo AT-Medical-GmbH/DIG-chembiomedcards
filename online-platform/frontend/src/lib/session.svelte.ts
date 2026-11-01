@@ -1,5 +1,7 @@
 // Sitzungszustand der SPA (Svelte-5-Runes). Im lokalen Entwicklungsmodus lässt sich eine
 // Test-Identität wählen; sie wird nur im Browser gespeichert (localStorage, mit Fallback).
+// Im OIDC-Modus hält `authConfig` die öffentliche Anmeldekonfiguration (aus /api/auth/config).
+import type { AuthConfig } from './oidc';
 
 export type DevUser = { subject: string; role: string; label: string };
 
@@ -24,7 +26,8 @@ function stored(): DevUser {
 class Session {
   authMode = $state<'local' | 'oidc' | 'unknown'>('unknown');
   user = $state<DevUser>(stored());
-  token = $state<string | null>(null);
+  authConfig = $state<AuthConfig | null>(null);
+  needsLogin = $state(false);
   me = $state<{ role: string; can_review: boolean; sees_unreviewed: boolean; dev_show_unreviewed: boolean; disclaimer: string } | null>(null);
   version = $state(0);  // erhöht sich beim Identitätswechsel -> Seiten laden neu
 

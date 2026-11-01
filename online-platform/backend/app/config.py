@@ -55,6 +55,12 @@ class Settings:
     oidc_jwks_url: str | None = None
     oidc_role_claim: str = "groups"
     oidc_role_map: dict[str, str] = field(default_factory=dict)
+    # Browser-Anmeldung der SPA (Authorization Code + PKCE, öffentlicher Client ohne Secret)
+    oidc_client_id: str | None = None
+    oidc_redirect_uri: str | None = None         # https://<host>/auth/callback
+    oidc_post_logout_uri: str | None = None      # https://<host>/
+    oidc_scopes: str = "openid profile email offline_access"
+    oidc_discovery_url: str | None = None        # Standard: <issuer>/.well-known/openid-configuration
 
     @property
     def is_production(self) -> bool:
@@ -70,6 +76,20 @@ class Settings:
                                "(ungeprüfte medizinische Inhalte).")
         if self.auth_mode == "oidc" and not (self.oidc_issuer and self.oidc_jwks_url):
             raise RuntimeError("AUTH_MODE=oidc braucht OIDC_ISSUER und OIDC_JWKS_URL.")
+        if self.auth_mode == "oidc" and not (self.oidc_client_id and self.oidc_redirect_uri):
+            raise RuntimeError("AUTH_MODE=oidc braucht OIDC_CLIENT_ID und OIDC_REDIRECT_URI "
+                               "(Browser-Anmeldung).")
+        if self.is_production and self.oidc_redirect_uri and \
+                not self.oidc_redirect_uri.startswith("https://"):
+            raise RuntimeError("OIDC_REDIRECT_URI muss in Produktion https verwenden.")
+
+    @property
+    def discovery_url(self) -> str | None:
+        if self.oidc_discovery_url:
+            return self.oidc_discovery_url
+        if not self.oidc_issuer:
+            return None
+        return self.oidc_issuer.rstrip("/") + "/.well-known/openid-configuration"
 
 
 def load_settings() -> Settings:
@@ -92,4 +112,9 @@ def load_settings() -> Settings:
         oidc_jwks_url=os.environ.get("OIDC_JWKS_URL") or None,
         oidc_role_claim=os.environ.get("OIDC_ROLE_CLAIM", "groups"),
         oidc_role_map=_role_map(os.environ.get("OIDC_ROLE_MAP", "")),
+        oidc_client_id=os.environ.get("OIDC_CLIENT_ID") or None,
+        oidc_redirect_uri=os.environ.get("OIDC_REDIRECT_URI") or None,
+        oidc_post_logout_uri=os.environ.get("OIDC_POST_LOGOUT_URI") or None,
+        oidc_scopes=os.environ.get("OIDC_SCOPES", "openid profile email offline_access"),
+        oidc_discovery_url=os.environ.get("OIDC_DISCOVERY_URL") or None,
     )

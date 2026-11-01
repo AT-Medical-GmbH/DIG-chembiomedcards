@@ -15,7 +15,8 @@ from fastapi.staticfiles import StaticFiles
 
 from .config import Settings, load_settings
 from .db import Base, make_engine, make_sessionmaker
-from .routers import cards, downloads, learn, meta, notes, review
+from .oidc_client import OidcClient
+from .routers import auth, cards, downloads, learn, meta, notes, review
 from .services import Renderer
 
 log = logging.getLogger("pharma_cards")
@@ -30,7 +31,7 @@ def _jwk_resolver(settings: Settings):
 
 
 def create_app(settings: Settings | None = None, *, create_schema: bool = False,
-               jwk_resolver=None) -> FastAPI:
+               jwk_resolver=None, oidc_client=None) -> FastAPI:
     settings = settings or load_settings()
     settings.validate()
     if settings.show_unreviewed:
@@ -48,11 +49,12 @@ def create_app(settings: Settings | None = None, *, create_schema: bool = False,
     app.state.sessionmaker = make_sessionmaker(engine)
     app.state.renderer = Renderer(settings)
     app.state.jwk_resolver = jwk_resolver or _jwk_resolver(settings)
+    app.state.oidc = oidc_client or (OidcClient(settings) if settings.auth_mode == "oidc" else None)
 
     if settings.cors_origins:
         app.add_middleware(CORSMiddleware, allow_origins=list(settings.cors_origins),
                            allow_methods=["*"], allow_headers=["*"], allow_credentials=True)
-    for r in (meta.router, cards.router, learn.router, notes.router, review.router, downloads.router):
+    for r in (auth.router, meta.router, cards.router, learn.router, notes.router, review.router, downloads.router):
         app.include_router(r)
 
     dist = settings.frontend_dist

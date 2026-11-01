@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-31 (Online: Anmeldung OIDC/PKCE)
+- SPA-Anmeldung über Authentik (Authorization Code + PKCE S256, öffentlicher Client):
+  - `src/lib/oidc.ts`, Route `/auth/callback`, Anmeldeseite, Abmelden, Refresh;
+  - Tokens nur in `sessionStorage`.
+- API:
+  - `GET /api/auth/config` liefert öffentliche Werte aus der Discovery, mit Issuer-Prüfung.
+  - `POST /api/auth/token` ist ein Token-Proxy mit Feld-Whitelist und fester Redirect-URI, ohne Secret.
+  - Die CSP bleibt bei `connect-src 'self'`.
+- Startsperren: `OIDC_CLIENT_ID`/`OIDC_REDIRECT_URI` sind im OIDC-Modus Pflicht; in Produktion nur `https`.
+- Tests: API 44/44, Browser-E2E OIDC 10/10 gegen simulierten Provider, lokaler Smoke 8/8.
+
 ## 2026-10-31 (P5 Online-MVP)
 - `online-platform/backend/`: FastAPI-API mit SQLAlchemy/Alembic (PostgreSQL 16, SQLite für Tests).
   Seed aus `cards/PH` (idempotent, Versions-Snapshots, Deaktivierung statt Löschen). Freigabe-Gating:
