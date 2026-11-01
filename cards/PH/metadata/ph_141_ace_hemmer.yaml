@@ -2,7 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_141
 slug: ph_141_ace_hemmer
-wirkstoff_slug: ace-hemmer
+begriff_slug: ace-hemmer
 title: ACE-Hemmer
 subtitle: Hemmer des Angiotensin-Konversionsenzyms
 module: PH
@@ -82,5 +82,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_141_ace_hemmer_front.png
 back_asset: cards/PH/back/ph_141_ace_hemmer_back.png
-qr_url: https://at-medical.de/w/wirkstoff/ace-hemmer
+qr_url: https://at-medical.de/w/begriff/ace-hemmer
 lms_url: https://lms.at-medical.example/ph/ace-hemmer
