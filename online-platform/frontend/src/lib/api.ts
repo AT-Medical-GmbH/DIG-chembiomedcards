@@ -1,5 +1,6 @@
 // API-Client der Pharma Cards SPA. Im lokalen Entwicklungsmodus wird die gewählte Test-Identität
 // als X-User/X-Role mitgeschickt; im Betrieb (OIDC) ein Bearer-Token (bei Bedarf erneuert).
+import { clearLti, ltiToken } from './lti';
 import { accessToken, clearTokens } from './oidc';
 import { session } from './session.svelte';
 
@@ -32,7 +33,10 @@ export class ApiError extends Error {
 
 async function headers(extra: Record<string, string> = {}): Promise<Record<string, string>> {
   const h: Record<string, string> = { ...extra };
-  if (session.authMode === 'local') {
+  const lti = ltiToken();
+  if (lti) {
+    h['Authorization'] = `Bearer ${lti}`;      // Start aus Moodle hat Vorrang
+  } else if (session.authMode === 'local') {
     h['X-User'] = session.user.subject;
     h['X-Role'] = session.user.role;
   } else if (session.authMode === 'oidc') {
@@ -44,7 +48,11 @@ async function headers(extra: Record<string, string> = {}): Promise<Record<strin
 
 /** 401 im OIDC-Modus: Sitzung abgelaufen -> Tokens verwerfen, Layout bietet Anmeldung an. */
 function unauthorized(res: Response) {
-  if (res.status === 401 && session.authMode === 'oidc') {
+  if (res.status === 401 && ltiToken()) {
+    clearLti();
+    session.viaLti = false;
+    session.ltiExpired = true;
+  } else if (res.status === 401 && session.authMode === 'oidc') {
     clearTokens();
     session.needsLogin = true;
   }

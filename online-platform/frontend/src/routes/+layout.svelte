@@ -2,23 +2,26 @@
   import '../app.css';
   import { page } from '$app/state';
   import { api } from '$lib/api';
+  import { ltiContext, ltiToken } from '$lib/lti';
   import { displayName, loadTokens, login, logout, type AuthConfig } from '$lib/oidc';
   import { DEV_USERS, session } from '$lib/session.svelte';
 
   let { children } = $props();
   let ready = $state(false);
   let startError = $state<string | null>(null);
-  const isCallback = $derived(page.url.pathname === '/auth/callback');
+  const isCallback = $derived(page.url.pathname === '/auth/callback' || page.url.pathname === '/lti/start');
 
   $effect(() => {
     void session.version;  // bei Identitätswechsel/Anmeldung neu laden
     if (isCallback) return; // die Callback-Seite tauscht erst den Code
     ready = false;
+    session.viaLti = !!ltiToken();
+    session.ltiCourse = ltiContext();
     api<{ mode: 'local' } | AuthConfig>('/api/auth/config')
       .then((cfg) => {
         session.authMode = cfg.mode;
         session.authConfig = cfg.mode === 'oidc' ? cfg : null;
-        if (cfg.mode === 'oidc' && !loadTokens()) { session.needsLogin = true; return null; }
+        if (cfg.mode === 'oidc' && !loadTokens() && !ltiToken()) { session.needsLogin = true; return null; }
         session.needsLogin = false;
         return api<typeof session.me>('/api/me');
       })
@@ -52,7 +55,9 @@
         <a href={item.href} aria-current={active(item.href) ? 'page' : undefined}>{item.label}</a>
       {/each}
     </nav>
-    {#if session.authMode === 'local'}
+    {#if session.viaLti}
+      <div class="dev small"><span class="muted">Über Moodle{session.ltiCourse ? ` · ${session.ltiCourse}` : ''}</span></div>
+    {:else if session.authMode === 'local'}
       <label class="dev small">
         <span class="muted">Test-Identität</span>
         <select value={session.user.subject}
@@ -78,6 +83,11 @@
 <main id="main" class="container">
   {#if isCallback}
     {@render children()}
+  {:else if session.ltiExpired}
+    <div class="panel login">
+      <h1>Moodle-Sitzung abgelaufen</h1>
+      <p>Bitte die Aktivität in Moodle erneut öffnen.</p>
+    </div>
   {:else if session.needsLogin}
     <div class="panel login">
       <h1>Anmeldung</h1>

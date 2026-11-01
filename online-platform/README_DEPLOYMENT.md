@@ -42,7 +42,7 @@ Fachreview Pharmakologie/Toxikologie, Admin).
 Tests:
 
 ```bash
-cd online-platform/backend && pytest -q                     # 44 Tests (SQLite)
+cd online-platform/backend && pytest -q                     # 66 Tests (SQLite)
 cd online-platform/frontend && npm run check && npm run build
 python3 online-platform/e2e/smoke.py --url http://127.0.0.1:8000   # Browser-E2E (laufende Instanz)
 ```
@@ -134,10 +134,79 @@ Der Test gegen das echte Authentik steht aus (Staging).
 **Erster Admin:** im lokalen Modus `PHARMA_BOOTSTRAP_ADMIN=<kennung>`, im OIDC-Modus über die
 Authentik-Gruppe `pharma-admin`. Es gibt keine Standardpasswörter.
 
+## 4a. Moodle LTI 1.3 (Launch + Deep Linking)
+
+Moodle startet Pharma Cards als externes Tool mit Single Sign-on. Lehrende wählen per Deep Linking ein
+Lernset oder eine freigegebene Karte als Aktivität. Noten werden nicht zurückgegeben (kein AGS).
+
+| Endpunkt | Zweck |
+|---|---|
+| `/api/lti/login` | Login-Init (Third-Party-Initiated Login), GET oder POST |
+| `/api/lti/launch` | Launch-/Redirect-URL (form_post mit `id_token`) |
+| `/api/lti/jwks` | öffentlicher Tool-Schlüssel (für die Signatur der Deep-Linking-Antwort) |
+
+**Sicherheit und Datenschutz:**
+
+- `state` und `nonce` werden serverseitig einmalig gespeichert (keine Cookies, funktioniert im iframe)
+  und nach 10 Minuten verworfen.
+- Geprüft werden:
+  - Signatur über die JWKS der Plattform;
+  - Issuer;
+  - Audience (die eigene `client_id`);
+  - Ablauf;
+  - `nonce`;
+  - Deployment;
+  - LTI-Version `1.3.0`;
+  - Nachrichtentyp.
+- Rollen: Moodle-Lehrende werden `teacher`, alle anderen `learner`. Über LTI werden nie Review- oder
+  Admin-Rechte vergeben, und Lernende sehen auch über Moodle nur freigegebene Karten.
+- Gespeichert wird nur eine pseudonyme Kennung (Hash aus Plattform und `sub`), keine Namen und keine
+  E-Mail-Adressen.
+- Nach dem Start stellt die API ein eigenes Sitzungstoken aus (RS256, Standard 4 h). Es wird im
+  URL-Fragment übergeben, also nicht in Server-Logs, und liegt danach nur in `sessionStorage`.
+  Für Deep Linking gilt die Sitzung nur 30 Minuten.
+- Ziele aus `custom` (`set=<slug>`, `card=ph_###`) werden streng geprüft. Andere Werte führen zur
+  Startseite (kein Open Redirect).
+
+**Einrichten:**
+
+1. Tool-Schlüssel erzeugen (siehe Kopf von `docker-compose.lti.yml`). Er muss für UID 10001 lesbar
+   sein. Ein Backup gehört in Vaultwarden, nie ins Repo; `.gitignore` sperrt `secrets/` und `*.pem`.
+2. Moodle → Website-Administration → Plugins → Externes Tool → Tools verwalten → Tool manuell
+   konfigurieren:
+   - LTI-Version 1.3;
+   - Tool-URL `https://<host>/api/lti/launch`;
+   - Login-URL `https://<host>/api/lti/login`;
+   - Weiterleitungs-URL `https://<host>/api/lti/launch`;
+   - Schlüsseltyp „Schlüsselsatz-URL“ `https://<host>/api/lti/jwks`;
+   - „Unterstützt Deep Linking“ an;
+   - Datenschutz: Name und E-Mail **nicht** übertragen (werden ohnehin nicht genutzt).
+3. Die Werte aus „Tool-Konfigurationsdetails“ in `LTI_PLATFORMS` übernehmen: Plattform-ID = `issuer`,
+   Client-ID, Deployment-ID, URL für Authentifizierungsanfragen, URL für öffentliche Schlüsselsätze.
+   Dazu `PHARMA_PUBLIC_URL` setzen.
+4. Mit dem Overlay starten:
+   `docker compose -f docker-compose.yml -f docker-compose.traefik.yml -f docker-compose.lti.yml --env-file .env up -d`.
+5. Für die Einbettung als iframe `FRAME_ANCESTORS` um die Moodle-Origin erweitern. Alternativ in
+   Moodle „In neuem Fenster öffnen“ wählen; das ist robuster bei Browsern mit strenger
+   Speicher-Partitionierung.
+
+Verifiziert am 2026-10-31 gegen eine simulierte Moodle-Plattform (`e2e/mock_moodle.py`):
+
+- API-Tests 22/22, unter anderem:
+  - Signatur, Audience, Issuer, `nonce`, Deployment, Version und Nachrichtentyp;
+  - Replay;
+  - Deep-Link-Sperren;
+  - gefälschtes Sitzungstoken.
+- Browser-E2E 10/10 (`e2e/lti_flow.py`).
+- Migration 0002 up/down/up.
+
+Der Test gegen das echte Moodle steht aus (Staging).
+
 ## 5. Sicherheitsregeln (beim Start erzwungen)
 
 - `PHARMA_ENV=production` mit `AUTH_MODE=local` → Start verweigert.
 - `PHARMA_ENV=production` mit `PHARMA_SHOW_UNREVIEWED=true` → Start verweigert.
+- `LTI_ENABLED` ohne Schlüsseldatei, ohne Plattform oder (in Produktion) ohne `https`-`PHARMA_PUBLIC_URL` → Start verweigert.
 - Lernende sehen nur `approved`-Karten; ungeprüfte Inhalte sehen nur Review-Rollen (mit Entwurfsbanner).
 - Downloads ungeprüfter Karten tragen ein ENTWURF-Wasserzeichen.
 - Inline-Scripts nur per CSP-Hash, fremde Scripts gesperrt. Einbettung nur von `FRAME_ANCESTORS`.
@@ -171,4 +240,5 @@ Wiederherstellen: `pg_restore -U pharma -d pharma_cards --clean <datei>`, dann A
   Zeichenwerkzeuge in der Oberfläche folgen.
 - Editor für Karten in der App: bewusst nicht enthalten. Karten werden im Repository gepflegt
   (Review per Pull Request).
-- Moodle-LTI-1.3-Endpunkte: noch nicht enthalten (Konzept: `docs/pharma-cards/07_moodle-integration.md`).
+- Moodle LTI 1.3: Launch und Deep Linking sind gebaut (Abschnitt 4a). Keine Notenrückgabe (AGS) und
+  noch nicht gegen das echte Moodle getestet.
