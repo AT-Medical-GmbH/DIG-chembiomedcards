@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_101
 slug: ph_101_flumazenil
+wirkstoff_slug: flumazenil
 title: Flumazenil
 subtitle: Benzodiazepin-Antagonist
 module: PH
@@ -77,5 +78,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_101_flumazenil_front.png
 back_asset: cards/PH/back/ph_101_flumazenil_back.png
-qr_url: https://chembiomed-cards.de/c/ph101
+qr_url: https://at-medical.de/w/wirkstoff/flumazenil
 lms_url: https://lms.at-medical.example/ph/flumazenil

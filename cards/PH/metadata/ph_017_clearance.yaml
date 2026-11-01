@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_017
 slug: ph_017_clearance
+begriff_slug: clearance
 title: Clearance
 subtitle: Eliminationsleistung
 module: PH
@@ -55,5 +56,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_017_clearance_front.png
 back_asset: cards/PH/back/ph_017_clearance_back.png
-qr_url: https://chembiomed-cards.de/c/ph017
+qr_url: https://at-medical.de/w/begriff/clearance
 lms_url: https://lms.at-medical.example/ph/clearance

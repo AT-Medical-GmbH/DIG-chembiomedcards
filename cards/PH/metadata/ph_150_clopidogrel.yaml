@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_150
 slug: ph_150_clopidogrel
+wirkstoff_slug: clopidogrel
 title: Clopidogrel
 subtitle: P2Y12-Hemmer (Prodrug)
 module: PH
@@ -78,5 +79,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_150_clopidogrel_front.png
 back_asset: cards/PH/back/ph_150_clopidogrel_back.png
-qr_url: https://chembiomed-cards.de/c/ph150
+qr_url: https://at-medical.de/w/wirkstoff/clopidogrel
 lms_url: https://lms.at-medical.example/ph/clopidogrel

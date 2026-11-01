@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_151
 slug: ph_151_ticagrelor
+wirkstoff_slug: ticagrelor
 title: Ticagrelor
 subtitle: Direkter P2Y12-Hemmer
 module: PH
@@ -72,5 +73,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_151_ticagrelor_front.png
 back_asset: cards/PH/back/ph_151_ticagrelor_back.png
-qr_url: https://chembiomed-cards.de/c/ph151
+qr_url: https://at-medical.de/w/wirkstoff/ticagrelor
 lms_url: https://lms.at-medical.example/ph/ticagrelor

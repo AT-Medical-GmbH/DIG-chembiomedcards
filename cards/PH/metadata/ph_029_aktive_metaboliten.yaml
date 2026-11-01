@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_029
 slug: ph_029_aktive_metaboliten
+begriff_slug: aktive-metaboliten
 title: Aktive Metaboliten
 subtitle: Wirksame Abbauprodukte
 module: PH
@@ -53,5 +54,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_029_aktive_metaboliten_front.png
 back_asset: cards/PH/back/ph_029_aktive_metaboliten_back.png
-qr_url: https://chembiomed-cards.de/c/ph029
+qr_url: https://at-medical.de/w/begriff/aktive-metaboliten
 lms_url: https://lms.at-medical.example/ph/aktive_metaboliten

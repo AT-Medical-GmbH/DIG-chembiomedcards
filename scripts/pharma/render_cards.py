@@ -21,6 +21,9 @@ import html
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import wiki_links  # noqa: E402
+
 try:
     import yaml
 except ImportError:  # pragma: no cover
@@ -123,10 +126,16 @@ def head_html(card: dict, scope: dict) -> str:
     )
 
 
-def qr_svg(url: str) -> str | None:
-    """QR-Code als SVG (schwarz auf weiß, Fehlerkorrektur Q, Ruhezone 4 Module).
+QR_COLOR = "#0b4f8a"      # Verknüpfungsstandard v0.2: Dunkelblau auf Weiß, kein Logo
+QR_CODE_MM = 15.0         # Kantenlänge des Codes ohne Ruhezone (Mindestmaß)
+QR_BORDER = 4             # Ruhezone in Modulen
 
-    Entspricht print-production/specs/qr-print-spec.md. Gibt None zurück, wenn die
+
+def qr_svg(url: str) -> tuple[str, float] | None:
+    """QR-Code als SVG mit Ruhezone und Gesamtkantenlänge in mm.
+
+    Verknüpfungsstandard QR → WikiMedica v0.2: Fehlerkorrektur M, Farbe #0b4f8a auf Weiß,
+    Code ≥ 15 × 15 mm zuzüglich 4 Module Ruhezone, kein Logo. Gibt None zurück, wenn die
     optionale Bibliothek `qrcode` fehlt; dann wird ein Platzhalter gerendert.
     """
     if not url:
@@ -135,31 +144,46 @@ def qr_svg(url: str) -> str | None:
         import qrcode
     except ImportError:
         return None
-    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q, border=4)
+    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=QR_BORDER)
     qr.add_data(url)
     qr.make(fit=True)
     matrix = qr.get_matrix()  # inkl. Ruhezone
     n = len(matrix)
+    total_mm = round(QR_CODE_MM * n / (n - 2 * QR_BORDER), 2)
     rects = "".join(f"M{x} {y}h1v1h-1z" for y, row in enumerate(matrix)
                     for x, dark in enumerate(row) if dark)
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {n} {n}" '
-            f'shape-rendering="crispEdges" role="img" aria-label="QR-Code {esc(url)}">'
-            f'<rect width="{n}" height="{n}" fill="#fff"/><path d="{rects}" fill="#000"/></svg>')
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {n} {n}" '
+           f'shape-rendering="crispEdges" role="img" aria-label="QR-Code {esc(url)}">'
+           f'<rect width="{n}" height="{n}" fill="#fff"/><path d="{rects}" fill="{QR_COLOR}"/></svg>')
+    return svg, total_mm
+
+
+def qr_label(card: dict) -> str:
+    """Bezeichnung unter dem QR-Code: Zieltyp und Name."""
+    kind = "Wirkstoff" if card.get("substance_name") else "Begriff"
+    return f"{kind}: {card.get('substance_name') or card.get('title', '')}"
 
 
 def footer_html(card: dict, with_qr: bool = True) -> str:
-    """Fußzeile: ID links, © rechts; QR-Code nur auf der Vorderseite (with_qr)."""
+    """Fußzeile: ID links, © rechts; QR-Code mit Klartext nur auf der Vorderseite (with_qr)."""
     cid = esc(card.get("card_id", ""))
     url = card.get("qr_url", "")
     qr = ""
     if with_qr:
-        svg = qr_svg(url)
-        qr = f'<div class="qr">{svg}</div>' if svg else f'<div class="qr placeholder">QR<br>{cid}</div>'
+        res = qr_svg(url)
+        caption = (f'<figcaption><span class="lbl">{esc(qr_label(card))}</span>'
+                   f'<span class="url">{esc(wiki_links.short_url(url))}</span></figcaption>')
+        if res:
+            svg, mm = res
+            qr = (f'<figure class="qr-block" style="--qr-size:{mm}mm">'
+                  f'<div class="qr">{svg}</div>{caption}</figure>')
+        else:
+            qr = (f'<figure class="qr-block"><div class="qr placeholder">QR<br>{cid}</div>'
+                  f'{caption}</figure>')
     return (
         '<div class="footer"><div class="cid">' + cid + "</div>"
         '<div class="right">'
-        '<div class="copy">© 2026 Andreas Tremml · AT Medical GmbH<br>'
-        f'<span class="url">{esc(url)}</span></div>'
+        '<div class="copy">© 2026 Andreas Tremml · AT Medical GmbH</div>'
         + qr + "</div></div>"
     )
 

@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_047
 slug: ph_047_ketamin
+wirkstoff_slug: ketamin
 title: Ketamin
 subtitle: NMDA-Rezeptor-Antagonist
 module: PH
@@ -91,5 +92,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_047_ketamin_front.png
 back_asset: cards/PH/back/ph_047_ketamin_back.png
-qr_url: https://chembiomed-cards.de/c/ph047
+qr_url: https://at-medical.de/w/wirkstoff/ketamin
 lms_url: https://lms.at-medical.example/ph/ketamin

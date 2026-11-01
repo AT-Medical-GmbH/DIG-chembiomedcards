@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_021
 slug: ph_021_cyp450_system
+begriff_slug: cyp450-system
 title: CYP450-System
 subtitle: Phase-I-Metabolismus
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_021_cyp450_system_front.png
 back_asset: cards/PH/back/ph_021_cyp450_system_back.png
-qr_url: https://chembiomed-cards.de/c/ph021
+qr_url: https://at-medical.de/w/begriff/cyp450-system
 lms_url: https://lms.at-medical.example/ph/cyp450_system

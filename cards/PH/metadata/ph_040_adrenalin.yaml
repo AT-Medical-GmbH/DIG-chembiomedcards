@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_040
 slug: ph_040_adrenalin
+wirkstoff_slug: adrenalin
 title: Adrenalin
 subtitle: Katecholamin, α- und β-Agonist
 module: PH
@@ -90,5 +91,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_040_adrenalin_front.png
 back_asset: cards/PH/back/ph_040_adrenalin_back.png
-qr_url: https://chembiomed-cards.de/c/ph040
+qr_url: https://at-medical.de/w/wirkstoff/adrenalin
 lms_url: https://lms.at-medical.example/ph/adrenalin

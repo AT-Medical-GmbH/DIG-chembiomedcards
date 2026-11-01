@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_087
 slug: ph_087_betablocker_intoxikation
+begriff_slug: betablocker-intoxikation
 title: Betablocker-Intoxikation
 subtitle: Bradykardie und Schock
 module: PH
@@ -79,5 +80,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_087_betablocker_intoxikation_front.png
 back_asset: cards/PH/back/ph_087_betablocker_intoxikation_back.png
-qr_url: https://chembiomed-cards.de/c/ph087
+qr_url: https://at-medical.de/w/begriff/betablocker-intoxikation
 lms_url: https://lms.at-medical.example/ph/betablocker-intoxikation

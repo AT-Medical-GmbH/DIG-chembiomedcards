@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_027
 slug: ph_027_hepatische_metabolisierung
+begriff_slug: hepatische-metabolisierung
 title: Hepatische Metabolisierung
 subtitle: Phase I und II
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_027_hepatische_metabolisierung_front.png
 back_asset: cards/PH/back/ph_027_hepatische_metabolisierung_back.png
-qr_url: https://chembiomed-cards.de/c/ph027
+qr_url: https://at-medical.de/w/begriff/hepatische-metabolisierung
 lms_url: https://lms.at-medical.example/ph/hepatische_metabolisierung

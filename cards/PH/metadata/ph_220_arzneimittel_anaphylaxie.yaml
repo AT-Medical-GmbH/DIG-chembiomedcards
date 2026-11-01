@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_220
 slug: ph_220_arzneimittel_anaphylaxie
+begriff_slug: arzneimittel-anaphylaxie
 title: Arzneimittel-Anaphylaxie
 subtitle: Lebensbedrohliche Überempfindlichkeit
 module: PH
@@ -64,5 +65,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_220_arzneimittel_anaphylaxie_front.png
 back_asset: cards/PH/back/ph_220_arzneimittel_anaphylaxie_back.png
-qr_url: https://chembiomed-cards.de/c/ph220
+qr_url: https://at-medical.de/w/begriff/arzneimittel-anaphylaxie
 lms_url: https://lms.at-medical.example/ph/arzneimittel-anaphylaxie

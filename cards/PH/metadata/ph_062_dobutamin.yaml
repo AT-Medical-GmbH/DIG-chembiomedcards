@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_062
 slug: ph_062_dobutamin
+wirkstoff_slug: dobutamin
 title: Dobutamin
 subtitle: Inotropes Katecholamin
 module: PH
@@ -81,5 +82,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_062_dobutamin_front.png
 back_asset: cards/PH/back/ph_062_dobutamin_back.png
-qr_url: https://chembiomed-cards.de/c/ph062
+qr_url: https://at-medical.de/w/wirkstoff/dobutamin
 lms_url: https://lms.at-medical.example/ph/dobutamin

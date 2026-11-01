@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_005
 slug: ph_005_dosis_wirkungs_kurve
+begriff_slug: dosis-wirkungs-kurve
 title: Dosis-Wirkungs-Kurve
 subtitle: EC50, Potenz und maximale Wirkung
 module: PH
@@ -58,5 +59,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_005_dosis_wirkungs_kurve_front.png
 back_asset: cards/PH/back/ph_005_dosis_wirkungs_kurve_back.png
-qr_url: https://chembiomed-cards.de/c/ph005
+qr_url: https://at-medical.de/w/begriff/dosis-wirkungs-kurve
 lms_url: https://lms.at-medical.example/ph/dosis_wirkungs_kurve

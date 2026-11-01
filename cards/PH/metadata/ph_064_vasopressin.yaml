@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_064
 slug: ph_064_vasopressin
+wirkstoff_slug: vasopressin
 title: Vasopressin
 subtitle: Nicht-adrenerger Vasopressor
 module: PH
@@ -75,5 +76,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_064_vasopressin_front.png
 back_asset: cards/PH/back/ph_064_vasopressin_back.png
-qr_url: https://chembiomed-cards.de/c/ph064
+qr_url: https://at-medical.de/w/wirkstoff/vasopressin
 lms_url: https://lms.at-medical.example/ph/vasopressin

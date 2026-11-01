@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_140
 slug: ph_140_betablocker
+wirkstoff_slug: betablocker
 title: Betablocker
 subtitle: β-Adrenozeptor-Antagonisten
 module: PH
@@ -86,5 +87,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_140_betablocker_front.png
 back_asset: cards/PH/back/ph_140_betablocker_back.png
-qr_url: https://chembiomed-cards.de/c/ph140
+qr_url: https://at-medical.de/w/wirkstoff/betablocker
 lms_url: https://lms.at-medical.example/ph/betablocker

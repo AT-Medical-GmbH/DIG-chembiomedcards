@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_056
 slug: ph_056_rocuronium
+wirkstoff_slug: rocuronium
 title: Rocuronium
 subtitle: Nichtdepolarisierendes Muskelrelaxans
 module: PH
@@ -83,5 +84,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_056_rocuronium_front.png
 back_asset: cards/PH/back/ph_056_rocuronium_back.png
-qr_url: https://chembiomed-cards.de/c/ph056
+qr_url: https://at-medical.de/w/wirkstoff/rocuronium
 lms_url: https://lms.at-medical.example/ph/rocuronium

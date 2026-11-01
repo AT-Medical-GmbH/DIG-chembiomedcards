@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_219
 slug: ph_219_maligne_hyperthermie
+begriff_slug: maligne-hyperthermie
 title: Maligne Hyperthermie
 subtitle: Pharmakogenetische Narkosekomplikation
 module: PH
@@ -67,5 +68,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_219_maligne_hyperthermie_front.png
 back_asset: cards/PH/back/ph_219_maligne_hyperthermie_back.png
-qr_url: https://chembiomed-cards.de/c/ph219
+qr_url: https://at-medical.de/w/begriff/maligne-hyperthermie
 lms_url: https://lms.at-medical.example/ph/maligne-hyperthermie

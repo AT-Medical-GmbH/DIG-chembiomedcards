@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_215
 slug: ph_215_nephrotoxische_kombinationen
+begriff_slug: nephrotoxische-kombinationen
 title: Nephrotoxische Kombinationen
 subtitle: „Triple Whammy“
 module: PH
@@ -66,5 +67,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_215_nephrotoxische_kombinationen_front.png
 back_asset: cards/PH/back/ph_215_nephrotoxische_kombinationen_back.png
-qr_url: https://chembiomed-cards.de/c/ph215
+qr_url: https://at-medical.de/w/begriff/nephrotoxische-kombinationen
 lms_url: https://lms.at-medical.example/ph/nephrotoxische-kombinationen

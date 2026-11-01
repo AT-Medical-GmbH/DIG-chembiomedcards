@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_148
 slug: ph_148_doak
+wirkstoff_slug: direkte-orale-antikoagulanzien
 title: Direkte orale Antikoagulanzien (DOAK)
 subtitle: Faktor-Xa- und Thrombinhemmer
 module: PH
@@ -84,5 +85,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_148_doak_front.png
 back_asset: cards/PH/back/ph_148_doak_back.png
-qr_url: https://chembiomed-cards.de/c/ph148
+qr_url: https://at-medical.de/w/wirkstoff/direkte-orale-antikoagulanzien
 lms_url: https://lms.at-medical.example/ph/doak

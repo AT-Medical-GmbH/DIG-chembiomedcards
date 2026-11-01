@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_057
 slug: ph_057_succinylcholin
+wirkstoff_slug: succinylcholin
 title: Succinylcholin (Suxamethonium)
 subtitle: Depolarisierendes Muskelrelaxans
 module: PH
@@ -80,5 +81,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_057_succinylcholin_front.png
 back_asset: cards/PH/back/ph_057_succinylcholin_back.png
-qr_url: https://chembiomed-cards.de/c/ph057
+qr_url: https://at-medical.de/w/wirkstoff/succinylcholin
 lms_url: https://lms.at-medical.example/ph/succinylcholin

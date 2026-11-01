@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_109
 slug: ph_109_calcium
+wirkstoff_slug: calcium
 title: Calcium
 subtitle: Calciumchlorid / Calciumgluconat
 module: PH
@@ -76,5 +77,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_109_calcium_front.png
 back_asset: cards/PH/back/ph_109_calcium_back.png
-qr_url: https://chembiomed-cards.de/c/ph109
+qr_url: https://at-medical.de/w/wirkstoff/calcium
 lms_url: https://lms.at-medical.example/ph/calcium

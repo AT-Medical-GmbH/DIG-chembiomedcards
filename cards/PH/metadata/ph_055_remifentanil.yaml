@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_055
 slug: ph_055_remifentanil
+wirkstoff_slug: remifentanil
 title: Remifentanil
 subtitle: Ultrakurz wirksames Opioid
 module: PH
@@ -82,5 +83,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_055_remifentanil_front.png
 back_asset: cards/PH/back/ph_055_remifentanil_back.png
-qr_url: https://chembiomed-cards.de/c/ph055
+qr_url: https://at-medical.de/w/wirkstoff/remifentanil
 lms_url: https://lms.at-medical.example/ph/remifentanil

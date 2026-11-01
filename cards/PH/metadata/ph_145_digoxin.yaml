@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_145
 slug: ph_145_digoxin
+wirkstoff_slug: digoxin
 title: Digoxin
 subtitle: Herzglykosid
 module: PH
@@ -84,5 +85,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_145_digoxin_front.png
 back_asset: cards/PH/back/ph_145_digoxin_back.png
-qr_url: https://chembiomed-cards.de/c/ph145
+qr_url: https://at-medical.de/w/wirkstoff/digoxin
 lms_url: https://lms.at-medical.example/ph/digoxin

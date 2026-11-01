@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_010
 slug: ph_010_kompetitive_hemmung
+begriff_slug: kompetitive-hemmung
 title: Kompetitive Hemmung
 subtitle: Verdrängbar
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_010_kompetitive_hemmung_front.png
 back_asset: cards/PH/back/ph_010_kompetitive_hemmung_back.png
-qr_url: https://chembiomed-cards.de/c/ph010
+qr_url: https://at-medical.de/w/begriff/kompetitive-hemmung
 lms_url: https://lms.at-medical.example/ph/kompetitive_hemmung

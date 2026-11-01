@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_049
 slug: ph_049_magnesium
+wirkstoff_slug: magnesium
 title: Magnesium (Magnesiumsulfat)
 subtitle: Elektrolyt mit antiarrhythmischer Wirkung
 module: PH
@@ -90,5 +91,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_049_magnesium_front.png
 back_asset: cards/PH/back/ph_049_magnesium_back.png
-qr_url: https://chembiomed-cards.de/c/ph049
+qr_url: https://at-medical.de/w/wirkstoff/magnesium
 lms_url: https://lms.at-medical.example/ph/magnesium

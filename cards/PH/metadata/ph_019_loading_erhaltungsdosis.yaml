@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_019
 slug: ph_019_loading_erhaltungsdosis
+begriff_slug: loading-dose-erhaltungsdosis
 title: Loading Dose / Erhaltungsdosis
 subtitle: Dosierungsprinzip
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_019_loading_erhaltungsdosis_front.png
 back_asset: cards/PH/back/ph_019_loading_erhaltungsdosis_back.png
-qr_url: https://chembiomed-cards.de/c/ph019
+qr_url: https://at-medical.de/w/begriff/loading-dose-erhaltungsdosis
 lms_url: https://lms.at-medical.example/ph/loading_erhaltungsdosis

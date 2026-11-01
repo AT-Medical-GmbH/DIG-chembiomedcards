@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_024
 slug: ph_024_cyp2c9
+begriff_slug: cyp2c9
 title: CYP2C9
 subtitle: Isoenzym mit engen Substraten
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_024_cyp2c9_front.png
 back_asset: cards/PH/back/ph_024_cyp2c9_back.png
-qr_url: https://chembiomed-cards.de/c/ph024
+qr_url: https://at-medical.de/w/begriff/cyp2c9
 lms_url: https://lms.at-medical.example/ph/cyp2c9

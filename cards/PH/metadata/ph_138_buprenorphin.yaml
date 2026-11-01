@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_138
 slug: ph_138_buprenorphin
+wirkstoff_slug: buprenorphin
 title: Buprenorphin
 subtitle: Partieller µ-Agonist
 module: PH
@@ -79,5 +80,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_138_buprenorphin_front.png
 back_asset: cards/PH/back/ph_138_buprenorphin_back.png
-qr_url: https://chembiomed-cards.de/c/ph138
+qr_url: https://at-medical.de/w/wirkstoff/buprenorphin
 lms_url: https://lms.at-medical.example/ph/buprenorphin

@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_137
 slug: ph_137_tramadol
+wirkstoff_slug: tramadol
 title: Tramadol
 subtitle: Opioid mit monoaminerger Wirkung
 module: PH
@@ -79,5 +80,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_137_tramadol_front.png
 back_asset: cards/PH/back/ph_137_tramadol_back.png
-qr_url: https://chembiomed-cards.de/c/ph137
+qr_url: https://at-medical.de/w/wirkstoff/tramadol
 lms_url: https://lms.at-medical.example/ph/tramadol

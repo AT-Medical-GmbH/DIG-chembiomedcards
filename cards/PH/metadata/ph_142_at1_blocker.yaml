@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_142
 slug: ph_142_at1_blocker
+wirkstoff_slug: at1-blocker
 title: AT1-Blocker (Sartane)
 subtitle: Angiotensin-II-Rezeptorblocker
 module: PH
@@ -79,5 +80,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_142_at1_blocker_front.png
 back_asset: cards/PH/back/ph_142_at1_blocker_back.png
-qr_url: https://chembiomed-cards.de/c/ph142
+qr_url: https://at-medical.de/w/wirkstoff/at1-blocker
 lms_url: https://lms.at-medical.example/ph/at1-blocker

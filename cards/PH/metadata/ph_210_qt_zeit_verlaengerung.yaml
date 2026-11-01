@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_210
 slug: ph_210_qt_zeit_verlaengerung
+begriff_slug: qt-zeit-verlaengerung
 title: QT-Zeit-Verlängerung
 subtitle: Arzneimittelbedingte Repolarisationsstörung
 module: PH
@@ -65,5 +66,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_210_qt_zeit_verlaengerung_front.png
 back_asset: cards/PH/back/ph_210_qt_zeit_verlaengerung_back.png
-qr_url: https://chembiomed-cards.de/c/ph210
+qr_url: https://at-medical.de/w/begriff/qt-zeit-verlaengerung
 lms_url: https://lms.at-medical.example/ph/qt-zeit-verlaengerung

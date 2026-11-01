@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_013
 slug: ph_013_bioverfuegbarkeit
+begriff_slug: bioverfuegbarkeit
 title: Bioverfügbarkeit
 subtitle: Anteil im systemischen Kreislauf
 module: PH
@@ -56,5 +57,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_013_bioverfuegbarkeit_front.png
 back_asset: cards/PH/back/ph_013_bioverfuegbarkeit_back.png
-qr_url: https://chembiomed-cards.de/c/ph013
+qr_url: https://at-medical.de/w/begriff/bioverfuegbarkeit
 lms_url: https://lms.at-medical.example/ph/bioverfuegbarkeit

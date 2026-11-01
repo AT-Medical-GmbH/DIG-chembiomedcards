@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_050
 slug: ph_050_propofol
+wirkstoff_slug: propofol
 title: Propofol
 subtitle: Intravenöses Hypnotikum
 module: PH
@@ -84,5 +85,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_050_propofol_front.png
 back_asset: cards/PH/back/ph_050_propofol_back.png
-qr_url: https://chembiomed-cards.de/c/ph050
+qr_url: https://at-medical.de/w/wirkstoff/propofol
 lms_url: https://lms.at-medical.example/ph/propofol

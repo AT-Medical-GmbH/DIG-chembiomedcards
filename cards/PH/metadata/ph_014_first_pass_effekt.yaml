@@ -2,6 +2,7 @@
 # review_status needs_review; keine finalen Dosierungen.
 card_id: ph_014
 slug: ph_014_first_pass_effekt
+begriff_slug: first-pass-effekt
 title: First-Pass-Effekt
 subtitle: Präsystemische Metabolisierung
 module: PH
@@ -54,5 +55,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_014_first_pass_effekt_front.png
 back_asset: cards/PH/back/ph_014_first_pass_effekt_back.png
-qr_url: https://chembiomed-cards.de/c/ph014
+qr_url: https://at-medical.de/w/begriff/first-pass-effekt
 lms_url: https://lms.at-medical.example/ph/first_pass_effekt

@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_211
 slug: ph_211_cyp_induktion
+begriff_slug: cyp-induktion
 title: CYP-Induktion
 subtitle: Verstärkter Abbau durch Enzyminduktoren
 module: PH
@@ -64,5 +65,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_211_cyp_induktion_front.png
 back_asset: cards/PH/back/ph_211_cyp_induktion_back.png
-qr_url: https://chembiomed-cards.de/c/ph211
+qr_url: https://at-medical.de/w/begriff/cyp-induktion
 lms_url: https://lms.at-medical.example/ph/cyp-induktion

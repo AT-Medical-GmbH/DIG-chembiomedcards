@@ -2,6 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_212
 slug: ph_212_cyp_inhibition
+begriff_slug: cyp-inhibition
 title: CYP-Inhibition
 subtitle: Gehemmter Abbau durch Enzyminhibitoren
 module: PH
@@ -63,5 +64,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_212_cyp_inhibition_front.png
 back_asset: cards/PH/back/ph_212_cyp_inhibition_back.png
-qr_url: https://chembiomed-cards.de/c/ph212
+qr_url: https://at-medical.de/w/begriff/cyp-inhibition
 lms_url: https://lms.at-medical.example/ph/cyp-inhibition
