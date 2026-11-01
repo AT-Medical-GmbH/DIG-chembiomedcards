@@ -1,0 +1,60 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_021
+slug: ph_021_cyp450_system
+title: CYP450-System
+subtitle: Phase-I-Metabolismus
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/metabolismus
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Welche Rolle spielt CYP450 im Arzneistoffmetabolismus?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Cytochrom-P450-Enzyme (v. a. in der Leber) katalysieren den oxidativen Phase-I-Abbau vieler Arzneistoffe.
+- key: vertiefung
+  label: Prinzip
+  color_role: pkpd
+  text: '- Induktion: mehr Enzym → schnellerer Abbau → geringere Spiegel
+
+    - Inhibition: weniger Umsatz → höhere Spiegel → Toxizitätsrisiko'
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Zentrale Quelle von Arzneimittelinteraktionen; besonders bei enger therapeutischer Breite kritisch.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Induktor senkt, Inhibitor hebt den Spiegel.
+learning_objectives:
+- Rolle des CYP450-Systems erklären
+- Induktion von Inhibition unterscheiden
+tags:
+- cyp450
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_022
+- ph_023
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_021_cyp450_system_front.png
+back_asset: cards/PH/back/ph_021_cyp450_system_back.png
+qr_url: https://chembiomed-cards.de/c/ph021
+lms_url: https://lms.at-medical.example/ph/cyp450_system

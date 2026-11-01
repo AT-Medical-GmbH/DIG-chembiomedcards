@@ -1,0 +1,60 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_025
+slug: ph_025_p_glykoprotein
+title: P-Glykoprotein
+subtitle: Efflux-Transporter
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/transport
+card_type: overview
+front_type: principle
+level: advanced
+difficulty: advanced
+front_content:
+  question: Welche Rolle spielt P-Glykoprotein in der PK?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: P-Glykoprotein (P-gp) ist eine Effluxpumpe, die Arzneistoffe aus Zellen heraustransportiert (Darm,
+    Blut-Hirn-Schranke, Niere).
+- key: vertiefung
+  label: Prinzip
+  color_role: pkpd
+  text: '- Inhibition erhöht Resorption/Spiegel von Substraten
+
+    - Induktion senkt sie'
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Transporter-Interaktionen ergänzen CYP-Interaktionen (z. B. bei bestimmten Antikoagulanzien).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Nicht nur CYP: auch Transporter machen Interaktionen.'
+learning_objectives:
+- Funktion von P-gp beschreiben
+- Transporter-Interaktionen einordnen
+tags:
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_021
+- ph_022
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_025_p_glykoprotein_front.png
+back_asset: cards/PH/back/ph_025_p_glykoprotein_back.png
+qr_url: https://chembiomed-cards.de/c/ph025
+lms_url: https://lms.at-medical.example/ph/p_glykoprotein

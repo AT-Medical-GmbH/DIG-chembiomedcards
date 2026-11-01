@@ -1,0 +1,60 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_013
+slug: ph_013_bioverfuegbarkeit
+title: Bioverfügbarkeit
+subtitle: Anteil im systemischen Kreislauf
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: grundlagen
+difficulty: beginner
+front_content:
+  question: Was beschreibt die Bioverfügbarkeit F?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Die Bioverfügbarkeit (F) ist der Anteil einer Dosis, der unverändert den systemischen Kreislauf
+    erreicht.
+- key: vertiefung
+  label: Grundlagen
+  color_role: pkpd
+  text: '- i.v.: F = 100 % (Referenz)
+
+    - oral: F < 100 % durch unvollständige Absorption und First-Pass-Effekt'
+- key: klinischer_bezug
+  label: Konsequenz
+  color_role: clinic
+  text: Bestimmt u. a. das Verhältnis oraler zu parenteraler Dosis (Dosisprinzip, keine konkreten Zahlen
+    hier).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Niedriges F → höhere orale Dosis nötig als i.v.
+learning_objectives:
+- Bioverfügbarkeit definieren
+- Ursachen für F < 100 % benennen
+tags:
+- pruefungsrelevant
+related_cards:
+- ph_014
+- ph_002
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_013_bioverfuegbarkeit_front.png
+back_asset: cards/PH/back/ph_013_bioverfuegbarkeit_back.png
+qr_url: https://chembiomed-cards.de/c/ph013
+lms_url: https://lms.at-medical.example/ph/bioverfuegbarkeit

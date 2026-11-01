@@ -1,0 +1,60 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_012
+slug: ph_012_therapeutische_breite
+title: Therapeutische Breite
+subtitle: Sicherheitsabstand
+module: PH
+primary_category: arzneimittelsicherheit
+chapter: pharmakologie/sicherheit
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Was bedeutet eine enge therapeutische Breite?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Die therapeutische Breite beschreibt den Abstand zwischen wirksamer und toxischer Dosis (therapeutischer
+    Index).
+- key: vertiefung
+  label: Kenngröße
+  color_role: pkpd
+  text: 'Grob: Verhältnis toxische zu wirksame Dosis. Enge therapeutische Breite = kleiner Sicherheitsabstand.'
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Wirkstoffe mit enger therapeutischer Breite (z. B. Digoxin, Lithium, viele Zytostatika) brauchen
+    Monitoring.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Eng = Spiegelkontrolle und vorsichtige Dosisführung.
+learning_objectives:
+- Therapeutische Breite definieren
+- Konsequenz für Monitoring ableiten
+tags:
+- enge_therapeutische_breite
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_005
+- ph_017
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_012_therapeutische_breite_front.png
+back_asset: cards/PH/back/ph_012_therapeutische_breite_back.png
+qr_url: https://chembiomed-cards.de/c/ph012
+lms_url: https://lms.at-medical.example/ph/therapeutische_breite

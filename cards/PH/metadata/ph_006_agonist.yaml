@@ -1,0 +1,60 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_006
+slug: ph_006_agonist
+title: Agonist
+subtitle: Bindung + Aktivierung
+module: PH
+primary_category: pharmakodynamik
+chapter: pharmakologie/pharmakodynamik
+card_type: overview
+front_type: principle
+level: grundlagen
+difficulty: beginner
+front_content:
+  question: Was kennzeichnet einen Agonisten?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Ein Agonist bindet an einen Rezeptor und löst eine Antwort aus (Affinität + intrinsische Aktivität).
+- key: vertiefung
+  label: Typen
+  color_role: pkpd
+  text: '- Vollagonist: maximale Wirkung
+
+    - Partialagonist: submaximale Wirkung trotz voller Besetzung'
+- key: klinischer_bezug
+  label: Beispiele
+  color_role: clinic
+  text: Grundprinzip vieler Wirkstoffklassen (z. B. Rezeptor-Agonisten in Notfall- und Dauertherapie).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Partialagonist kann in Gegenwart eines Vollagonisten abschwächend wirken.
+learning_objectives:
+- Agonist über Affinität + intrinsische Aktivität definieren
+- Voll- von Partialagonist unterscheiden
+tags:
+- rezeptor
+- agonist
+- pruefungsrelevant
+related_cards:
+- ph_007
+- ph_008
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_006_agonist_front.png
+back_asset: cards/PH/back/ph_006_agonist_back.png
+qr_url: https://chembiomed-cards.de/c/ph006
+lms_url: https://lms.at-medical.example/ph/agonist

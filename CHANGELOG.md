@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-10-31
+- Pharma Cards (Modul PH) – P1 Pipeline: reproduzierbare Erzeugung unter `scripts/pharma/`
+  (`validate_ph_cards.py`, `build_registry.py`, `render_cards.py`, `validate_output.py`) + `Makefile`
+  und gemeinsames Kartenlayout `card-system/templates/pharma/card.css` (DIN A6 quer, Tab-Leiste,
+  Farbrollen, Warnlevel-Badge). Rendering optional via vorinstalliertem Chromium.
+- Pharma Cards – P2 Pilot-Content R1: 30 Karten in `cards/PH/metadata/` (Allgemeine Pharmakologie
+  `ph_001`–`ph_019`, PK/PD-Mechanismen `ph_020`–`ph_030`), warning_level low/moderate,
+  review_status needs_review, keine Dosierungen; Registry `cards.master.csv` um PH-Zeilen ergänzt
+  (Nicht-PH-Zeilen unverändert).
+- Export-Gating implementiert (critical nur approved; moderate/high nur reviewed/approved);
+  Pilot-Karten korrekt als "im Review / nicht exportierbar" erkannt.
+- Beispiel-Renders unter `card-system/examples/pharma/`; generierte Massen-Artefakte via `.gitignore`
+  ausgeschlossen (reproduzierbar). Superseded Beispiel-YAML aus `cards/PH/examples/` entfernt.
+
 ## 2026-10-09
 - Pharma Cards (Modul PH) — vollständiges Konzeptdossier unter `docs/pharma-cards/` (18 Phasen:
   Analyse/Architektur, Datenmodell, fachliche Zielstruktur, kuratierte Startliste, Layout, Generierung
