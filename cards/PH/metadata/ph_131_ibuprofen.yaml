@@ -1,0 +1,84 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_131
+slug: ph_131_ibuprofen
+title: Ibuprofen
+subtitle: NSAR
+module: PH
+primary_category: analgetika
+secondary_categories:
+- klinische_pharmakologie
+chapter: pharmakologie/analgetika
+drug_class: nsar
+substance_name: Ibuprofen
+generic_name: Ibuprofen
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Reversible, nichtselektive Hemmung von COX-1 und COX-2: analgetisch, antipyretisch,
+  antiphlogistisch.'
+indications: '- Schmerzen, Entzündung, Fieber'
+contraindications: Aktives Ulkus oder GI-Blutung, schwere Herz-, Nieren-, Leberinsuffizienz, letztes Schwangerschaftsdrittel.
+adverse_effects: Magen-Darm-Ulzera und -Blutungen, Nierenfunktionsverschlechterung, Blutdruckanstieg,
+  kardiovaskuläres Risiko.
+interactions: Antikoagulanzien (Blutung), RAAS-Hemmer und Diuretika (Niere); kann die Plättchenwirkung
+  von ASS abschwächen.
+monitoring: Nierenfunktion bei Risikopatienten.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: 'NSAR + RAAS-Hemmer + Diuretikum: Risiko für akutes Nierenversagen.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Reversible, nichtselektive Hemmung von COX-1 und COX-2: analgetisch, antipyretisch, antiphlogistisch.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Schmerzen, Entzündung, Fieber'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Magen-Darm-Ulzera und -Blutungen, Nierenfunktionsverschlechterung, Blutdruckanstieg, kardiovaskuläres
+    Risiko.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Aktives Ulkus oder GI-Blutung, schwere Herz-, Nieren-, Leberinsuffizienz, letztes Schwangerschaftsdrittel.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Antikoagulanzien (Blutung), RAAS-Hemmer und Diuretika (Niere); kann die Plättchenwirkung von ASS
+    abschwächen. Nierenfunktion bei Risikopatienten.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'NSAR + RAAS-Hemmer + Diuretikum: Risiko für akutes Nierenversagen.'
+tags:
+- interaktion
+- niereninsuffizienz
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_215
+- ph_134
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- ASS-Interaktion nach aktuellem Stand formulieren
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_131_ibuprofen_front.png
+back_asset: cards/PH/back/ph_131_ibuprofen_back.png
+qr_url: https://chembiomed-cards.de/c/ph131
+lms_url: https://lms.at-medical.example/ph/ibuprofen

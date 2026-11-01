@@ -1,0 +1,68 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_220
+slug: ph_220_arzneimittel_anaphylaxie
+title: Arzneimittel-Anaphylaxie
+subtitle: Lebensbedrohliche Überempfindlichkeit
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- notfallmedikamente
+chapter: pharmakologie/sicherheit
+card_type: overview
+front_type: case
+level: clinical
+difficulty: intermediate
+emergency_relevance: Auslöser stoppen, Hilfe holen, Adrenalin i.m. (i.v. nur titriert durch Erfahrene),
+  Volumen, Sauerstoff.
+toxicology_relevance: IgE-vermittelte oder direkte Mastzellaktivierung mit Freisetzung von Histamin und
+  anderen Mediatoren.
+clinical_pearls: Adrenalin ist das wichtigste Medikament; Antihistaminika und Steroide nur ergänzend.
+front_content:
+  prompt: 'Minuten nach einer Antibiotikagabe: Hypotonie, Bronchospasmus, Urtikaria. Was tun?'
+back_sections:
+- key: ausloeser
+  label: Auslöser
+  color_role: risk
+  text: Häufig Antibiotika (v. a. Betalaktame), Muskelrelaxanzien, NSAR, Kontrastmittel, Chlorhexidin.
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: IgE-vermittelte oder direkte Mastzellaktivierung mit Freisetzung von Histamin und anderen Mediatoren.
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: Haut- und Schleimhautzeichen, Bronchospasmus, Hypotonie bis Schock; Hautzeichen können fehlen.
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Auslöser stoppen, Hilfe holen, Adrenalin i.m. (i.v. nur titriert durch Erfahrene), Volumen, Sauerstoff.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Adrenalin ist das wichtigste Medikament; Antihistaminika und Steroide nur ergänzend.
+tags:
+- notfall
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_040
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Ablauf gegen aktuelle Anaphylaxie-Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_220_arzneimittel_anaphylaxie_front.png
+back_asset: cards/PH/back/ph_220_arzneimittel_anaphylaxie_back.png
+qr_url: https://chembiomed-cards.de/c/ph220
+lms_url: https://lms.at-medical.example/ph/arzneimittel-anaphylaxie

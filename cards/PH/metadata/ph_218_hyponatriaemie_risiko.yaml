@@ -1,0 +1,67 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_218
+slug: ph_218_hyponatriaemie_risiko
+title: Hyponatriämie-Risiko
+subtitle: Arzneimittelbedingte Hyponatriämie
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- arzneimittelinteraktionen
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: Thiazide steigern den Natriumverlust; SSRI, Carbamazepin u. a. können ein SIADH auslösen.
+monitoring: Natrium kontrollieren, vor allem zu Therapiebeginn; langsam ausgleichen (osmotische Demyelinisierung).
+clinical_pearls: Chronische Hyponatriämie nie zu schnell korrigieren.
+front_content:
+  prompt: 'Ältere Patientin unter Thiazid und SSRI wird verwirrt: woran denken?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: Thiazide steigern den Natriumverlust; SSRI, Carbamazepin u. a. können ein SIADH auslösen.
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: Hyponatriämie mit Verwirrtheit, Stürzen, Krampfanfällen.
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Höheres Alter, weibliches Geschlecht, niedriges Körpergewicht, Kombinationen.
+- key: management
+  label: Management
+  color_role: clinic
+  text: Natrium kontrollieren, vor allem zu Therapiebeginn; langsam ausgleichen (osmotische Demyelinisierung).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Chronische Hyponatriämie nie zu schnell korrigieren.
+tags:
+- interaktion
+- geriatrie
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_144
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Korrekturgrenzen nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_218_hyponatriaemie_risiko_front.png
+back_asset: cards/PH/back/ph_218_hyponatriaemie_risiko_back.png
+qr_url: https://chembiomed-cards.de/c/ph218
+lms_url: https://lms.at-medical.example/ph/hyponatriaemie-risiko

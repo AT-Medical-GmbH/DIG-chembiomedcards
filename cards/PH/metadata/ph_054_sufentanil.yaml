@@ -1,0 +1,92 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_054
+slug: ph_054_sufentanil
+title: Sufentanil
+subtitle: Hochpotentes Opioid
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories:
+- analgetika
+- intensivpharmakologie
+chapter: pharmakologie/anaesthesie
+drug_class: opioide
+substance_name: Sufentanil
+generic_name: Sufentanil
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: µ-Opioidrezeptor-Agonist, potenter als Fentanyl, mit deutlicher sedierender Komponente.
+indications: '- Analgesie bei Narkose
+
+  - Analgosedierung auf Intensivstation
+
+  - epidural (Geburtshilfe, Schmerztherapie)'
+contraindications: 'Wie andere starke Opioide: nur mit Überwachung und Atemwegsmanagement.'
+adverse_effects: Atemdepression, Thoraxrigidität, Bradykardie, Hypotonie, Übelkeit.
+interactions: CYP3A4-Inhibitoren erhöhen den Spiegel; additive ZNS-Dämpfung.
+monitoring: Atmung, Vigilanz.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: 'Sehr hohe Potenz: Verwechslung mit Fentanyl ist gefährlich.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: µ-Opioidrezeptor-Agonist, potenter als Fentanyl, mit deutlicher sedierender Komponente.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Analgesie bei Narkose
+
+    - Analgosedierung auf Intensivstation
+
+    - epidural (Geburtshilfe, Schmerztherapie)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Atemdepression, Thoraxrigidität, Bradykardie, Hypotonie, Übelkeit.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: 'Wie andere starke Opioide: nur mit Überwachung und Atemwegsmanagement.'
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: CYP3A4-Inhibitoren erhöhen den Spiegel; additive ZNS-Dämpfung. Atmung, Vigilanz.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Sehr hohe Potenz: Verwechslung mit Fentanyl ist gefährlich.'
+tags:
+- anaesthesie
+- intensivmedizin
+- agonist
+- rezeptor
+- hochrisiko
+- pruefungsrelevant
+- cyp450
+related_cards:
+- ph_053
+- ph_055
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Potenzverhältnis zu Fentanyl nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_054_sufentanil_front.png
+back_asset: cards/PH/back/ph_054_sufentanil_back.png
+qr_url: https://chembiomed-cards.de/c/ph054
+lms_url: https://lms.at-medical.example/ph/sufentanil

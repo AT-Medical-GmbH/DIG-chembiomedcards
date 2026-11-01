@@ -1,0 +1,85 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_135
+slug: ph_135_morphin
+title: Morphin
+subtitle: Referenzopioid
+module: PH
+primary_category: analgetika
+secondary_categories:
+- notfallmedikamente
+chapter: pharmakologie/analgetika
+drug_class: opioide
+substance_name: Morphin
+generic_name: Morphin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Agonist am µ-Opioidrezeptor; Referenzsubstanz der Opioide.
+indications: '- starke akute und chronische Schmerzen
+
+  - Atemnot in der Palliativmedizin'
+contraindications: Atemdepression ohne Überwachung, paralytischer Ileus; Vorsicht bei Niereninsuffizienz.
+adverse_effects: Atemdepression, Sedierung, Obstipation, Übelkeit, Histaminfreisetzung, Miosis.
+interactions: Additive ZNS-Dämpfung mit Benzodiazepinen und Alkohol.
+monitoring: Atmung, Vigilanz; Obstipationsprophylaxe.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: Der aktive Metabolit Morphin-6-Glucuronid kumuliert bei Niereninsuffizienz.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Agonist am µ-Opioidrezeptor; Referenzsubstanz der Opioide.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- starke akute und chronische Schmerzen
+
+    - Atemnot in der Palliativmedizin'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Atemdepression, Sedierung, Obstipation, Übelkeit, Histaminfreisetzung, Miosis.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Atemdepression ohne Überwachung, paralytischer Ileus; Vorsicht bei Niereninsuffizienz.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additive ZNS-Dämpfung mit Benzodiazepinen und Alkohol. Atmung, Vigilanz; Obstipationsprophylaxe.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Der aktive Metabolit Morphin-6-Glucuronid kumuliert bei Niereninsuffizienz.
+tags:
+- agonist
+- rezeptor
+- niereninsuffizienz
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_100
+- ph_029
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Anwendung bei Niereninsuffizienz mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_135_morphin_front.png
+back_asset: cards/PH/back/ph_135_morphin_back.png
+qr_url: https://chembiomed-cards.de/c/ph135
+lms_url: https://lms.at-medical.example/ph/morphin
