@@ -2,9 +2,9 @@
   // Rücksprung von Authentik: Code tauschen, dann zur ursprünglichen Seite.
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { api } from '$lib/api';
-  import { handleCallback, type AuthConfig } from '$lib/oidc';
-  import { session } from '$lib/session.svelte';
+  import { api } from '#lib/api.ts';
+  import { handleCallback, type AuthConfig } from '#lib/oidc.ts';
+  import { session } from '#lib/session.svelte.ts';
 
   let error = $state<string | null>(null);
 

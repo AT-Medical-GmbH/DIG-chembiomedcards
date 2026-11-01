@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-01 (Online: SvelteKit 3)
+- Frontend auf SvelteKit 3 / adapter-static 4 (ersetzt Dependabot-PR #21, der allein nicht installierbar
+  war): Vite 8, vite-plugin-svelte 7, TypeScript 6, Svelte 5.57.
+- Konfiguration aus `svelte.config.js` in `sveltekit({...})` in `vite.config.ts` verschoben (CSP und
+  SPA-Fallback unverändert); `$lib` → Subpath-Import `#lib`; `tsconfig.json` erweitert `$app/tsconfig`.
+- Geprüft: `npm run check` 0 Fehler, Build ok, CSP-Hash im `index.html`, E2E-Smoke 8/8.
 ## 2026-10-31 (CI: eigener Runner)
 - CI läuft auf einem eigenen Runner, weil die GitHub-Runner wegen Billing gesperrt sind:
   `runs-on: [self-hosted, linux, chembiomed]`, jeder Job im Container, nie für Fork-PRs, nur
