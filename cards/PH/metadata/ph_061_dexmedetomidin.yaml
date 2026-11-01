@@ -1,0 +1,82 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_061
+slug: ph_061_dexmedetomidin
+title: Dexmedetomidin
+subtitle: α2-Agonist zur Sedierung
+module: PH
+primary_category: intensivpharmakologie
+secondary_categories:
+- anaesthesiepharmakologie
+chapter: pharmakologie/intensivmedizin
+drug_class: alpha2_agonisten
+substance_name: Dexmedetomidin
+generic_name: Dexmedetomidin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Hochselektiver α2-Adrenozeptor-Agonist: Sedierung über den Locus coeruleus, Sympathikolyse.'
+indications: '- Sedierung auf Intensivstation (erweckbar, kooperativ)
+
+  - prozedurale Sedierung'
+contraindications: Höhergradiger AV-Block ohne Schrittmacher, unkontrollierte Hypotonie.
+adverse_effects: Bradykardie, Hypotonie (initial auch Hypertonie), Mundtrockenheit.
+interactions: Additiv mit anderen Sedativa und bradykardisierenden Substanzen.
+monitoring: EKG, Blutdruck.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Kaum Atemdepression; der Patient bleibt erweckbar.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Hochselektiver α2-Adrenozeptor-Agonist: Sedierung über den Locus coeruleus, Sympathikolyse.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Sedierung auf Intensivstation (erweckbar, kooperativ)
+
+    - prozedurale Sedierung'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Bradykardie, Hypotonie (initial auch Hypertonie), Mundtrockenheit.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Höhergradiger AV-Block ohne Schrittmacher, unkontrollierte Hypotonie.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additiv mit anderen Sedativa und bradykardisierenden Substanzen. EKG, Blutdruck.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Kaum Atemdepression; der Patient bleibt erweckbar.
+tags:
+- intensivmedizin
+- agonist
+- rezeptor
+- pruefungsrelevant
+related_cards:
+- ph_046
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Zulassungsumfang (Sedierungstiefe) nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_061_dexmedetomidin_front.png
+back_asset: cards/PH/back/ph_061_dexmedetomidin_back.png
+qr_url: https://chembiomed-cards.de/c/ph061
+lms_url: https://lms.at-medical.example/ph/dexmedetomidin

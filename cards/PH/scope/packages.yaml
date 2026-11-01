@@ -34,7 +34,8 @@ packages:
   - slug: herz_kreislauf
     name: Herz-Kreislauf
     label: Herz_Kreislauf
-    categories: [katecholamine_vasopressoren, antiarrhythmika, antihypertensiva, antikoagulanzien]
+    categories: [katecholamine_vasopressoren, antiarrhythmika, antihypertensiva, antikoagulanzien,
+                 thrombozytenaggregationshemmer]
   - slug: endokrinologie
     name: Endokrinologie / Stoffwechsel
     label: Endokrinologie_Stoffwechsel

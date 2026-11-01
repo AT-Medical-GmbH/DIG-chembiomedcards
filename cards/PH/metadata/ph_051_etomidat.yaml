@@ -1,0 +1,79 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_051
+slug: ph_051_etomidat
+title: Etomidat
+subtitle: Kreislaufstabiles Hypnotikum
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories: []
+chapter: pharmakologie/anaesthesie
+drug_class: hypnotika_iv
+substance_name: Etomidat
+generic_name: Etomidat
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Modulation des GABA-A-Rezeptors: Hypnose mit nur geringer Kreislaufdepression.'
+indications: '- Narkoseeinleitung bei kardiovaskulär instabilen Patienten'
+contraindications: Nicht zur Dauersedierung. Zurückhaltung bei Sepsis wegen Nebennierensuppression.
+adverse_effects: Hemmung der 11β-Hydroxylase (Nebennierensuppression schon nach Einzelgabe), Myoklonien,
+  Injektionsschmerz, Übelkeit.
+interactions: Additiv mit anderen Hypnotika und Opioiden.
+monitoring: Kreislauf, Atmung.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: 'Kreislaufstabil, aber Nebennierensuppression: nur zur Einleitung.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Modulation des GABA-A-Rezeptors: Hypnose mit nur geringer Kreislaufdepression.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Narkoseeinleitung bei kardiovaskulär instabilen Patienten'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Hemmung der 11β-Hydroxylase (Nebennierensuppression schon nach Einzelgabe), Myoklonien, Injektionsschmerz,
+    Übelkeit.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Nicht zur Dauersedierung. Zurückhaltung bei Sepsis wegen Nebennierensuppression.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additiv mit anderen Hypnotika und Opioiden. Kreislauf, Atmung.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Kreislaufstabil, aber Nebennierensuppression: nur zur Einleitung.'
+tags:
+- anaesthesie
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_050
+- ph_047
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Stellenwert bei Sepsis nach aktueller Evidenz prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_051_etomidat_front.png
+back_asset: cards/PH/back/ph_051_etomidat_back.png
+qr_url: https://chembiomed-cards.de/c/ph051
+lms_url: https://lms.at-medical.example/ph/etomidat

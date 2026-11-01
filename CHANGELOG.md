@@ -28,6 +28,19 @@
 - Tests: 33 API-Tests (u. a. Gating, OIDC-Ablehnung, Rollen, Seed), Browser-E2E 8/8 gegen
   PostgreSQL und gegen den gebauten Docker-Stack.
 
+## 2026-10-31 (Content R2)
+- 50 R2-Entwürfe in `cards/PH/metadata/`: Anästhesie/Intensiv `ph_050`–`ph_064`, Intoxikationen
+  `ph_087`–`ph_089`, Analgetika `ph_130`–`ph_138`, Herz-Kreislauf `ph_140`–`ph_151`,
+  Interaktionen/Arzneimittelsicherheit `ph_210`–`ph_220`. Keine Zahlendosen, Prüfpunkte je Karte in
+  `review_focus`, Status `clinical_review_needed` bzw. `toxicology_review_needed`.
+- Scope: Kategorie `thrombozytenaggregationshemmer` (Clopidogrel, Ticagrelor, ASS) ergänzt und im
+  Paket Herz-Kreislauf eingehängt, statt Thrombozytenhemmer als Antikoagulanzien zu führen.
+- Layoutmessung: 110/110 Karten ohne Überlauf, alle Inhalte in der 5-mm-Sicherheitszone.
+- Reports `missing_cards`, `content_review`, `content_scope`, `cards_review_needed`, `layout_review`
+  aktualisiert; Registry um 50 PH-Zeilen erweitert.
+- `scripts/pharma/review_packet.py` + `make ph-review-packet`: Review-PDF für das Fachreview
+  (110 Karten, 113 A4-Seiten, ENTWURF-Wasserzeichen, Prüfschwerpunkte und Ergebnisfelder je Karte).
+
 ## 2026-10-31 (P4 Export: Moodle + Druck)
 - `scripts/pharma/generate_moodle_import.py`: Moodle-Pakete je Paket aus
   `cards/PH/scope/packages.yaml` (import.csv, import_html.csv, TAB-/Semikolon-Zweispaltenimport mit

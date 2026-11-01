@@ -1,0 +1,81 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_058
+slug: ph_058_cisatracurium
+title: Cisatracurium
+subtitle: Nichtdepolarisierendes Muskelrelaxans
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/anaesthesie
+drug_class: muskelrelaxanzien
+substance_name: Cisatracurium
+generic_name: Cisatracurium
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Kompetitiver Antagonist am nikotinischen Acetylcholinrezeptor (Benzylisochinolin).
+indications: '- Relaxierung bei Narkose und Beatmung, besonders bei Leber- oder Niereninsuffizienz'
+contraindications: Nie ohne Sedierung und Atemwegsmanagement.
+adverse_effects: Restblockade; kaum Histaminfreisetzung.
+interactions: Wirkverstärkung durch volatile Anästhetika und Aminoglykoside.
+monitoring: Relaxometrie (Train-of-Four).
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: 'Hofmann-Elimination: Abbau weitgehend organunabhängig. Sugammadex wirkt hier nicht.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Kompetitiver Antagonist am nikotinischen Acetylcholinrezeptor (Benzylisochinolin).
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Relaxierung bei Narkose und Beatmung, besonders bei Leber- oder Niereninsuffizienz'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Restblockade; kaum Histaminfreisetzung.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Nie ohne Sedierung und Atemwegsmanagement.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Wirkverstärkung durch volatile Anästhetika und Aminoglykoside. Relaxometrie (Train-of-Four).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Hofmann-Elimination: Abbau weitgehend organunabhängig. Sugammadex wirkt hier nicht.'
+tags:
+- anaesthesie
+- hochrisiko
+- rezeptor
+- monitoring
+- pruefungsrelevant
+- antagonist
+related_cards:
+- ph_056
+- ph_059
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Aussage zur Histaminfreisetzung mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_058_cisatracurium_front.png
+back_asset: cards/PH/back/ph_058_cisatracurium_back.png
+qr_url: https://chembiomed-cards.de/c/ph058
+lms_url: https://lms.at-medical.example/ph/cisatracurium

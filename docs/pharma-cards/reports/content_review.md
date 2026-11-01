@@ -16,6 +16,11 @@ Produktive Tranche R1 in `cards/PH/metadata/`:
 | Notfallmedikamente | `ph_040`–`ph_049` (10) | moderate–critical | clinical_review_needed |
 | Toxidrome | `ph_080`–`ph_086` (7) | high | toxicology_review_needed |
 | Antidote | `ph_100`–`ph_112` (13) | high/critical | toxicology_review_needed |
+| R2 Anästhesie / Intensiv | `ph_050`–`ph_064` (15) | high/critical | clinical_review_needed |
+| R2 Intoxikationen | `ph_087`–`ph_089` (3) | critical | toxicology_review_needed |
+| R2 Analgetika | `ph_130`–`ph_138` (9) | moderate/high | clinical_review_needed |
+| R2 Herz-Kreislauf | `ph_140`–`ph_151` (12) | moderate–critical | clinical_review_needed |
+| R2 Interaktionen / Sicherheit | `ph_210`–`ph_220` (11) | moderate–critical | clinical_review_needed |
 
 Die klinischen Blöcke sind Entwürfe ohne Zahlendosen. Jede Karte trägt in `review_focus` die
 konkreten Punkte, die das Fachreview klären muss. Die vollständige Liste steht in

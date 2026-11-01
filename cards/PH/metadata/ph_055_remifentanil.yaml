@@ -1,0 +1,86 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_055
+slug: ph_055_remifentanil
+title: Remifentanil
+subtitle: Ultrakurz wirksames Opioid
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories:
+- intensivpharmakologie
+chapter: pharmakologie/anaesthesie
+drug_class: opioide
+substance_name: Remifentanil
+generic_name: Remifentanil
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: µ-Opioidrezeptor-Agonist; Abbau durch unspezifische Esterasen in Blut und Gewebe,
+  organunabhängig.
+indications: '- Analgesie bei Narkose als kontinuierliche Infusion
+
+  - gut steuerbare Analgosedierung'
+contraindications: Kein Bolus ohne Atemwegssicherung. Nicht epidural oder intrathekal (Glycin in der Zubereitung).
+adverse_effects: Atemdepression, Bradykardie, Hypotonie, Thoraxrigidität; opioidinduzierte Hyperalgesie.
+interactions: Additive ZNS-Dämpfung mit Hypnotika.
+monitoring: Atmung, Kreislauf.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: 'Die Wirkung endet Minuten nach Infusionsstopp: Anschlussanalgesie rechtzeitig planen.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: µ-Opioidrezeptor-Agonist; Abbau durch unspezifische Esterasen in Blut und Gewebe, organunabhängig.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Analgesie bei Narkose als kontinuierliche Infusion
+
+    - gut steuerbare Analgosedierung'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Atemdepression, Bradykardie, Hypotonie, Thoraxrigidität; opioidinduzierte Hyperalgesie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Kein Bolus ohne Atemwegssicherung. Nicht epidural oder intrathekal (Glycin in der Zubereitung).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additive ZNS-Dämpfung mit Hypnotika. Atmung, Kreislauf.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Die Wirkung endet Minuten nach Infusionsstopp: Anschlussanalgesie rechtzeitig planen.'
+tags:
+- anaesthesie
+- intensivmedizin
+- agonist
+- rezeptor
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_053
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Kontraindikation epidural/intrathekal nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_055_remifentanil_front.png
+back_asset: cards/PH/back/ph_055_remifentanil_back.png
+qr_url: https://chembiomed-cards.de/c/ph055
+lms_url: https://lms.at-medical.example/ph/remifentanil
