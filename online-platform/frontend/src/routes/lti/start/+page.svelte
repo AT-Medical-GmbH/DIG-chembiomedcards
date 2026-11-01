@@ -1,8 +1,8 @@
 <script lang="ts">
   // Ziel nach dem Moodle-Start: Token aus dem Fragment übernehmen, Fragment entfernen, weiterleiten.
   import { goto } from '$app/navigation';
-  import { safeNext, setLtiToken } from '$lib/lti';
-  import { session } from '$lib/session.svelte';
+  import { safeNext, setLtiToken } from '#lib/lti.ts';
+  import { session } from '#lib/session.svelte.ts';
 
   let error = $state<string | null>(null);
   const frag = new URLSearchParams(window.location.hash.slice(1));

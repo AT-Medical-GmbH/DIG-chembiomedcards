@@ -1,7 +1,7 @@
 <script lang="ts">
   // Kartenübersicht: Suche (Wirkstoff, Klasse, Indikation, Nebenwirkung, Antidot, Toxidrom) und
   // Filter nach Kategorie, Wirkstoffgruppe, Tag und Warnlevel.
-  import { api, statusLabel, warnLabel, type CardSummary } from '$lib/api';
+  import { api, statusLabel, warnLabel, type CardSummary } from '#lib/api.ts';
 
   type Opt = { slug: string; name: string; count?: number };
   let meta = $state<{ categories: Opt[]; drug_classes: Opt[]; tags: Opt[] } | null>(null);

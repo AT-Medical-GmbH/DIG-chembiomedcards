@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { api, download, type Note } from '$lib/api';
+  import { api, download, type Note } from '#lib/api.ts';
 
   let notes = $state<Note[]>([]);
   let loaded = $state(false);

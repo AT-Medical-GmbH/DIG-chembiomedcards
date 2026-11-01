@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { api } from '$lib/api';
-  import { session } from '$lib/session.svelte';
+  import { api } from '#lib/api.ts';
+  import { session } from '#lib/session.svelte.ts';
 
   type Stats = {
     gesamt: Record<string, number>; heute_bewertet: number; tagesziel: number;

@@ -86,7 +86,7 @@ async function tokenRequest(body: Record<string, string>) {
 }
 
 /** Auf /auth/callback: Code tauschen. Gibt den Rücksprungpfad zurück. */
-export async function handleCallback(cfg: AuthConfig, url: URL): Promise<string> {
+export async function handleCallback(cfg: AuthConfig, url: { searchParams: Pick<URLSearchParams, 'get'> }): Promise<string> {
   const raw = store()?.getItem(K_FLOW);
   store()?.removeItem(K_FLOW);                       // Flow ist einmalig
   const flow = raw ? JSON.parse(raw) as { verifier: string; state: string; nonce: string; returnTo: string } : null;
