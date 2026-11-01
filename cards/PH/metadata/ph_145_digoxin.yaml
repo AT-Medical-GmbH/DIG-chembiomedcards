@@ -1,0 +1,88 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_145
+slug: ph_145_digoxin
+title: Digoxin
+subtitle: Herzglykosid
+module: PH
+primary_category: antiarrhythmika
+secondary_categories:
+- klinische_pharmakologie
+chapter: pharmakologie/herz_kreislauf
+drug_class: herzglykoside
+substance_name: Digoxin
+generic_name: Digoxin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Hemmung der Na⁺/K⁺-ATPase: mehr intrazelluläres Calcium (inotrop) und vagale Hemmung
+  des AV-Knotens.'
+indications: '- Frequenzkontrolle bei Vorhofflimmern
+
+  - Herzinsuffizienz (Reservemedikament)'
+contraindications: AV-Block II°/III°, Präexzitation mit Vorhofflimmern, Hypokaliämie, Hyperkalzämie.
+adverse_effects: Übelkeit, Sehstörungen (Gelb-Grün-Sehen), Bradykardie, nahezu jede Rhythmusstörung.
+interactions: Amiodaron, Verapamil, Makrolide erhöhen den Spiegel; Diuretika (Hypokaliämie).
+monitoring: Spiegel, Kalium, Nierenfunktion.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: digoxin_fab
+toxidrome: digitalis
+clinical_pearls: 'Enge therapeutische Breite: Hypokaliämie und Niereninsuffizienz fördern die Toxizität.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Hemmung der Na⁺/K⁺-ATPase: mehr intrazelluläres Calcium (inotrop) und vagale Hemmung des AV-Knotens.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Frequenzkontrolle bei Vorhofflimmern
+
+    - Herzinsuffizienz (Reservemedikament)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Übelkeit, Sehstörungen (Gelb-Grün-Sehen), Bradykardie, nahezu jede Rhythmusstörung.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: AV-Block II°/III°, Präexzitation mit Vorhofflimmern, Hypokaliämie, Hyperkalzämie.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Amiodaron, Verapamil, Makrolide erhöhen den Spiegel; Diuretika (Hypokaliämie). Spiegel, Kalium,
+    Nierenfunktion.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Enge therapeutische Breite: Hypokaliämie und Niereninsuffizienz fördern die Toxizität.'
+tags:
+- enge_therapeutische_breite
+- interaktion
+- niereninsuffizienz
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_089
+- ph_107
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Stellenwert bei Herzinsuffizienz nach aktueller Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_145_digoxin_front.png
+back_asset: cards/PH/back/ph_145_digoxin_back.png
+qr_url: https://chembiomed-cards.de/c/ph145
+lms_url: https://lms.at-medical.example/ph/digoxin

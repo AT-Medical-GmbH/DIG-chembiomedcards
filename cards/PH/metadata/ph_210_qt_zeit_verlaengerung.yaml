@@ -1,0 +1,69 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_210
+slug: ph_210_qt_zeit_verlaengerung
+title: QT-Zeit-Verlängerung
+subtitle: Arzneimittelbedingte Repolarisationsstörung
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- arzneimittelinteraktionen
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: Hemmung des kardialen hERG-Kaliumkanals verlängert die Repolarisation.
+monitoring: 'Kombinationen vermeiden, EKG vor und unter Therapie, Elektrolyte ausgleichen; Torsade: Magnesium.'
+clinical_pearls: 'Beispiele: Amiodaron, Makrolide, Fluorchinolone, Haloperidol, Ondansetron, Methadon.'
+front_content:
+  prompt: 'Mehrere QT-verlängernde Medikamente plus Hypokaliämie: welche Gefahr?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: Hemmung des kardialen hERG-Kaliumkanals verlängert die Repolarisation.
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: Torsade de pointes bis Kammerflimmern.
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Hypokaliämie, Hypomagnesiämie, Bradykardie, weibliches Geschlecht, angeborenes Long-QT, Kombinationen.
+- key: management
+  label: Management
+  color_role: clinic
+  text: 'Kombinationen vermeiden, EKG vor und unter Therapie, Elektrolyte ausgleichen; Torsade: Magnesium.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Beispiele: Amiodaron, Makrolide, Fluorchinolone, Haloperidol, Ondansetron, Methadon.'
+tags:
+- qt_verlaengerung
+- interaktion
+- monitoring
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_042
+- ph_049
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Beispielsubstanzen gegen aktuelle Referenzliste (z. B. CredibleMeds) prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_210_qt_zeit_verlaengerung_front.png
+back_asset: cards/PH/back/ph_210_qt_zeit_verlaengerung_back.png
+qr_url: https://chembiomed-cards.de/c/ph210
+lms_url: https://lms.at-medical.example/ph/qt-zeit-verlaengerung

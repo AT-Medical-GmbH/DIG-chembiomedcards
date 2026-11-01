@@ -7,11 +7,17 @@ import pytest
 import yaml
 from sqlalchemy import select, update
 
-from app.config import Settings
+from app.config import REPO_ROOT, Settings
 from app.models import Card, CardVersion, UserProgress
 from app.seed import run as run_seed
 
 from .conftest import APPROVED, DRAFT, LEARNER, REVIEWER, TEACHER, as_user
+
+# Erwartungswerte aus dem Kartenbestand ableiten, damit neue Karten die Tests nicht brechen
+_CARDS = [yaml.safe_load(f.read_text(encoding="utf-8"))
+          for f in sorted((REPO_ROOT / "cards/PH/metadata").glob("*.yaml"))]
+N_CARDS = len(_CARDS)
+N_TOXIDROME = sum(1 for c in _CARDS if c.get("card_type") == "toxidrome")
 
 
 # ---------------- Startsperren ----------------
@@ -39,14 +45,14 @@ def test_learner_sees_only_approved_cards(client):
 
 def test_reviewer_sees_drafts_marked_as_draft(client):
     r = client.get("/api/cards", headers=REVIEWER).json()
-    assert r["count"] == 60
+    assert r["count"] == N_CARDS
     detail = client.get(f"/api/cards/{DRAFT}", headers=REVIEWER).json()
     assert detail["draft"] is True and detail["warning_level"] == "critical"
 
 
 def test_dev_flag_shows_drafts_to_learners(make_client):
     c = make_client(show_unreviewed=True)
-    assert c.get("/api/cards", headers=LEARNER).json()["count"] == 60
+    assert c.get("/api/cards", headers=LEARNER).json()["count"] == N_CARDS
     assert c.get("/api/me", headers=LEARNER).json()["sees_unreviewed"] is True
 
 
@@ -59,7 +65,7 @@ def test_search_and_filters(client):
     hits = client.get("/api/cards", params={"q": "naloxon"}, headers=REVIEWER).json()["cards"]
     assert DRAFT in {c["card_id"] for c in hits}
     tox = client.get("/api/cards", params={"card_type": "toxidrome"}, headers=REVIEWER).json()
-    assert tox["count"] == 7
+    assert tox["count"] == N_TOXIDROME and N_TOXIDROME > 0
     notfall = client.get("/api/cards", params={"category": "notfallmedikamente"}, headers=REVIEWER).json()
     assert DRAFT in {c["card_id"] for c in notfall["cards"]}   # über Nebenkategorie
 

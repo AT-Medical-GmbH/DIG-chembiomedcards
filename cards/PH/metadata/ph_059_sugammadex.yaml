@@ -1,0 +1,79 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_059
+slug: ph_059_sugammadex
+title: Sugammadex
+subtitle: Selektives Relaxans-Bindungsmittel
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories: []
+chapter: pharmakologie/anaesthesie
+drug_class: antidote
+substance_name: Sugammadex
+generic_name: Sugammadex
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Modifiziertes γ-Cyclodextrin: umschließt Rocuronium oder Vecuronium und hebt so
+  die Blockade auf.'
+indications: '- Aufhebung einer Rocuronium-/Vecuronium-Blockade, auch einer tiefen'
+contraindications: Unwirksam bei Succinylcholin und Benzylisochinolinen (z. B. Cisatracurium).
+adverse_effects: Bradykardie, Anaphylaxie, Bronchospasmus.
+interactions: Mindert die Wirksamkeit hormoneller Kontrazeptiva vorübergehend.
+monitoring: Relaxometrie nach Gabe.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Wirkt nur bei Aminosteroiden (Rocuronium, Vecuronium).
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Modifiziertes γ-Cyclodextrin: umschließt Rocuronium oder Vecuronium und hebt so die Blockade
+    auf.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Aufhebung einer Rocuronium-/Vecuronium-Blockade, auch einer tiefen'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Bradykardie, Anaphylaxie, Bronchospasmus.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Unwirksam bei Succinylcholin und Benzylisochinolinen (z. B. Cisatracurium).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Mindert die Wirksamkeit hormoneller Kontrazeptiva vorübergehend. Relaxometrie nach Gabe.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Wirkt nur bei Aminosteroiden (Rocuronium, Vecuronium).
+tags:
+- anaesthesie
+- interaktion
+- pruefungsrelevant
+related_cards:
+- ph_056
+- ph_060
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Hinweis zur hormonellen Kontrazeption nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_059_sugammadex_front.png
+back_asset: cards/PH/back/ph_059_sugammadex_back.png
+qr_url: https://chembiomed-cards.de/c/ph059
+lms_url: https://lms.at-medical.example/ph/sugammadex
