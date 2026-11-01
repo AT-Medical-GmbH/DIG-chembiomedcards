@@ -1,8 +1,8 @@
 <script lang="ts">
   // Deep Linking: Lehrende wählen Lernsets oder einzelne freigegebene Karten als Moodle-Aktivität.
   import { tick } from 'svelte';
-  import { api, post, type CardSummary } from '$lib/api';
-  import { session } from '$lib/session.svelte';
+  import { api, post, type CardSummary } from '#lib/api.ts';
+  import { session } from '#lib/session.svelte.ts';
 
   type Item = { type: 'set' | 'card'; id: string; label: string };
   let sets = $state<{ slug: string; name: string }[]>([]);

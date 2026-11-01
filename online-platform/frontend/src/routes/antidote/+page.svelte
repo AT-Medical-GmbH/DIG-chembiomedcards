@@ -1,6 +1,6 @@
 <script lang="ts">
   // Toxikologie-/Antidot-Schnellübersicht: Antidot ↔ Zielintoxikation und Toxidrome auf einen Blick.
-  import { api, warnLabel, type CardDetail, type CardSummary } from '$lib/api';
+  import { api, warnLabel, type CardDetail, type CardSummary } from '#lib/api.ts';
 
   let antidotes = $state<CardDetail[]>([]);
   let toxidromes = $state<CardDetail[]>([]);

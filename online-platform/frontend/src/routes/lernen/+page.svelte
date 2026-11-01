@@ -2,10 +2,10 @@
   // Lernmodus: Karte mittig, Flip per Klick/Tap/Leertaste/Wischen, Bewertung 1–4, Markierungen,
   // Notizen, Downloads, Fokusmodus (Vollbild). Bewertung steuert SM-2 bzw. Leitner im Backend.
   import { page } from '$app/state';
-  import CardView from '$lib/CardView.svelte';
-  import NotesPanel from '$lib/NotesPanel.svelte';
+  import CardView from '#lib/CardView.svelte';
+  import NotesPanel from '#lib/NotesPanel.svelte';
   import { api, download, flagLabel, post, put, ratingLabel, warnLabel,
-           type CardDetail, type CardSummary, type Rating } from '$lib/api';
+           type CardDetail, type CardSummary, type Rating } from '#lib/api.ts';
 
   const setSlug = page.url.searchParams.get('set') ?? 'alle';
   const category = page.url.searchParams.get('category');

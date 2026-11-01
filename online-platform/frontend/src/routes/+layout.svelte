@@ -1,10 +1,10 @@
 <script lang="ts">
   import '../app.css';
   import { page } from '$app/state';
-  import { api } from '$lib/api';
-  import { ltiContext, ltiToken } from '$lib/lti';
-  import { displayName, loadTokens, login, logout, type AuthConfig } from '$lib/oidc';
-  import { DEV_USERS, session } from '$lib/session.svelte';
+  import { api } from '#lib/api.ts';
+  import { ltiContext, ltiToken } from '#lib/lti.ts';
+  import { displayName, loadTokens, login, logout, type AuthConfig } from '#lib/oidc.ts';
+  import { DEV_USERS, session } from '#lib/session.svelte.ts';
 
   let { children } = $props();
   let ready = $state(false);

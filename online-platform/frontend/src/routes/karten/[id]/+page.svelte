@@ -2,10 +2,10 @@
   // Kartendetail: Karte (Flip), Einordnung, Lernziele, verwandte Karten, Notiz, Downloads.
   // Für Fachreview-Rollen zusätzlich Review-Protokoll und Änderungsverlauf.
   import { page } from '$app/state';
-  import CardView from '$lib/CardView.svelte';
-  import NotesPanel from '$lib/NotesPanel.svelte';
-  import { api, download, post, statusLabel, warnLabel, type CardDetail } from '$lib/api';
-  import { session } from '$lib/session.svelte';
+  import CardView from '#lib/CardView.svelte';
+  import NotesPanel from '#lib/NotesPanel.svelte';
+  import { api, download, post, statusLabel, warnLabel, type CardDetail } from '#lib/api.ts';
+  import { session } from '#lib/session.svelte.ts';
 
   type Review = { id: number; review_type: string; status: string; card_version: string; notes: string | null; reviewer: string; role: string; at: string };
   type Version = { version: string; content_hash: string; changed_by: string; change_note: string | null; at: string };
