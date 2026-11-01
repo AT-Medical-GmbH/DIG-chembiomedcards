@@ -224,6 +224,14 @@ def test_link_check():
     assert errs == [] and warns
 
 
+def test_drug_class_links_to_begriff():
+    grp = {"card_id": "ph_140", "title": "Betablocker", "substance_name": "Betablocker",
+           "front_type": "drug_class", "begriff_slug": "betablocker",
+           "qr_url": "https://at-medical.de/w/begriff/betablocker"}
+    assert wiki_links.link_kind(grp) == "begriff" and wiki_links.check(grp) == ([], [])
+    assert "Begriff: Betablocker" in render_cards.footer_html(grp, with_qr=True)
+
+
 # ---------------- Rendering (Chromium) ----------------
 
 def test_rendered_sample_has_no_overflow():

@@ -2,7 +2,7 @@
 # Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
 card_id: ph_147
 slug: ph_147_niedermolekulare_heparine
-wirkstoff_slug: niedermolekulare-heparine
+begriff_slug: niedermolekulare-heparine
 title: Niedermolekulare Heparine
 subtitle: Indirekte Faktor-Xa-Hemmer
 module: PH
@@ -86,5 +86,5 @@ print_status: planned
 web_status: planned
 front_asset: cards/PH/front/ph_147_niedermolekulare_heparine_front.png
 back_asset: cards/PH/back/ph_147_niedermolekulare_heparine_back.png
-qr_url: https://at-medical.de/w/wirkstoff/niedermolekulare-heparine
+qr_url: https://at-medical.de/w/begriff/niedermolekulare-heparine
 lms_url: https://lms.at-medical.example/ph/niedermolekulare-heparine

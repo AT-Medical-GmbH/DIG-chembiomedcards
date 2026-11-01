@@ -160,7 +160,7 @@ def qr_svg(url: str) -> tuple[str, float] | None:
 
 def qr_label(card: dict) -> str:
     """Bezeichnung unter dem QR-Code: Zieltyp und Name."""
-    kind = "Wirkstoff" if card.get("substance_name") else "Begriff"
+    kind = "Wirkstoff" if wiki_links.link_kind(card) == "wirkstoff" else "Begriff"
     return f"{kind}: {card.get('substance_name') or card.get('title', '')}"
 
 

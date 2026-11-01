@@ -2,6 +2,8 @@
 
 - Wirkstoffkarten (Feld ``substance_name`` gesetzt) erhalten ``wirkstoff_slug`` und zeigen auf
   ``https://at-medical.de/w/wirkstoff/<slug>``.
+- Wirkstoffgruppen (``front_type: drug_class``, z. B. Betablocker, DOAK) sind keine einzelnen
+  Wirkstoffe und zählen als Begriff (Entscheidung Andreas Tremml 2026-11-01).
 - Alle übrigen Karten (Übersicht, Toxidrom) erhalten ``begriff_slug`` und zeigen auf
   ``https://at-medical.de/w/begriff/<slug>``.
 - ``qr_url`` wird ausschließlich daraus erzeugt (``scripts/pharma/sync_qr_urls.py``) und vom
@@ -33,7 +35,9 @@ def slugify(name: str) -> str:
 
 
 def link_kind(card: dict) -> str:
-    """'wirkstoff' für Karten mit Wirkstoff, sonst 'begriff'."""
+    """'wirkstoff' für Karten zu einem einzelnen Wirkstoff, sonst 'begriff' (auch Wirkstoffgruppen)."""
+    if card.get("front_type") == "drug_class":
+        return "begriff"
     return "wirkstoff" if card.get("substance_name") else "begriff"
 
 
