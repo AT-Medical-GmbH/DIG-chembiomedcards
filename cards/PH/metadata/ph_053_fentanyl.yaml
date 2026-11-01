@@ -1,0 +1,93 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_053
+slug: ph_053_fentanyl
+wirkstoff_slug: fentanyl
+title: Fentanyl
+subtitle: Hochpotentes Opioid
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories:
+- analgetika
+- intensivpharmakologie
+chapter: pharmakologie/anaesthesie
+drug_class: opioide
+substance_name: Fentanyl
+generic_name: Fentanyl
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Hochpotenter µ-Opioidrezeptor-Agonist; stark lipophil, daher schneller Wirkeintritt.
+indications: '- Analgesie in Anästhesie und Intensivmedizin
+
+  - Notfallanalgesie
+
+  - transdermal bei chronischen Tumorschmerzen'
+contraindications: Nur mit Überwachung und Atemwegsmanagement. Pflaster nicht bei opioidnaiven Patienten.
+adverse_effects: Atemdepression, Thoraxrigidität bei rascher hoher Gabe, Bradykardie, Übelkeit, Obstipation.
+interactions: CYP3A4-Inhibitoren erhöhen den Spiegel; additive Atemdepression mit Sedativa.
+monitoring: Atmung, SpO₂, Vigilanz.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: Die kontextsensitive Halbwertszeit steigt bei langer Infusion deutlich an.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Hochpotenter µ-Opioidrezeptor-Agonist; stark lipophil, daher schneller Wirkeintritt.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Analgesie in Anästhesie und Intensivmedizin
+
+    - Notfallanalgesie
+
+    - transdermal bei chronischen Tumorschmerzen'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Atemdepression, Thoraxrigidität bei rascher hoher Gabe, Bradykardie, Übelkeit, Obstipation.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Nur mit Überwachung und Atemwegsmanagement. Pflaster nicht bei opioidnaiven Patienten.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: CYP3A4-Inhibitoren erhöhen den Spiegel; additive Atemdepression mit Sedativa. Atmung, SpO₂, Vigilanz.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Die kontextsensitive Halbwertszeit steigt bei langer Infusion deutlich an.
+tags:
+- anaesthesie
+- intensivmedizin
+- agonist
+- rezeptor
+- hochrisiko
+- pruefungsrelevant
+- cyp450
+related_cards:
+- ph_054
+- ph_100
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Pflaster-Indikation und -Kontraindikationen nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_053_fentanyl_front.png
+back_asset: cards/PH/back/ph_053_fentanyl_back.png
+qr_url: https://at-medical.de/w/wirkstoff/fentanyl
+lms_url: https://lms.at-medical.example/ph/fentanyl

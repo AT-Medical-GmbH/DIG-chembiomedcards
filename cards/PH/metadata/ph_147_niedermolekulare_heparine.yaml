@@ -1,0 +1,90 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_147
+slug: ph_147_niedermolekulare_heparine
+wirkstoff_slug: niedermolekulare-heparine
+title: Niedermolekulare Heparine
+subtitle: Indirekte Faktor-Xa-Hemmer
+module: PH
+primary_category: antikoagulanzien
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: antikoagulanzien
+substance_name: Niedermolekulare Heparine
+generic_name: Niedermolekulare Heparine
+card_type: substance
+front_type: drug_class
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Verstärken Antithrombin; wirken vorwiegend gegen Faktor Xa, weniger gegen Thrombin.
+indications: '- Thromboseprophylaxe
+
+  - Therapie von Thrombose und Lungenembolie
+
+  - Bridging'
+contraindications: Aktive Blutung, HIT in der Anamnese; Vorsicht bei Niereninsuffizienz (renale Elimination).
+adverse_effects: Blutung, HIT (seltener als bei unfraktioniertem Heparin), Hämatome an der Einstichstelle.
+interactions: Thrombozytenhemmer, NSAR.
+monitoring: Nierenfunktion, Thrombozyten; Anti-Xa nur in Sondersituationen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: protamin
+clinical_pearls: Protamin hebt die Anti-Xa-Wirkung nur teilweise auf.
+front_content:
+  prompt: 'Niedermolekulare Heparine: Wirkprinzip, Einsatz und Risiken?'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Verstärken Antithrombin; wirken vorwiegend gegen Faktor Xa, weniger gegen Thrombin.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Thromboseprophylaxe
+
+    - Therapie von Thrombose und Lungenembolie
+
+    - Bridging'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Blutung, HIT (seltener als bei unfraktioniertem Heparin), Hämatome an der Einstichstelle.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Aktive Blutung, HIT in der Anamnese; Vorsicht bei Niereninsuffizienz (renale Elimination).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Thrombozytenhemmer, NSAR. Nierenfunktion, Thrombozyten; Anti-Xa nur in Sondersituationen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Protamin hebt die Anti-Xa-Wirkung nur teilweise auf.
+tags:
+- hochrisiko
+- interaktion
+- monitoring
+- pruefungsrelevant
+- niereninsuffizienz
+related_cards:
+- ph_146
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Anpassung bei Niereninsuffizienz nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_147_niedermolekulare_heparine_front.png
+back_asset: cards/PH/back/ph_147_niedermolekulare_heparine_back.png
+qr_url: https://at-medical.de/w/wirkstoff/niedermolekulare-heparine
+lms_url: https://lms.at-medical.example/ph/niedermolekulare-heparine

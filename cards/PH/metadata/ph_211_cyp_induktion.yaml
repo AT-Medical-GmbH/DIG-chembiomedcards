@@ -1,0 +1,69 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_211
+slug: ph_211_cyp_induktion
+begriff_slug: cyp-induktion
+title: CYP-Induktion
+subtitle: Verstärkter Abbau durch Enzyminduktoren
+module: PH
+primary_category: arzneimittelinteraktionen
+secondary_categories: []
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: Induktoren steigern die Enzymsynthese; die Wirkung beginnt und endet verzögert (Tage bis
+  Wochen).
+monitoring: Kombination prüfen, Spiegel bzw. Wirkung überwachen, Dosis anpassen – auch nach dem Absetzen.
+clinical_pearls: 'Typische Induktoren: Rifampicin, Carbamazepin, Phenytoin, Johanniskraut.'
+front_content:
+  prompt: 'Patient unter Rifampicin erhält ein CYP3A4-Substrat: was passiert?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: Induktoren steigern die Enzymsynthese; die Wirkung beginnt und endet verzögert (Tage bis Wochen).
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: 'Spiegel der Substrate sinken: Wirkverlust (z. B. Antikoagulanzien, Kontrazeptiva, Immunsuppressiva).'
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Substrate mit enger therapeutischer Breite; nach Absetzen des Induktors steigt der Spiegel wieder.
+- key: management
+  label: Management
+  color_role: clinic
+  text: Kombination prüfen, Spiegel bzw. Wirkung überwachen, Dosis anpassen – auch nach dem Absetzen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Typische Induktoren: Rifampicin, Carbamazepin, Phenytoin, Johanniskraut.'
+tags:
+- cyp450
+- interaktion
+- enge_therapeutische_breite
+- pruefungsrelevant
+related_cards:
+- ph_021
+- ph_212
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Zeitverlauf der Induktion mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_211_cyp_induktion_front.png
+back_asset: cards/PH/back/ph_211_cyp_induktion_back.png
+qr_url: https://at-medical.de/w/begriff/cyp-induktion
+lms_url: https://lms.at-medical.example/ph/cyp-induktion

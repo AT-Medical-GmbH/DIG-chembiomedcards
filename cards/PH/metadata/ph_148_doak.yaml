@@ -1,0 +1,89 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_148
+slug: ph_148_doak
+wirkstoff_slug: direkte-orale-antikoagulanzien
+title: Direkte orale Antikoagulanzien (DOAK)
+subtitle: Faktor-Xa- und Thrombinhemmer
+module: PH
+primary_category: antikoagulanzien
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: antikoagulanzien
+substance_name: Direkte orale Antikoagulanzien (DOAK)
+generic_name: Direkte orale Antikoagulanzien (DOAK)
+card_type: substance
+front_type: drug_class
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Direkte Hemmung von Faktor Xa (Apixaban, Edoxaban, Rivaroxaban) oder Thrombin (Dabigatran).
+indications: '- Schlaganfallprophylaxe bei nichtvalvulärem Vorhofflimmern
+
+  - Therapie und Prophylaxe venöser Thromboembolien'
+contraindications: Mechanische Herzklappen, aktive Blutung, schwere Niereninsuffizienz (substanzabhängig),
+  Schwangerschaft.
+adverse_effects: Blutung; Magen-Darm-Beschwerden (Dabigatran).
+interactions: Starke P-gp-/CYP3A4-Hemmer und -Induktoren, Thrombozytenhemmer, NSAR.
+monitoring: Nierenfunktion regelmäßig.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: 'Antidote: Idarucizumab (Dabigatran), Andexanet alfa (Faktor-Xa-Hemmer, Zulassung beachten).'
+front_content:
+  prompt: 'Direkte orale Antikoagulanzien (DOAK): Wirkprinzip, Einsatz und Risiken?'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Direkte Hemmung von Faktor Xa (Apixaban, Edoxaban, Rivaroxaban) oder Thrombin (Dabigatran).
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Schlaganfallprophylaxe bei nichtvalvulärem Vorhofflimmern
+
+    - Therapie und Prophylaxe venöser Thromboembolien'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Blutung; Magen-Darm-Beschwerden (Dabigatran).
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Mechanische Herzklappen, aktive Blutung, schwere Niereninsuffizienz (substanzabhängig), Schwangerschaft.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Starke P-gp-/CYP3A4-Hemmer und -Induktoren, Thrombozytenhemmer, NSAR. Nierenfunktion regelmäßig.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Antidote: Idarucizumab (Dabigatran), Andexanet alfa (Faktor-Xa-Hemmer, Zulassung beachten).'
+tags:
+- hochrisiko
+- interaktion
+- monitoring
+- pruefungsrelevant
+- niereninsuffizienz
+- cyp450
+related_cards:
+- ph_149
+- ph_025
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Antidot-Zulassungsstand (Andexanet) prüfen
+- Nierenfunktionsgrenzen je Substanz nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_148_doak_front.png
+back_asset: cards/PH/back/ph_148_doak_back.png
+qr_url: https://at-medical.de/w/wirkstoff/direkte-orale-antikoagulanzien
+lms_url: https://lms.at-medical.example/ph/doak

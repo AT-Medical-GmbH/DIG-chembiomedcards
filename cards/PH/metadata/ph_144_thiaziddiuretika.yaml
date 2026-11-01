@@ -1,0 +1,85 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_144
+slug: ph_144_thiaziddiuretika
+wirkstoff_slug: thiaziddiuretika
+title: Thiaziddiuretika
+subtitle: Distal-tubuläre Diuretika
+module: PH
+primary_category: antihypertensiva
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: diuretika
+substance_name: Thiaziddiuretika
+generic_name: Thiaziddiuretika
+card_type: substance
+front_type: drug_class
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Hemmung des Na⁺-Cl⁻-Cotransporters im distalen Tubulus.
+indications: '- Hypertonie
+
+  - Ödeme (in Kombination)'
+contraindications: Schwere Niereninsuffizienz (Wirkverlust), Hyponatriämie, Hypokaliämie.
+adverse_effects: Hypokaliämie, Hyponatriämie, Hyperurikämie/Gicht, Hyperglykämie, Hyperkalzämie.
+interactions: Lithium (Spiegel ↑), Digitalis (Hypokaliämie), NSAR.
+monitoring: Elektrolyte, Harnsäure, Glucose.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Häufige Ursache einer Hyponatriämie, besonders bei älteren Frauen.
+front_content:
+  prompt: 'Thiaziddiuretika: Wirkprinzip, Einsatz und Risiken?'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Hemmung des Na⁺-Cl⁻-Cotransporters im distalen Tubulus.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Hypertonie
+
+    - Ödeme (in Kombination)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Hypokaliämie, Hyponatriämie, Hyperurikämie/Gicht, Hyperglykämie, Hyperkalzämie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Schwere Niereninsuffizienz (Wirkverlust), Hyponatriämie, Hypokaliämie.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Lithium (Spiegel ↑), Digitalis (Hypokaliämie), NSAR. Elektrolyte, Harnsäure, Glucose.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Häufige Ursache einer Hyponatriämie, besonders bei älteren Frauen.
+tags:
+- interaktion
+- monitoring
+- geriatrie
+- pruefungsrelevant
+related_cards:
+- ph_218
+- ph_045
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Wirkverlust bei Niereninsuffizienz (Grenze) nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_144_thiaziddiuretika_front.png
+back_asset: cards/PH/back/ph_144_thiaziddiuretika_back.png
+qr_url: https://at-medical.de/w/wirkstoff/thiaziddiuretika
+lms_url: https://lms.at-medical.example/ph/thiaziddiuretika

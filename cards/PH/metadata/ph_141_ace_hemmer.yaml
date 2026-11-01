@@ -1,0 +1,86 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_141
+slug: ph_141_ace_hemmer
+wirkstoff_slug: ace-hemmer
+title: ACE-Hemmer
+subtitle: Hemmer des Angiotensin-Konversionsenzyms
+module: PH
+primary_category: antihypertensiva
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: raas_hemmer
+substance_name: ACE-Hemmer
+generic_name: ACE-Hemmer
+card_type: substance
+front_type: drug_class
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Hemmung des Angiotensin-Konversionsenzyms: weniger Angiotensin II und Aldosteron,
+  weniger Bradykinin-Abbau.'
+indications: '- Hypertonie, Herzinsuffizienz
+
+  - nach Myokardinfarkt, diabetische Nephropathie'
+contraindications: Angioödem in der Anamnese, Schwangerschaft, beidseitige Nierenarterienstenose.
+adverse_effects: Reizhusten, Hyperkaliämie, Nierenfunktionsverschlechterung, Angioödem, Hypotonie.
+interactions: Kaliumsparende Diuretika (Hyperkaliämie), NSAR (Niere), Lithium.
+monitoring: Kalium, Kreatinin.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Husten → Wechsel auf AT1-Blocker; nach Angioödem nie wieder ACE-Hemmer.
+front_content:
+  prompt: 'ACE-Hemmer: Wirkprinzip, Einsatz und Risiken?'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Hemmung des Angiotensin-Konversionsenzyms: weniger Angiotensin II und Aldosteron, weniger Bradykinin-Abbau.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Hypertonie, Herzinsuffizienz
+
+    - nach Myokardinfarkt, diabetische Nephropathie'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Reizhusten, Hyperkaliämie, Nierenfunktionsverschlechterung, Angioödem, Hypotonie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Angioödem in der Anamnese, Schwangerschaft, beidseitige Nierenarterienstenose.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Kaliumsparende Diuretika (Hyperkaliämie), NSAR (Niere), Lithium. Kalium, Kreatinin.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Husten → Wechsel auf AT1-Blocker; nach Angioödem nie wieder ACE-Hemmer.
+tags:
+- interaktion
+- niereninsuffizienz
+- schwangerschaft
+- pruefungsrelevant
+related_cards:
+- ph_142
+- ph_217
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Kontraindikationen nach aktueller Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_141_ace_hemmer_front.png
+back_asset: cards/PH/back/ph_141_ace_hemmer_back.png
+qr_url: https://at-medical.de/w/wirkstoff/ace-hemmer
+lms_url: https://lms.at-medical.example/ph/ace-hemmer

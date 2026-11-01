@@ -1,0 +1,92 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_143
+slug: ph_143_calciumkanalblocker
+wirkstoff_slug: calciumkanalblocker
+title: Calciumkanalblocker
+subtitle: L-Typ-Calciumkanal-Blocker
+module: PH
+primary_category: antihypertensiva
+secondary_categories:
+- antiarrhythmika
+chapter: pharmakologie/herz_kreislauf
+drug_class: calciumkanalblocker
+substance_name: Calciumkanalblocker
+generic_name: Calciumkanalblocker
+card_type: substance
+front_type: drug_class
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Blockade von L-Typ-Calciumkanälen. Dihydropyridine wirken vor allem an Gefäßen, Verapamil/Diltiazem
+  auch am Herzen.
+indications: '- Hypertonie, Angina pectoris (Dihydropyridine)
+
+  - Frequenzkontrolle supraventrikulärer Tachykardien (Verapamil/Diltiazem)'
+contraindications: 'Verapamil/Diltiazem: AV-Block, Herzinsuffizienz mit reduzierter EF, Präexzitation
+  mit Vorhofflimmern.'
+adverse_effects: Knöchelödeme, Flush, Reflextachykardie (Dihydropyridine); Bradykardie, AV-Block, Obstipation
+  (Verapamil).
+interactions: 'Verapamil + Betablocker: Bradykardie/AV-Block; CYP3A4-Interaktionen.'
+monitoring: Herzfrequenz, Blutdruck.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: calcium
+toxidrome: calciumkanalblocker
+clinical_pearls: Gefäßtyp und Herztyp unterscheiden – nicht alle Calciumkanalblocker sind gleich.
+front_content:
+  prompt: 'Calciumkanalblocker: Wirkprinzip, Einsatz und Risiken?'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Blockade von L-Typ-Calciumkanälen. Dihydropyridine wirken vor allem an Gefäßen, Verapamil/Diltiazem
+    auch am Herzen.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Hypertonie, Angina pectoris (Dihydropyridine)
+
+    - Frequenzkontrolle supraventrikulärer Tachykardien (Verapamil/Diltiazem)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Knöchelödeme, Flush, Reflextachykardie (Dihydropyridine); Bradykardie, AV-Block, Obstipation (Verapamil).
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: 'Verapamil/Diltiazem: AV-Block, Herzinsuffizienz mit reduzierter EF, Präexzitation mit Vorhofflimmern.'
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: 'Verapamil + Betablocker: Bradykardie/AV-Block; CYP3A4-Interaktionen. Herzfrequenz, Blutdruck.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Gefäßtyp und Herztyp unterscheiden – nicht alle Calciumkanalblocker sind gleich.
+tags:
+- interaktion
+- cyp450
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_088
+- ph_140
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Kontraindikationen je Substanzgruppe nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_143_calciumkanalblocker_front.png
+back_asset: cards/PH/back/ph_143_calciumkanalblocker_back.png
+qr_url: https://at-medical.de/w/wirkstoff/calciumkanalblocker
+lms_url: https://lms.at-medical.example/ph/calciumkanalblocker
