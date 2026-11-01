@@ -11,7 +11,7 @@ PNG_OUT   ?= exports/preview/ph
 PYR       ?= $(PY)
 
 .PHONY: help ph-validate ph-registry ph-registry-check ph-render ph-render-png \
-        ph-output-check ph-release-check ph-review-report ph-layout-check \
+        ph-output-check ph-release-check ph-review-report ph-review-packet ph-layout-check \
         ph-moodle ph-moodle-preview ph-print ph-print-preview ph-test ph-all registry-validate
 
 help:
@@ -24,6 +24,7 @@ help:
 	@echo "  make ph-output-check    - erzeugte Ausgabe + Export-Gating prüfen"
 	@echo "  make ph-release-check   - Export-Gating hart (nur approved/reviewed) erzwingen"
 	@echo "  make ph-review-report   - Liste offener Reviews mit Prüfschwerpunkten erzeugen"
+	@echo "  make ph-review-packet   - Review-PDF aller offenen Karten (ENTWURF) -> dist/review"
 	@echo "  make ph-layout-check    - Überlauf + Sicherheitszone in Chromium messen (Report)"
 	@echo "  make ph-moodle          - Moodle-Pakete, nur freigegebene Karten -> dist/moodle"
 	@echo "  make ph-moodle-preview  - Moodle-Vorschau inkl. Karten im Review -> dist/preview"
@@ -57,6 +58,9 @@ ph-release-check:
 
 ph-review-report:
 	$(PY) scripts/pharma/review_report.py --cards $(PH_CARDS) --out docs/pharma-cards/reports/cards_review_needed.md
+
+ph-review-packet:
+	$(PYR) scripts/pharma/review_packet.py --cards $(PH_CARDS) --out dist/review/Pharma_Cards_Review.pdf
 
 ph-layout-check:
 	$(PYR) scripts/pharma/check_layout.py --cards $(PH_CARDS) --strict

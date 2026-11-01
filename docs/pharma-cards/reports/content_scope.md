@@ -23,6 +23,6 @@ Wirkstoff · Wirkmechanismus · Toxidrom · Antidot · Interaktion · Fall · Ü
 (`card_types.yaml`).
 
 ## Produktionsstand (2026-10-31)
-R1 ist mit 60 Karten vollständig als Entwurf angelegt (`cards/PH/metadata/`). Freigegeben ist noch
-keine Karte. 30 Grundlagen-/PK-PD-Karten warten auf allgemeines Fachreview, 30 klinische Karten auf
-pharmakologische bzw. toxikologische Prüfung. Details: `missing_cards.md`, `cards_review_needed.md`.
+110 Karten als Entwurf angelegt (`cards/PH/metadata/`): R1 vollständig (60), R2 weitgehend (50).
+Freigegeben ist noch keine Karte. Alle 110 Karten passen laut Layoutmessung ohne Überlauf auf DIN A6
+(`layout_review.md`). Details: `missing_cards.md`, `cards_review_needed.md`.

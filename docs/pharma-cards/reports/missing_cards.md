@@ -1,6 +1,6 @@
 # Report — Missing Cards (PH / Pharma Cards)
 
-**Stand:** 2026-10-31 · **Bedeutung:** Geplante Karten, die noch fehlen, und Karten, die zwar angelegt,
+**Stand:** 2026-10-31 (R1 + R2) · **Bedeutung:** Geplante Karten, die noch fehlen, und Karten, die zwar angelegt,
 aber noch nicht freigegeben sind.
 
 ## Release R1 — als Entwurf vollständig angelegt
@@ -21,12 +21,20 @@ nicht doppelt angelegt. Es gibt sie nur als Antidotkarte; über die Nebenkategor
 **Was in R1 fehlt, ist die Freigabe, nicht der Inhalt.** Offene Prüfungen mit Schwerpunkten:
 `cards_review_needed.md`.
 
-## Release R2 — fehlt noch
+## Release R2 — als Entwurf angelegt (50 Karten)
 
-Anästhesie/Intensiv (u. a. Propofol, Etomidat, Sevofluran, Fentanyl/Sufentanil/Remifentanil,
-Rocuronium, Succinylcholin, Sugammadex, Dexmedetomidin, Dobutamin, Levosimendan), Analgetika,
-Herz-Kreislauf inkl. Intoxikationskarten, Arzneimittelsicherheit/Interaktionen.
-Siehe `../04_startliste-kuratiert.md` §3.
+| Block | IDs | Anzahl | Status |
+|---|---|---:|---|
+| Anästhesie / Intensiv | `ph_050`–`ph_064` | 15 | `clinical_review_needed` |
+| Analgetika | `ph_130`–`ph_138` | 9 | `clinical_review_needed` |
+| Herz-Kreislauf | `ph_140`–`ph_151` | 12 | `clinical_review_needed` |
+| Intoxikationen (Betablocker, Calciumkanalblocker, Digitalis) | `ph_087`–`ph_089` | 3 | `toxicology_review_needed` |
+| Interaktionen / Arzneimittelsicherheit | `ph_210`–`ph_220` | 11 | `clinical_review_needed` |
+
+Aus der Startliste noch offen (bewusst nicht im ersten R2-Schnitt): Esketamin (als Hinweis auf der
+Ketamin-Karte), Vecuronium, Desfluran, Isofluran, Clonidin. Wirkstoffe, die mehreren Blöcken
+angehören (Noradrenalin, ASS, Naloxon), gibt es nur einmal; die Mehrfachzuordnung läuft über
+Nebenkategorien.
 
 ## Release R3 / R4 — fehlt noch
 

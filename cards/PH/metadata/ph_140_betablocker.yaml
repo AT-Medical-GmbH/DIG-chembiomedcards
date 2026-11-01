@@ -1,0 +1,90 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_140
+slug: ph_140_betablocker
+title: Betablocker
+subtitle: β-Adrenozeptor-Antagonisten
+module: PH
+primary_category: antihypertensiva
+secondary_categories:
+- antiarrhythmika
+chapter: pharmakologie/herz_kreislauf
+drug_class: betablocker
+substance_name: Betablocker
+generic_name: Betablocker
+card_type: substance
+front_type: drug_class
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Kompetitive Blockade von β-Adrenozeptoren; kardioselektive (β1) und nichtselektive
+  Substanzen.
+indications: '- Hypertonie, KHK, Herzinsuffizienz (bestimmte Substanzen)
+
+  - tachykarde Rhythmusstörungen'
+contraindications: Höhergradiger AV-Block, symptomatische Bradykardie, dekompensierte Herzinsuffizienz,
+  schweres Asthma.
+adverse_effects: Bradykardie, AV-Block, Bronchospasmus (v. a. nichtselektiv), Müdigkeit, maskierte Hypoglykämie.
+interactions: 'Verapamil/Diltiazem: Bradykardie, AV-Block.'
+monitoring: Herzfrequenz, Blutdruck.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: glucagon
+toxidrome: betablocker
+clinical_pearls: 'Nicht abrupt absetzen: Rebound-Tachykardie und Angina möglich.'
+front_content:
+  prompt: 'Betablocker: Wirkprinzip, Einsatz und Risiken?'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Kompetitive Blockade von β-Adrenozeptoren; kardioselektive (β1) und nichtselektive Substanzen.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Hypertonie, KHK, Herzinsuffizienz (bestimmte Substanzen)
+
+    - tachykarde Rhythmusstörungen'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Bradykardie, AV-Block, Bronchospasmus (v. a. nichtselektiv), Müdigkeit, maskierte Hypoglykämie.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Höhergradiger AV-Block, symptomatische Bradykardie, dekompensierte Herzinsuffizienz, schweres
+    Asthma.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: 'Verapamil/Diltiazem: Bradykardie, AV-Block. Herzfrequenz, Blutdruck.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Nicht abrupt absetzen: Rebound-Tachykardie und Angina möglich.'
+tags:
+- antagonist
+- rezeptor
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_087
+- ph_143
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Asthma-Kontraindikation (kardioselektiv vs. nichtselektiv) nach Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_140_betablocker_front.png
+back_asset: cards/PH/back/ph_140_betablocker_back.png
+qr_url: https://chembiomed-cards.de/c/ph140
+lms_url: https://lms.at-medical.example/ph/betablocker
