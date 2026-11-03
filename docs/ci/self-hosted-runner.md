@@ -1,5 +1,10 @@
 # Eigener GitHub-Actions-Runner für DIG-chembiomedcards
 
+> **Abgelöst (2026-11-03):** Entscheidung von Andreas Tremml: Das Projekt zieht auf Forgejo auf
+> ATMED-core um. Der Runner läuft dann dort als Forgejo-Runner, siehe `ops/forgejo/README.md`.
+> Diese Anleitung (GitHub-Runner auf ATINFRA-control) wird nicht mehr umgesetzt und bleibt nur als
+> Referenz für das Sicherheitsmodell erhalten.
+
 Stand 2026-10-31. Entscheidung von Andreas Tremml: Das Repo wird privat gestellt, und die CI läuft auf
 einem eigenen Runner. Anlass: Die GitHub-Runner sind organisationsweit wegen Billing gesperrt.
 

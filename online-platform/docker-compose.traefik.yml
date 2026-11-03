@@ -5,15 +5,18 @@ services:
   pharma-web:
     ports: !reset []
     networks: [internal, proxy]
+    # Listenform, damit der Routername (PHARMA_ROUTER) je Umgebung eindeutig ist
+    # (Staging und Produktion am selben Traefik). Standard bleibt "pharma-cards".
     labels:
-      traefik.enable: "true"
-      traefik.docker.network: ${TRAEFIK_NETWORK:-proxy}
-      traefik.http.routers.pharma-cards.rule: Host(`${PHARMA_HOST:?PHARMA_HOST setzen}`)
-      traefik.http.routers.pharma-cards.entrypoints: ${TRAEFIK_ENTRYPOINT:-websecure}
-      traefik.http.routers.pharma-cards.tls: "true"
-      traefik.http.routers.pharma-cards.tls.certresolver: ${TRAEFIK_CERTRESOLVER:-letsencrypt}
-      traefik.http.routers.pharma-cards.middlewares: ${TRAEFIK_MIDDLEWARES:-}
-      traefik.http.services.pharma-cards.loadbalancer.server.port: "8080"
+      - "traefik.enable=true"
+      - "traefik.docker.network=${TRAEFIK_NETWORK:-proxy}"
+      - "traefik.http.routers.${PHARMA_ROUTER:-pharma-cards}.rule=Host(`${PHARMA_HOST:?PHARMA_HOST setzen}`)"
+      - "traefik.http.routers.${PHARMA_ROUTER:-pharma-cards}.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}"
+      - "traefik.http.routers.${PHARMA_ROUTER:-pharma-cards}.tls=true"
+      - "traefik.http.routers.${PHARMA_ROUTER:-pharma-cards}.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}"
+      - "traefik.http.routers.${PHARMA_ROUTER:-pharma-cards}.middlewares=${TRAEFIK_MIDDLEWARES:-}"
+      - "traefik.http.routers.${PHARMA_ROUTER:-pharma-cards}.service=${PHARMA_ROUTER:-pharma-cards}"
+      - "traefik.http.services.${PHARMA_ROUTER:-pharma-cards}.loadbalancer.server.port=8080"
 
 networks:
   proxy:

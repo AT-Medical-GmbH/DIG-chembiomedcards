@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-11-03 (Betrieb: Umzug auf eigene Server)
+- Entscheidung von Andreas Tremml:
+  - Forgejo 15 LTS auf ATMED-core;
+  - GitHub wird nach dem Umzug privat und archiviert.
+- `ops/forgejo/`:
+  - Compose-Datei für Forgejo und PostgreSQL hinter Traefik (keine Ports, Ressourcen begrenzt);
+  - Env-Vorlage;
+  - lesende Vorabprüfung;
+  - Runner-Konfiguration und systemd-Unit (rootless Docker);
+  - Umzugsanleitung in 8 Phasen mit Prüfungen, Backup und Rückweg.
+- `ops/deploy/pharma-deploy`: einziger Weg von der CI auf den Server, aufgerufen per sudo:
+  - Staging nur für Commits auf main;
+  - Produktion nur per Tag vX.Y.Z und mit Freigabedatei;
+  - nächtlicher Inhaltsbau ohne Netz als unprivilegierter Benutzer;
+  - Rollback;
+  - automatische Rückkehr, wenn ein Dienst nicht gesund wird.
+- `.forgejo/workflows/`:
+  - CI (Karten, Layout im Browser, API, Web);
+  - Staging-Deploy;
+  - nächtlicher Inhaltsbau;
+  - Produktion per Tag.
+  - Alle Deploy-Wege sind über Repo-Variablen abgeschaltet, bis Andreas sie freigibt.
+- Traefik-Overlay: Labels in Listenform mit `PHARMA_ROUTER`, damit Staging und Produktion am selben
+  Traefik eindeutige Routernamen haben. Der Standard bleibt `pharma-cards`.
+
 ## 2026-11-01 (Online: SvelteKit 3)
 - Frontend auf SvelteKit 3 / adapter-static 4 (ersetzt Dependabot-PR #21, der allein nicht installierbar
   war): Vite 8, vite-plugin-svelte 7, TypeScript 6, Svelte 5.57.

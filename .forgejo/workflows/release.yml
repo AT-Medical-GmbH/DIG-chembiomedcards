@@ -1,0 +1,21 @@
+name: Produktion ausrollen
+
+# Produktion nur über ein Tag vX.Y.Z auf main (Tags in Forgejo geschützt: nur Andreas).
+# Dreifach abgesichert: Repo-Variable PRODUCTION_DEPLOY=true, Freigabedatei
+# /etc/pharma-deploy/production.enabled auf ATMED-core und Tag-Prüfung in pharma-deploy.
+on:
+  push:
+    tags: ["v*.*.*"]
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: vars.PRODUCTION_DEPLOY == 'true'
+    runs-on: atmed-core-deploy
+    timeout-minutes: 30
+    steps:
+      - name: pharma-deploy production
+        run: sudo -n /usr/local/sbin/pharma-deploy production "${{ github.ref_name }}"

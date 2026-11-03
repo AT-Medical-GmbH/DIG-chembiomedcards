@@ -1,0 +1,94 @@
+name: CI
+
+# Läuft auf dem Forgejo-Runner auf ATMED-core (Label "docker": jeder Job in einem frischen Container
+# im rootless Docker des Benutzers forgejo-runner). Nach grünem CI auf main folgt der Staging-Deploy,
+# sobald die Repo-Variable STAGING_DEPLOY=true gesetzt ist (Freigabe Andreas).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CHECKOUT: |
+    command -v git >/dev/null && command -v make >/dev/null || { apt-get update -qq && apt-get install -y -qq --no-install-recommends git make ca-certificates >/dev/null; }
+    git init -q . && git remote add origin "${{ github.server_url }}/${{ github.repository }}.git"
+    git -c "http.extraHeader=Authorization: token ${{ github.token }}" fetch -q --depth 1 origin "${{ github.sha }}"
+    git -c advice.detachedHead=false checkout -q FETCH_HEAD
+
+jobs:
+  pipeline:
+    name: Karten (Schema, Registry, QR, Export-Tests)
+    runs-on: docker
+    container: python:3.12-bookworm
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        run: eval "$CHECKOUT"
+      - name: Werkzeuge
+        run: pip install -q pyyaml qrcode pytest
+      - name: PH-Validierung, Registry, QR-Links
+        run: make ph-validate ph-registry-check registry-validate PY=python3 && python3 scripts/pharma/sync_qr_urls.py --check
+      - name: Export-Tests
+        run: python3 -m pytest -q scripts/pharma/tests
+
+  layout:
+    name: Kartenlayout (Render + Überlauf-Prüfung im Browser)
+    runs-on: docker
+    container: mcr.microsoft.com/playwright/python:v1.56.0-noble
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        run: eval "$CHECKOUT"
+      - name: Werkzeuge
+        run: |
+          python3 -m venv /tmp/v 2>/dev/null || { apt-get update -qq && apt-get install -y -qq python3-venv >/dev/null && python3 -m venv /tmp/v; }
+          /tmp/v/bin/pip install -q pyyaml qrcode playwright==1.56.0
+      - name: Render und Layout-Check
+        run: make ph-render ph-output-check ph-layout-check PY=/tmp/v/bin/python PYR=/tmp/v/bin/python
+
+  api:
+    name: API-Tests
+    runs-on: docker
+    container: python:3.12-bookworm
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        run: eval "$CHECKOUT"
+      - name: Tests
+        working-directory: online-platform/backend
+        run: |
+          pip install -q -r requirements-dev.txt
+          python -m pytest -q tests
+
+  web:
+    name: Web (Typprüfung, Build)
+    runs-on: docker
+    container: node:22-bookworm
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        run: eval "$CHECKOUT"
+      - name: Check und Build
+        working-directory: online-platform/frontend
+        run: |
+          npm ci --no-audit --no-fund
+          npm run check
+          npm run build
+
+  deploy-staging:
+    name: Staging ausrollen
+    needs: [pipeline, layout, api, web]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.STAGING_DEPLOY == 'true'
+    runs-on: atmed-core-deploy
+    timeout-minutes: 30
+    concurrency:
+      group: deploy-staging
+      cancel-in-progress: false
+    steps:
+      - name: pharma-deploy staging
+        run: sudo -n /usr/local/sbin/pharma-deploy staging "${{ github.sha }}"

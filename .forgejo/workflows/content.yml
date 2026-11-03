@@ -1,0 +1,23 @@
+name: Inhalte bauen
+
+# Baut jede Nacht (und auf Knopfdruck) aus dem aktuellen main die Lern- und Druckpakete:
+# Moodle-Pakete und Druckbögen NUR aus freigegebenen Karten, dazu Review-PDF und Vorschauen mit
+# ENTWURF-Wasserzeichen. Ablage auf ATMED-core unter /srv/pharma-cards/exports/<datum>-<sha>/.
+# Aktiv erst mit der Repo-Variable CONTENT_BUILD=true (Freigabe Andreas).
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: content-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: vars.CONTENT_BUILD == 'true'
+    runs-on: atmed-core-deploy
+    timeout-minutes: 45
+    steps:
+      - name: pharma-deploy content
+        run: sudo -n /usr/local/sbin/pharma-deploy content "${{ github.sha }}"

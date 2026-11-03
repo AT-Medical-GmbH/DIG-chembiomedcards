@@ -1,0 +1,33 @@
+# Forgejo-Runner auf ATMED-core (Benutzer forgejo-runner, rootless Docker).
+# Ablage: /home/forgejo-runner/config.yml. Mit `forgejo-runner generate-config` gegen die
+# installierte Version abgleichen (neue Schlüssel übernehmen, die Werte hier beibehalten).
+log:
+  level: info
+
+runner:
+  file: .runner
+  # Ein Job gleichzeitig: Builds sollen Moodle/WordPress auf ATMED-core nicht verdrängen.
+  capacity: 1
+  timeout: 1h
+  insecure: false
+  fetch_timeout: 5s
+  fetch_interval: 5s
+  # Labels werden bei der Registrierung gesetzt (siehe ops/forgejo/README.md, Phase 4):
+  #   docker            -> Job im Container (Standard für CI)
+  #   atmed-core-deploy -> Job direkt als Benutzer forgejo-runner (nur für pharma-deploy)
+  labels: []
+
+cache:
+  enabled: true
+
+container:
+  # Kein Zugriff auf Host-Docker, keine Host-Verzeichnisse, keine Privilegien.
+  network: ""
+  privileged: false
+  options: "--memory=3g --cpus=2 --pids-limit=2048"
+  valid_volumes: []
+  docker_host: "-"
+  force_pull: false
+
+host:
+  workdir_parent: /home/forgejo-runner/.cache/act-host

@@ -1,0 +1,5 @@
+# /etc/sudoers.d/pharma-deploy  (root:root, 0440; vorher mit `visudo -cf` prüfen)
+# Der Forgejo-Runner darf genau dieses eine Skript als root starten – sonst nichts.
+# Das Skript prüft seine Argumente selbst (SHA auf main, Tag vX.Y.Z, Produktions-Freigabedatei).
+Defaults!/usr/local/sbin/pharma-deploy env_reset, !setenv
+forgejo-runner ALL=(root) NOPASSWD: /usr/local/sbin/pharma-deploy

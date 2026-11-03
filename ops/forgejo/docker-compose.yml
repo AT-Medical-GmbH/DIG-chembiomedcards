@@ -1,0 +1,92 @@
+# Forgejo (Git, Pull Requests, Actions) auf ATMED-core hinter dem bestehenden Traefik.
+# Eigenes Compose-Projekt "forgejo", keine veröffentlichten Ports, Ressourcen begrenzt.
+#   docker compose -p forgejo -f ops/forgejo/docker-compose.yml --env-file /srv/forgejo/forgejo.env up -d
+# Der CI-Runner läuft NICHT hier, sondern als eigener Benutzer mit rootless Docker (ops/forgejo/runner/).
+name: forgejo
+
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:${FORGEJO_VERSION:-15.0.11}-rootless   # LTS
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      FORGEJO__database__DB_TYPE: postgres
+      FORGEJO__database__HOST: db:5432
+      FORGEJO__database__NAME: forgejo
+      FORGEJO__database__USER: forgejo
+      FORGEJO__database__PASSWD: ${FORGEJO_DB_PASSWORD:?FORGEJO_DB_PASSWORD setzen (Vaultwarden)}
+      FORGEJO__server__DOMAIN: ${FORGEJO_HOST:?FORGEJO_HOST setzen}
+      FORGEJO__server__ROOT_URL: https://${FORGEJO_HOST}/
+      FORGEJO__server__HTTP_PORT: "3000"
+      # Nur HTTPS über Traefik; kein zusätzlicher SSH-Port auf dem Produktivserver.
+      FORGEJO__server__DISABLE_SSH: "true"
+      FORGEJO__server__OFFLINE_MODE: "true"
+      FORGEJO__security__INSTALL_LOCK: "true"
+      FORGEJO__service__DISABLE_REGISTRATION: "true"
+      FORGEJO__service__REQUIRE_SIGNIN_VIEW: "true"
+      FORGEJO__service__ENABLE_BASIC_AUTHENTICATION: "false"
+      FORGEJO__session__COOKIE_SECURE: "true"
+      FORGEJO__repository__DEFAULT_PRIVATE: private
+      FORGEJO__repository__FORCE_PRIVATE: "true"
+      FORGEJO__openid__ENABLE_OPENID_SIGNIN: "false"
+      FORGEJO__oauth2_client__ENABLE_AUTO_REGISTRATION: "true"
+      FORGEJO__oauth2_client__USERNAME: nickname
+      FORGEJO__actions__ENABLED: "true"
+      FORGEJO__actions__DEFAULT_ACTIONS_URL: https://data.forgejo.org
+      # Import von GitHub (Phase 3); danach auf leer setzen.
+      FORGEJO__migrations__ALLOWED_DOMAINS: ${FORGEJO_MIGRATION_DOMAINS:-github.com,*.github.com,api.github.com}
+      FORGEJO__mailer__ENABLED: ${FORGEJO_MAIL_ENABLED:-false}
+    volumes:
+      - forgejo-data:/var/lib/gitea
+      - forgejo-config:/etc/gitea
+    networks: [internal, proxy]
+    mem_limit: 1g
+    cpus: 1.5
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:3000/api/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: ${TRAEFIK_NETWORK:-proxy}
+      traefik.http.routers.forgejo.rule: Host(`${FORGEJO_HOST}`)
+      traefik.http.routers.forgejo.entrypoints: ${TRAEFIK_ENTRYPOINT:-websecure}
+      traefik.http.routers.forgejo.tls: "true"
+      traefik.http.routers.forgejo.tls.certresolver: ${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      traefik.http.routers.forgejo.middlewares: ${TRAEFIK_MIDDLEWARES:-}
+      traefik.http.services.forgejo.loadbalancer.server.port: "3000"
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: forgejo
+      POSTGRES_USER: forgejo
+      POSTGRES_PASSWORD: ${FORGEJO_DB_PASSWORD}
+    volumes:
+      - forgejo-db:/var/lib/postgresql/data
+    networks: [internal]
+    mem_limit: 512m
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U forgejo -d forgejo"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  forgejo-data:
+  forgejo-config:
+  forgejo-db:
+
+networks:
+  internal:
+    internal: true
+  proxy:
+    external: true
+    name: ${TRAEFIK_NETWORK:-proxy}

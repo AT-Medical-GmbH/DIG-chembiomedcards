@@ -1,0 +1,23 @@
+# systemd-Unit für den Forgejo-Runner (Benutzer forgejo-runner, rootless Docker).
+# Ablage: /etc/systemd/system/forgejo-runner.service
+[Unit]
+Description=Forgejo Actions Runner (Pharma Cards CI, rootless)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=forgejo-runner
+Group=forgejo-runner
+WorkingDirectory=/home/forgejo-runner
+# Rootless-Docker-Socket des Benutzers (uid aus `id -u forgejo-runner` eintragen)
+Environment=DOCKER_HOST=unix:///run/user/__UID__/docker.sock
+ExecStart=/usr/local/bin/forgejo-runner daemon --config /home/forgejo-runner/config.yml
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=false
+MemoryMax=4G
+CPUQuota=200%
+
+[Install]
+WantedBy=multi-user.target

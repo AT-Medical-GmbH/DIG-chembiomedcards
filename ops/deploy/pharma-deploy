@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+# pharma-deploy – einziger Weg, über den Forgejo-Actions etwas auf ATMED-core starten.
+# Ablage: /usr/local/sbin/pharma-deploy (root:root, 0755); Aufruf per sudo (ops/deploy/sudoers.pharma-deploy).
+#
+#   pharma-deploy staging    <commit-sha>   # Commit muss auf main liegen
+#   pharma-deploy production <tag>          # nur vX.Y.Z auf main UND /etc/pharma-deploy/production.enabled
+#   pharma-deploy content    <commit-sha>   # Lern-/Druckpakete bauen -> $BASE/exports/<datum>-<sha>
+#   pharma-deploy rollback   staging|production
+#   pharma-deploy status
+#
+# Der Quellcode wird nie aus dem CI-Arbeitsverzeichnis übernommen, sondern frisch aus Forgejo geholt.
+# Konfiguration: /etc/pharma-deploy/pharma-deploy.conf (siehe pharma-deploy.conf.example).
+set -euo pipefail
+umask 027
+
+CONF=${PHARMA_DEPLOY_CONF:-/etc/pharma-deploy/pharma-deploy.conf}
+[ -r "$CONF" ] || { echo "Konfiguration $CONF fehlt" >&2; exit 2; }
+# shellcheck source=/dev/null
+. "$CONF"
+: "${REPO_URL:?REPO_URL in $CONF setzen}"
+: "${TOKEN_FILE:?TOKEN_FILE in $CONF setzen}"
+BASE=${BASE:-/srv/pharma-cards}
+LOG=${LOG:-/var/log/pharma-deploy.log}
+CONTENT_KEEP=${CONTENT_KEEP:-14}
+HEALTH_TIMEOUT=${HEALTH_TIMEOUT:-180}
+NTFY_URL=${NTFY_URL:-}
+
+log() { printf '%s %s\n' "$(date -u +%FT%TZ)" "$*" | tee -a "$LOG" >&2; }
+die() { log "FEHLER: $*"; notify "Pharma-Deploy FEHLER: $*"; exit 1; }
+notify() { [ -n "$NTFY_URL" ] && curl -fsS -m 10 -d "$1" "$NTFY_URL" >/dev/null 2>&1 || true; }
+
+exec 9>/run/lock/pharma-deploy.lock
+flock -w 600 9 || die "anderer Deploy läuft noch"
+
+src_dir() { echo "$BASE/$1/src"; }
+
+git_auth() {  # Token nur im Header, nie in URL, Log oder Prozessliste der Kindprozesse
+  local tok; tok=$(cat "$TOKEN_FILE")
+  git -c "http.extraHeader=Authorization: token $tok" "$@"
+}
+
+fetch_src() {  # $1 = Ziel; holt main + Tags in einen eigenen Checkout
+  local d; d=$(src_dir "$1")
+  if [ ! -d "$d/.git" ]; then
+    install -d -m 750 "$d"
+    git -C "$d" init -q
+    git -C "$d" remote add origin "$REPO_URL"
+  fi
+  git_auth -C "$d" fetch -q --prune --tags origin '+refs/heads/main:refs/remotes/origin/main'
+}
+
+checkout() {  # $1 = Ziel, $2 = Commit
+  local d; d=$(src_dir "$1")
+  git -C "$d" -c advice.detachedHead=false checkout -q --force "$2"
+  git -C "$d" clean -qfdx   # .env und Schlüssel liegen bewusst außerhalb ($BASE/<ziel>/)
+}
+
+on_main() { git -C "$(src_dir "$1")" merge-base --is-ancestor "$2" origin/main; }
+
+compose() {  # $1 = Ziel, Rest = compose-Argumente
+  local t=$1; shift
+  local d; d=$(src_dir "$t")
+  local files=(-f "$d/online-platform/docker-compose.yml" -f "$d/online-platform/docker-compose.traefik.yml")
+  if [ -f "$BASE/$t/lti.enabled" ]; then
+    [ -f "$BASE/$t/secrets/lti_tool.pem" ] || die "LTI aktiv, aber $BASE/$t/secrets/lti_tool.pem fehlt"
+    files+=(-f "$d/online-platform/docker-compose.lti.yml")
+    export LTI_KEY_PATH="$BASE/$t/secrets/lti_tool.pem"
+  fi
+  [ -f "$BASE/$t/override.yml" ] && files+=(-f "$BASE/$t/override.yml")
+  docker compose -p "pharma-cards-$t" --project-directory "$d/online-platform" "${files[@]}" \
+    --env-file "$BASE/$t/.env" "$@"
+}
+
+wait_healthy() {  # alle Dienste des Projekts healthy/running
+  local t=$1 end=$((SECONDS + HEALTH_TIMEOUT)) bad
+  while [ $SECONDS -lt $end ]; do
+    # nicht gesund = nicht "Up" oder Healthcheck noch nicht/nie bestanden
+    bad=$(docker ps -a --filter "label=com.docker.compose.project=pharma-cards-$t" \
+          --format '{{.Names}} {{.Status}}' | grep -Ev '^[^ ]+ Up ' || true; \
+          docker ps --filter "label=com.docker.compose.project=pharma-cards-$t" \
+          --format '{{.Names}} {{.Status}}' | grep -E '\((unhealthy|health: starting)\)' || true)
+    [ -z "$bad" ] && return 0
+    sleep 5
+  done
+  log "nicht gesund nach ${HEALTH_TIMEOUT}s: $bad"
+  return 1
+}
+
+deploy() {  # $1 = Ziel, $2 = Commit (aufgelöst)
+  local t=$1 sha=$2 cur prev_file="$BASE/$1/previous" cur_file="$BASE/$1/current"
+  [ -f "$BASE/$t/.env" ] || die "$BASE/$t/.env fehlt (aus online-platform/ops/staging/staging.env.example anlegen)"
+  cur=$(cat "$cur_file" 2>/dev/null || true)
+  [ "$cur" = "$sha" ] && { log "$t ist bereits auf $sha"; return 0; }
+  log "$t: ${cur:-<leer>} -> $sha"
+  checkout "$t" "$sha"
+  if PHARMA_VERSION="${sha:0:12}" compose "$t" up -d --build --remove-orphans && wait_healthy "$t"; then
+    [ -n "$cur" ] && echo "$cur" > "$prev_file"
+    echo "$sha" > "$cur_file"
+    log "$t erfolgreich auf $sha"; notify "Pharma Cards $t: ${sha:0:12} ausgerollt"
+  else
+    if [ -n "$cur" ]; then
+      log "$t fehlgeschlagen, Rückkehr auf $cur"
+      checkout "$t" "$cur"
+      PHARMA_VERSION="${cur:0:12}" compose "$t" up -d --build --remove-orphans || true
+    fi
+    die "$t: Deploy von $sha fehlgeschlagen${cur:+, zurück auf $cur}"
+  fi
+}
+
+content() {  # Lern- und Druckpakete aus einem main-Commit bauen (nur freigegebene Karten exportierbar)
+  local sha=$1 out stamp
+  stamp="$(date -u +%Y%m%d-%H%M)-${sha:0:8}"
+  out="$BASE/exports/$stamp"
+  checkout content "$sha"
+  install -d -m 750 -o 65534 -g 65534 "$out"
+  log "content: baue $stamp"
+  docker build -q -t pharma-content:local -f "$(src_dir content)/ops/deploy/content.Dockerfile" \
+    "$(src_dir content)/ops/deploy" >>"$LOG" 2>&1 || die "content: Bauumgebung konnte nicht gebaut werden"
+  docker run --rm --network none --memory 3g --cpus 2 --pids-limit 2048 \
+    --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges -e HOME=/tmp \
+    -v "$(src_dir content):/src:ro" -v "$out:/out" -w /tmp pharma-content:local bash -ceu '
+      cp -a /src /tmp/w && cd /tmp/w
+      M="make PY=/opt/v/bin/python PYR=/opt/v/bin/python"
+      $M ph-all ph-test ph-layout-check
+      $M ph-moodle ph-print ph-review-packet ph-moodle-preview ph-print-preview
+      cp -a dist/. /out/
+    ' >>"$LOG" 2>&1 || die "content: Bau von $stamp fehlgeschlagen (Log: $LOG)"
+  chown -R root:root "$out"
+  echo "$sha" > "$out/COMMIT"
+  ln -sfn "$out" "$BASE/exports/latest"
+  ls -1dt "$BASE"/exports/2* 2>/dev/null | tail -n +"$((CONTENT_KEEP + 1))" | xargs -r rm -rf --
+  log "content: $stamp fertig"; notify "Pharma Cards Inhalte: $stamp gebaut"
+}
+
+cmd=${1:-}; arg=${2:-}
+case "$cmd" in
+  staging)
+    [[ "$arg" =~ ^[0-9a-f]{40}$ ]] || die "staging erwartet einen vollständigen Commit-SHA"
+    fetch_src staging
+    on_main staging "$arg" || die "$arg liegt nicht auf main"
+    deploy staging "$arg" ;;
+  production)
+    [ -f /etc/pharma-deploy/production.enabled ] || die "Produktion ist nicht freigegeben (/etc/pharma-deploy/production.enabled fehlt)"
+    [[ "$arg" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || die "production erwartet ein Tag vX.Y.Z"
+    fetch_src production
+    sha=$(git -C "$(src_dir production)" rev-list -n1 "refs/tags/$arg" 2>/dev/null) || die "Tag $arg unbekannt"
+    on_main production "$sha" || die "Tag $arg zeigt nicht auf main"
+    deploy production "$sha" ;;
+  content)
+    [[ "$arg" =~ ^[0-9a-f]{40}$ ]] || die "content erwartet einen vollständigen Commit-SHA"
+    fetch_src content
+    on_main content "$arg" || die "$arg liegt nicht auf main"
+    content "$arg" ;;
+  rollback)
+    [[ "$arg" =~ ^(staging|production)$ ]] || die "rollback staging|production"
+    prev=$(cat "$BASE/$arg/previous" 2>/dev/null) || die "keine vorherige Version für $arg"
+    fetch_src "$arg"
+    deploy "$arg" "$prev" ;;
+  status)
+    for t in staging production; do
+      printf '%-11s aktuell=%s vorher=%s\n' "$t" "$(cat "$BASE/$t/current" 2>/dev/null || echo -)" \
+        "$(cat "$BASE/$t/previous" 2>/dev/null || echo -)"
+    done
+    printf 'content     neuestes=%s\n' "$(readlink "$BASE/exports/latest" 2>/dev/null || echo -)" ;;
+  *) sed -n '2,12p' "$0"; exit 2 ;;
+esac

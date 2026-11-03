@@ -1,0 +1,12 @@
+# /etc/pharma-deploy/pharma-deploy.conf  (root:root, 0600) – keine Secrets hier, nur Pfade.
+REPO_URL=https://git.at-medical.de/at-medical/DIG-chembiomedcards.git
+# Lese-Token des Bot-Kontos "pharma-deploy" (Forgejo: nur Lesezugriff auf dieses Repo).
+# Datei root:root 0600; Inhalt zusätzlich in Vaultwarden.
+TOKEN_FILE=/etc/pharma-deploy/forgejo-read.token
+BASE=/srv/pharma-cards
+LOG=/var/log/pharma-deploy.log
+HEALTH_TIMEOUT=180
+# Lern- und Druckpakete (pharma-deploy content): Aufbewahrung; Bauumgebung aus ops/deploy/content.Dockerfile
+CONTENT_KEEP=14
+# Optional: Benachrichtigung über den ntfy-Server auf ATINFRA-gateway (Thema mit Zugriffsschutz)
+NTFY_URL=
