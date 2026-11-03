@@ -1,0 +1,11 @@
+# /etc/systemd/system/pharma-deploy.service – arbeitet alle offenen Anträge ab (root, einmalig).
+[Unit]
+Description=Pharma Cards online: Deploy-Anträge abarbeiten
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/pharma-deploy process
+TimeoutStartSec=30min
+Nice=10

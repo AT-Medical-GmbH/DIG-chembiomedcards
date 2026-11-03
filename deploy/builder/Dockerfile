@@ -29,7 +29,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       fonts-inter fonts-dejavu-core fontconfig \
-      git make ca-certificates curl rsync python3-venv \
+      git make ca-certificates curl rsync python3-venv xz-utils \
  && fc-cache -f \
  && rm -rf /var/lib/apt/lists/*
 
@@ -39,6 +39,22 @@ RUN python3 -m venv "$VIRTUAL_ENV" \
  && pip install --upgrade pip \
  && pip install -r /tmp/requirements.txt \
  && python -c "import playwright, rdkit, yaml, jsonschema, jinja2, qrcode, pypdf; print('deps ok')"
+
+# Pharma Cards (Modul PH) und Lernplattform (online-platform/): pytest für die PH-Tests,
+# eigene venv für die API-Tests, Node 22 LTS für Typprüfung und Build der Web-Oberfläche.
+ARG NODE_VERSION=22.23.4
+# SHA-256 laut https://nodejs.org/dist/v22.23.4/SHASUMS256.txt (linux-x64.tar.xz)
+ARG NODE_SHA256=1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce
+COPY online-platform/backend/requirements.txt online-platform/backend/requirements-dev.txt /tmp/api/
+RUN pip install pytest==9.0.3 \
+ && python3 -m venv /opt/api-venv \
+ && /opt/api-venv/bin/pip install -r /tmp/api/requirements-dev.txt \
+ && curl -fsSL -o /tmp/node.tar.xz "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" \
+ && echo "${NODE_SHA256}  /tmp/node.tar.xz" | sha256sum -c - \
+ && tar -xJf /tmp/node.tar.xz -C /usr/local --strip-components=1 \
+      --exclude=CHANGELOG.md --exclude=LICENSE --exclude=README.md \
+ && rm -f /tmp/node.tar.xz \
+ && node --version && npm --version
 
 # Forgejo-Runner (nur für den Betrieb als CI-Runner nötig)
 RUN curl -fsSL -o /usr/local/bin/forgejo-runner \

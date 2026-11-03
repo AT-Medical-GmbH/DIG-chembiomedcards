@@ -51,9 +51,52 @@ zurück sowie `forgejo dump` samt Prüfsumme funktionierten.
 **Nicht getestet:** die Live-Migration von GitHub (`10-migrate-from-github.sh`, dafür ist ein
 GitHub-Token nötig), Traefik, Authentik und DNS auf ATMED-core.
 
+## Gemeinsamer Plan: Projekt 16 + Pharma Cards (Stand 2026-11-03)
+
+Andreas hat entschieden, beide Umzugspakete zu **einem** Plan zusammenzuführen. Grundlage ist dieses
+Runbook (Projekt 16, ADR-024). Ergänzt wurden die Pharma Cards (Modul PH) und die Lernplattform
+„Pharma Cards online“ (`online-platform/`) aus dem früheren Paket (GitHub-PR #25, abgelöst).
+
+| Baustein | Projekt 16 | Ergänzung Pharma Cards |
+|---|---|---|
+| Git-Server | Forgejo 15 LTS, `/srv/atmed/stacks/forgejo` | – |
+| Runner | `chembiomed-runner`, Host-Modus im Build-Image | Build-Image zusätzlich mit pytest, API-venv (`/opt/api-venv`) und Node 22 LTS |
+| CI | `.forgejo/workflows/cards.yml` (Kernkarten) | `.forgejo/workflows/pharma.yml`: PH-Prüfungen, Layout, API-Tests, Web-Build |
+| Karten-Releases | `sites/<kanal>/current`, nginx `chembiomed-sites` | PH-Moodle-/Druckpakete im Release unter `pharma/` (`scripts/pharma/add_to_release.py`), Vorschau und Review-PDF nur in Staging |
+| Lernplattform | – | Compose-Projekt `pharma-cards-staging` (API, Web, PostgreSQL) über `pharma-deploy` auf dem Host, Antrag des Runners in `requests/` (Phase 4b) |
+
+**Ergebnis Phase 0 (claude-code-atmed-core, 03.11. 18:34) – in diesem Plan berücksichtigt:**
+
+- Ressourcen:
+  - 12 CPU, RAM 11 GB frei;
+  - **Swap 7,1/8 GB belegt**, deshalb nur ein Job gleichzeitig mit Speicherlimit;
+  - `/srv` 84 GB frei.
+- Traefik:
+  - Netz `traefik_web`, Entrypoint `websecure` mit Standard-Middleware `haertung-grundkopf@file`;
+  - Certresolver `letsencrypt` (DNS-Challenge über Cloudflare).
+- **Eine Authentik-Forward-Auth-Middleware gibt es auf ATMED-core nicht.** Sowohl
+  `authentik-forwardauth@file` als auch `forwardauth@file` fehlen. `AUTH_MIDDLEWARE` in
+  `chembiomed-cards/.env` kann deshalb so nicht gesetzt werden. Entscheidung offen (siehe unten).
+- Restic sichert `/srv/atmed` vollständig, **schließt aber `/srv/atmed/backups/*`** sowie `*/logs/*`,
+  `*/tmp/*`, `*/cache/*` und `*.log` aus. Die Forgejo-Sicherung schreibt deshalb nach
+  `/srv/atmed/stacks/forgejo/sicherung/` (korrigiert in `forgejo-backup.sh`).
+- Zeitfenster: nicht während des LearningOS-Einbaus (codex) und nicht in den Live-Zeiten
+  (Mo–Fr 17:45–20:15, Sa/So 07:45–10:00 und 12:30–14:00).
+- Zielpfade, Containernamen und Hostnamen sind frei.
+
+**Offene Entscheidungen (Andreas, vor Phase 1):**
+
+| Punkt | Vorschlag |
+|---|---|
+| Zugangsschutz für `staging.`/`releases.chembiomed-cards.de` | Eine Authentik-Forward-Auth (Outpost und Middleware) neu einrichten ist ein Eingriff in zentrale Dienste und braucht eigene Freigabe. Bis dahin vorschlagsweise eine IP-Allowlist- oder Basic-Auth-Middleware in `/srv/atmed/traefik/dynamic`. |
+| Hostname der Lernplattform-Staging | `pharma-staging.at-medical.de` (Entscheidung 31.10.) beibehalten oder auf `lernen-staging.chembiomed-cards.de` vereinheitlichen. Die Lernplattform hat eigene Anmeldung über Authentik/OIDC und braucht keine Forward-Auth. |
+| Authentik-Provider der Lernplattform | `pharma-cards-staging` (Public Client, PKCE) laut `online-platform/ops/staging/STAGING_HANDOVER.md` |
+
 ---
 
 ## Phase 0 – Read-only-Vorabprüfung
+
+**Status: erledigt** (claude-code-atmed-core, 03.11. 18:34; Ergebnis im Abschnitt „Gemeinsamer Plan“). G0 ist erfüllt bis auf die Authentik-Middleware (offene Entscheidung).
 
 **Wo:** eigener Rechner mit den SSH-Aliasen (`docs/operations/claude-server-access.md` in ATMED-docs).
 
@@ -151,8 +194,9 @@ Test-Push in Forgejo erscheint über den Spiegel auf GitHub.
 
 **Wo:** Forgejo-Weboberfläche, dann ATMED-core.
 
-1. In Forgejo einen Pull Request `claude/chembio-cards-planning-c5l2ub` → `main` anlegen, prüfen
-   und mergen. Danach enthält `main` die 116 Karten und die Pipeline. Der erste Workflow-Lauf
+1. In Forgejo einen Pull Request `claude/pharma-cards-umzug-gemeinsam-apbnpz` → `main` anlegen
+   (gemeinsamer Plan, enthält `claude/chembio-cards-planning-c5l2ub`), prüfen und mergen. Danach
+   enthält `main` die 116 Kernkarten, die 110 PH-Karten, die Lernplattform und beide Workflows. Der erste Workflow-Lauf
    wartet, bis der Runner läuft.
 2. Schutz für `main`: Einstellungen → Branches → Schutzregel. Kein direkter Push, Merge nur per
    PR, Schreibrecht nur für Andreas und die Redaktion.
@@ -205,6 +249,60 @@ früheren Stand aktivieren:
 SITES_DIR=/srv/atmed/stacks/chembiomed-cards/sites src/deploy/scripts/rollback-release.sh staging
 ```
 
+## Phase 4b – Lernplattform „Pharma Cards online“ (Staging)
+
+**Voraussetzung:**
+- G4 erfüllt;
+- Authentik-Provider und DNS der Lernplattform stehen (offene Entscheidungen oben);
+- die Schritte 2–3 aus `online-platform/ops/staging/STAGING_HANDOVER.md`, wobei die `.env` hier im
+  Vault liegt.
+
+Der Runner hat bewusst keinen Docker-Socket. Er legt deshalb nur einen **Antrag** ab (`staging <sha>`).
+`pharma-deploy` auf dem Host prüft ihn:
+- der Commit muss auf `main` liegen;
+- für Produktion muss zusätzlich `/etc/pharma-deploy/production.enabled` existieren.
+
+Danach holt `pharma-deploy` den Stand frisch aus Forgejo und rollt das Compose-Projekt
+`pharma-cards-staging` aus. Wird ein Dienst nicht gesund, kehrt es automatisch zum vorherigen Stand
+zurück.
+
+1. Verzeichnisse anlegen. Der Runner darf nur Anträge ablegen und Ergebnisse lesen:
+   ```bash
+   sudo install -d -o root -g 1001 -m 1770 /srv/atmed/stacks/chembiomed-cards/requests
+   sudo install -d -o root -g 1001 -m 2750 /srv/atmed/stacks/chembiomed-cards/requests/ergebnis
+   sudo install -d -o root -g root -m 0700 /srv/atmed/stacks/chembiomed-cards/requests/done
+   sudo install -d -m 0750 /srv/atmed/stacks/chembiomed-cards/online
+   ```
+2. Konfiguration ablegen. Die `.env` kommt aus der Staging-Vorlage, Passwort neu erzeugen und in
+   Vaultwarden ablegen:
+   ```bash
+   sudo install -m 600 src/online-platform/ops/staging/staging.env.example /srv/atmed/vault/services/chembiomed-cards/online-staging.env
+   ```
+3. Lese-Token: in Forgejo einen Bot oder ein Token nur mit Lesezugriff auf dieses Repository anlegen,
+   nach `/srv/atmed/vault/services/chembiomed-cards/online-deploy-read.token` schreiben
+   (root, 0600), nicht anzeigen.
+4. `pharma-deploy` installieren:
+   ```bash
+   sudo install -m 755 src/deploy/atmed-core/pharma-online/pharma-deploy /usr/local/sbin/pharma-deploy
+   sudo install -d -m 700 /etc/pharma-deploy && sudo install -m 600 src/deploy/atmed-core/pharma-online/pharma-deploy.conf.example /etc/pharma-deploy/pharma-deploy.conf
+   sudo install -m 644 src/deploy/atmed-core/pharma-online/pharma-deploy.{path,service} /etc/systemd/system/ && sudo systemctl daemon-reload
+   ```
+5. Erster Lauf von Hand, außerhalb der Live-Zeiten:
+   ```bash
+   sudo pharma-deploy staging "$(git -C src rev-parse origin/main)" && sudo pharma-deploy status
+   ```
+6. Automatik einschalten:
+   - `sudo systemctl enable --now pharma-deploy.path`;
+   - in Forgejo die Repo-Variable `PHARMA_ONLINE_STAGING=true` setzen.
+
+**Gate G4b:**
+- Die Prüfpunkte aus STAGING_HANDOVER Schritt 5 sind erfüllt: drei Dienste `healthy`,
+  `auth_mode: oidc`, keine offenen Ports.
+- Ein Test-Merge auf `main` rollt automatisch aus, und der Job „lernplattform“ meldet `ok staging <sha>`.
+
+**Rollback:** `sudo pharma-deploy rollback staging`. Zum Abschalten
+`systemctl disable --now pharma-deploy.path` und die Variable `PHARMA_ONLINE_STAGING` entfernen.
+
 ## Phase 5 – Sicherung und Überwachung
 
 1. Sicherung einrichten (Zeitpunkt in `forgejo-backup.timer` vor den nächtlichen Restic-Lauf legen,
@@ -218,8 +316,10 @@ SITES_DIR=/srv/atmed/stacks/chembiomed-cards/sites src/deploy/scripts/rollback-r
    ```bash
    sudo systemctl enable --now forgejo-backup.timer
    ```
-2. Sicherstellen, dass `/srv/atmed/backups/forgejo` und `/srv/atmed/stacks/chembiomed-cards/sites`
-   in der Restic-Kette von ATINFRA-backup enthalten sind. Falls nicht, mit Freigabe aufnehmen
+2. Sicherstellen, dass `/srv/atmed/stacks/forgejo/sicherung` und `/srv/atmed/stacks/chembiomed-cards/sites`
+   in der Restic-Kette von ATINFRA-backup enthalten sind (laut Phase 0: ja, `/srv/atmed` komplett).
+   Zusätzlich `/srv/atmed/vault/services/chembiomed-cards/` und den täglichen `pg_dump` der
+   Lernplattform (`online-platform/README_DEPLOYMENT.md` Abschnitt 6) unter `/srv/atmed/stacks/chembiomed-cards/online/sicherung/`. Falls nicht, mit Freigabe aufnehmen
    (`parked-hosts.conf` ist davon nicht betroffen).
 3. **Wiederherstellungstest:** einen Dump in einem Wegwerf-Container auf einem anderen Pfad
    entpacken und starten. Repositories und Datenbank müssen vollständig sein; danach den Container

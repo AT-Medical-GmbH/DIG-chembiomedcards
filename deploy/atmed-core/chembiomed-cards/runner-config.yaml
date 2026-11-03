@@ -12,6 +12,7 @@ runner:
     # Checkout über das interne Netz forgejo_ci statt über Traefik
     CHECKOUT_BASE: http://forgejo:3000
     SITES_DIR: /sites
+    REQUESTS_DIR: /requests
   labels:
     - chembiomed-builder:host
 

@@ -26,7 +26,7 @@ run "$CORE" "Traefik-Start-Argumente" "t=\$(docker ps --format '{{.Names}}' | gr
 run "$CORE" "Traefik-Konfigurationsorte" "ls -ld /srv/atmed/traefik /srv/atmed/stacks/traefik 2>&1; ls /srv/atmed/traefik/dynamic /srv/atmed/stacks/traefik/config/middlewares 2>/dev/null"
 run "$CORE" "Middleware-Namen (Forward-Auth)" "grep -rhoE '^ *[A-Za-z0-9_-]*(auth|Auth|secureHeaders)[A-Za-z0-9_-]*:' /srv/atmed/traefik/dynamic /srv/atmed/stacks/traefik/config 2>/dev/null | sort -u; docker ps --format '{{.Names}}' | xargs -r -n1 docker inspect --format '{{.Name}} {{index .Config.Labels \"traefik.http.routers.moodle.middlewares\"}}' 2>/dev/null | grep -v ' $' | head"
 run "$CORE" "Ablage-Konvention" "ls -ld /srv/atmed/stacks /srv/atmed/vault/services /srv/atmed/backups 2>&1; ls /srv/atmed/stacks 2>&1"
-run "$CORE" "Zielpfade frei?" "for p in /srv/atmed/stacks/forgejo /srv/atmed/stacks/chembiomed-cards /srv/atmed/vault/services/chembiomed-cards /srv/atmed/backups/forgejo; do test -e \$p && echo \"BELEGT  \$p\" || echo \"frei    \$p\"; done"
+run "$CORE" "Zielpfade frei?" "for p in /srv/atmed/stacks/forgejo /srv/atmed/stacks/chembiomed-cards /srv/atmed/vault/services/chembiomed-cards /srv/atmed/stacks/forgejo/sicherung; do test -e \$p && echo \"BELEGT  \$p\" || echo \"frei    \$p\"; done"
 run "$CORE" "Containernamen frei?" "for n in forgejo chembiomed-runner chembiomed-sites; do docker ps -a --format '{{.Names}}' | grep -qx \$n && echo \"BELEGT  \$n\" || echo \"frei    \$n\"; done"
 run "$CORE" "DNS-Auflösung" "for h in $HOSTS; do printf '%-34s ' \$h; getent hosts \$h || echo 'kein Eintrag'; done"
 run "$CORE" "Backup-Timer" "systemctl list-timers --all --no-pager | grep -iE 'restic|backup|forgejo' || echo 'keine'"

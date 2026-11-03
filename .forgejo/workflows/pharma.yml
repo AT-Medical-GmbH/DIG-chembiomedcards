@@ -1,0 +1,97 @@
+# Pharma Cards (Modul PH) und Lernplattform „Pharma Cards online“ – gemeinsamer Umzugsplan (ADR-024)
+#
+#   Pull Request      → PH-Prüfungen, Layout im Browser, API-Tests, Web-Build (nichts wird ausgerollt)
+#   Push auf main     → dasselbe; danach Lernplattform-Staging, sobald Repo-Variable
+#                       PHARMA_ONLINE_STAGING=true gesetzt ist
+#   Manuell starten   → Kanal "production" + Bestätigung "FREIGABE" (zusätzlich muss auf ATMED-core
+#                       /etc/pharma-deploy/production.enabled existieren)
+#
+# Die Lern- und Druckpakete der PH-Karten baut der Workflow „Karten“ mit (cards.yml).
+# Läuft auf dem Runner chembiomed-builder (Host-Modus im Build-Image, kein Docker-Socket). Für die
+# Lernplattform legt der Job nur einen Antrag in $REQUESTS_DIR; pharma-deploy auf dem Host prüft
+# ihn (Commit auf main, Freigabedatei) und rollt aus.
+name: Pharma Cards
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Zielkanal der Lernplattform
+        type: choice
+        options: [staging, production]
+        default: staging
+      confirm:
+        description: Für production FREIGABE eintragen
+        type: string
+        default: ""
+
+jobs:
+  pruefen:
+    runs-on: chembiomed-builder
+    steps:
+      - name: Quellstand holen
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          auth="$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          git init -q .
+          git -c http.extraHeader="Authorization: Basic $auth" \
+            fetch -q --depth 1 "$CHECKOUT_BASE/${{ github.repository }}.git" "${{ github.sha }}"
+          git checkout -q FETCH_HEAD
+          git log -1 --format='%h %s'
+
+      - name: PH-Karten (Schema, Scope, Registry, QR-Links, Export-Tests)
+        run: |
+          make ph-validate ph-registry-check registry-validate PY=python
+          python scripts/pharma/sync_qr_urls.py --check
+          python -m pytest -q scripts/pharma/tests
+
+      - name: PH-Layout (Render, Ausgabeprüfung, Überlauf im Browser)
+        run: make ph-render ph-output-check ph-layout-check PY=python PYR=python
+
+      - name: Lernplattform API-Tests
+        working-directory: online-platform/backend
+        run: /opt/api-venv/bin/python -m pytest -q tests
+
+      - name: Lernplattform Typprüfung und Build
+        working-directory: online-platform/frontend
+        run: |
+          npm ci --no-audit --no-fund
+          npm run check
+          npm run build
+
+  lernplattform:
+    needs: pruefen
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.PHARMA_ONLINE_STAGING == 'true')
+      || github.event_name == 'workflow_dispatch'
+    runs-on: chembiomed-builder
+    timeout-minutes: 35
+    steps:
+      - name: Kanal und Freigabe prüfen
+        id: kanal
+        run: |
+          channel="${{ inputs.channel }}"; [ -n "$channel" ] || channel=staging
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "Ausrollen nur von main (Stand: ${{ github.ref }})"; exit 1
+          fi
+          if [ "$channel" = production ] && [ "${{ inputs.confirm }}" != "FREIGABE" ]; then
+            echo "Bestätigung fehlt: im Feld confirm FREIGABE eintragen"; exit 1
+          fi
+          echo "channel=$channel" >> "$GITHUB_OUTPUT"
+
+      - name: Antrag an pharma-deploy stellen und Ergebnis abwarten
+        run: |
+          id="run-${{ github.run_id }}-${{ steps.kanal.outputs.channel }}"
+          printf '%s %s\n' "${{ steps.kanal.outputs.channel }}" "${{ github.sha }}" > "$REQUESTS_DIR/.$id.tmp"
+          mv "$REQUESTS_DIR/.$id.tmp" "$REQUESTS_DIR/$id.req"
+          echo "Antrag $id gestellt, warte auf pharma-deploy …"
+          for i in $(seq 1 180); do
+            if [ -f "$REQUESTS_DIR/ergebnis/$id.ok" ]; then cat "$REQUESTS_DIR/ergebnis/$id.ok"; exit 0; fi
+            if [ -f "$REQUESTS_DIR/ergebnis/$id.fail" ]; then cat "$REQUESTS_DIR/ergebnis/$id.fail"; exit 1; fi
+            sleep 10
+          done
+          echo "Keine Antwort von pharma-deploy nach 30 Minuten (läuft pharma-deploy.path?)"; exit 1

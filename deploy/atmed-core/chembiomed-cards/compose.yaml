@@ -18,6 +18,9 @@ services:
     volumes:
       - ./runner:/data
       - ./sites:/sites
+      # Deploy-Anträge für die Lernplattform (Pharma Cards online): der Runner legt nur eine
+      # Datei mit Kanal + Commit ab, pharma-deploy auf dem Host prüft und rollt aus.
+      - ./requests:/requests
       - ${RUNNER_TOKEN_FILE:?RUNNER_TOKEN_FILE fehlt}:/run/secrets/runner-token:ro
     networks:
       - forgejo_ci

@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-11-03 (Umzug: gemeinsamer Plan Projekt 16 + Pharma Cards)
+- Entscheidung von Andreas: Die beiden Umzugspakete werden zu einem Plan zusammengeführt. Grundlage
+  ist ADR-024 bzw. `deploy/README_MIGRATION.md`. GitHub-PR #25 ist damit abgelöst.
+- Zusammengeführt: Kernkarten (116) und Pharma Cards (110) samt Lernplattform. Konflikte in
+  `.gitignore`, `CHANGELOG.md` und `Makefile` aufgelöst, alle Ziele bleiben nebeneinander.
+- Build-Image: zusätzlich pytest, API-venv und Node 22.23.4 LTS (Prüfsumme gepinnt).
+- Neu `.forgejo/workflows/pharma.yml`: PH-Prüfungen, Layout, API-Tests und Web-Build. Danach geht
+  ein Antrag an `pharma-deploy` für das Lernplattform-Staging. Produktion nur mit „FREIGABE“ und
+  Freigabedatei auf dem Host.
+- `cards.yml`: PH-Moodle- und Druckpakete im Karten-Release unter `pharma/`
+  (`scripts/pharma/add_to_release.py`). Vorschau und Review-PDF gehen nur nach Staging.
+- `deploy/atmed-core/pharma-online/`: `pharma-deploy` mit systemd-Path-Unit.
+  - Der Antragsordner ist sticky, Ergebnisse schreibt nur root (atomar).
+  - Es gelten nur Commits auf `main`.
+  - Rollback ist möglich; wird ein Dienst nicht gesund, kehrt das Skript automatisch zurück.
+- Ergebnis von Phase 0 eingearbeitet:
+  - Traefik-Netz `traefik_web`;
+  - Forgejo-Sicherung nach `/srv/atmed/stacks/forgejo/sicherung` (`/srv/atmed/backups/*` ist von
+    Restic ausgeschlossen);
+  - fehlende Authentik-Middleware als offene Entscheidung.
+- Traefik-Overlay der Lernplattform mit eindeutigem Routernamen (`PHARMA_ROUTER`).
+
 ## 2026-11-03
 - Umzug auf eigene Server vorbereitet (ADR-024): Forgejo und Kartenproduktion auf ATMED-core,
   Runbook mit Phasen und Gates `deploy/README_MIGRATION.md`

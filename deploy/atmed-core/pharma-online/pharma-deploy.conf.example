@@ -1,0 +1,12 @@
+# /etc/pharma-deploy/pharma-deploy.conf  (root:root 0600) – keine Secrets, nur Pfade.
+REPO_URL=https://git.at-medical.de/AT-Medical-GmbH/DIG-chembiomedcards.git
+# Lese-Token (Forgejo, nur Lesen auf dieses Repo), Datei root:root 0600, Kopie in Vaultwarden
+TOKEN_FILE=/srv/atmed/vault/services/chembiomed-cards/online-deploy-read.token
+BASE=/srv/atmed/stacks/chembiomed-cards/online
+VAULT=/srv/atmed/vault/services/chembiomed-cards
+REQ_DIR=/srv/atmed/stacks/chembiomed-cards/requests
+# Log nicht unter */logs/* (von Restic ausgeschlossen, hier aber auch nicht nötig)
+LOG=/var/log/pharma-deploy.log
+HEALTH_TIMEOUT=180
+# Optional: ntfy auf ATINFRA-gateway (Thema mit Zugriffsschutz)
+NTFY_URL=
