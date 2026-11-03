@@ -1,0 +1,65 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_002
+slug: ph_002_pharmakokinetik_ueberblick
+begriff_slug: pharmakokinetik-ueberblick
+title: Pharmakokinetik – Überblick
+subtitle: Was der Körper mit dem Wirkstoff macht
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: grundlagen
+difficulty: beginner
+front_content:
+  question: Welche Schritte fasst die Pharmakokinetik zusammen?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Pharmakokinetik beschreibt den zeitlichen Konzentrationsverlauf eines Wirkstoffs im Körper.
+- key: vertiefung
+  label: LADME
+  color_role: pkpd
+  text: '- Liberation: Freisetzung aus der Darreichungsform
+
+    - Absorption: Aufnahme ins Blut
+
+    - Distribution: Verteilung in Gewebe
+
+    - Metabolismus: Umwandlung (v. a. Leber)
+
+    - Elimination: Ausscheidung (v. a. Niere)'
+- key: klinischer_bezug
+  label: Kenngrößen
+  color_role: clinic
+  text: Bioverfügbarkeit, Verteilungsvolumen, Halbwertszeit und Clearance beschreiben die PK quantitativ.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: PK bestimmt, wie viel Wirkstoff wann am Wirkort ankommt.
+learning_objectives:
+- Die fünf LADME-Schritte erläutern
+- PK-Kenngrößen zuordnen
+tags:
+- pruefungsrelevant
+related_cards:
+- ph_001
+- ph_020
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_002_pharmakokinetik_ueberblick_front.png
+back_asset: cards/PH/back/ph_002_pharmakokinetik_ueberblick_back.png
+qr_url: https://at-medical.de/w/begriff/pharmakokinetik-ueberblick
+lms_url: https://lms.at-medical.example/ph/pharmakokinetik_ueberblick

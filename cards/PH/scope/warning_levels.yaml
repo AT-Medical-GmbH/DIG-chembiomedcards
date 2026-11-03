@@ -1,0 +1,40 @@
+# Pharma Cards — Warnlevel (PH)
+# Steuert visuelle Kennzeichnung (Online + Print) und Export-Gating (Dok. 10/17).
+schema_version: "1.0.0"
+module: PH
+
+warning_levels:
+  - key: low
+    label: Niedrig
+    color: "#43A047"       # grün
+    description: "Grundlagen-/Definitionskarte ohne unmittelbares klinisches Risiko."
+    export_gate: none
+  - key: moderate
+    label: Mittel
+    color: "#FB8C00"       # orange
+    description: "Klinisch relevant; Nebenwirkungen/Interaktionen beachten."
+    export_gate: reviewed_or_approved
+  - key: high
+    label: Hoch
+    color: "#E53935"       # rot
+    description: "Relevantes Risiko (z. B. enge therapeutische Breite, Monitoringpflicht)."
+    export_gate: reviewed_or_approved
+  - key: critical
+    label: Kritisch
+    color: "#B71C1C"       # dunkelrot
+    description: >
+      Hochrisikomedikament/-situation. Beispiele: Katecholamine, Antikoagulanzien, Antidote,
+      pädiatrische Dosierungen, Toxikologie-Algorithmen, Schwangerschaft/Stillzeit,
+      Nieren-/Leberinsuffizienz-Anpassungen.
+    export_gate: approved_only   # nur approved Karten dürfen exportiert werden
+
+# Beispiele kritischer Domänen (dienen der Einstufungshilfe im Review, nicht als harte Liste)
+critical_domains:
+  - hochrisikomedikamente
+  - antidote
+  - katecholamine
+  - antikoagulanzien
+  - paediatrische_dosierungen
+  - toxikologie_algorithmen
+  - schwangerschaft_stillzeit
+  - niere_leber_insuffizienz_anpassung

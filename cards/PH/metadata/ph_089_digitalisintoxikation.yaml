@@ -1,0 +1,81 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_089
+slug: ph_089_digitalisintoxikation
+begriff_slug: digitalisintoxikation
+title: Digitalisintoxikation
+subtitle: Herzglykosid-Vergiftung
+module: PH
+primary_category: toxikologie
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/intoxikationen
+card_type: toxidrome
+front_type: toxidrome
+level: clinical
+difficulty: intermediate
+monitoring: EKG, Kalium, Nierenfunktion, Glykosidspiegel (Abnahmezeitpunkt beachten).
+emergency_relevance: Elektrolyte korrigieren, Bradykardie behandeln; Digoxin-Fab bei lebensbedrohlichen
+  Zeichen.
+toxicology_relevance: Hemmung der Na⁺/K⁺-ATPase; akut mit Hyperkaliämie, chronisch oft mit Hypokaliämie
+  und Niereninsuffizienz.
+antidote: digoxin_fab
+toxidrome: digitalis
+clinical_pearls: Bradykardie plus Extrasystolie ist typisch – fast jede Rhythmusstörung ist möglich.
+front_content:
+  prompt: 'Leitsymptome: Übelkeit, Erbrechen, Sehstörungen (Gelb-Grün-Sehen), Verwirrtheit … Welche Intoxikation?'
+back_sections:
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: '- Übelkeit, Erbrechen, Sehstörungen (Gelb-Grün-Sehen), Verwirrtheit
+
+    - Bradykardie, AV-Block, ventrikuläre Arrhythmien'
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: Hemmung der Na⁺/K⁺-ATPase; akut mit Hyperkaliämie, chronisch oft mit Hypokaliämie und Niereninsuffizienz.
+- key: diagnostik_monitoring
+  label: Diagnostik / Monitoring
+  color_role: interaction
+  text: EKG, Kalium, Nierenfunktion, Glykosidspiegel (Abnahmezeitpunkt beachten).
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Elektrolyte korrigieren, Bradykardie behandeln; Digoxin-Fab bei lebensbedrohlichen Zeichen.
+- key: red_flags
+  label: Red Flags
+  color_role: risk
+  text: Ventrikuläre Arrhythmien, Hyperkaliämie bei akuter Intoxikation.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Bradykardie plus Extrasystolie ist typisch – fast jede Rhythmusstörung ist möglich.
+tags:
+- toxidrom
+- intoxikation
+- notfall
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_145
+- ph_107
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Indikationskriterien für Digoxin-Fab mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_089_digitalisintoxikation_front.png
+back_asset: cards/PH/back/ph_089_digitalisintoxikation_back.png
+qr_url: https://at-medical.de/w/begriff/digitalisintoxikation
+lms_url: https://lms.at-medical.example/ph/digitalisintoxikation

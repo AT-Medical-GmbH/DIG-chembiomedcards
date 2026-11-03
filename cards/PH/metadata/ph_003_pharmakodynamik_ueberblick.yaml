@@ -1,0 +1,64 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_003
+slug: ph_003_pharmakodynamik_ueberblick
+begriff_slug: pharmakodynamik-ueberblick
+title: Pharmakodynamik – Überblick
+subtitle: Was der Wirkstoff mit dem Körper macht
+module: PH
+primary_category: pharmakodynamik
+chapter: pharmakologie/pharmakodynamik
+card_type: overview
+front_type: principle
+level: grundlagen
+difficulty: beginner
+front_content:
+  question: Was beschreibt die Pharmakodynamik?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Pharmakodynamik beschreibt die Wirkung eines Arzneistoffs und ihren Mechanismus (meist über Rezeptoren
+    oder Enzyme).
+- key: vertiefung
+  label: Grundgrößen
+  color_role: pkpd
+  text: '- Affinität: Bindungsneigung an das Target
+
+    - intrinsische Aktivität: Fähigkeit, es zu aktivieren
+
+    - Wirkstärke (Potenz) und maximale Wirkung (Efficacy)'
+- key: klinischer_bezug
+  label: Dosis-Wirkung
+  color_role: clinic
+  text: Die Dosis-Wirkungs-Kurve verbindet Konzentration und Effekt; EC50 kennzeichnet die halbmaximale
+    Wirkung.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: PD erklärt, warum ein Stoff wirkt – und warum er unerwünscht wirken kann.
+learning_objectives:
+- Affinität und intrinsische Aktivität unterscheiden
+- Potenz von Efficacy abgrenzen
+tags:
+- pruefungsrelevant
+- rezeptor
+related_cards:
+- ph_004
+- ph_005
+warning_level: low
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_003_pharmakodynamik_ueberblick_front.png
+back_asset: cards/PH/back/ph_003_pharmakodynamik_ueberblick_back.png
+qr_url: https://at-medical.de/w/begriff/pharmakodynamik-ueberblick
+lms_url: https://lms.at-medical.example/ph/pharmakodynamik_ueberblick

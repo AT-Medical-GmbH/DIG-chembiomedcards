@@ -1,0 +1,71 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_215
+slug: ph_215_nephrotoxische_kombinationen
+begriff_slug: nephrotoxische-kombinationen
+title: Nephrotoxische Kombinationen
+subtitle: „Triple Whammy“
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- arzneimittelinteraktionen
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: NSAR verengen das Vas afferens, RAAS-Hemmer erweitern das Vas efferens, Diuretika senken
+  das Volumen.
+monitoring: Kombination meiden, bei Exsikkose pausieren („Sick-Day-Rules“), Kreatinin kontrollieren.
+clinical_pearls: 'Triple Whammy: NSAR + RAAS-Hemmer + Diuretikum.'
+front_content:
+  prompt: 'ACE-Hemmer, Diuretikum und NSAR bei einem exsikkierten Patienten: welche Gefahr?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: NSAR verengen das Vas afferens, RAAS-Hemmer erweitern das Vas efferens, Diuretika senken das Volumen.
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: 'Glomeruläre Filtration bricht ein: akutes Nierenversagen.'
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Exsikkose, höheres Alter, chronische Niereninsuffizienz; weitere Nephrotoxine (Aminoglykoside,
+    Kontrastmittel).
+- key: management
+  label: Management
+  color_role: clinic
+  text: Kombination meiden, bei Exsikkose pausieren („Sick-Day-Rules“), Kreatinin kontrollieren.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Triple Whammy: NSAR + RAAS-Hemmer + Diuretikum.'
+tags:
+- interaktion
+- niereninsuffizienz
+- geriatrie
+- pruefungsrelevant
+related_cards:
+- ph_131
+- ph_141
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Sick-Day-Rules nach aktueller Empfehlung formulieren
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_215_nephrotoxische_kombinationen_front.png
+back_asset: cards/PH/back/ph_215_nephrotoxische_kombinationen_back.png
+qr_url: https://at-medical.de/w/begriff/nephrotoxische-kombinationen
+lms_url: https://lms.at-medical.example/ph/nephrotoxische-kombinationen

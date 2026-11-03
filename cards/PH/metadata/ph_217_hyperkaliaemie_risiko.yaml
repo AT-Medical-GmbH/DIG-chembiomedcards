@@ -1,0 +1,70 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_217
+slug: ph_217_hyperkaliaemie_risiko
+begriff_slug: hyperkaliaemie-risiko
+title: Hyperkaliämie-Risiko
+subtitle: Arzneimittelbedingte Hyperkaliämie
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- arzneimittelinteraktionen
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: Weniger Kaliumausscheidung durch RAAS-Blockade oder kaliumsparende Mechanismen.
+monitoring: Kalium und Kreatinin kontrollieren, Kombinationen begrenzen; bei EKG-Veränderungen Notfalltherapie.
+clinical_pearls: Calcium stabilisiert das Myokard, senkt das Kalium aber nicht.
+front_content:
+  prompt: 'ACE-Hemmer plus Spironolacton bei Niereninsuffizienz: welche Elektrolytstörung?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: Weniger Kaliumausscheidung durch RAAS-Blockade oder kaliumsparende Mechanismen.
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: Hyperkaliämie mit Rhythmusstörungen bis zum Kreislaufstillstand.
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Niereninsuffizienz, Diabetes, Alter; ACE-Hemmer, Sartane, Spironolacton, Trimethoprim, NSAR, Heparin.
+- key: management
+  label: Management
+  color_role: clinic
+  text: Kalium und Kreatinin kontrollieren, Kombinationen begrenzen; bei EKG-Veränderungen Notfalltherapie.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Calcium stabilisiert das Myokard, senkt das Kalium aber nicht.
+tags:
+- interaktion
+- niereninsuffizienz
+- monitoring
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_141
+- ph_109
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Notfalltherapie der Hyperkaliämie nach aktueller Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_217_hyperkaliaemie_risiko_front.png
+back_asset: cards/PH/back/ph_217_hyperkaliaemie_risiko_back.png
+qr_url: https://at-medical.de/w/begriff/hyperkaliaemie-risiko
+lms_url: https://lms.at-medical.example/ph/hyperkaliaemie-risiko

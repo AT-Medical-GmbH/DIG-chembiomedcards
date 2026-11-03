@@ -1,0 +1,84 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_087
+slug: ph_087_betablocker_intoxikation
+begriff_slug: betablocker-intoxikation
+title: Betablocker-Intoxikation
+subtitle: Bradykardie und Schock
+module: PH
+primary_category: toxikologie
+secondary_categories:
+- notfalltoxikologie
+chapter: toxikologie/intoxikationen
+card_type: toxidrome
+front_type: toxidrome
+level: clinical
+difficulty: intermediate
+monitoring: EKG (QRS-Breite), Blutdruck, Blutzucker.
+emergency_relevance: Atropin, Volumen, Glucagon, Katecholamine; hochdosierte Insulin-Euglykämie-Therapie
+  nach Rücksprache.
+toxicology_relevance: β-Blockade senkt Inotropie und Herzfrequenz; lipophile Stoffe (z. B. Propranolol)
+  wirken zusätzlich membranstabilisierend.
+antidote: glucagon
+toxidrome: betablocker
+clinical_pearls: Propranolol ist besonders gefährlich (lipophil, membranstabilisierend).
+front_content:
+  prompt: 'Leitsymptome: Bradykardie, Hypotonie, AV-Block … Welche Intoxikation?'
+back_sections:
+- key: leitsymptome
+  label: Leitsymptome
+  color_role: risk
+  text: '- Bradykardie, Hypotonie, AV-Block
+
+    - Hypoglykämie (v. a. Kinder), Bewusstseinsstörung
+
+    - Bronchospasmus'
+- key: pathophysiologie
+  label: Pathophysiologie
+  color_role: pkpd
+  text: β-Blockade senkt Inotropie und Herzfrequenz; lipophile Stoffe (z. B. Propranolol) wirken zusätzlich
+    membranstabilisierend.
+- key: diagnostik_monitoring
+  label: Diagnostik / Monitoring
+  color_role: interaction
+  text: EKG (QRS-Breite), Blutdruck, Blutzucker.
+- key: akuttherapie
+  label: Akuttherapie
+  color_role: clinic
+  text: Atropin, Volumen, Glucagon, Katecholamine; hochdosierte Insulin-Euglykämie-Therapie nach Rücksprache.
+- key: red_flags
+  label: Red Flags
+  color_role: risk
+  text: Kreislaufstillstand, Krampfanfall, QRS-Verbreiterung.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Propranolol ist besonders gefährlich (lipophil, membranstabilisierend).
+tags:
+- toxidrom
+- intoxikation
+- notfall
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_140
+- ph_108
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Stufentherapie und Stellenwert der Insulin-Euglykämie-Therapie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_087_betablocker_intoxikation_front.png
+back_asset: cards/PH/back/ph_087_betablocker_intoxikation_back.png
+qr_url: https://at-medical.de/w/begriff/betablocker-intoxikation
+lms_url: https://lms.at-medical.example/ph/betablocker-intoxikation

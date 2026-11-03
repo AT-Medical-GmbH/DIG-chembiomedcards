@@ -1,0 +1,86 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_052
+slug: ph_052_sevofluran
+wirkstoff_slug: sevofluran
+title: Sevofluran
+subtitle: Volatiles Anästhetikum
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories: []
+chapter: pharmakologie/anaesthesie
+drug_class: inhalationsanaesthetika
+substance_name: Sevofluran
+generic_name: Sevofluran
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Volatiles Anästhetikum mit niedrigem Blut/Gas-Verteilungskoeffizienten: rasches
+  An- und Abfluten; wenig atemwegsreizend.'
+indications: '- Narkoseeinleitung per Inhalation (besonders bei Kindern)
+
+  - Narkoseaufrechterhaltung'
+contraindications: Disposition zur malignen Hyperthermie (absolute Kontraindikation).
+adverse_effects: Dosisabhängige Hypotonie und Atemdepression, Übelkeit/Erbrechen, Aufwachdelir bei Kindern.
+interactions: Verstärkt nichtdepolarisierende Muskelrelaxanzien.
+monitoring: Endtidale Konzentration, Kreislauf, endtidales CO₂.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Alle volatilen Anästhetika können eine maligne Hyperthermie auslösen.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Volatiles Anästhetikum mit niedrigem Blut/Gas-Verteilungskoeffizienten: rasches An- und Abfluten;
+    wenig atemwegsreizend.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Narkoseeinleitung per Inhalation (besonders bei Kindern)
+
+    - Narkoseaufrechterhaltung'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Dosisabhängige Hypotonie und Atemdepression, Übelkeit/Erbrechen, Aufwachdelir bei Kindern.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Disposition zur malignen Hyperthermie (absolute Kontraindikation).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Verstärkt nichtdepolarisierende Muskelrelaxanzien. Endtidale Konzentration, Kreislauf, endtidales
+    CO₂.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Alle volatilen Anästhetika können eine maligne Hyperthermie auslösen.
+tags:
+- anaesthesie
+- kontraindikation
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_219
+- ph_057
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- MH-Kontraindikation und Monitoring nach aktueller Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_052_sevofluran_front.png
+back_asset: cards/PH/back/ph_052_sevofluran_back.png
+qr_url: https://at-medical.de/w/wirkstoff/sevofluran
+lms_url: https://lms.at-medical.example/ph/sevofluran

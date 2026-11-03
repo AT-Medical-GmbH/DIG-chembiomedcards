@@ -1,0 +1,70 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_214
+slug: ph_214_blutungsrisiko_antikoagulanzien
+begriff_slug: blutungsrisiko-unter-antikoagulanzien
+title: Blutungsrisiko unter Antikoagulanzien
+subtitle: Additive Blutungsgefahr
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- arzneimittelinteraktionen
+- antikoagulanzien
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: Additive Hemmung von Gerinnung und Thrombozytenfunktion; NSAR schädigen zusätzlich die Schleimhaut.
+monitoring: Kombinationen kritisch prüfen, Dauer begrenzen, Magenschutz erwägen, Nierenfunktion kontrollieren.
+clinical_pearls: 'Antikoagulans + Thrombozytenhemmer + NSAR: höchstes Blutungsrisiko.'
+front_content:
+  prompt: 'Patient unter DOAK erhält zusätzlich NSAR und SSRI: wie verändert sich das Blutungsrisiko?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: Additive Hemmung von Gerinnung und Thrombozytenfunktion; NSAR schädigen zusätzlich die Schleimhaut.
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: Mehr gastrointestinale und intrakranielle Blutungen.
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Höheres Alter, Niereninsuffizienz, Ulkusanamnese, Dreifachkombination, Alkohol.
+- key: management
+  label: Management
+  color_role: clinic
+  text: Kombinationen kritisch prüfen, Dauer begrenzen, Magenschutz erwägen, Nierenfunktion kontrollieren.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Antikoagulans + Thrombozytenhemmer + NSAR: höchstes Blutungsrisiko.'
+tags:
+- interaktion
+- hochrisiko
+- niereninsuffizienz
+- pruefungsrelevant
+related_cards:
+- ph_148
+- ph_134
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Empfehlung zum Magenschutz nach aktueller Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_214_blutungsrisiko_antikoagulanzien_front.png
+back_asset: cards/PH/back/ph_214_blutungsrisiko_antikoagulanzien_back.png
+qr_url: https://at-medical.de/w/begriff/blutungsrisiko-unter-antikoagulanzien
+lms_url: https://lms.at-medical.example/ph/blutungsrisiko-antikoagulanzien

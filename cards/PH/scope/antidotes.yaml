@@ -1,0 +1,31 @@
+# Pharma Cards — Antidote (PH)
+# Referenzliste für das Feld `antidote` und Grundlage der Antidot-Schnellübersicht.
+# WARNUNG: Alle Antidot-Karten sind warning_level >= high (meist critical) und dürfen nur
+# nach toxikologischer Freigabe (review_status: approved) exportiert werden.
+schema_version: "1.0.0"
+module: PH
+
+antidotes:
+  - { slug: naloxon,          name: "Naloxon",                    target: opioid,            warning_level: critical }
+  - { slug: flumazenil,       name: "Flumazenil",                 target: benzodiazepin,     warning_level: critical }
+  - { slug: nac,              name: "N-Acetylcystein",            target: paracetamol,       warning_level: critical }
+  - { slug: atropin,          name: "Atropin",                    target: cholinerg,         warning_level: critical }
+  - { slug: oxime,            name: "Obidoxim / Pralidoxim",      target: organophosphat,    warning_level: critical }
+  - { slug: hydroxocobalamin, name: "Hydroxocobalamin",           target: cyanid,            warning_level: critical }
+  - { slug: sauerstoff,       name: "Sauerstoff",                 target: co,                warning_level: high }
+  - { slug: fomepizol,        name: "Fomepizol",                  target: methanol_ethylenglykol, warning_level: critical }
+  - { slug: ethanol_antidot,  name: "Ethanol (als Antidot)",      target: methanol_ethylenglykol, warning_level: critical }
+  - { slug: digoxin_fab,      name: "Digoxin-spezifische Fab-Fragmente", target: digitalis,  warning_level: critical }
+  - { slug: glucagon,         name: "Glucagon",                   target: betablocker,       warning_level: critical }
+  - { slug: hdie,             name: "Hochdosis-Insulin-Euglykämie-Therapie", target: calciumkanalblocker_betablocker, warning_level: critical }
+  - { slug: calcium,          name: "Calcium",                    target: calciumkanalblocker, warning_level: critical }
+  - { slug: natriumbicarbonat,name: "Natriumbicarbonat",          target: trizyklika_salicylat, warning_level: critical }
+  - { slug: lipidemulsion,    name: "Lipidemulsion",              target: last,              warning_level: critical }
+  - { slug: vitamin_k,        name: "Vitamin K",                  target: vka,               warning_level: high }
+  - { slug: protamin,         name: "Protamin",                   target: heparin,           warning_level: critical }
+  - { slug: idarucizumab,     name: "Idarucizumab",               target: dabigatran,        warning_level: critical }
+  - { slug: andexanet,        name: "Andexanet alfa",             target: faktor_xa_hemmer,  warning_level: critical }
+  - { slug: deferoxamin,      name: "Deferoxamin",                target: eisen,             warning_level: critical }
+  - { slug: dimercaprol,      name: "Dimercaprol",                target: schwermetalle,     warning_level: critical }
+  - { slug: dmsa,             name: "DMSA (Succimer)",            target: schwermetalle,     warning_level: critical }
+  - { slug: penicillamin,     name: "Penicillamin",               target: schwermetalle,     warning_level: critical }

@@ -1,0 +1,89 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_134
+slug: ph_134_acetylsalicylsaeure
+wirkstoff_slug: acetylsalicylsaeure
+title: Acetylsalicylsäure (ASS)
+subtitle: COX-Hemmer, Thrombozytenhemmer
+module: PH
+primary_category: analgetika
+secondary_categories:
+- thrombozytenaggregationshemmer
+chapter: pharmakologie/analgetika
+drug_class: thrombozytenhemmer
+substance_name: Acetylsalicylsäure (ASS)
+generic_name: Acetylsalicylsäure (ASS)
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Irreversible Acetylierung der Cyclooxygenase; niedrig dosiert v. a. Hemmung der thrombozytären
+  Thromboxan-Bildung.
+indications: '- Sekundärprophylaxe kardiovaskulärer Ereignisse, akutes Koronarsyndrom (niedrig dosiert)
+
+  - Schmerzen, Fieber (höher dosiert)'
+contraindications: Aktive Blutung, Ulkus; Kinder/Jugendliche mit Virusinfekt (Reye-Syndrom); letztes Schwangerschaftsdrittel
+  (analgetisch).
+adverse_effects: Magen-Darm-Blutung und Ulzera, Blutungsneigung, Bronchospasmus bei Analgetika-Asthma.
+interactions: Antikoagulanzien und SSRI (Blutung), Methotrexat.
+monitoring: Blutungszeichen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxidrome: salicylat
+clinical_pearls: Die Plättchenhemmung hält über die Lebensdauer der Thrombozyten (etwa 7–10 Tage) an.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Irreversible Acetylierung der Cyclooxygenase; niedrig dosiert v. a. Hemmung der thrombozytären
+    Thromboxan-Bildung.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Sekundärprophylaxe kardiovaskulärer Ereignisse, akutes Koronarsyndrom (niedrig dosiert)
+
+    - Schmerzen, Fieber (höher dosiert)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Magen-Darm-Blutung und Ulzera, Blutungsneigung, Bronchospasmus bei Analgetika-Asthma.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Aktive Blutung, Ulkus; Kinder/Jugendliche mit Virusinfekt (Reye-Syndrom); letztes Schwangerschaftsdrittel
+    (analgetisch).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Antikoagulanzien und SSRI (Blutung), Methotrexat. Blutungszeichen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Die Plättchenhemmung hält über die Lebensdauer der Thrombozyten (etwa 7–10 Tage) an.
+tags:
+- interaktion
+- kontraindikation
+- pruefungsrelevant
+related_cards:
+- ph_150
+- ph_214
+- ph_110
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Reye-Syndrom-Altersgrenze und Schwangerschaftshinweis nach Fachinformation prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_134_acetylsalicylsaeure_front.png
+back_asset: cards/PH/back/ph_134_acetylsalicylsaeure_back.png
+qr_url: https://at-medical.de/w/wirkstoff/acetylsalicylsaeure
+lms_url: https://lms.at-medical.example/ph/acetylsalicylsaeure

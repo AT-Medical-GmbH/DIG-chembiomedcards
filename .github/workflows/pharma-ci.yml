@@ -1,0 +1,71 @@
+name: Pharma Cards CI
+
+# Läuft auf dem eigenen Runner, jeder Job in einem frischen Container (keine Host-Werkzeuge nötig).
+# Schritte sind über hashFiles abgesichert, damit der Workflow auch auf Ständen ohne PH-Pipeline grün bleibt.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pharma-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pipeline:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, chembiomed]
+    container: python:3.12-slim
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Werkzeuge
+        run: apt-get update -qq && apt-get install -y -qq --no-install-recommends make >/dev/null && pip install -q pyyaml qrcode pytest
+      - name: PH-Validierung
+        if: hashFiles('scripts/pharma/validate_ph_cards.py') != ''
+        run: make ph-validate PY=python3
+      - name: Registry aktuell
+        if: hashFiles('scripts/pharma/build_registry.py') != ''
+        run: make ph-registry-check PY=python3
+      - name: Export-Tests
+        if: hashFiles('scripts/pharma/tests/test_export.py') != ''
+        run: python3 -m pytest -q scripts/pharma/tests
+
+  api:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, chembiomed]
+    container: python:3.12-slim
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: API-Tests
+        if: hashFiles('online-platform/backend/requirements-dev.txt') != ''
+        working-directory: online-platform/backend
+        run: |
+          pip install -q -r requirements.txt pytest==9.0.3 httpx==0.27.2
+          python -m pytest -q
+
+  web:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, chembiomed]
+    container: node:22-bookworm-slim
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Typprüfung und Build
+        if: hashFiles('online-platform/frontend/package-lock.json') != ''
+        working-directory: online-platform/frontend
+        run: |
+          npm ci --no-audit --no-fund
+          npm run check
+          npm run build

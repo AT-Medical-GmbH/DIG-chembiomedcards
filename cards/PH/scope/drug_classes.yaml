@@ -1,0 +1,49 @@
+# Pharma Cards — Wirkstoffgruppen (PH)
+# Hierarchisch (parent) erweiterbar. color/icon steuern Darstellung in Online-DB & Übersichten.
+schema_version: "1.0.0"
+module: PH
+
+drug_classes:
+  # --- Notfall / Kreislauf ---
+  - { slug: katecholamine, name: "Katecholamine / Sympathomimetika", parent: null, color: "#E53935", icon: catecholamine }
+  - { slug: vasopressoren, name: "Vasopressoren", parent: katecholamine, color: "#E53935", icon: vasopressor }
+  - { slug: inotropika, name: "Inotropika", parent: null, color: "#E53935", icon: inotrope }
+  - { slug: antiarrhythmika, name: "Antiarrhythmika", parent: null, color: "#1E88E5", icon: antiarrhythmic }
+  - { slug: nitrate, name: "Nitrate", parent: null, color: "#43A047", icon: nitrate }
+  - { slug: diuretika, name: "Diuretika", parent: null, color: "#43A047", icon: diuretic }
+  # --- Anästhesie / Intensiv ---
+  - { slug: hypnotika_iv, name: "Intravenöse Hypnotika/Anästhetika", parent: null, color: "#1E88E5", icon: hypnotic }
+  - { slug: inhalationsanaesthetika, name: "Inhalationsanästhetika", parent: null, color: "#1E88E5", icon: inhalant }
+  - { slug: opioide, name: "Opioide", parent: null, color: "#8E24AA", icon: opioid }
+  - { slug: muskelrelaxanzien, name: "Muskelrelaxanzien", parent: null, color: "#8E24AA", icon: relaxant }
+  - { slug: benzodiazepine, name: "Benzodiazepine", parent: null, color: "#8E24AA", icon: benzo }
+  - { slug: alpha2_agonisten, name: "Alpha-2-Agonisten", parent: null, color: "#1E88E5", icon: alpha2 }
+  # --- Analgetika ---
+  - { slug: nichtopioid_analgetika, name: "Nichtopioid-Analgetika", parent: null, color: "#43A047", icon: analgesic }
+  - { slug: nsar, name: "NSAR", parent: nichtopioid_analgetika, color: "#43A047", icon: nsaid }
+  # --- Antiinfektiva ---
+  - { slug: betalaktame, name: "Beta-Laktam-Antibiotika", parent: null, color: "#00897B", icon: betalactam }
+  - { slug: makrolide, name: "Makrolide", parent: null, color: "#00897B", icon: macrolide }
+  - { slug: fluorchinolone, name: "Fluorchinolone", parent: null, color: "#00897B", icon: quinolone }
+  - { slug: glykopeptide, name: "Glykopeptide", parent: null, color: "#00897B", icon: glycopeptide }
+  - { slug: aminoglykoside, name: "Aminoglykoside", parent: null, color: "#00897B", icon: aminoglycoside }
+  - { slug: virostatika, name: "Virostatika", parent: null, color: "#00897B", icon: antiviral }
+  - { slug: antimykotika, name: "Antimykotika", parent: null, color: "#00897B", icon: antifungal }
+  # --- Herz-Kreislauf chronisch / Gerinnung ---
+  - { slug: betablocker, name: "Betablocker", parent: null, color: "#1E88E5", icon: betablocker }
+  - { slug: raas_hemmer, name: "RAAS-Hemmer (ACE-Hemmer/AT1-Blocker)", parent: null, color: "#43A047", icon: raas }
+  - { slug: calciumkanalblocker, name: "Calciumkanalblocker", parent: null, color: "#43A047", icon: ccb }
+  - { slug: antikoagulanzien, name: "Antikoagulanzien", parent: null, color: "#B71C1C", icon: anticoagulant }
+  - { slug: thrombozytenhemmer, name: "Thrombozytenaggregationshemmer", parent: null, color: "#B71C1C", icon: antiplatelet }
+  - { slug: herzglykoside, name: "Herzglykoside", parent: null, color: "#B71C1C", icon: glycoside }
+  # --- Endokrinologie / Stoffwechsel ---
+  - { slug: antidiabetika, name: "Antidiabetika", parent: null, color: "#43A047", icon: antidiabetic }
+  - { slug: schilddruesentherapeutika, name: "Schilddrüsentherapeutika", parent: null, color: "#43A047", icon: thyroid }
+  - { slug: glucocorticoide, name: "Glucocorticoide", parent: null, color: "#43A047", icon: steroid }
+  # --- Psychopharmaka / Neurologie ---
+  - { slug: antidepressiva, name: "Antidepressiva", parent: null, color: "#8E24AA", icon: antidepressant }
+  - { slug: neuroleptika, name: "Neuroleptika / Antipsychotika", parent: null, color: "#8E24AA", icon: antipsychotic }
+  - { slug: antiepileptika, name: "Antiepileptika", parent: null, color: "#8E24AA", icon: antiepileptic }
+  - { slug: stimmungsstabilisierer, name: "Stimmungsstabilisierer", parent: null, color: "#8E24AA", icon: moodstab }
+  # --- Antidote (als eigene Gruppe geführt) ---
+  - { slug: antidote, name: "Antidote", parent: null, color: "#8E24AA", icon: antidote }

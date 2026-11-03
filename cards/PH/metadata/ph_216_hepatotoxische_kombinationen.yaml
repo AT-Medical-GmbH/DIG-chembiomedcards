@@ -1,0 +1,70 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_216
+slug: ph_216_hepatotoxische_kombinationen
+begriff_slug: hepatotoxische-kombinationen
+title: Hepatotoxische Kombinationen
+subtitle: Arzneimittelbedingter Leberschaden
+module: PH
+primary_category: arzneimittelsicherheit
+secondary_categories:
+- arzneimittelinteraktionen
+chapter: pharmakologie/sicherheit
+card_type: interaction
+front_type: interaction
+level: clinical
+difficulty: intermediate
+interactions: Mehrere lebertoxische Stoffe oder Enzyminduktion, die mehr toxische Metaboliten entstehen
+  lässt.
+monitoring: Indikation prüfen, Dosis begrenzen, Leberwerte überwachen.
+clinical_pearls: Enzyminduktion kann die Bildung toxischer Metaboliten steigern.
+front_content:
+  prompt: 'Paracetamol bei chronischem Alkoholkonsum und Enzyminduktion: welches Risiko?'
+back_sections:
+- key: mechanismus
+  label: Mechanismus
+  color_role: pkpd
+  text: Mehrere lebertoxische Stoffe oder Enzyminduktion, die mehr toxische Metaboliten entstehen lässt.
+- key: konsequenz
+  label: Konsequenz
+  color_role: risk
+  text: Arzneimittelinduzierte Leberschädigung bis zum Leberversagen.
+- key: risikogruppen
+  label: Risikofaktoren
+  color_role: risk
+  text: Alkohol, Lebererkrankung, Mangelernährung; z. B. Paracetamol, Isoniazid, Methotrexat, Valproat,
+    Amiodaron.
+- key: management
+  label: Management
+  color_role: clinic
+  text: Indikation prüfen, Dosis begrenzen, Leberwerte überwachen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Enzyminduktion kann die Bildung toxischer Metaboliten steigern.
+tags:
+- interaktion
+- leberinsuffizienz
+- pruefungsrelevant
+related_cards:
+- ph_130
+- ph_211
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Beispielsubstanzen mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_216_hepatotoxische_kombinationen_front.png
+back_asset: cards/PH/back/ph_216_hepatotoxische_kombinationen_back.png
+qr_url: https://at-medical.de/w/begriff/hepatotoxische-kombinationen
+lms_url: https://lms.at-medical.example/ph/hepatotoxische-kombinationen

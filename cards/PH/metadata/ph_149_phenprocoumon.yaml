@@ -1,0 +1,82 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_149
+slug: ph_149_phenprocoumon
+wirkstoff_slug: phenprocoumon
+title: Phenprocoumon
+subtitle: Vitamin-K-Antagonist
+module: PH
+primary_category: antikoagulanzien
+secondary_categories: []
+chapter: pharmakologie/herz_kreislauf
+drug_class: antikoagulanzien
+substance_name: Phenprocoumon
+generic_name: Phenprocoumon
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Hemmt die Vitamin-K-Epoxid-Reduktase: weniger funktionsfähige Faktoren II, VII,
+  IX und X.'
+indications: '- Langzeitantikoagulation (z. B. mechanische Herzklappen, Vorhofflimmern, Thromboembolien)'
+contraindications: Schwangerschaft, aktive Blutung, fehlende Kontrollmöglichkeit oder Therapietreue.
+adverse_effects: Blutung, Hautnekrosen zu Therapiebeginn, Teratogenität.
+interactions: Sehr viele Interaktionen (u. a. Antibiotika, Amiodaron, NSAR) und Vitamin-K-Zufuhr.
+monitoring: INR regelmäßig.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: vitamin_k
+clinical_pearls: Sehr lange Halbwertszeit; Antidot Vitamin K, bei Blutung zusätzlich PPSB.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Hemmt die Vitamin-K-Epoxid-Reduktase: weniger funktionsfähige Faktoren II, VII, IX und X.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Langzeitantikoagulation (z. B. mechanische Herzklappen, Vorhofflimmern, Thromboembolien)'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Blutung, Hautnekrosen zu Therapiebeginn, Teratogenität.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Schwangerschaft, aktive Blutung, fehlende Kontrollmöglichkeit oder Therapietreue.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Sehr viele Interaktionen (u. a. Antibiotika, Amiodaron, NSAR) und Vitamin-K-Zufuhr. INR regelmäßig.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Sehr lange Halbwertszeit; Antidot Vitamin K, bei Blutung zusätzlich PPSB.
+tags:
+- hochrisiko
+- interaktion
+- monitoring
+- pruefungsrelevant
+- schwangerschaft
+related_cards:
+- ph_112
+- ph_148
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- INR-Zielbereiche nur mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_149_phenprocoumon_front.png
+back_asset: cards/PH/back/ph_149_phenprocoumon_back.png
+qr_url: https://at-medical.de/w/wirkstoff/phenprocoumon
+lms_url: https://lms.at-medical.example/ph/phenprocoumon

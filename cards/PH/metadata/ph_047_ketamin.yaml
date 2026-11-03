@@ -1,0 +1,96 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_047
+slug: ph_047_ketamin
+wirkstoff_slug: ketamin
+title: Ketamin
+subtitle: NMDA-Rezeptor-Antagonist
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- anaesthesiepharmakologie
+- analgetika
+chapter: pharmakologie/notfallmedikamente
+drug_class: hypnotika_iv
+substance_name: Ketamin
+generic_name: Ketamin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Nichtkompetitiver NMDA-Antagonist: dissoziative Anästhesie und Analgesie, sympathomimetische
+  Begleitwirkung.'
+indications: '- Narkoseeinleitung bei hämodynamischer Instabilität
+
+  - Analgesie (subanästhetisch)
+
+  - Ko-Therapie bei schwerem Bronchospasmus'
+contraindications: Unkontrollierte Hypertonie, schwere KHK, akute Psychose (relativ).
+adverse_effects: Hypersalivation, Aufwachreaktionen/Halluzinationen, Hypertonie, Tachykardie, erhöhter
+  myokardialer O₂-Bedarf.
+interactions: Additive Effekte mit anderen ZNS-dämpfenden Substanzen.
+monitoring: Blutdruck, Herzfrequenz, Atmung.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: 'Esketamin ist das S-Enantiomer und wirkt etwa doppelt so stark: Verwechslungsgefahr.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Nichtkompetitiver NMDA-Antagonist: dissoziative Anästhesie und Analgesie, sympathomimetische
+    Begleitwirkung.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Narkoseeinleitung bei hämodynamischer Instabilität
+
+    - Analgesie (subanästhetisch)
+
+    - Ko-Therapie bei schwerem Bronchospasmus'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Hypersalivation, Aufwachreaktionen/Halluzinationen, Hypertonie, Tachykardie, erhöhter myokardialer
+    O₂-Bedarf.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Unkontrollierte Hypertonie, schwere KHK, akute Psychose (relativ).
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Additive Effekte mit anderen ZNS-dämpfenden Substanzen. Blutdruck, Herzfrequenz, Atmung.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Esketamin ist das S-Enantiomer und wirkt etwa doppelt so stark: Verwechslungsgefahr.'
+tags:
+- notfall
+- anaesthesie
+- praeklinik
+- rezeptor
+- antagonist
+- pruefungsrelevant
+related_cards:
+- ph_046
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Aussage zum Hirndruck nach aktuellem Stand prüfen (frühere KI gilt als relativiert)
+- Potenzverhältnis Ketamin/Esketamin mit Quelle belegen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_047_ketamin_front.png
+back_asset: cards/PH/back/ph_047_ketamin_back.png
+qr_url: https://at-medical.de/w/wirkstoff/ketamin
+lms_url: https://lms.at-medical.example/ph/ketamin

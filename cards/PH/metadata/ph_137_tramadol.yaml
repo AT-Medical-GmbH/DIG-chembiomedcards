@@ -1,0 +1,84 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_137
+slug: ph_137_tramadol
+wirkstoff_slug: tramadol
+title: Tramadol
+subtitle: Opioid mit monoaminerger Wirkung
+module: PH
+primary_category: analgetika
+secondary_categories: []
+chapter: pharmakologie/analgetika
+drug_class: opioide
+substance_name: Tramadol
+generic_name: Tramadol
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Schwacher µ-Agonismus (v. a. über den CYP2D6-Metaboliten) plus Hemmung der Serotonin-
+  und Noradrenalin-Wiederaufnahme.
+indications: '- mäßige bis starke Schmerzen'
+contraindications: Unzureichend kontrollierte Epilepsie, Therapie mit MAO-Hemmern.
+adverse_effects: Übelkeit, Schwindel, Krampfanfälle, Serotoninsyndrom; Atemdepression bei ultraschnellen
+  Metabolisierern.
+interactions: 'Serotonerge Stoffe: Serotoninsyndrom; CYP2D6-Hemmer schwächen die Wirkung.'
+monitoring: Bei Kombinationen klinisch überwachen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+antidote: naloxon
+clinical_pearls: Die Wirkung hängt vom CYP2D6-Status ab.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Schwacher µ-Agonismus (v. a. über den CYP2D6-Metaboliten) plus Hemmung der Serotonin- und Noradrenalin-Wiederaufnahme.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- mäßige bis starke Schmerzen'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Übelkeit, Schwindel, Krampfanfälle, Serotoninsyndrom; Atemdepression bei ultraschnellen Metabolisierern.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Unzureichend kontrollierte Epilepsie, Therapie mit MAO-Hemmern.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: 'Serotonerge Stoffe: Serotoninsyndrom; CYP2D6-Hemmer schwächen die Wirkung. Bei Kombinationen
+    klinisch überwachen.'
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Die Wirkung hängt vom CYP2D6-Status ab.
+tags:
+- interaktion
+- cyp450
+- prodrug
+- hochrisiko
+- pruefungsrelevant
+related_cards:
+- ph_023
+- ph_213
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Krampfschwelle und CYP2D6-Aussagen mit Quelle
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_137_tramadol_front.png
+back_asset: cards/PH/back/ph_137_tramadol_back.png
+qr_url: https://at-medical.de/w/wirkstoff/tramadol
+lms_url: https://lms.at-medical.example/ph/tramadol

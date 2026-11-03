@@ -1,0 +1,61 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_024
+slug: ph_024_cyp2c9
+begriff_slug: cyp2c9
+title: CYP2C9
+subtitle: Isoenzym mit engen Substraten
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/metabolismus
+card_type: overview
+front_type: principle
+level: advanced
+difficulty: advanced
+front_content:
+  question: Warum ist CYP2C9 bei Substraten mit enger therapeutischer Breite kritisch?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: CYP2C9 metabolisiert u. a. Substrate mit enger therapeutischer Breite; auch hier gibt es genetische
+    Varianten.
+- key: vertiefung
+  label: Relevanz
+  color_role: pkpd
+  text: Interaktionen und Varianten können den Abbau verlangsamen und Spiegel/Wirkung verstärken.
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Bei Substraten mit enger therapeutischer Breite erhöhtes Risiko (z. B. Blutungsneigung bei Antikoagulation)
+    – fachliche Prüfung nötig.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Enge Substrate + CYP2C9-Variante = Vorsicht.
+learning_objectives:
+- Bedeutung von CYP2C9 für enge Substrate erläutern
+tags:
+- cyp450
+- interaktion
+- enge_therapeutische_breite
+- pruefungsrelevant
+related_cards:
+- ph_021
+- ph_023
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_024_cyp2c9_front.png
+back_asset: cards/PH/back/ph_024_cyp2c9_back.png
+qr_url: https://at-medical.de/w/begriff/cyp2c9
+lms_url: https://lms.at-medical.example/ph/cyp2c9

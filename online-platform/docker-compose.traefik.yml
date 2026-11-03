@@ -1,0 +1,21 @@
+# Overlay für den Betrieb hinter Traefik (ATMED-traefik). Ersetzt den lokalen Port durch
+# Traefik-Labels und hängt pharma-web zusätzlich ins externe Proxy-Netz.
+#   docker compose -f docker-compose.yml -f docker-compose.traefik.yml --env-file .env up -d
+services:
+  pharma-web:
+    ports: !reset []
+    networks: [internal, proxy]
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: ${TRAEFIK_NETWORK:-proxy}
+      traefik.http.routers.pharma-cards.rule: Host(`${PHARMA_HOST:?PHARMA_HOST setzen}`)
+      traefik.http.routers.pharma-cards.entrypoints: ${TRAEFIK_ENTRYPOINT:-websecure}
+      traefik.http.routers.pharma-cards.tls: "true"
+      traefik.http.routers.pharma-cards.tls.certresolver: ${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      traefik.http.routers.pharma-cards.middlewares: ${TRAEFIK_MIDDLEWARES:-}
+      traefik.http.services.pharma-cards.loadbalancer.server.port: "8080"
+
+networks:
+  proxy:
+    external: true
+    name: ${TRAEFIK_NETWORK:-proxy}

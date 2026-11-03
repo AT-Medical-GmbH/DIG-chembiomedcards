@@ -1,0 +1,86 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_062
+slug: ph_062_dobutamin
+wirkstoff_slug: dobutamin
+title: Dobutamin
+subtitle: Inotropes Katecholamin
+module: PH
+primary_category: intensivpharmakologie
+secondary_categories:
+- katecholamine_vasopressoren
+chapter: pharmakologie/intensivmedizin
+drug_class: katecholamine
+substance_name: Dobutamin
+generic_name: Dobutamin
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Synthetisches Katecholamin, vorwiegend β1-Agonist: positiv inotrop; geringe β2-vermittelte
+  Vasodilatation.'
+indications: '- kardiogener Schock, Low-Output-Syndrom
+
+  - Stressechokardiographie'
+contraindications: Hypertrophe obstruktive Kardiomyopathie, unkorrigierte Hypovolämie.
+adverse_effects: Tachykardie, Arrhythmien, erhöhter myokardialer O₂-Bedarf, Hypotonie durch Vasodilatation.
+interactions: Betablocker schwächen die Wirkung ab.
+monitoring: EKG, invasiver Blutdruck, Herzzeitvolumen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: 'Inotrop, aber kein Vasopressor: bei Hypotonie oft mit Noradrenalin kombiniert.'
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: 'Synthetisches Katecholamin, vorwiegend β1-Agonist: positiv inotrop; geringe β2-vermittelte Vasodilatation.'
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- kardiogener Schock, Low-Output-Syndrom
+
+    - Stressechokardiographie'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Tachykardie, Arrhythmien, erhöhter myokardialer O₂-Bedarf, Hypotonie durch Vasodilatation.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Hypertrophe obstruktive Kardiomyopathie, unkorrigierte Hypovolämie.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Betablocker schwächen die Wirkung ab. EKG, invasiver Blutdruck, Herzzeitvolumen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Inotrop, aber kein Vasopressor: bei Hypotonie oft mit Noradrenalin kombiniert.'
+tags:
+- intensivmedizin
+- agonist
+- hochrisiko
+- monitoring
+- pruefungsrelevant
+related_cards:
+- ph_041
+- ph_063
+warning_level: critical
+review_status: clinical_review_needed
+review_focus:
+- Stellenwert im kardiogenen Schock gegen aktuelle Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_062_dobutamin_front.png
+back_asset: cards/PH/back/ph_062_dobutamin_back.png
+qr_url: https://at-medical.de/w/wirkstoff/dobutamin
+lms_url: https://lms.at-medical.example/ph/dobutamin

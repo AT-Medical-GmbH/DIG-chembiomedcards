@@ -1,0 +1,61 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_028
+slug: ph_028_proteinbindung
+begriff_slug: proteinbindung
+title: Proteinbindung
+subtitle: Freie vs. gebundene Fraktion
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/distribution
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Warum ist nur die freie Fraktion wirksam?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Viele Wirkstoffe binden an Plasmaproteine (z. B. Albumin); nur die freie Fraktion ist pharmakologisch
+    wirksam.
+- key: vertiefung
+  label: Prinzip
+  color_role: pkpd
+  text: Hohe Proteinbindung → kleines effektives Vd; Verdrängung kann die freie Fraktion erhöhen.
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Bei Hypalbuminämie oder Verdrängung steigt die freie, wirksame Fraktion (Vorsicht bei enger therapeutischer
+    Breite).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Nur frei wirkt – gebunden ist Depot.
+learning_objectives:
+- Bedeutung der Proteinbindung erklären
+- Verdrängungseffekte einordnen
+tags:
+- interaktion
+- enge_therapeutische_breite
+- pruefungsrelevant
+related_cards:
+- ph_015
+- ph_024
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_028_proteinbindung_front.png
+back_asset: cards/PH/back/ph_028_proteinbindung_back.png
+qr_url: https://at-medical.de/w/begriff/proteinbindung
+lms_url: https://lms.at-medical.example/ph/proteinbindung

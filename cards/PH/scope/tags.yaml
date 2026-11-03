@@ -1,0 +1,37 @@
+# Pharma Cards — Tags (PH)
+# Freiere, querschnittliche Verschlagwortung (ergänzend zu Kategorien/Wirkstoffgruppen).
+# Tags werden validiert: nur hier gelistete Slugs sind in Karten zulässig (kontrolliertes Vokabular).
+schema_version: "1.0.0"
+module: PH
+
+tags:
+  # Lern-/Prüfungsrelevanz
+  - { slug: pruefungsrelevant,   name: "Prüfungsrelevant" }
+  - { slug: notfall,             name: "Notfall" }
+  - { slug: hochrisiko,          name: "Hochrisiko" }
+  - { slug: intensivmedizin,     name: "Intensivmedizin" }
+  - { slug: anaesthesie,         name: "Anästhesie" }
+  - { slug: praeklinik,          name: "Präklinik" }
+  # Mechanismus/PK/PD
+  - { slug: rezeptor,            name: "Rezeptor" }
+  - { slug: agonist,             name: "Agonist" }
+  - { slug: antagonist,          name: "Antagonist" }
+  - { slug: enzyminhibition,     name: "Enzyminhibition" }
+  - { slug: cyp450,              name: "CYP450" }
+  - { slug: prodrug,             name: "Prodrug" }
+  - { slug: enge_therapeutische_breite, name: "Enge therapeutische Breite" }
+  # Sicherheit
+  - { slug: qt_verlaengerung,    name: "QT-Verlängerung" }
+  - { slug: interaktion,         name: "Interaktion" }
+  - { slug: monitoring,          name: "Monitoring" }
+  - { slug: kontraindikation,    name: "Kontraindikation" }
+  - { slug: schwangerschaft,     name: "Schwangerschaft/Stillzeit" }
+  - { slug: niereninsuffizienz,  name: "Niereninsuffizienz" }
+  - { slug: leberinsuffizienz,   name: "Leberinsuffizienz" }
+  - { slug: paediatrie,          name: "Pädiatrie" }
+  - { slug: geriatrie,           name: "Geriatrie" }
+  # Toxikologie
+  - { slug: toxidrom,            name: "Toxidrom" }
+  - { slug: antidot,             name: "Antidot" }
+  - { slug: intoxikation,        name: "Intoxikation" }
+  - { slug: entgiftung,          name: "Entgiftung/Elimination" }

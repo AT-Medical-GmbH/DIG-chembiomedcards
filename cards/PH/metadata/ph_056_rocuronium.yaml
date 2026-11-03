@@ -1,0 +1,88 @@
+# ENTWURF R2. Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_056
+slug: ph_056_rocuronium
+wirkstoff_slug: rocuronium
+title: Rocuronium
+subtitle: Nichtdepolarisierendes Muskelrelaxans
+module: PH
+primary_category: anaesthesiepharmakologie
+secondary_categories:
+- notfallmedikamente
+chapter: pharmakologie/anaesthesie
+drug_class: muskelrelaxanzien
+substance_name: Rocuronium
+generic_name: Rocuronium
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Kompetitiver Antagonist am nikotinischen Acetylcholinrezeptor der motorischen Endplatte
+  (Aminosteroid).
+indications: '- Intubation, auch Ileuseinleitung (RSI)
+
+  - Relaxierung während Operationen'
+contraindications: Nie ohne Narkose/Sedierung und Atemwegsmanagement.
+adverse_effects: Restblockade, Anaphylaxie (selten). Keine Analgesie, keine Sedierung.
+interactions: Wirkverstärkung durch volatile Anästhetika, Aminoglykoside, Magnesium.
+monitoring: Relaxometrie (Train-of-Four).
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+clinical_pearls: Spezifisch aufhebbar durch Sugammadex.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Kompetitiver Antagonist am nikotinischen Acetylcholinrezeptor der motorischen Endplatte (Aminosteroid).
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Intubation, auch Ileuseinleitung (RSI)
+
+    - Relaxierung während Operationen'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Restblockade, Anaphylaxie (selten). Keine Analgesie, keine Sedierung.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Nie ohne Narkose/Sedierung und Atemwegsmanagement.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Wirkverstärkung durch volatile Anästhetika, Aminoglykoside, Magnesium. Relaxometrie (Train-of-Four).
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Spezifisch aufhebbar durch Sugammadex.
+tags:
+- anaesthesie
+- hochrisiko
+- rezeptor
+- monitoring
+- pruefungsrelevant
+- antagonist
+- notfall
+related_cards:
+- ph_059
+- ph_057
+warning_level: high
+review_status: clinical_review_needed
+review_focus:
+- Einsatz zur RSI gegen aktuelle Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_056_rocuronium_front.png
+back_asset: cards/PH/back/ph_056_rocuronium_back.png
+qr_url: https://at-medical.de/w/wirkstoff/rocuronium
+lms_url: https://lms.at-medical.example/ph/rocuronium

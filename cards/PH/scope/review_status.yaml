@@ -1,0 +1,44 @@
+# Pharma Cards — Review-Status (PH)
+# Verbindlicher Fachreview-Workflow. Reihenfolge = typischer Lebenszyklus.
+schema_version: "1.0.0"
+module: PH
+
+review_status:
+  - key: draft
+    label: Entwurf
+    exportable: false
+    description: "Erstentwurf, inhaltlich nicht geprüft."
+  - key: needs_review
+    label: Review nötig
+    exportable: false
+    description: "Vollständig, wartet auf fachliche Prüfung."
+  - key: clinical_review_needed
+    label: Klinische Prüfung nötig
+    exportable: false
+    description: "Klinisch relevante Aussagen müssen durch Fachreviewer Pharmakologie geprüft werden."
+  - key: toxicology_review_needed
+    label: Toxikologische Prüfung nötig
+    exportable: false
+    description: "Toxikologische Aussagen/Antidote müssen durch Fachreviewer Toxikologie geprüft werden."
+  - key: reviewed
+    label: Geprüft
+    exportable: true           # je Warnlevel (siehe warning_levels.yaml export_gate)
+    description: "Fachlich geprüft, Freigabe ausstehend."
+  - key: approved
+    label: Freigegeben
+    exportable: true
+    description: "Fachlich freigegeben; für Export/Print/Online zulässig."
+  - key: deprecated
+    label: Veraltet
+    exportable: false
+    description: "Inhaltlich überholt; Nachfolgekarte vorhanden oder geplant."
+  - key: archived
+    label: Archiviert
+    exportable: false
+    description: "Aus dem aktiven Bestand genommen."
+
+# Zusätzlicher Pflegestatus für inhaltliche Alterung (Handover Phase 17)
+maintenance_flags:
+  - key: update_needed
+    label: Aktualisierung nötig
+    description: "Inhalt möglicherweise veraltet (Leitlinien-/Zulassungsänderung), Re-Review anstoßen."

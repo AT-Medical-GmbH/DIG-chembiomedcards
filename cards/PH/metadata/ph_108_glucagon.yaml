@@ -1,0 +1,81 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_108
+slug: ph_108_glucagon
+wirkstoff_slug: glucagon
+title: Glucagon
+subtitle: Antidot bei Betablocker-Intoxikation
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfallmedikamente
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Glucagon
+generic_name: Glucagon
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: 'Aktiviert Glucagonrezeptoren und erhöht cAMP unabhängig vom β-Rezeptor: positiv
+  inotrop und chronotrop.'
+indications: Als Teil der Therapie bei symptomatischer Bradykardie/Hypotonie.
+adverse_effects: Erbrechen (Aspirationsgefahr), Hyperglykämie; Wirkung oft begrenzt und kurz.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Betablocker-, auch Calciumkanalblocker-Intoxikation.
+antidote: glucagon
+toxidrome: betablocker
+clinical_pearls: 'Glucagon dient auch der Hypoglykämie-Therapie: Indikationen auseinanderhalten.'
+front_content:
+  prompt: 'Betablocker-Intoxikation mit Bradykardie und Hypotonie: welches Antidot wirkt am β-Rezeptor
+    vorbei?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Betablocker-, auch Calciumkanalblocker-Intoxikation.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: 'Aktiviert Glucagonrezeptoren und erhöht cAMP unabhängig vom β-Rezeptor: positiv inotrop und chronotrop.'
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Als Teil der Therapie bei symptomatischer Bradykardie/Hypotonie.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Erbrechen (Aspirationsgefahr), Hyperglykämie; Wirkung oft begrenzt und kurz.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Glucagon dient auch der Hypoglykämie-Therapie: Indikationen auseinanderhalten.'
+tags:
+- antidot
+- intoxikation
+- notfall
+- pruefungsrelevant
+related_cards:
+- ph_048
+- ph_109
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Stellenwert gegenüber hochdosierter Insulin-Euglykämie-Therapie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_108_glucagon_front.png
+back_asset: cards/PH/back/ph_108_glucagon_back.png
+qr_url: https://at-medical.de/w/wirkstoff/glucagon
+lms_url: https://lms.at-medical.example/ph/glucagon

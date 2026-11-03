@@ -1,0 +1,81 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_109
+slug: ph_109_calcium
+wirkstoff_slug: calcium
+title: Calcium
+subtitle: Calciumchlorid / Calciumgluconat
+module: PH
+primary_category: antidote
+secondary_categories:
+- notfallmedikamente
+- notfalltoxikologie
+chapter: toxikologie/antidote
+drug_class: antidote
+substance_name: Calcium
+generic_name: Calcium
+card_type: antidote
+front_type: antidote
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Erhöht das extrazelluläre Calcium und verbessert Kontraktilität; stabilisiert Membranen
+  bei Hyperkaliämie.
+indications: Teil der Therapie bei Calciumkanalblocker-Intoxikation und bedrohlicher Hyperkaliämie.
+adverse_effects: Calciumchlorid stark venenreizend; Gluconat verträglicher, enthält aber weniger Calcium
+  pro Volumen.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+toxicology_relevance: Calciumkanalblocker-Intoxikation; außerdem Hyperkaliämie und Hypermagnesiämie.
+antidote: calcium
+toxidrome: calciumkanalblocker
+clinical_pearls: 'Chlorid und Gluconat sind nicht gleich dosiert: Verwechslungsgefahr.'
+front_content:
+  prompt: 'Calciumkanalblocker-Intoxikation: welches Antidot?'
+back_sections:
+- key: zielintoxikation
+  label: Zielintoxikation
+  color_role: risk
+  text: Calciumkanalblocker-Intoxikation; außerdem Hyperkaliämie und Hypermagnesiämie.
+- key: wirkprinzip
+  label: Wirkprinzip
+  color_role: pkpd
+  text: Erhöht das extrazelluläre Calcium und verbessert Kontraktilität; stabilisiert Membranen bei Hyperkaliämie.
+- key: anwendungskontext
+  label: Anwendungskontext
+  color_role: clinic
+  text: Teil der Therapie bei Calciumkanalblocker-Intoxikation und bedrohlicher Hyperkaliämie.
+- key: risiken_cave
+  label: Risiken / Cave
+  color_role: risk
+  text: Calciumchlorid stark venenreizend; Gluconat verträglicher, enthält aber weniger Calcium pro Volumen.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: 'Chlorid und Gluconat sind nicht gleich dosiert: Verwechslungsgefahr.'
+tags:
+- antidot
+- intoxikation
+- notfall
+- pruefungsrelevant
+related_cards:
+- ph_049
+- ph_108
+warning_level: critical
+review_status: toxicology_review_needed
+review_focus:
+- Aussage zu Calcium bei Digitalisintoxikation nach aktuellem Stand prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_109_calcium_front.png
+back_asset: cards/PH/back/ph_109_calcium_back.png
+qr_url: https://at-medical.de/w/wirkstoff/calcium
+lms_url: https://lms.at-medical.example/ph/calcium

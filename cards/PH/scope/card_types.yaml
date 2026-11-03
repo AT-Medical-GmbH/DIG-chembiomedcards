@@ -1,0 +1,85 @@
+# Pharma Cards — Kartentypen & Front-/Back-Typen (PH)
+# Definiert erlaubte Kartentypen und die zugehörige Vorder-/Rückseiten-Struktur.
+# Layout-Templates wählen die Box-Struktur anhand dieser Keys (keine Hartverdrahtung).
+schema_version: "1.0.0"
+module: PH
+
+# Registry-kompatible Oberkategorie (card_type-Feld der Registry)
+card_types:
+  - key: substance      # Wirkstoffkarte
+    label: Wirkstoffkarte
+    default_front_type: substance
+    default_back_sections: [wirkstoffgruppe, wirkmechanismus, indikationen, nebenwirkungen, kontraindikationen, interaktionen_monitoring, merke]
+  - key: mechanism      # Wirkmechanismuskarte
+    label: Wirkmechanismuskarte
+    default_front_type: mechanism
+    default_back_sections: [kernmechanismus, pathway, klinischer_bezug, merke]
+  - key: toxidrome      # Toxidromkarte
+    label: Toxidromkarte
+    default_front_type: toxidrome
+    default_back_sections: [leitsymptome, pathophysiologie, diagnostik_monitoring, akuttherapie, antidot, red_flags, merke]
+  - key: antidote       # Antidotkarte
+    label: Antidotkarte
+    default_front_type: antidote
+    default_back_sections: [zielintoxikation, wirkprinzip, anwendungskontext, risiken_cave, merke]
+  - key: interaction    # Interaktionskarte
+    label: Interaktionskarte
+    default_front_type: interaction
+    default_back_sections: [mechanismus, konsequenz, risikogruppen, management, merke]
+  - key: case           # Klinische Fallkarte
+    label: Klinische Fallkarte
+    default_front_type: case
+    default_back_sections: [loesung, begruendung, fallstricke, merke]
+  - key: overview       # Übersichts-/Prinzipkarte (Registry-kompatibel)
+    label: Übersichtskarte
+    default_front_type: principle
+    default_back_sections: [kernaussage, vertiefung, klinischer_bezug, merke]
+
+# Front-Typen (front_type-Feld), erweiterbar für künftige Fachgebiete (Handover Phase 13)
+front_types:
+  - { key: substance,   label: "Wirkstoffname / Struktur" }
+  - { key: structure,   label: "Strukturformel" }
+  - { key: drug_class,  label: "Wirkstoffgruppe" }
+  - { key: receptor,    label: "Rezeptor / Target" }
+  - { key: mechanism,   label: "Wirkmechanismus-Frage/Schema" }
+  - { key: toxidrome,   label: "Toxidrom / Leitsymptom-Cluster" }
+  - { key: antidote,    label: "Giftstoff/Intoxikation (Antidot gesucht)" }
+  - { key: interaction, label: "Kombination/Problem" }
+  - { key: case,        label: "Fallvignette" }
+  - { key: dose,        label: "Dosierungsprinzip" }
+  - { key: algorithm,   label: "Algorithmus" }
+  - { key: principle,   label: "Prinzip/Definition" }
+  - { key: ecg,         label: "EKG-Streifen (perspektivisch)" }
+  - { key: lab,         label: "Laborwert (perspektivisch)" }
+
+# Back-Section-Bausteine → Farbrolle (siehe 05_kartenlayout.md Farblogik)
+back_sections:
+  wirkstoffgruppe:        { label: "Wirkstoffgruppe",            color_role: base }
+  wirkmechanismus:        { label: "Wirkmechanismus",           color_role: pkpd }
+  kernmechanismus:        { label: "Kernmechanismus",           color_role: pkpd }
+  pathway:                { label: "Signalweg/Schema",          color_role: pkpd }
+  indikationen:           { label: "Indikationen",              color_role: clinic }
+  klinischer_bezug:       { label: "Klinische Relevanz",        color_role: clinic }
+  nebenwirkungen:         { label: "Nebenwirkungen",            color_role: risk }
+  kontraindikationen:     { label: "Kontraindikationen",        color_role: risk }
+  red_flags:              { label: "Red Flags",                 color_role: risk }
+  leitsymptome:           { label: "Leitsymptome",              color_role: risk }
+  pathophysiologie:       { label: "Pathophysiologie",          color_role: pkpd }
+  diagnostik_monitoring:  { label: "Diagnostik / Monitoring",   color_role: interaction }
+  interaktionen_monitoring: { label: "Interaktionen / Monitoring", color_role: interaction }
+  mechanismus:            { label: "Mechanismus",               color_role: pkpd }
+  konsequenz:             { label: "Konsequenz",                color_role: risk }
+  risikogruppen:          { label: "Risikogruppen",             color_role: risk }
+  management:             { label: "Management",                color_role: clinic }
+  akuttherapie:           { label: "Akuttherapie",              color_role: clinic }
+  antidot:                { label: "Antidot",                   color_role: antidote }
+  zielintoxikation:       { label: "Zielintoxikation",          color_role: risk }
+  wirkprinzip:            { label: "Wirkprinzip",               color_role: pkpd }
+  anwendungskontext:      { label: "Anwendungskontext",         color_role: clinic }
+  risiken_cave:           { label: "Risiken / Cave",            color_role: risk }
+  loesung:                { label: "Lösung",                    color_role: clinic }
+  begruendung:            { label: "Begründung",                color_role: pkpd }
+  fallstricke:            { label: "Fallstricke",               color_role: antidote }
+  kernaussage:            { label: "Kernaussage",               color_role: base }
+  vertiefung:             { label: "Vertiefung",                color_role: pkpd }
+  merke:                  { label: "Merke / Fallstrick",        color_role: antidote }

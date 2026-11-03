@@ -1,0 +1,94 @@
+# ENTWURF R1 (klinisch). Ausbildungsmaterial, keine Therapieanweisung.
+# Fachreview ausstehend (siehe review_focus). Keine Dosierungen ohne Quelle.
+card_id: ph_045
+slug: ph_045_furosemid
+wirkstoff_slug: furosemid
+title: Furosemid
+subtitle: Schleifendiuretikum
+module: PH
+primary_category: notfallmedikamente
+secondary_categories:
+- intensivpharmakologie
+- klinische_pharmakologie
+chapter: pharmakologie/notfallmedikamente
+drug_class: diuretika
+substance_name: Furosemid
+generic_name: Furosemid
+card_type: substance
+front_type: substance
+level: clinical
+difficulty: intermediate
+mechanism_of_action: Hemmt den Na⁺-K⁺-2Cl⁻-Cotransporter im aufsteigenden Teil der Henle-Schleife.
+indications: '- Lungenödem bei Volumenüberladung
+
+  - Ödeme
+
+  - unterstützend bei Hyperkaliämie'
+contraindications: Hypovolämie, Anurie, schwere Elektrolytentgleisung.
+adverse_effects: Hypokaliämie, Hyponatriämie, Hypovolämie, metabolische Alkalose, Ototoxizität bei rascher
+  hoher i.v.-Gabe.
+interactions: Aminoglykoside (Oto-/Nephrotoxizität), Digitalis (Hypokaliämie ↑ Toxizität), Lithium (Spiegel
+  ↑).
+monitoring: Elektrolyte, Nierenfunktion, Bilanz.
+dose_principles: Konkrete Dosierung bewusst nicht angegeben. Nur nach aktueller Leitlinie bzw. Fachinformation;
+  wird im Fachreview mit Quelle ergänzt.
+emergency_relevance: Notfall- und Intensivmedikament.
+clinical_pearls: Hypokaliämie plus Digitalis erhöht das Arrhythmierisiko.
+back_sections:
+- key: wirkmechanismus
+  label: Wirkmechanismus
+  color_role: pkpd
+  text: Hemmt den Na⁺-K⁺-2Cl⁻-Cotransporter im aufsteigenden Teil der Henle-Schleife.
+- key: indikationen
+  label: Indikationen
+  color_role: clinic
+  text: '- Lungenödem bei Volumenüberladung
+
+    - Ödeme
+
+    - unterstützend bei Hyperkaliämie'
+- key: nebenwirkungen
+  label: Nebenwirkungen
+  color_role: risk
+  text: Hypokaliämie, Hyponatriämie, Hypovolämie, metabolische Alkalose, Ototoxizität bei rascher hoher
+    i.v.-Gabe.
+- key: kontraindikationen
+  label: Kontraindikationen / Cave
+  color_role: risk
+  text: Hypovolämie, Anurie, schwere Elektrolytentgleisung.
+- key: interaktionen_monitoring
+  label: Interaktionen / Monitoring
+  color_role: interaction
+  text: Aminoglykoside (Oto-/Nephrotoxizität), Digitalis (Hypokaliämie ↑ Toxizität), Lithium (Spiegel
+    ↑). Elektrolyte, Nierenfunktion, Bilanz.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Hypokaliämie plus Digitalis erhöht das Arrhythmierisiko.
+tags:
+- notfall
+- interaktion
+- monitoring
+- niereninsuffizienz
+- pruefungsrelevant
+related_cards:
+- ph_107
+warning_level: moderate
+review_status: clinical_review_needed
+review_focus:
+- Stellenwert beim akuten Lungenödem gegen aktuelle Herzinsuffizienz-Leitlinie prüfen
+- Aktuelle Quelle (Leitlinie/Fachinformation) mit Jahr in references eintragen
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_045_furosemid_front.png
+back_asset: cards/PH/back/ph_045_furosemid_back.png
+qr_url: https://at-medical.de/w/wirkstoff/furosemid
+lms_url: https://lms.at-medical.example/ph/furosemid

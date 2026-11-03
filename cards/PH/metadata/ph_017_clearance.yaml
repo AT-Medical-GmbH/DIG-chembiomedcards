@@ -1,0 +1,60 @@
+# Pilot-Karte R1 (Grundlagen/PK-PD). Ausbildungsmaterial, keine Therapieanweisung.
+# review_status needs_review; keine finalen Dosierungen.
+card_id: ph_017
+slug: ph_017_clearance
+begriff_slug: clearance
+title: Clearance
+subtitle: Eliminationsleistung
+module: PH
+primary_category: pharmakokinetik
+chapter: pharmakologie/pharmakokinetik
+card_type: overview
+front_type: principle
+level: intermediate
+difficulty: intermediate
+front_content:
+  question: Was misst die Clearance?
+back_sections:
+- key: kernaussage
+  label: Kernaussage
+  color_role: base
+  text: Die Clearance ist das pro Zeiteinheit vollständig vom Wirkstoff befreite Plasmavolumen; sie misst
+    die Eliminationsleistung.
+- key: vertiefung
+  label: Zusammenhang
+  color_role: pkpd
+  text: Clearance und Vd bestimmen gemeinsam die Halbwertszeit (t½ ∝ Vd / Clearance).
+- key: risiken_cave
+  label: Cave
+  color_role: risk
+  text: Nieren-/Leberinsuffizienz senken die Clearance → Kumulationsgefahr, Dosisanpassung nötig.
+- key: merke
+  label: Merke
+  color_role: antidote
+  text: Clearance bestimmt die Erhaltungsdosis (Prinzip).
+learning_objectives:
+- Clearance definieren
+- Zusammenhang mit t½ und Vd erläutern
+tags:
+- monitoring
+- niereninsuffizienz
+- pruefungsrelevant
+related_cards:
+- ph_016
+- ph_019
+warning_level: moderate
+review_status: needs_review
+dose_contains_numeric: false
+references: []
+source_status: draft
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: planned
+web_status: planned
+front_asset: cards/PH/front/ph_017_clearance_front.png
+back_asset: cards/PH/back/ph_017_clearance_back.png
+qr_url: https://at-medical.de/w/begriff/clearance
+lms_url: https://lms.at-medical.example/ph/clearance
