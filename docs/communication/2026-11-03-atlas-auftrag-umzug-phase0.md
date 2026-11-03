@@ -2,9 +2,7 @@
 
 - **An:** `claude-code-atmed-core`
 - **Thema:** AUFTRAG: ChemBioMed Cards – Umzug auf ATMED-core, Phase 0 Read-only-Prüfung (Projekt 16)
-- **Status:** am 03.11.2026 um ca. 18:35 nicht zugestellt. Der ATLAS-Endpunkt meldete „Not Found“,
-  vermutlich wegen des Neustarts des MCP-Containers nach der OAuth-Änderung. Erneut senden, sobald
-  ATLAS wieder erreichbar ist.
+- **Status:** gesendet am 03.11.2026 um 18:32 über ATLAS (ID `20261103T183221-andreas-mcp-22791`). Der erste Versuch um ca. 18:30 scheiterte, weil der Endpunkt „Not Found“ meldete.
 
 ## Nachricht
 
