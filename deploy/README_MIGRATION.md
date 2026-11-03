@@ -8,8 +8,16 @@ Auslieferung laufen danach vollständig auf **ATMED-core**. Entscheidung und Beg
 |---|---|
 | Eigener Git-Server | **Forgejo v15 (LTS)** mit Forgejo Actions |
 | Zielserver | **ATMED-core**, Stacks unter `/srv/atmed/stacks/`, hinter dem bestehenden Traefik |
-| GitHub danach | **archivieren** (schreibgeschützt, umkehrbar), bis dahin Push-Spiegel |
+| GitHub danach | **nicht mehr weiterbetreiben**: archivieren, sobald Staging aus Forgejo läuft (G4), ohne Wartezeit und umkehrbar |
 | Automatik | Jede Änderung auf `main` → **Staging automatisch**; **Produktion nur per Freigabe** und nur Karten mit `approved` |
+
+> **Ergebnis Phase 0 (claude-code-atmed-core, 03.11.2026 18:34):**
+> - **Ressourcen:** 12 CPU, 11 GB RAM frei; Swap fast voll, deshalb Runner mit Speicherlimit und nur ein Lauf gleichzeitig. Auf /srv sind 84 GB frei.
+> - **Traefik:** `traefik_web`, Entrypoint `websecure` (Middleware `haertung-grundkopf@file`), Certresolver `letsencrypt` per DNS-Challenge.
+> - **Keine Authentik-Forward-Auth auf core:** Staging und Produktion werden daher zunächst per Kennwort in nginx geschützt, Forgejo über Authentik-OIDC.
+> - **Sicherung:** Restic sichert `/srv/atmed` komplett, **ohne** `/srv/atmed/backups`. Der Forgejo-Dump liegt deshalb unter `/srv/atmed/stacks/forgejo/sicherung`.
+> - **Zielpfade, Containernamen und Hostnamen:** alle frei.
+> - **Zeitfenster:** nicht während des LearningOS-Einbaus und nicht in den Live-Zeiten (Mo–Fr 17:45–20:15, Sa/So 07:45–10:00 und 12:30–14:00).
 
 > **Regeln für jeden Schritt:** Read-only zuerst · ein Befehl nach dem anderen, Ausgabe prüfen ·
 > keine Secrets in Dateien des Repos, im Chat oder in Logs · nichts löschen ohne Freigabe von Andreas ·
@@ -25,8 +33,8 @@ Auslieferung laufen danach vollständig auf **ATMED-core**. Entscheidung und Beg
                                     │                 ├─ staging/current     ◀── jeder Push auf main
                                     │                 └─ production/current  ◀── nur „FREIGABE“ + approved
                                     ▼                         │
-                     Push-Spiegel → GitHub (bis Phase 7)      ▼
-                                              chembiomed-sites (nginx) ◀─ Traefik + Authentik
+                     (GitHub: archiviert nach G4)             ▼
+                                              chembiomed-sites (nginx, Anmeldung) ◀─ Traefik
 ```
 
 | Komponente | Datei im Repo | Ziel auf ATMED-core |
@@ -39,6 +47,7 @@ Auslieferung laufen danach vollständig auf **ATMED-core**. Entscheidung und Beg
 | Veröffentlichen / Rollback | `deploy/scripts/publish-release.sh`, `rollback-release.sh` | – |
 | Forgejo-Sicherung | `deploy/atmed-core/forgejo/backup/` | systemd-Timer |
 | Secrets (nur dort!) | – | `/srv/atmed/vault/services/{forgejo,chembiomed-cards}/` |
+| Forgejo-Sicherung (Ablage) | – | `/srv/atmed/stacks/forgejo/sicherung/` (von Restic erfasst) |
 
 **Ressourcen:** Forgejo ≈ 300 MB RAM (Limit 1 GB). Runner im Leerlauf ≈ 300 MB, beim Rendern bis
 etwa 2 GB (Limit 3 GB, 2 CPUs). nginx < 20 MB. Ein voller Build aller 116 Karten dauert etwa 75 s.
@@ -48,6 +57,8 @@ etwa 2 GB (Limit 3 GB, 2 CPUs). nginx < 20 MB. Ein voller Build aller 116 Karten
 Die Produktion lehnte einen Lauf ohne „FREIGABE“ und einen Lauf ohne `approved`-Karten jeweils ab.
 Mit einer freigegebenen Testkarte enthielt die Produktion genau diese eine Karte. Rollback vor und
 zurück sowie `forgejo dump` samt Prüfsumme funktionierten.
+Nach Phase 0 ebenfalls lokal geprüft: Der Kennwortschutz von nginx antwortet ohne oder mit
+falschem Kennwort mit 401, mit richtigem Kennwort mit 200.
 **Nicht getestet:** die Live-Migration von GitHub (`10-migrate-from-github.sh`, dafür ist ein
 GitHub-Token nötig), Traefik, Authentik und DNS auf ATMED-core.
 
@@ -63,7 +74,7 @@ bash deploy/scripts/00-preflight-readonly.sh | tee preflight-$(date +%F).txt
 
 Die Ausgabe vollständig zurückgeben. Sie liefert die Werte für die `.env`-Dateien.
 
-**Gate G0:**
+**Erledigt am 03.11.2026, Ergebnis oben.** **Gate G0:**
 - frei: ≥ 3 GB RAM, ≥ 20 GB auf `/srv`;
 - `traefik_web` vorhanden;
 - Entrypoint, Certresolver und **Name der Authentik-Middleware** bestätigt;
@@ -74,13 +85,14 @@ Die Ausgabe vollständig zurückgeben. Sie liefert die Werte für die `.env`-Dat
 
 | Name | Typ | Ziel | Proxy |
 |---|---|---|---|
-| `git.at-medical.de` | A | `91.99.60.101` | **nur DNS** (graue Wolke) |
-| `staging.chembiomed-cards.de` | A | `91.99.60.101` | nach Traefik-Konfiguration |
-| `releases.chembiomed-cards.de` | A | `91.99.60.101` | nach Traefik-Konfiguration |
+| `git.at-medical.de` | A | `91.99.60.101` | **Proxy an** |
+| `staging.chembiomed-cards.de` | A | `91.99.60.101` | Proxy an |
+| `releases.chembiomed-cards.de` | A | `91.99.60.101` | Proxy an |
 
-Für den Git-Host gilt „nur DNS“, weil der Cloudflare-Proxy Anfragen über 100 MB abbricht, und
-große Git-Pushes würden scheitern. Die Hostnamen sind Vorschläge; abweichende Namen in beiden
-`.env`-Dateien eintragen.
+Der Proxy bleibt an, damit die Server-IP verdeckt bleibt (Hinweis aus Phase 0). Er bricht Anfragen
+über 100 MB ab; das Repository hat etwa 32 MB, und Build-Artefakte werden nicht versioniert. Die
+Zertifikate kommen per DNS-Challenge und funktionieren deshalb auch mit Proxy. Zuständig ist
+`claude-code-atinfra-gateway` (Cloudflare).
 
 **Gate G1:** `getent hosts <name>` auf ATMED-core liefert die erwartete Adresse für alle drei Namen
 (siehe Preflight-Abschnitt „DNS-Auflösung“).
@@ -114,9 +126,17 @@ große Git-Pushes würden scheitern. Die Hostnamen sind Vorschläge; abweichende
    docker exec -u git forgejo forgejo admin user create --admin --username andreas --email <e-mail-adresse> --random-password --must-change-password
    ```
 7. Im Browser anmelden, Passwort ändern und **2FA aktivieren**.
+8. Anmeldung über Authentik (OIDC) direkt hier einrichten, nicht erst in Phase 6, weil der Dienst
+   öffentlich erreichbar ist. In Authentik (über `claude-code-atinfra-gateway`) die Application
+   `forgejo` anlegen; Redirect `https://git.at-medical.de/user/oauth2/authentik/callback`. Dann:
+   ```bash
+   docker exec -u git forgejo forgejo admin auth add-oauth --name authentik --provider openidConnect --key forgejo --secret "$(cat /srv/atmed/vault/services/forgejo/oidc-secret)" --auto-discover-url https://<authentik-host>/application/o/forgejo/.well-known/openid-configuration
+   ```
+   Das Client-Secret wird nur aus der Vault-Datei gelesen.
 
 **Gate G2:** Anmeldung per HTTPS mit gültigem Zertifikat funktioniert, 2FA ist aktiv, und
-Registrierung ist nicht möglich (`/user/sign_up` zeigt „deaktiviert“).
+Registrierung ist nicht möglich (`/user/sign_up` zeigt „deaktiviert“). Die Anmeldung über
+Authentik funktioniert.
 
 **Rollback:** `docker compose down` im Stack-Verzeichnis. Daten in `./data` bleiben erhalten.
 DNS-Eintrag entfernen.
@@ -135,15 +155,15 @@ DNS-Eintrag entfernen.
    ```bash
    FORGEJO_URL=https://git.at-medical.de FORGEJO_TOKEN_FILE=… GITHUB_TOKEN_FILE=… bash deploy/scripts/10-migrate-from-github.sh
    ```
-4. **Push-Spiegel nach GitHub** für die Übergangszeit: in Forgejo unter Repository →
-   Einstellungen → Spiegel → Push-Spiegel. Ziel ist die GitHub-URL; dazu ein **zweites** GitHub-Token
-   mit Schreibrecht nur auf dieses Repo (Contents). Synchronisation „bei Push“. So bleibt GitHub
-   aktuell, bis es archiviert wird.
-5. Ab jetzt **nur noch in Forgejo arbeiten**. Auf GitHub nicht mehr pushen, sonst überschreibt der
-   Spiegel diese Änderungen.
+4. **Ohne GitHub-Token** (falls keins erzeugt werden soll): eine vollständige Git-Kopie aller
+   Branches und Tags über einen vorhandenen Lesezugang
+   (`git clone --mirror`, danach `git push --mirror` nach Forgejo). Damit fehlen Issues und PRs.
+   PR #8 (Pharma) dann als Issue in Forgejo mit Verweis auf GitHub vermerken.
+5. Ab jetzt **nur noch in Forgejo arbeiten**. Auf GitHub wird nichts mehr gepusht. Kein
+   Push-Spiegel, weil GitHub nach G4 archiviert wird.
 
-**Gate G3:** Das Skript meldet „identisch“. Issues und PRs sind in Forgejo sichtbar. Ein
-Test-Push in Forgejo erscheint über den Spiegel auf GitHub.
+**Gate G3:** Das Skript meldet „identisch“ (oder `git ls-remote` stimmt bei der Spiegelkopie
+überein). Issues und PRs sind in Forgejo sichtbar.
 
 **Rollback:** Repo in Forgejo löschen (Freigabe Andreas). GitHub ist unverändert die Quelle.
 
@@ -184,20 +204,25 @@ Test-Push in Forgejo erscheint über den Spiegel auf GitHub.
    ```bash
    cd /srv/atmed/stacks/chembiomed-cards && sudo sed "s/__RUNNER_UUID__/<UUID>/" src/deploy/atmed-core/chembiomed-cards/runner-config.yaml > runner/config.yaml && sudo chown 1001:1001 runner/config.yaml
    ```
-9. `compose.yaml`, `nginx/` und `.env` übernehmen. In `.env` stehen `BUILDER_TAG` aus Schritt 5
-   und die Hostnamen bzw. die Middleware aus G0. Dann prüfen:
+9. Kennwortdatei für Staging/Produktion anlegen. Das Kennwort wird abgefragt und landet in
+   Vaultwarden, nicht im Verlauf:
+   ```bash
+   read -rs -p "Kennwort: " pw; echo; printf 'redaktion:%s\n' "$(openssl passwd -apr1 "$pw")" | sudo tee /srv/atmed/vault/services/chembiomed-cards/sites.htpasswd >/dev/null; unset pw
+   ```
+10. `compose.yaml`, `nginx/` und `.env` übernehmen. In `.env` stehen `BUILDER_TAG` aus Schritt 5
+   und die Hostnamen. Dann prüfen:
    ```bash
    docker compose config --quiet && echo ok
    ```
-10. Starten:
+11. Starten:
     ```bash
     docker compose up -d && docker logs --tail 20 chembiomed-runner
     ```
     Erwartet: `declared successfully`, danach `task … repo is AT-Medical-GmbH/DIG-chembiomedcards`.
 
 **Gate G4:** Der Workflow-Lauf in Forgejo (Actions) ist grün und meldet 0 Layoutfehler.
-`https://staging.chembiomed-cards.de` fragt nach dem Authentik-Login und zeigt danach 116 Karten
-mit Prüfstatus. Ohne Anmeldung ist kein Zugriff möglich.
+`https://staging.chembiomed-cards.de` verlangt eine Anmeldung und zeigt danach 116 Karten mit
+Prüfstatus. Ohne Anmeldung kommt 401.
 
 **Rollback:** `docker compose down` (Stack chembiomed-cards). Für Staging/Produktion einen
 früheren Stand aktivieren:
@@ -218,23 +243,23 @@ SITES_DIR=/srv/atmed/stacks/chembiomed-cards/sites src/deploy/scripts/rollback-r
    ```bash
    sudo systemctl enable --now forgejo-backup.timer
    ```
-2. Sicherstellen, dass `/srv/atmed/backups/forgejo` und `/srv/atmed/stacks/chembiomed-cards/sites`
-   in der Restic-Kette von ATINFRA-backup enthalten sind. Falls nicht, mit Freigabe aufnehmen
-   (`parked-hosts.conf` ist davon nicht betroffen).
+2. Laut Phase 0 sind `/srv/atmed/stacks/forgejo/sicherung` und
+   `/srv/atmed/stacks/chembiomed-cards/sites` von Restic erfasst. Nach dem ersten nächtlichen Lauf
+   bei `claude-code-atinfra-backup` bestätigen lassen, dass der Dump im Snapshot liegt.
 3. **Wiederherstellungstest:** einen Dump in einem Wegwerf-Container auf einem anderen Pfad
    entpacken und starten. Repositories und Datenbank müssen vollständig sein; danach den Container
    entfernen.
 4. Uptime Kuma (ATINFRA-control): Monitore für `https://git.at-medical.de/api/healthz` und
-   `https://staging.chembiomed-cards.de` (Statuscode 302/401 = Authentik aktiv).
+   `https://staging.chembiomed-cards.de` (Statuscode 401 = Schutz aktiv).
 
 **Gate G5:** Ein Dump liegt vor und ist in der Restic-Kette nachweisbar. Der
 Wiederherstellungstest war erfolgreich. Die Monitore sind grün.
 
 ## Phase 6 – Produktion und Anmeldung
 
-1. Forgejo an Authentik anbinden: OIDC-Application `forgejo` in Authentik, dann
-   `forgejo admin auth add-oauth` (Client-Secret aus Vaultwarden über eine Datei bzw.
-   Umgebungsvariable, nicht auf der Kommandozeile).
+1. Optional: Staging und Produktion von Kennwort auf Authentik umstellen. Dafür braucht core einen
+   Authentik-Outpost bzw. eine Forward-Auth-Middleware, die es dort noch nicht gibt (eigener
+   Auftrag an gateway).
 2. **Produktion freigeben** (sobald Karten fachlich geprüft sind):
    - Karte in Forgejo bearbeiten: `review_status: approved`, `reviewer`, `references`. PR stellen
      und mergen; Staging zeigt die Karte als „freigegeben“.
@@ -244,22 +269,27 @@ Wiederherstellungstest war erfolgreich. Die Monitore sind grün.
      unverändert.
 
 **Gate G6:** Der erste Produktionsstand ist veröffentlicht und unter `releases.…` erreichbar,
-`release.json` nennt den Git-Stand. Die Anmeldung an Forgejo über Authentik funktioniert.
+`release.json` nennt den Git-Stand. 
 
-## Phase 7 – GitHub archivieren (frühestens 14 Tage nach G5)
+## Phase 7 – GitHub stilllegen (direkt nach G4)
 
-1. Push-Spiegel in Forgejo entfernen. Ein archiviertes Repo nimmt keine Pushes an.
+1. Letzter Abgleich: `git ls-remote` von GitHub und Forgejo vergleichen. Alles auf GitHub muss
+   auch in Forgejo sein.
 2. Auf GitHub in der README einen Hinweis auf den neuen Ort ergänzen. Das ist der letzte Commit auf
    GitHub.
 3. GitHub → Settings → **Archive this repository** (umkehrbar über „Unarchive“).
-4. Beide GitHub-Tokens widerrufen.
+4. Das GitHub-Token widerrufen, falls eins erzeugt wurde.
 5. Dokumentation nachziehen:
    - ATMED-infrastructure `inventory/service-catalog.json` (Forgejo, chembiomed-cards);
    - Rolle von ATMED-core in `host-lifecycle.json`;
    - Runbook in ATMED-docs `runbooks/`.
 
-**Gate G7:** Das GitHub-Repo ist als archiviert markiert, die Tokens sind widerrufen und das
+**Gate G7:** Das GitHub-Repo ist als archiviert markiert, das Token ist widerrufen und das
 Inventar ist aktualisiert.
+
+> **Folge für KI-Sitzungen:** Cloud-Sitzungen von Claude Code (claude.ai/code) arbeiten nur mit
+> GitHub-Repositories. Nach der Archivierung wird ChemBioMed Cards in einer Claude-Code-Sitzung auf
+> dem Server (z. B. `claude-code-atmed-core`) oder lokal mit Zugang zu Forgejo weiterentwickelt.
 
 ---
 
@@ -286,7 +316,7 @@ Inventar ist aktualisiert.
 - **Produktion zurücksetzen:** `rollback-release.sh production` (siehe Phase 4). Es bleiben die
   letzten 5 Stände je Kanal.
 - **Forgejo ausgefallen:** Die Auslieferung (nginx) läuft unabhängig weiter. Wiederherstellung aus
-  dem letzten `forgejo dump`.
+  dem letzten `forgejo dump` in `/srv/atmed/stacks/forgejo/sicherung/`.
 - **Runner hängt:** `docker restart chembiomed-runner`. Den Lauf in Forgejo neu starten.
 
 ### Sicherheitshinweise

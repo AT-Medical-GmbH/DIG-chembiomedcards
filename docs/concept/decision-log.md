@@ -151,8 +151,8 @@ keinen eigenen Git-Server. **Entscheidung:**
   `approved` (`scripts/release_cards.py`).
 - Veröffentlichung atomar über einen Symlink; die letzten 5 Stände bleiben für ein Rollback.
 - Sicherung per `forgejo dump` in die Restic-Kette.
-- GitHub läuft bis dahin als Push-Spiegel mit und wird nach einem stabilen Betrieb
-  **archiviert**.
+- GitHub wird **nicht weiterbetrieben**: Sobald Staging aus Forgejo läuft (Gate G4), wird es
+  ohne Wartezeit archiviert (Andreas, 03.11.2026), umkehrbar und ohne Push-Spiegel.
 
 **Begründung:** Forgejo ist schlank (≈ 300 MB RAM), bringt Reviews und CI mit und übernimmt Issues
 und PRs von GitHub. Ein Build-Image für Build und Runner macht die Produktion reproduzierbar (lokal
@@ -168,3 +168,12 @@ Infrastruktur-Repositories bleiben unberührt.
 **Risiko:** Wer auf das Repository schreiben darf, kann auch Staging und Produktion verändern.
 Gegenmaßnahmen sind Branchschutz, ein kleiner Kreis von Schreibberechtigten und ein Runner, der nur
 an dieses eine Repository gebunden ist.
+
+**Nachtrag 03.11.2026 (Ergebnis Phase 0):**
+- Auf core gibt es keine Authentik-Forward-Auth. Staging und Produktion werden deshalb zunächst per
+  Kennwort in nginx geschützt, Forgejo über Authentik-OIDC.
+- Restic schließt `/srv/atmed/backups` aus. Der Forgejo-Dump liegt deshalb unter
+  `/srv/atmed/stacks/forgejo/sicherung`.
+- Cloudflare-Proxy für alle drei Hostnamen an, damit die Server-IP verdeckt bleibt.
+- Folge für KI-Sitzungen: Cloud-Sitzungen von Claude Code arbeiten nur mit GitHub. Die
+  Weiterentwicklung erfolgt deshalb in einer Sitzung auf dem Server oder lokal.

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Konsistente Sicherung von Forgejo (Repositories, Datenbank, Konfiguration) per `forgejo dump`.
-# Läuft auf ATMED-core als systemd-Timer (forgejo-backup.timer). Das Zielverzeichnis muss in der
-# Restic-Kette von ATINFRA-backup enthalten sein (Runbook Phase 5, Gate G5).
+# Läuft auf ATMED-core als systemd-Timer (forgejo-backup.timer). Ziel liegt bewusst NICHT unter
+# /srv/atmed/backups: Diesen Pfad schließt die Restic-Abholung aus (Phase 0, 03.11.2026).
 set -euo pipefail
 
-dest="${FORGEJO_BACKUP_DIR:-/srv/atmed/backups/forgejo}"
+dest="${FORGEJO_BACKUP_DIR:-/srv/atmed/stacks/forgejo/sicherung}"
 keep_days="${FORGEJO_BACKUP_KEEP_DAYS:-14}"
 ts="$(date -u +%Y%m%dT%H%M%SZ)"
 umask 077

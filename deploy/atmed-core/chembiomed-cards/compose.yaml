@@ -4,7 +4,8 @@
 #   runner – Forgejo-Runner im Host-Modus im Build-Image: rendert Karten bei jeder Änderung,
 #            veröffentlicht nach sites/staging, nach Freigabe nach sites/production.
 #            Kein Docker-Socket, nicht privilegiert, ohne Root.
-#   sites  – nginx liefert sites/<kanal>/current aus; beide Kanäle hinter Authentik.
+#   sites  – nginx liefert sites/<kanal>/current aus; beide Kanäle mit Anmeldung (HTTP-Basic,
+#            Kennwortdatei im Vault). Auf core gibt es keine Authentik-Forward-Auth (Phase 0).
 name: chembiomed-cards
 
 services:
@@ -34,6 +35,7 @@ services:
     volumes:
       - ./sites:/sites:ro
       - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - ${SITES_HTPASSWD_FILE:?SITES_HTPASSWD_FILE fehlt}:/etc/nginx/htpasswd:ro
     networks:
       - traefik_web
     labels:
@@ -43,12 +45,10 @@ services:
       - traefik.http.routers.chembiomed-staging.rule=Host(`${STAGING_HOST}`)
       - traefik.http.routers.chembiomed-staging.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
       - traefik.http.routers.chembiomed-staging.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
-      - traefik.http.routers.chembiomed-staging.middlewares=${AUTH_MIDDLEWARE:?AUTH_MIDDLEWARE fehlt}
       - traefik.http.routers.chembiomed-staging.service=chembiomed-sites
       - traefik.http.routers.chembiomed-prod.rule=Host(`${PROD_HOST}`)
       - traefik.http.routers.chembiomed-prod.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
       - traefik.http.routers.chembiomed-prod.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
-      - traefik.http.routers.chembiomed-prod.middlewares=${AUTH_MIDDLEWARE}
       - traefik.http.routers.chembiomed-prod.service=chembiomed-sites
     mem_limit: 128m
 

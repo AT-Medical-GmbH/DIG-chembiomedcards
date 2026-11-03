@@ -10,6 +10,8 @@ server {
     server_name ${STAGING_HOST};
     root /sites/staging/current;
     add_header X-Robots-Tag "noindex, nofollow" always;
+    auth_basic "ChemBioMed Cards";
+    auth_basic_user_file /etc/nginx/htpasswd;
     location / { try_files $uri $uri/ =404; }
 }
 
@@ -18,5 +20,7 @@ server {
     server_name ${PROD_HOST};
     root /sites/production/current;
     add_header X-Robots-Tag "noindex, nofollow" always;
+    auth_basic "ChemBioMed Cards";
+    auth_basic_user_file /etc/nginx/htpasswd;
     location / { try_files $uri $uri/ =404; }
 }

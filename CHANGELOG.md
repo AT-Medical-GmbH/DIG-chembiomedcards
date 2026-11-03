@@ -10,6 +10,12 @@
   `rollback-release.sh`
 - Read-only-Vorabprüfung `deploy/scripts/00-preflight-readonly.sh`, Migration
   `deploy/scripts/10-migrate-from-github.sh`, Forgejo-Sicherung per systemd-Timer
+- Ergebnis Phase 0 eingearbeitet:
+  - Kennwortschutz für Staging und Produktion in nginx (auf core gibt es keine Forward-Auth);
+  - Forgejo-Dump unter `stacks/forgejo/sicherung`, weil Restic `/srv/atmed/backups` ausschließt;
+  - Cloudflare-Proxy an;
+  - Authentik-OIDC für Forgejo schon in Phase 2;
+  - GitHub direkt nach G4 archivieren, ohne Push-Spiegel.
 - Ende-zu-Ende lokal getestet (Forgejo 15.0.11, Runner, nginx); die Live-Migration von GitHub ist
   noch nicht getestet
 
