@@ -1,0 +1,62 @@
+# ChemBioMed Cards – Kartenproduktion und Auslieferung auf ATMED-core (ADR-024)
+# Zielpfad: /srv/atmed/stacks/chembiomed-cards   (Runbook: deploy/README_MIGRATION.md)
+#
+#   runner – Forgejo-Runner im Host-Modus im Build-Image: rendert Karten bei jeder Änderung,
+#            veröffentlicht nach sites/staging, nach Freigabe nach sites/production.
+#            Kein Docker-Socket, nicht privilegiert, ohne Root.
+#   sites  – nginx liefert sites/<kanal>/current aus; beide Kanäle hinter Authentik.
+name: chembiomed-cards
+
+services:
+  runner:
+    image: chembiomed-builder:${BUILDER_TAG:?BUILDER_TAG fehlt}
+    container_name: chembiomed-runner
+    restart: unless-stopped
+    command: ["forgejo-runner", "daemon", "--config", "/data/config.yaml"]
+    environment:
+      CREDENTIALS_DIRECTORY: /run/secrets
+    volumes:
+      - ./runner:/data
+      - ./sites:/sites
+      # Deploy-Anträge für die Lernplattform (Pharma Cards online): der Runner legt nur eine
+      # Datei mit Kanal + Commit ab, pharma-deploy auf dem Host prüft und rollt aus.
+      - ./requests:/requests
+      - ${RUNNER_TOKEN_FILE:?RUNNER_TOKEN_FILE fehlt}:/run/secrets/runner-token:ro
+    networks:
+      - forgejo_ci
+    mem_limit: 3g
+    cpus: 2
+
+  sites:
+    image: nginx:${NGINX_VERSION:-1.28-alpine}
+    container_name: chembiomed-sites
+    restart: unless-stopped
+    environment:
+      STAGING_HOST: ${STAGING_HOST:?STAGING_HOST fehlt}
+      PROD_HOST: ${PROD_HOST:?PROD_HOST fehlt}
+    volumes:
+      - ./sites:/sites:ro
+      - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+    networks:
+      - traefik_web
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik_web
+      - traefik.http.services.chembiomed-sites.loadbalancer.server.port=8080
+      - traefik.http.routers.chembiomed-staging.rule=Host(`${STAGING_HOST}`)
+      - traefik.http.routers.chembiomed-staging.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.chembiomed-staging.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.chembiomed-staging.middlewares=${AUTH_MIDDLEWARE:?AUTH_MIDDLEWARE fehlt}
+      - traefik.http.routers.chembiomed-staging.service=chembiomed-sites
+      - traefik.http.routers.chembiomed-prod.rule=Host(`${PROD_HOST}`)
+      - traefik.http.routers.chembiomed-prod.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.chembiomed-prod.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.routers.chembiomed-prod.middlewares=${AUTH_MIDDLEWARE}
+      - traefik.http.routers.chembiomed-prod.service=chembiomed-sites
+    mem_limit: 128m
+
+networks:
+  traefik_web:
+    external: true
+  forgejo_ci:
+    external: true

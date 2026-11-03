@@ -1,0 +1,10 @@
+# /etc/systemd/system/pharma-deploy.path – startet pharma-deploy, sobald ein Antrag eintrifft.
+[Unit]
+Description=Pharma Cards online: Deploy-Anträge des Runners überwachen
+
+[Path]
+PathExistsGlob=/srv/atmed/stacks/chembiomed-cards/requests/*.req
+Unit=pharma-deploy.service
+
+[Install]
+WantedBy=multi-user.target

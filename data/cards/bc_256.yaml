@@ -1,0 +1,49 @@
+# ChemBioMed Cards – Kartendatensatz (Quelle der Wahrheit)
+# Schema: data/schema/card.schema.json
+card_id: bc_256
+id_status: confirmed
+slug: bc_256_vitamin_a
+title: Vitamin A
+subtitle: Retinol
+module: BC
+primary_category: biochemie
+secondary_categories:
+- klinik
+- molekularbio
+topic_group: vitamine
+chapter: biochemie/vitamine
+tags:
+- vitamin
+- fettloeslich
+- arzneimittel-target
+difficulty: intermediate
+front_type: term
+front_content:
+  render: term
+  text: Vitamin A
+back_sections:
+  classification: Fettlösliches Vitamin · Retinoide (Retinol, Retinal, Retinsäure)
+  general_properties:
+  - Vorstufe β-Carotin aus Pflanzen
+  - Speicherung in den Ito-Zellen der Leber
+  biochemical_relevance:
+  - 11-cis-Retinal + Opsin = Rhodopsin (Sehvorgang)
+  - Retinsäure steuert die Zelldifferenzierung
+  clinical_relevance:
+  - 'Mangel: Nachtblindheit, Xerophthalmie'
+  - Retinoide sind teratogen – Isotretinoin in der Schwangerschaft kontraindiziert
+  molecular_relevance:
+  - Retinsäure bindet nukleäre Rezeptoren (RAR/RXR)
+  mnemonic: A wie Auge.
+references: []
+review_status: needs_review
+review_notes:
+- Pilotinhalt – fachliche Prüfung aller Aussagen ausstehend.
+version: 0.1.0
+author: AT Medical GmbH
+reviewer: ''
+created_at: '2026-10-31'
+updated_at: '2026-10-31'
+print_status: draft
+web_status: draft
+qr_url: https://chembiomed-cards.de/c/bc256

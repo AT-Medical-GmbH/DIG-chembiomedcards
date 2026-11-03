@@ -1,0 +1,11 @@
+[Unit]
+Description=Tägliche Forgejo-Sicherung vor der nächtlichen Backup-Kette
+
+[Timer]
+# Zeitpunkt vor dem Restic-Lauf wählen (Uhrzeit per Preflight aus den Backup-Timern ableiten)
+OnCalendar=*-*-* 01:15:00
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

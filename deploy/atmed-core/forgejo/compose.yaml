@@ -1,0 +1,58 @@
+# Forgejo – eigener Git-Server der AT Medical GmbH (ADR-024)
+# Zielpfad auf ATMED-core: /srv/atmed/stacks/forgejo   (Runbook: deploy/README_MIGRATION.md)
+#
+# - nur HTTPS über den bestehenden Traefik (Netz traefik_web), kein eigener SSH-Port
+# - SQLite: ein Team, wenige Repositories; Sicherung per `forgejo dump` (backup/)
+# - Registrierung gesperrt, Anmeldung nötig zum Lesen; Authentik-OIDC kommt in Phase 6 dazu
+name: forgejo
+
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:${FORGEJO_VERSION:?FORGEJO_VERSION fehlt}
+    container_name: forgejo
+    restart: unless-stopped
+    environment:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      FORGEJO__server__DOMAIN: ${FORGEJO_HOST:?FORGEJO_HOST fehlt}
+      FORGEJO__server__ROOT_URL: https://${FORGEJO_HOST}/
+      FORGEJO__server__HTTP_PORT: "3000"
+      FORGEJO__server__DISABLE_SSH: "true"
+      FORGEJO__server__START_SSH_SERVER: "false"
+      FORGEJO__server__LFS_START_SERVER: "true"
+      FORGEJO__database__DB_TYPE: sqlite3
+      FORGEJO__security__INSTALL_LOCK: "true"
+      FORGEJO__service__DISABLE_REGISTRATION: "true"
+      FORGEJO__service__REQUIRE_SIGNIN_VIEW: "true"
+      FORGEJO__repository__DEFAULT_PRIVATE: private
+      FORGEJO__actions__ENABLED: "true"
+      FORGEJO__mailer__ENABLED: "false"
+      FORGEJO__log__LEVEL: Info
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - traefik_web
+      - forgejo_ci
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik_web
+      - traefik.http.routers.forgejo.rule=Host(`${FORGEJO_HOST}`)
+      - traefik.http.routers.forgejo.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.forgejo.tls=true
+      - traefik.http.routers.forgejo.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}
+      - traefik.http.services.forgejo.loadbalancer.server.port=3000
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/api/healthz"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+    mem_limit: 1g
+
+networks:
+  traefik_web:
+    external: true
+  # internes Netz für CI-Runner (Runner erreicht Forgejo ohne Umweg über Traefik)
+  forgejo_ci:
+    name: forgejo_ci

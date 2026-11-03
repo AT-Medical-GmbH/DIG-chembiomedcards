@@ -1,0 +1,173 @@
+#!/usr/bin/env bash
+# pharma-deploy – rollt die Lernplattform „Pharma Cards online“ (online-platform/) auf ATMED-core aus.
+# Ablage: /usr/local/sbin/pharma-deploy (root:root 0755). Gestartet von pharma-deploy.path, sobald
+# der Runner (chembiomed-runner, ohne Docker-Socket) einen Antrag nach $REQ_DIR legt.
+#
+# Antrag (eine Zeile, Datei <id>.req, id = [A-Za-z0-9_-]{1,64}):
+#   staging <40-stelliger-sha>        – Commit muss auf main liegen
+#   production <40-stelliger-sha>     – zusätzlich /etc/pharma-deploy/production.enabled (Andreas)
+# Ergebnis: ergebnis/<id>.ok bzw. ergebnis/<id>.fail (eine Zeile); der Antrag wandert nach done/.
+# Verzeichnisse (Runbook): requests/ root:1001 1770 (Sticky), requests/ergebnis/ root:1001 2750,
+# requests/done/ root:root 0700 – der Runner kann nur Anträge ablegen und Ergebnisse lesen.
+#
+# Von Hand:  pharma-deploy process | staging <sha> | production <sha> | rollback <kanal> | status
+# Der Quellcode wird nie aus dem Runner übernommen, sondern frisch aus Forgejo geholt.
+set -euo pipefail
+umask 027
+
+CONF=${PHARMA_DEPLOY_CONF:-/etc/pharma-deploy/pharma-deploy.conf}
+[ -r "$CONF" ] || { echo "Konfiguration $CONF fehlt" >&2; exit 2; }
+# shellcheck source=/dev/null
+. "$CONF"
+: "${REPO_URL:?REPO_URL in $CONF setzen}"
+: "${TOKEN_FILE:?TOKEN_FILE in $CONF setzen}"
+BASE=${BASE:-/srv/atmed/stacks/chembiomed-cards/online}
+VAULT=${VAULT:-/srv/atmed/vault/services/chembiomed-cards}
+REQ_DIR=${REQ_DIR:-/srv/atmed/stacks/chembiomed-cards/requests}
+LOG=${LOG:-/var/log/pharma-deploy.log}
+LOCK=${LOCK:-/run/lock/pharma-deploy.lock}
+HEALTH_TIMEOUT=${HEALTH_TIMEOUT:-180}
+NTFY_URL=${NTFY_URL:-}
+
+log() { printf '%s %s\n' "$(date -u +%FT%TZ)" "$*" | tee -a "$LOG" >&2; }
+notify() { [ -n "$NTFY_URL" ] && curl -fsS -m 10 -d "$1" "$NTFY_URL" >/dev/null 2>&1 || true; }
+fail() { log "FEHLER: $*"; notify "Pharma Cards online FEHLER: $*"; return 1; }
+
+src_dir() { echo "$BASE/$1/src"; }
+env_file() { echo "$VAULT/online-$1.env"; }
+
+git_auth() {  # Token nur im Header, nie in URL, Datei oder Log
+  local tok; tok=$(cat "$TOKEN_FILE")
+  git -c "http.extraHeader=Authorization: token $tok" "$@"
+}
+
+fetch_src() {
+  local d; d=$(src_dir "$1")
+  if [ ! -d "$d/.git" ]; then
+    install -d -m 750 "$d"; git -C "$d" init -q; git -C "$d" remote add origin "$REPO_URL"
+  fi
+  git_auth -C "$d" fetch -q --prune origin '+refs/heads/main:refs/remotes/origin/main'
+}
+
+checkout() {
+  local d; d=$(src_dir "$1")
+  git -C "$d" -c advice.detachedHead=false checkout -q --force "$2" || return 1
+  git -C "$d" clean -qfdx || return 1   # .env und Schlüssel liegen im Vault, nie im Checkout
+}
+
+on_main() { git -C "$(src_dir "$1")" merge-base --is-ancestor "$2" origin/main 2>/dev/null; }
+
+compose() {
+  local t=$1; shift
+  local d; d=$(src_dir "$t")
+  local files=(-f "$d/online-platform/docker-compose.yml" -f "$d/online-platform/docker-compose.traefik.yml")
+  if [ -f "$BASE/$t/lti.enabled" ]; then
+    [ -f "$VAULT/online-$t-lti.pem" ] || { fail "LTI aktiv, aber $VAULT/online-$t-lti.pem fehlt"; return 1; }
+    files+=(-f "$d/online-platform/docker-compose.lti.yml")
+    export LTI_KEY_PATH="$VAULT/online-$t-lti.pem"
+  fi
+  [ -f "$BASE/$t/override.yml" ] && files+=(-f "$BASE/$t/override.yml")
+  docker compose -p "pharma-cards-$t" --project-directory "$d/online-platform" "${files[@]}" \
+    --env-file "$(env_file "$t")" "$@"
+}
+
+wait_healthy() {
+  local t=$1 end=$((SECONDS + HEALTH_TIMEOUT)) bad
+  while [ $SECONDS -lt $end ]; do
+    bad=$(docker ps -a --filter "label=com.docker.compose.project=pharma-cards-$t" \
+            --format '{{.Names}} {{.Status}}' | grep -Ev '^[^ ]+ Up ' || true
+          docker ps --filter "label=com.docker.compose.project=pharma-cards-$t" \
+            --format '{{.Names}} {{.Status}}' | grep -E '\((unhealthy|health: starting)\)' || true)
+    [ -z "$bad" ] && return 0
+    sleep 5
+  done
+  log "nicht gesund nach ${HEALTH_TIMEOUT}s: $bad"; return 1
+}
+
+deploy() {  # $1 Kanal, $2 Commit
+  local t=$1 sha=$2 cur
+  [ -f "$(env_file "$t")" ] || { fail "$(env_file "$t") fehlt (Vorlage online-platform/ops/staging/staging.env.example)"; return 1; }
+  cur=$(cat "$BASE/$t/current" 2>/dev/null || true)
+  [ "$cur" = "$sha" ] && { log "$t ist bereits auf $sha"; return 0; }
+  log "$t: ${cur:-<leer>} -> $sha"
+  checkout "$t" "$sha" || { fail "Checkout von $sha fehlgeschlagen"; return 1; }
+  if PHARMA_VERSION="${sha:0:12}" compose "$t" up -d --build --remove-orphans && wait_healthy "$t"; then
+    [ -n "$cur" ] && echo "$cur" > "$BASE/$t/previous"
+    echo "$sha" > "$BASE/$t/current"
+    log "$t erfolgreich auf $sha"; notify "Pharma Cards online $t: ${sha:0:12} ausgerollt"
+    return 0
+  fi
+  if [ -n "$cur" ]; then
+    log "$t fehlgeschlagen, Rückkehr auf $cur"
+    checkout "$t" "$cur"
+    PHARMA_VERSION="${cur:0:12}" compose "$t" up -d --build --remove-orphans || true
+  fi
+  fail "$t: Deploy von $sha fehlgeschlagen${cur:+, zurück auf $cur}"
+}
+
+run() {  # $1 Kanal, $2 Commit – alle Prüfungen, dann deploy
+  local t=$1 sha=$2
+  [[ "$t" =~ ^(staging|production)$ ]] || { fail "unbekannter Kanal '$t'"; return 1; }
+  [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { fail "kein vollständiger Commit-SHA"; return 1; }
+  if [ "$t" = production ] && [ ! -f /etc/pharma-deploy/production.enabled ]; then
+    fail "Produktion ist nicht freigegeben (/etc/pharma-deploy/production.enabled fehlt)"; return 1
+  fi
+  install -d -m 750 "$BASE/$t"
+  fetch_src "$t" || { fail "Abruf aus Forgejo fehlgeschlagen"; return 1; }
+  on_main "$t" "$sha" || { fail "$sha liegt nicht auf main"; return 1; }
+  deploy "$t" "$sha"
+}
+
+result() {  # $1 Datei, $2 Text – schreibt atomar per rename (folgt keinem vorhandenen Symlink)
+  local tmp; tmp=$(mktemp "$res/.tmp.XXXXXX") && printf '%s\n' "$2" > "$tmp" && chmod 640 "$tmp" && mv -fT -- "$tmp" "$1"
+}
+
+process() {  # Anträge abarbeiten: erst in root-eigenes done/ verschieben, dann lesen
+  local f id line t sha res
+  install -d -m 700 "$REQ_DIR/done"
+  res="$REQ_DIR/ergebnis"
+  [ -d "$res" ] && [ ! -L "$res" ] && [ "$(stat -c %u "$res")" = 0 ] || { log "ergebnis/ fehlt oder gehört nicht root"; return 1; }
+  find "$REQ_DIR" -maxdepth 1 -type f -name '*.req' -print0 | sort -z |
+  while IFS= read -r -d '' f; do
+    id=$(basename "$f" .req)
+    [[ "$id" =~ ^[A-Za-z0-9_-]{1,64}$ ]] || { log "ungültiger Antragsname verworfen"; rm -f -- "$f"; continue; }
+    mv -f -- "$f" "$REQ_DIR/done/$id.req" 2>/dev/null || continue   # done/ ist nur für root
+    f="$REQ_DIR/done/$id.req"
+    if [ -L "$f" ] || [ ! -f "$f" ] || [ "$(stat -c %s "$f")" -gt 200 ]; then
+      log "Antrag $id: kein gültiger Antrag"; rm -f -- "$f"; result "$res/$id.fail" "fehler ungültiger Antrag"; continue
+    fi
+    line=$(head -n1 -- "$f" | tr -d '\r')
+    if [[ "$line" =~ ^(staging|production)\ ([0-9a-f]{40})$ ]]; then
+      t=${BASH_REMATCH[1]}; sha=${BASH_REMATCH[2]}
+      log "Antrag $id: $t $sha"
+      if ( run "$t" "$sha" ); then
+        result "$res/$id.ok" "ok $t $sha"
+      else
+        result "$res/$id.fail" "fehler $t $sha (Details: pharma-deploy-Log auf ATMED-core)"
+      fi
+    else
+      log "Antrag $id: ungültiges Format"; result "$res/$id.fail" "fehler ungültiges Antragsformat"
+    fi
+  done
+  find "$REQ_DIR" -maxdepth 1 -type l -name '*.req' -delete    # Symlinks sind nie gültige Anträge
+  find "$REQ_DIR/done" "$res" -maxdepth 1 -type f -mtime +14 -delete
+}
+
+exec 9>"$LOCK"
+flock -w 900 9 || { log "anderer Deploy läuft noch"; exit 1; }
+
+cmd=${1:-}
+case "$cmd" in
+  process) process ;;
+  staging|production) run "$cmd" "${2:-}" ;;
+  rollback)
+    t=${2:-}; [[ "$t" =~ ^(staging|production)$ ]] || { echo "rollback staging|production" >&2; exit 2; }
+    prev=$(cat "$BASE/$t/previous" 2>/dev/null) || { fail "keine vorherige Version für $t"; exit 1; }
+    fetch_src "$t"; deploy "$t" "$prev" ;;
+  status)
+    for t in staging production; do
+      printf '%-11s aktuell=%s vorher=%s\n' "$t" "$(cat "$BASE/$t/current" 2>/dev/null || echo -)" \
+        "$(cat "$BASE/$t/previous" 2>/dev/null || echo -)"
+    done ;;
+  *) sed -n '2,13p' "$0"; exit 2 ;;
+esac

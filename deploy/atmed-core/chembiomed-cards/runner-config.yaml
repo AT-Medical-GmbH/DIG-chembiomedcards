@@ -1,0 +1,28 @@
+# Forgejo-Runner v13 – Konfiguration für ChemBioMed Cards (liegt im Container unter /data/config.yaml)
+# Jobs laufen im Host-Modus direkt im Build-Image (Label chembiomed-builder).
+log:
+  level: info
+
+runner:
+  file: /data/.runner
+  capacity: 1
+  timeout: 1h
+  fetch_interval: 10s
+  envs:
+    # Checkout über das interne Netz forgejo_ci statt über Traefik
+    CHECKOUT_BASE: http://forgejo:3000
+    SITES_DIR: /sites
+    REQUESTS_DIR: /requests
+  labels:
+    - chembiomed-builder:host
+
+host:
+  workdir_parent: /data/work
+
+server:
+  connections:
+    atmed:
+      url: http://forgejo:3000/
+      # UUID aus Forgejo (Website-Administration → Actions → Runner → Neuer Runner)
+      uuid: __RUNNER_UUID__
+      token_url: file:$CREDENTIALS_DIRECTORY/runner-token

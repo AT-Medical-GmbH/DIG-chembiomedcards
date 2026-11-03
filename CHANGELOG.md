@@ -1,11 +1,84 @@
 # Changelog
 
+## 2026-11-03 (Umzug: gemeinsamer Plan Projekt 16 + Pharma Cards)
+- Entscheidung von Andreas: Die beiden Umzugspakete werden zu einem Plan zusammengeführt. Grundlage
+  ist ADR-024 bzw. `deploy/README_MIGRATION.md`. GitHub-PR #25 ist damit abgelöst.
+- Zusammengeführt: Kernkarten (116) und Pharma Cards (110) samt Lernplattform. Konflikte in
+  `.gitignore`, `CHANGELOG.md` und `Makefile` aufgelöst, alle Ziele bleiben nebeneinander.
+- Build-Image: zusätzlich pytest, API-venv und Node 22.23.4 LTS (Prüfsumme gepinnt).
+- Neu `.forgejo/workflows/pharma.yml`: PH-Prüfungen, Layout, API-Tests und Web-Build. Danach geht
+  ein Antrag an `pharma-deploy` für das Lernplattform-Staging. Produktion nur mit „FREIGABE“ und
+  Freigabedatei auf dem Host.
+- `cards.yml`: PH-Moodle- und Druckpakete im Karten-Release unter `pharma/`
+  (`scripts/pharma/add_to_release.py`). Vorschau und Review-PDF gehen nur nach Staging.
+- `deploy/atmed-core/pharma-online/`: `pharma-deploy` mit systemd-Path-Unit.
+  - Der Antragsordner ist sticky, Ergebnisse schreibt nur root (atomar).
+  - Es gelten nur Commits auf `main`.
+  - Rollback ist möglich; wird ein Dienst nicht gesund, kehrt das Skript automatisch zurück.
+- Ergebnis von Phase 0 eingearbeitet:
+  - Traefik-Netz `traefik_web`;
+  - Forgejo-Sicherung nach `/srv/atmed/stacks/forgejo/sicherung` (`/srv/atmed/backups/*` ist von
+    Restic ausgeschlossen);
+  - fehlende Authentik-Middleware als offene Entscheidung.
+- Traefik-Overlay der Lernplattform mit eindeutigem Routernamen (`PHARMA_ROUTER`).
+
+## 2026-11-03
+- Umzug auf eigene Server vorbereitet (ADR-024): Forgejo und Kartenproduktion auf ATMED-core,
+  Runbook mit Phasen und Gates `deploy/README_MIGRATION.md`
+- Build-/Runner-Image `deploy/builder/Dockerfile` (Playwright 1.56, Forgejo-Runner 13.2.1 mit
+  Prüfsumme); Compose-Stacks `deploy/atmed-core/{forgejo,chembiomed-cards}`
+- Forgejo-Workflow `.forgejo/workflows/cards.yml`: Staging automatisch, Produktion nur mit
+  „FREIGABE“ und `approved`-Karten; `scripts/release_cards.py`, `deploy/scripts/publish-release.sh`,
+  `rollback-release.sh`
+- Read-only-Vorabprüfung `deploy/scripts/00-preflight-readonly.sh`, Migration
+  `deploy/scripts/10-migrate-from-github.sh`, Forgejo-Sicherung per systemd-Timer
+- Ende-zu-Ende lokal getestet (Forgejo 15.0.11, Runner, nginx); die Live-Migration von GitHub ist
+  noch nicht getestet
+
 ## 2026-11-01 (Online: SvelteKit 3)
 - Frontend auf SvelteKit 3 / adapter-static 4 (ersetzt Dependabot-PR #21, der allein nicht installierbar
   war): Vite 8, vite-plugin-svelte 7, TypeScript 6, Svelte 5.57.
 - Konfiguration aus `svelte.config.js` in `sveltekit({...})` in `vite.config.ts` verschoben (CSP und
   SPA-Fallback unverändert); `$lib` → Subpath-Import `#lib`; `tsconfig.json` erweitert `$app/tsconfig`.
 - Geprüft: `npm run check` 0 Fehler, Build ok, CSP-Hash im `index.html`, E2E-Smoke 8/8.
+
+## 2026-10-31 (4)
+- Alle offenen Fragen in einer strukturierten Abfrage entschieden; `open-questions.md` neu gefasst,
+  ADR-022 (gemeinsamer Tab Allg./Anorganik) und ADR-023 (Entscheidungspaket)
+- Tab-Leiste auf fünf Tabs umgestellt; alle 116 Karten-IDs bestätigt
+- Masterverzeichnis: automatisch gepflegter Abschnitt „Produzierte Karten“
+  (`scripts/update_master_directory.py`, Teil von `make reports`)
+- Logo-Vektorfassung als Nachzeichnung (`scripts/vectorize_logo.py`), Abnahme offen
+
+## 2026-10-31 (3)
+- Offizielles ChemBioMed-Cards-Logo eingebunden: Original unter `brand/logo/source/`, reproduzierbar
+  abgeleitete Varianten (vollständig, kompakt, Bildmarke) per `scripts/derive_logo_assets.py`
+- Kartenkopf zeigt die Kompaktfassung statt der Text-Wortmarke; Kartenfarben aus dem Logo übernommen
+  (Navy, Petrol, Rot) – ADR-021
+- Neue automatische Prüfung: Logo geladen und ohne Überdeckung von Inhalten
+
+## 2026-10-31 (2)
+- Zentrale Kartenvorlage `templates/card_template.html` ersetzt die vier bisherigen Vorlagendateien
+  (ADR-018); Bedienungsanleitung `templates/README.md`
+- 96 weitere Karten der Handover-Soll-Liste: Derivate, Stickstoffstoffwechsel, Neurotransmitter, Hormone,
+  zentraler Stoffwechsel, Lipide, Nukleotide/Coenzyme/Second Messenger, Vitamine (gesamt 116, alle
+  `needs_review`, IDs vorläufig nach ADR-020)
+- Strukturformeln aus PubChem mit RDKit (`scripts/cbm/molecule.py`, ADR-019); Fischer-Projektion um
+  Ring-Substituenten und Hydroxyprolin erweitert; Vorderseitentypen `molecule` und `formula`
+- Neue automatische Prüfungen: geladene Schrift, Mindestabstand von Atombeschriftungen
+- Übersichtsbilder je Themengruppe; Einzelvorschauen nicht mehr versioniert
+
+## 2026-10-31
+- Content-Pipeline umgesetzt: Kartenschema (`data/schema/card.schema.json`), Kategorien/Tags
+  (`data/categories.yaml`, `data/tags.yaml`), Design-Tokens für Karten, HTML/CSS-Templates mit fester
+  Tab-Leiste, Fischer-Projektion als SVG (`scripts/cbm/fischer.py`)
+- `scripts/validate_cards.py`, `scripts/generate_cards.py` (PNG 300 dpi, PDF 148 × 105 mm, SVG,
+  Vorschau, Manifest, Layout-Report), `scripts/report_review_status.py`, `Makefile`, `requirements.txt`
+- Pilotserie: 20 proteinogene Aminosäuren (`bc_098`–`bc_117`, IDs vorläufig, Fachreview offen)
+- CI validiert zusätzlich `data/cards/*.yaml`
+- Konzept aktualisiert: Produktion aus Daten (ADR-014), Startumfang (ADR-015), vorläufige IDs (ADR-016),
+  QR nur Rückseite / Logo-Platzhalter (ADR-017)
+
 ## 2026-10-31 (CI: eigener Runner)
 - CI läuft auf einem eigenen Runner, weil die GitHub-Runner wegen Billing gesperrt sind:
   `runs-on: [self-hosted, linux, chembiomed]`, jeder Job im Container, nie für Fork-PRs, nur
@@ -123,6 +196,15 @@
   ausgeschlossen (reproduzierbar). Superseded Beispiel-YAML aus `cards/PH/examples/` entfernt.
 
 ## 2026-10-09
+- Vollständiges Gesamtkonzept unter `docs/concept/` ausgearbeitet (00–16 + Decision Log + offene Fragen)
+- Drei-Ebenen-Architektur, kanonisches Content-Modell, Import-/Audit-Pipeline, Kartenlayout- und
+  Generierungs-Pipeline, Print-/Moodle-Export, Online-Lernsystem (Funktion, Architektur, Datenmodell,
+  UI/UX), Erweiterbarkeit, QS, Deployment sowie Phasenplan & Akzeptanzkriterien dokumentiert
+- Architekturentscheidungen als ADR-Kurzform festgehalten; offene Abstimmungspunkte markiert
+- Platzhalter `online-platform/database/data-model.md` und `lms-content/moodle-integration.md` auf
+  die maßgeblichen Konzeptkapitel verwiesen; README um Konzept-Einstieg ergänzt
+
+## 2026-10-09
 - Pharma Cards (Modul PH) — vollständiges Konzeptdossier unter `docs/pharma-cards/` (18 Phasen:
   Analyse/Architektur, Datenmodell, fachliche Zielstruktur, kuratierte Startliste, Layout, Generierung
   & Print, Moodle-Integration, Online-Lernsystem, Deployment, Review/Sicherheit, Import/Audit,
@@ -134,6 +216,7 @@
   Review-Status, ohne finale Dosierungen
 - Phase-4-Reports angelegt (`docs/pharma-cards/reports/`: content_scope, missing_cards, content_review)
 - PH als Ausbau-Vertikal von ChemBioMed Cards verankert (kein Parallel-Repo)
+
 
 ## 2026-05-15
 - Initiale Repository-Struktur für ChemBioMed Cards angelegt

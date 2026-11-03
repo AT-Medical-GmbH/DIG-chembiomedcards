@@ -1,6 +1,16 @@
 __pycache__/
 *.pyc
 
+# Build-Artefakte – reproduzierbar aus data/ + templates/ (make build)
+generated/individual/
+generated/manifest.json
+# Einzelvorschauen lokal; versioniert werden nur die Übersichten je Themengruppe (Review im PR)
+generated/preview/*
+!generated/preview/contact_sheet_*.png
+
+# Release-Pakete (scripts/release_cards.py)
+dist/
+
 # Generierte Artefakte (reproduzierbar via scripts/pharma/render_cards.py).
 # Quelle der Wahrheit sind Daten (cards/PH/metadata) + Templates + Skripte.
 # Committete, ansehbare Beispielrenders liegen unter card-system/examples/pharma/.
@@ -9,8 +19,7 @@ exports/preview/
 exports/pdf/**/*.pdf
 exports/**/*.png
 
-# Erzeugte Export-/Druckpakete (reproduzierbar via make ph-moodle / ph-print)
-dist/
+# Erzeugte Export-/Druckpakete (reproduzierbar via make ph-moodle / ph-print), dist/ s. o.
 exports/moodle/
 exports/print/
 .pytest_cache/

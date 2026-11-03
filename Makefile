@@ -10,12 +10,20 @@ PNG_OUT   ?= exports/preview/ph
 # Python mit Playwright (+ qrcode) für Rendering, Druck, Moodle-Bilder, Layoutprüfung
 PYR       ?= $(PY)
 
-.PHONY: help ph-validate ph-registry ph-registry-check ph-render ph-render-png \
+PHONY_CBM := validate cards cards-force reports build clean
+.PHONY: help $(PHONY_CBM) ph-validate ph-registry ph-registry-check ph-render ph-render-png \
         ph-output-check ph-release-check ph-review-report ph-review-packet ph-layout-check \
         ph-moodle ph-moodle-preview ph-print ph-print-preview ph-test ph-all registry-validate \
         app-test app-web app-e2e
 
 help:
+	@echo "ChemBioMed Cards (Kern) Ziele:"
+	@echo "  make validate          - Kartendaten gegen Schema und Projektregeln prüfen"
+	@echo "  make cards             - geänderte Karten rendern (PNG/PDF/SVG/Vorschau)"
+	@echo "  make cards-force       - alle Karten neu rendern"
+	@echo "  make reports           - Review-Bericht erzeugen"
+	@echo "  make build             - validate + cards + reports"
+	@echo ""
 	@echo "Pharma Cards (PH) Ziele:"
 	@echo "  make ph-validate        - PH-Kartendaten gegen Schema + Scope prüfen"
 	@echo "  make ph-qr-sync         - wirkstoff_/begriff_slug ergänzen, qr_url daraus erzeugen"
@@ -93,6 +101,25 @@ registry-validate:
 
 ph-all: ph-validate ph-registry ph-render ph-output-check ph-review-report registry-validate
 	@echo "Pharma-Cards-Pipeline durchlaufen."
+
+# ---- ChemBioMed Cards Kern (docs/concept/06-generation-pipeline.md) ----
+validate:
+	$(PY) scripts/validate_cards.py
+
+cards:
+	$(PY) scripts/generate_cards.py
+
+cards-force:
+	$(PY) scripts/generate_cards.py --force
+
+reports:
+	$(PY) scripts/report_review_status.py
+	$(PY) scripts/update_master_directory.py
+
+build: validate cards reports
+
+clean:
+	rm -rf generated/individual generated/manifest.json
 
 # ---- Online-Lernsystem (online-platform/) ----
 URL ?= http://127.0.0.1:8000

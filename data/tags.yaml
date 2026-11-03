@@ -1,0 +1,69 @@
+# Kontrolliertes Tag-Vokabular. Der Build bricht ab, wenn eine Karte ein hier
+# nicht gelistetes Tag nutzt (docs/concept/03-taxonomy-and-tabs.md §6).
+stoffklasse:
+  - aminosaeure
+  - proteinogen
+  - nicht-proteinogen
+  - neurotransmitter
+  - biogenes-amin
+  - katecholamin
+  - hormon
+  - peptidhormon
+  - steroidhormon
+  - schilddruesenhormon
+  - inkretin
+  - adipokin
+  - kohlenhydrat
+  - carbonsaeure
+  - thioester
+  - lipid
+  - fettsaeure
+  - eicosanoid
+  - ketonkoerper
+  - nukleotid
+  - coenzym
+  - second-messenger
+  - vitamin
+  - ion
+  - gasotransmitter
+  - sonderkarte
+eigenschaft:
+  - unpolar
+  - polar
+  - sauer
+  - basisch
+  - aromatisch
+  - aliphatisch
+  - verzweigtkettig
+  - schwefelhaltig
+  - selenhaltig
+  - hydroxy
+  - amid
+  - ungesaettigt
+  - essenziell
+  - semi-essenziell
+  - nicht-essenziell
+  - glukogen
+  - ketogen
+  - fettloeslich
+  - wasserloeslich
+pathway:
+  - harnstoffzyklus
+  - transaminierung
+  - kollagen
+  - neurotransmitter-vorstufe
+  - methylierung
+  - signaltransduktion
+  - glykolyse
+  - citratzyklus
+  - glukoneogenese
+  - fettsaeuresynthese
+  - cholesterinsynthese
+  - ketogenese
+  - atmungskette
+  - nukleotidsynthese
+  - energiestoffwechsel
+klinik:
+  - laborwert
+  - stoffwechseldefekt
+  - arzneimittel-target

@@ -1,10 +1,19 @@
 {
   "project": "ChemBioMed Cards",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "tokens": {
-    "spacing": { "xs": 4, "sm": 8, "md": 16, "lg": 24 },
-    "radius": { "card": 8 },
-    "typography": { "base_size": 16 },
+    "spacing": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24
+    },
+    "radius": {
+      "card": 8
+    },
+    "typography": {
+      "base_size": 16
+    },
     "colors": {
       "surface": "#FFFFFF",
       "text_primary": "#1A1A1A",
@@ -14,6 +23,68 @@
       "accent_mb": "#8E24AA",
       "accent_apc": "#00897B",
       "accent_ph": "#E53935"
+    },
+    "card": {
+      "$comment": "Kartenlayout-Tokens (docs/concept/05-card-layout.md). Farben aus dem ChemBioMed-Cards-Logo abgeleitet (ADR-021): Navy = Chem/Grundinformation, Petrol = Bio/Biochemie, Rot = Med/Klinik.",
+      "format_mm": {
+        "width": 148,
+        "height": 105,
+        "bleed": 3,
+        "safe": 4
+      },
+      "export_dpi": 300,
+      "font_family": "Inter, 'Liberation Sans', Arial, sans-serif",
+      "colors": {
+        "surface": "#ffffff",
+        "surface_alt": "#f0f4f8",
+        "text": "#1a202c",
+        "muted": "#6b7280",
+        "border": "#d1d5db",
+        "brand": "#03204c",
+        "tab_inactive_bg": "#eef1f5",
+        "tab_inactive_text": "#6b7280"
+      },
+      "categories": {
+        "allgemein_anorganik": "#03204c",
+        "organik": "#03204c",
+        "molekularbio": "#2563eb",
+        "biochemie": "#06807d",
+        "klinik": "#a90411"
+      },
+      "boxes": {
+        "properties": {
+          "accent": "#03204c",
+          "bg": "#f1f3f7"
+        },
+        "biochemical": {
+          "accent": "#06807d",
+          "bg": "#e8f4f3"
+        },
+        "clinical": {
+          "accent": "#a90411",
+          "bg": "#fcedee"
+        },
+        "molecular": {
+          "accent": "#2563eb",
+          "bg": "#eff6ff"
+        },
+        "mnemonic": {
+          "accent": "#7c3aed",
+          "bg": "#f5f3ff"
+        }
+      },
+      "logo": {
+        "card_header": "brand/logo/chembiomed-cards-logo-compact.png",
+        "full": "brand/logo/chembiomed-cards-logo-full.png",
+        "mark": "brand/logo/chembiomed-cards-mark.png",
+        "header_height_mm": 9.6
+      },
+      "logo_palette": {
+        "navy": "#03204c",
+        "teal": "#06807d",
+        "red": "#a90411",
+        "grey": "#717479"
+      }
     }
   }
 }
