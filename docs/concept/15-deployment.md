@@ -72,12 +72,15 @@ WOOCOMMERCE_WEBHOOK_SECRET=__set__
 - DB-Migrationen vorwärts über Alembic; Rollback über vorherige Migration + vorheriges Image.
 - Blue/Green bzw. Staging-Validierung vor Produktiv-Switch (Staging-first).
 
-## 8. CI/CD (GitHub Actions)
+## 8. CI/CD (Forgejo Actions auf ATMED-core, ADR-024)
 
-1. **Lint/Test** (Pipeline-Python, Backend, Frontend).
-2. **Build** Images; **Push** in Registry.
-3. **Content-Build** (optional): `make build` erzeugt Artefakte, validiert Schema.
-4. **Deploy** auf Staging automatisch; Produktion nach Freigabe.
+1. **Pull Request:** prüfen und rendern (`make build`), keine Veröffentlichung.
+2. **Push auf `main`:** prüfen, rendern und Staging veröffentlichen (alle Karten mit Prüfstatus).
+3. **Produktion:** nur manuell mit der Bestätigung „FREIGABE“ und nur Karten mit `approved`.
+4. Später kommen Images für Backend und Frontend dazu (Build, Tag mit Git-SHA, Deploy auf Staging,
+   Produktion nach Freigabe).
+
+Workflow: `.forgejo/workflows/cards.yml`; Betrieb und Einrichtung: `deploy/README_MIGRATION.md`.
 
 ## 9. Integrationen vorbereiten
 

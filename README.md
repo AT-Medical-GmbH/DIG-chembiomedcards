@@ -27,6 +27,12 @@ Online-Lernsystem) liegt in **[`docs/concept/`](docs/concept/README.md)**. Einst
 - [Online-Lernsystem](docs/concept/09-online-learning-system.md) & [Online-Architektur](docs/concept/10-online-architecture.md)
 - [Decision Log](docs/concept/decision-log.md) & [Offene Fragen](docs/concept/open-questions.md)
 
+## Betrieb auf eigenen Servern
+
+Das Projekt zieht von GitHub in ein eigenes Forgejo auf ATMED-core. Kartenproduktion und
+Auslieferung laufen dort automatisch: Staging bei jeder Änderung, Produktion nur nach Freigabe.
+Einrichtung und Betrieb: [`deploy/README_MIGRATION.md`](deploy/README_MIGRATION.md) (ADR-024).
+
 ## Projektstatus
 
 **Soll-Liste vollständig produziert – Fachreview offen.** 116 Karten (Handover-Soll-Liste) liegen als

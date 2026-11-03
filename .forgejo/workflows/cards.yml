@@ -1,0 +1,65 @@
+# ChemBioMed Cards – automatische Kartenproduktion auf ATMED-core (ADR-024)
+#
+#   Pull Request      → prüfen + rendern (nichts wird veröffentlicht)
+#   Push auf main     → prüfen + rendern + Staging veröffentlichen (alle Karten, mit Prüfstatus)
+#   Manuell starten   → Kanal "production" + Bestätigung "FREIGABE":
+#                       nur Karten mit review_status "approved" gehen in Produktion
+#
+# Läuft auf dem eigenen Runner (Label chembiomed-builder, Build-Image deploy/builder/Dockerfile).
+name: Karten
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Zielkanal
+        type: choice
+        options: [staging, production]
+        default: staging
+      confirm:
+        description: Für production FREIGABE eintragen
+        type: string
+        default: ""
+
+jobs:
+  cards:
+    runs-on: chembiomed-builder
+    steps:
+      - name: Produktionsfreigabe prüfen
+        if: github.event_name == 'workflow_dispatch' && inputs.channel == 'production'
+        run: |
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "Produktion nur von main (Stand: ${{ github.ref }})"; exit 1
+          fi
+          if [ "${{ inputs.confirm }}" != "FREIGABE" ]; then
+            echo "Bestätigung fehlt: im Feld confirm FREIGABE eintragen"; exit 1
+          fi
+
+      - name: Quellstand holen
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          auth="$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          git init -q .
+          git -c http.extraHeader="Authorization: Basic $auth" \
+            fetch -q --depth 1 "$CHECKOUT_BASE/${{ github.repository }}.git" "${{ github.sha }}"
+          git checkout -q FETCH_HEAD
+          git log -1 --format='%h %s'
+
+      - name: Prüfen und rendern
+        run: make build PY=python
+
+      - name: Staging veröffentlichen
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && inputs.channel == 'staging')
+        run: |
+          python scripts/release_cards.py --channel staging --out dist/staging
+          deploy/scripts/publish-release.sh staging dist/staging
+
+      - name: Produktion veröffentlichen
+        if: github.event_name == 'workflow_dispatch' && inputs.channel == 'production'
+        run: |
+          python scripts/release_cards.py --channel production --out dist/production
+          deploy/scripts/publish-release.sh production dist/production

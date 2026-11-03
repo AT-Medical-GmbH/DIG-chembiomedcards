@@ -56,6 +56,8 @@ Alle Komponenten müssen sich **isoliert deployen und migrieren** lassen.
 - Verwendung von permanenten Redirect-URLs (z. B. `chembiomed-cards.de/qr/{card_id}`).
 - Backend-seitige Konfiguration der Ziel-URLs, sodass diese bei Infrastrukturwechsel angepasst werden können.
 
+> Umsetzung des Betriebs auf ATMED-core: [`README_MIGRATION.md`](README_MIGRATION.md) (ADR-024).
+
 ### Migration auf dedizierten Server
 
 Die spätere Migration auf einen **eigenen dedizierten Server** muss explizit vorbereitet werden:

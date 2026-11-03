@@ -1,0 +1,22 @@
+# Wird vom nginx-Image beim Start mit STAGING_HOST/PROD_HOST gefüllt.
+# Ausgeliefert wird jeweils der Symlink sites/<kanal>/current (atomarer Wechsel, Rollback).
+server {
+    listen 8080 default_server;
+    return 404;
+}
+
+server {
+    listen 8080;
+    server_name ${STAGING_HOST};
+    root /sites/staging/current;
+    add_header X-Robots-Tag "noindex, nofollow" always;
+    location / { try_files $uri $uri/ =404; }
+}
+
+server {
+    listen 8080;
+    server_name ${PROD_HOST};
+    root /sites/production/current;
+    add_header X-Robots-Tag "noindex, nofollow" always;
+    location / { try_files $uri $uri/ =404; }
+}

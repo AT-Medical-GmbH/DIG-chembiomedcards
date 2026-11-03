@@ -7,3 +7,6 @@ generated/manifest.json
 # Einzelvorschauen lokal; versioniert werden nur die Übersichten je Themengruppe (Review im PR)
 generated/preview/*
 !generated/preview/contact_sheet_*.png
+
+# Release-Pakete (scripts/release_cards.py)
+dist/

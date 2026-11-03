@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-03
+- Umzug auf eigene Server vorbereitet (ADR-024): Forgejo und Kartenproduktion auf ATMED-core,
+  Runbook mit Phasen und Gates `deploy/README_MIGRATION.md`
+- Build-/Runner-Image `deploy/builder/Dockerfile` (Playwright 1.56, Forgejo-Runner 13.2.1 mit
+  Prüfsumme); Compose-Stacks `deploy/atmed-core/{forgejo,chembiomed-cards}`
+- Forgejo-Workflow `.forgejo/workflows/cards.yml`: Staging automatisch, Produktion nur mit
+  „FREIGABE“ und `approved`-Karten; `scripts/release_cards.py`, `deploy/scripts/publish-release.sh`,
+  `rollback-release.sh`
+- Read-only-Vorabprüfung `deploy/scripts/00-preflight-readonly.sh`, Migration
+  `deploy/scripts/10-migrate-from-github.sh`, Forgejo-Sicherung per systemd-Timer
+- Ende-zu-Ende lokal getestet (Forgejo 15.0.11, Runner, nginx); die Live-Migration von GitHub ist
+  noch nicht getestet
+
 ## 2026-10-31 (4)
 - Alle offenen Fragen in einer strukturierten Abfrage entschieden; `open-questions.md` neu gefasst,
   ADR-022 (gemeinsamer Tab Allg./Anorganik) und ADR-023 (Entscheidungspaket)

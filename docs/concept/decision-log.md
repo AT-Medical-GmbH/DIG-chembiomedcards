@@ -135,3 +135,36 @@ und Online-MVP parallel · Druck: RGB jetzt, CMYK mit der Druckerei; Standard 4 
 (Virenprüfung, Löschkonzept) · Authentik-Application `chembiomed-cards` mit Gruppen
 `chembiomed-admins/-editors/-reviewers/-dozenten` · Server-Prüfungen nur lesend · Logo-Vektorfassung
 per automatischer Nachzeichnung (`scripts/vectorize_logo.py`), Abnahme durch AT Medical.
+
+### ADR-024 — Umzug auf eigene Server: Forgejo und Kartenproduktion auf ATMED-core · *accepted*
+**Kontext:** Andreas, 2026-11-03: Das Projekt soll von GitHub auf die Server der AT Medical GmbH,
+damit es dort produktiv geht und die Produktion weiterer Karten automatisiert läuft. Bisher gibt es
+keinen eigenen Git-Server. **Entscheidung:**
+- Quellcode in einem eigenen **Forgejo** (v15 LTS, SQLite, nur HTTPS, Registrierung gesperrt).
+- Betrieb auf **ATMED-core** unter `/srv/atmed/stacks/{forgejo,chembiomed-cards}`, hinter dem
+  bestehenden Traefik (`traefik_web`).
+- **Forgejo Actions** mit einem eigenen Runner im Host-Modus im Build-Image
+  (`deploy/builder/Dockerfile`), ohne Docker-Socket und ohne Root.
+- Jede Änderung auf `main` geht automatisch nach **Staging**, mit allen Karten und deren
+  Prüfstatus.
+- **Produktion** nur per manuellem Start mit Bestätigung „FREIGABE“ und nur mit Karten im Status
+  `approved` (`scripts/release_cards.py`).
+- Veröffentlichung atomar über einen Symlink; die letzten 5 Stände bleiben für ein Rollback.
+- Sicherung per `forgejo dump` in die Restic-Kette.
+- GitHub läuft bis dahin als Push-Spiegel mit und wird nach einem stabilen Betrieb
+  **archiviert**.
+
+**Begründung:** Forgejo ist schlank (≈ 300 MB RAM), bringt Reviews und CI mit und übernimmt Issues
+und PRs von GitHub. Ein Build-Image für Build und Runner macht die Produktion reproduzierbar (lokal
+geprüft: 116 Karten, 0 Layoutfehler). Das Freigabe-Gate verhindert, dass ungeprüfte medizinische
+Inhalte ausgeliefert werden.
+
+**Konsequenz:** Umsetzung nach `deploy/README_MIGRATION.md` (Phasen 0–7 mit Gates, Staging-first).
+
+**Abweichung:** Der Master-Auftrag (Abschnitt 41) hatte GitHub zur Hauptquelle für die
+Infrastruktur gemacht. Dieses Projekt weicht davon auf ausdrückliche Entscheidung von Andreas ab;
+Infrastruktur-Repositories bleiben unberührt.
+
+**Risiko:** Wer auf das Repository schreiben darf, kann auch Staging und Produktion verändern.
+Gegenmaßnahmen sind Branchschutz, ein kleiner Kreis von Schreibberechtigten und ein Runner, der nur
+an dieses eine Repository gebunden ist.

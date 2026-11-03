@@ -1,0 +1,10 @@
+[Unit]
+Description=Forgejo-Sicherung (forgejo dump)
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/srv/atmed/stacks/forgejo/backup/forgejo-backup.sh
+Nice=10
+IOSchedulingClass=idle

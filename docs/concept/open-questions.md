@@ -11,6 +11,7 @@ Die Entscheidungen stehen unten; die Begründungen im [Decision Log](decision-lo
 | 2 | **Fachreview der 116 Karten** durch Andreas | Arbeitsliste: [`reports/cards_review_needed.md`](../../reports/cards_review_needed.md) | Freigabe für Druck, Moodle, Online |
 | 3 | **Abnahme der Logo-Vektorfassung** | `brand/logo/chembiomed-cards-logo-full.svg` ist eine automatische Nachzeichnung (Abweichungen im Detail möglich) | Verwendung im Druck (Boxen, Verpackung) |
 | 4 | **APC/PH als eigene Tabs?** | Neu entscheiden, sobald Inhalte in diesen Modulen entstehen | – |
+| 5 | **Umzug auf ATMED-core** (ADR-024) | Ausgabe von `deploy/scripts/00-preflight-readonly.sh` (ersetzt die Einzelbefehle unten); Hostnamen `git.at-medical.de`, `staging.`/`releases.chembiomed-cards.de` bestätigen | Phasen 1–7 in `deploy/README_MIGRATION.md` |
 
 ### Befehle für die Read-only-Prüfung
 
@@ -48,6 +49,7 @@ ssh -n -T -o BatchMode=yes -o ConnectTimeout=8 ATMED-core "systemctl list-timers
 | Authentik | Application `chembiomed-cards`, Gruppen `chembiomed-admins/-editors/-reviewers/-dozenten` |
 | Server-Prüfung | read-only freigegeben |
 | Code-Verzeichnis | `app/` für die Implementierung (ADR-013, unverändert) |
+| Umzug (2026-11-03) | eigenes Forgejo auf ATMED-core · GitHub nach stabilem Betrieb archivieren · Staging automatisch, Produktion per Freigabe – ADR-024 |
 
 > Es werden weiterhin **keine** Live-Systeme verändert; produktive Schritte erst nach gesonderter
 > Freigabe und nach den ATMED-Betriebsregeln.
