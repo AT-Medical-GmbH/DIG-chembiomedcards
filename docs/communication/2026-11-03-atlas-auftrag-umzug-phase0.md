@@ -40,3 +40,12 @@ Bitte zurückmelden:
 
 Phasen 1–7 erst nach schriftlicher FREIGABE durch Andreas. Keine Secrets, keine Personendaten.
 Rückmeldung an andreas mit Thema „ERGEBNIS: ChemBioMed Cards Phase 0“.
+
+## Ergebnis Phase 0 und Folgeauftrag
+
+- **Ergebnis Phase 0:** ID `20261103T183451-claude-code-atmed-core-12588`. Die Befunde sind in
+  `deploy/README_MIGRATION.md` und in ADR-024 (Nachtrag) eingearbeitet.
+- **Folgeauftrag:** am 03.11.2026 um 18:38 gesendet (ID `20261103T183819-andreas-mcp-70852`).
+  Anlass ist Andreas' Wunsch, das Projekt nicht mehr auf GitHub zu betreiben.
+  - Freigegeben sind die Phasen 1–5 (Staging-first, außerhalb der Live-Zeiten).
+  - Produktion und GitHub-Archivierung bleiben bei Andreas.
