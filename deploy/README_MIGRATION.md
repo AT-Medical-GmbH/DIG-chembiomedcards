@@ -76,7 +76,7 @@ Runbook (Projekt 16, ADR-024). Ergänzt wurden die Pharma Cards (Modul PH) und d
   - Certresolver `letsencrypt` (DNS-Challenge über Cloudflare).
 - **Eine Authentik-Forward-Auth-Middleware gibt es auf ATMED-core nicht.** Sowohl
   `authentik-forwardauth@file` als auch `forwardauth@file` fehlen. `AUTH_MIDDLEWARE` in
-  `chembiomed-cards/.env` kann deshalb so nicht gesetzt werden. Entscheidung offen (siehe unten).
+  `chembiomed-cards/.env` kann deshalb erst nach Phase 4a gesetzt werden (Entscheidung unten).
 - Restic sichert `/srv/atmed` vollständig, **schließt aber `/srv/atmed/backups/*`** sowie `*/logs/*`,
   `*/tmp/*`, `*/cache/*` und `*.log` aus. Die Forgejo-Sicherung schreibt deshalb nach
   `/srv/atmed/stacks/forgejo/sicherung/` (korrigiert in `forgejo-backup.sh`).
@@ -84,19 +84,19 @@ Runbook (Projekt 16, ADR-024). Ergänzt wurden die Pharma Cards (Modul PH) und d
   (Mo–Fr 17:45–20:15, Sa/So 07:45–10:00 und 12:30–14:00).
 - Zielpfade, Containernamen und Hostnamen sind frei.
 
-**Offene Entscheidungen (Andreas, vor Phase 1):**
+**Entscheidungen (Andreas, 03.11., Auswahlfrage):**
 
-| Punkt | Vorschlag |
+| Punkt | Entscheidung |
 |---|---|
-| Zugangsschutz für `staging.`/`releases.chembiomed-cards.de` | Eine Authentik-Forward-Auth (Outpost und Middleware) neu einrichten ist ein Eingriff in zentrale Dienste und braucht eigene Freigabe. Bis dahin vorschlagsweise eine IP-Allowlist- oder Basic-Auth-Middleware in `/srv/atmed/traefik/dynamic`. |
-| Hostname der Lernplattform-Staging | `pharma-staging.at-medical.de` (Entscheidung 31.10.) beibehalten oder auf `lernen-staging.chembiomed-cards.de` vereinheitlichen. Die Lernplattform hat eigene Anmeldung über Authentik/OIDC und braucht keine Forward-Auth. |
+| Zugangsschutz für `staging.`/`releases.chembiomed-cards.de` | **Authentik-Forward-Auth gleich einrichten** (Phase 4a), bevor die Seiten online gehen. Der Eingriff in Authentik und Traefik braucht die schriftliche Freigabe von Phase 4a. |
+| Hostname der Lernplattform-Staging | **`pharma-staging.at-medical.de`** (wie am 31.10. entschieden). Die Lernplattform hat ihre eigene Anmeldung über Authentik/OIDC und braucht keine Forward-Auth. |
 | Authentik-Provider der Lernplattform | `pharma-cards-staging` (Public Client, PKCE) laut `online-platform/ops/staging/STAGING_HANDOVER.md` |
 
 ---
 
 ## Phase 0 – Read-only-Vorabprüfung
 
-**Status: erledigt** (claude-code-atmed-core, 03.11. 18:34; Ergebnis im Abschnitt „Gemeinsamer Plan“). G0 ist erfüllt bis auf die Authentik-Middleware (offene Entscheidung).
+**Status: erledigt** (claude-code-atmed-core, 03.11. 18:34; Ergebnis im Abschnitt „Gemeinsamer Plan“). G0 ist erfüllt bis auf die Authentik-Middleware. Sie wird in Phase 4a neu eingerichtet (Entscheidung Andreas).
 
 **Wo:** eigener Rechner mit den SSH-Aliasen (`docs/operations/claude-server-access.md` in ATMED-docs).
 
@@ -249,10 +249,39 @@ früheren Stand aktivieren:
 SITES_DIR=/srv/atmed/stacks/chembiomed-cards/sites src/deploy/scripts/rollback-release.sh staging
 ```
 
+## Phase 4a – Authentik-Forward-Auth für die Kartenseiten (eigene Freigabe)
+
+Auf ATMED-core gibt es bisher keine Forward-Auth-Middleware (Phase 0). Andreas hat entschieden, sie
+einzurichten, bevor `staging.`/`releases.chembiomed-cards.de` online gehen. Der Schritt greift in
+zentrale Dienste ein (Authentik, Traefik-Dynamik). Deshalb gilt: vorher Sicherung, außerhalb der
+Live-Zeiten, Rückweg bereit. Die Sitzung, die Authentik betreut, wird über Atlas eingebunden.
+
+1. **Authentik:**
+   - Proxy-Provider `chembiomed-cards` im Modus *Forward auth (single application)* für beide Hosts
+     anlegen, dazu eine Application mit Zugriffsgruppe (z. B. `chembiomed-redaktion`);
+   - den Provider dem eingebetteten Outpost zuweisen.
+   - Vorher: Datenbank-Sicherung von Authentik, Rückweg dokumentieren.
+2. **Traefik auf ATMED-core** (neue Datei in `/srv/atmed/traefik/dynamic/`, bestehende Dateien
+   unverändert): eine Middleware `authentik-forwardauth`, Typ `forwardAuth`, auf den Outpost von
+   `auth.at-medical.de`. Dazu `trustForwardHeader` und `authResponseHeaders` (Benutzer, Gruppen).
+   Außerdem auf beiden Hosts den Pfad `/outpost.goauthentik.io/` zum Outpost leiten, über einen
+   eigenen Router mit höherer Priorität. Die genaue Konfiguration richtet sich nach der
+   Authentik-Version auf `auth.at-medical.de` und wird vor dem Einbau in Atlas vorgelegt.
+3. In `chembiomed-cards/.env` `AUTH_MIDDLEWARE=authentik-forwardauth@file` setzen.
+
+**Gate G4a:**
+- Ohne Anmeldung leiten beide Hosts auf Authentik weiter.
+- Mit Konto in der Zugriffsgruppe erscheinen die Seiten, ohne Gruppe kommt 403.
+- Andere Router auf ATMED-core sind unverändert, Stichprobe: Website, Moodle, WikiMedica.
+
+**Rollback:** Die neue Datei in `dynamic/` entfernen (Traefik lädt neu), Provider und Application in
+Authentik löschen oder die Datenbank aus der Sicherung zurückspielen. `AUTH_MIDDLEWARE` bleibt dann
+leer, und die Kartenseiten bleiben offline (Router nicht starten).
+
 ## Phase 4b – Lernplattform „Pharma Cards online“ (Staging)
 
 **Voraussetzung:**
-- G4 erfüllt;
+- G4 erfüllt (G4a ist für die Lernplattform nicht nötig, sie meldet sich selbst über OIDC an);
 - Authentik-Provider und DNS der Lernplattform stehen (offene Entscheidungen oben);
 - die Schritte 2–3 aus `online-platform/ops/staging/STAGING_HANDOVER.md`, wobei die `.env` hier im
   Vault liegt.
