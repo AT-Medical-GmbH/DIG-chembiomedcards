@@ -16,6 +16,7 @@ from dataclasses import dataclass
 import jwt
 from fastapi import Depends, HTTPException, Request, status
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from .config import REVIEW_ROLES, ROLES, Settings
@@ -43,11 +44,21 @@ class Principal:
 def _upsert_user(db: Session, subject: str, email: str | None, name: str | None, role: str) -> User:
     user = db.scalar(select(User).where(User.subject == subject))
     if user is None:
-        user = User(subject=subject, email=email, display_name=name, role=role)
-        db.add(user)
-    else:
-        user.email, user.role = email or user.email, role
-        user.display_name = name or user.display_name
+        # Parallele Erstanfragen nach der Anmeldung legen denselben Benutzer gleichzeitig an
+        # (UniqueViolation ix_users_subject, vorher HTTP 500). Bei Konflikt zurückrollen und den
+        # inzwischen vorhandenen Benutzer übernehmen.
+        try:
+            user = User(subject=subject, email=email, display_name=name, role=role)
+            db.add(user)
+            db.commit()
+            return user
+        except IntegrityError:
+            db.rollback()
+            user = db.scalar(select(User).where(User.subject == subject))
+            if user is None:
+                raise
+    user.email, user.role = email or user.email, role
+    user.display_name = name or user.display_name
     db.commit()
     return user
 
